@@ -4,7 +4,7 @@
 	"description": "author haven frontend ",
 	"main": "index.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
+		"test": "jest",
 		"webpack": "webpack --env.mode development",
 		"client:build": "rimraf dist && mkdir dist && webpack --env.mode production",
 		"dev:start": "webpack-dev-server --env.mode development --open --hot"
@@ -52,7 +52,9 @@
 		"tailwindcss": "^1.0.5",
 		"webpack": "^4.38.0",
 		"webpack-cli": "^3.3.6",
-		"webpack-merge": "^4.2.1"
+		"webpack-merge": "^4.2.1",
+		"enzyme": "^3.10.0",
+		"enzyme-adapter-react-16": "^1.14.0"
 	},
 	"devDependencies": {
 		"babel-eslint": "^10.0.2",
@@ -63,6 +65,9 @@
 		"eslint-plugin-jsx-a11y": "^6.2.3",
 		"eslint-plugin-react": "^7.14.3",
 		"husky": "^3.0.1",
+		"jest": "^24.8.0",
+		"jest-config": "^24.8.0",
+		"jest-enzyme": "^7.0.2",
 		"lint-staged": "^9.2.1",
 		"webpack-dev-server": "^3.7.2"
 	}

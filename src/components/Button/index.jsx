@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Button = () => (
-  <button type="submit">
+  <button className="btn" type="submit">
       Button
   </button>
 );

@@ -1,0 +1,20 @@
+{
+    "env": {
+      "browser": true,
+      "es6": true
+    },
+    "extends": ["airbnb", "plugin:react/recommended"],
+    "parserOptions": {
+      "ecmaVersion": 9
+    },
+    "parser": "babel-eslint",
+    "plugins": ["react", "json"],
+    "rules": {
+      "react/jsx-filename-extension": "off",
+      "no-unused-expressions": "off",
+      "global-require": "off",
+      "import/no-dynamic-require": "off",
+      "quotes": ["error", "single"],
+      "semi": ["error", "always"]
+    }
+  }

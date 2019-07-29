@@ -1,0 +1,66 @@
+{
+	"name": "demeter-ah-frontend",
+	"version": "1.0.0",
+	"description": "author haven frontend ",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"webpack": "webpack --env.mode development",
+		"client:build": "rimraf dist && mkdir dist && webpack --env.mode production",
+		"dev:start": "webpack-dev-server --env.mode development --open --hot"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged"
+		}
+	},
+	"lint-staged": {
+		"**/**/*.{js,json, scss, jsx}": [
+			"eslint --ext .json --ext .js --ext .scss --ext .jsx --fix",
+			"git add"
+		]
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/andela/demeter-ah-frontend.git"
+	},
+	"author": "Demeter Team",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/andela/demeter-ah-frontend/issues"
+	},
+	"homepage": "https://github.com/andela/demeter-ah-frontend#readme",
+	"dependencies": {
+		"@babel/core": "^7.5.5",
+		"@babel/plugin-transform-runtime": "^7.5.5",
+		"@babel/preset-env": "^7.5.5",
+		"@babel/preset-react": "^7.0.0",
+		"@fullhuman/postcss-purgecss": "^1.2.0",
+		"autoprefixer": "^9.6.1",
+		"babel-loader": "^8.0.6",
+		"css-loader": "^3.1.0",
+		"file-loader": "^4.1.0",
+		"html-webpack-plugin": "^3.2.0",
+		"mini-css-extract-plugin": "^0.8.0",
+		"postcss-loader": "^3.0.0",
+		"react": "^16.8.6",
+		"react-dom": "^16.8.6",
+		"sass-loader": "^7.1.0",
+		"tailwindcss": "^1.0.5",
+		"webpack": "^4.38.0",
+		"webpack-cli": "^3.3.6",
+		"webpack-merge": "^4.2.1"
+	},
+	"devDependencies": {
+		"babel-eslint": "^10.0.2",
+		"eslint": "^6.1.0",
+		"eslint-config-airbnb": "^17.1.1",
+		"eslint-plugin-import": "^2.18.2",
+		"eslint-plugin-json": "^1.4.0",
+		"eslint-plugin-jsx-a11y": "^6.2.3",
+		"eslint-plugin-react": "^7.14.3",
+		"husky": "^3.0.1",
+		"lint-staged": "^9.2.1",
+		"webpack-dev-server": "^3.7.2"
+	}
+}

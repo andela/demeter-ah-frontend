@@ -1,5 +1,8 @@
 const tailwindcss = require('tailwindcss');
 const autoprefixer = require('autoprefixer');
+const dotenv = require('dotenv');
+
+dotenv.config();
 
 const purgecss = require('@fullhuman/postcss-purgecss')({
   // Specify the paths to all of the template files in your project
@@ -7,6 +10,7 @@ const purgecss = require('@fullhuman/postcss-purgecss')({
     'src/**/*.html',
     'src/**/*.css',
     'src/**/*.js',
+    'src/**/*.scss',
     // etc.
   ],
   // Include any special characters you're using in this regular expression
@@ -14,5 +18,5 @@ const purgecss = require('@fullhuman/postcss-purgecss')({
 });
 
 module.exports = {
-  plugins: [tailwindcss, autoprefixer, purgecss],
+  plugins: [tailwindcss, autoprefixer, ...(process.env.NODE_ENV === 'production' ? [purgecss] : [])],
 };

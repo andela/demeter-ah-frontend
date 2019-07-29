@@ -10,7 +10,6 @@
     "parser": "babel-eslint",
     "plugins": ["react", "json"],
     "rules": {
-      "react/jsx-filename-extension": "off",
       "no-unused-expressions": "off",
       "global-require": "off",
       "import/no-dynamic-require": "off",

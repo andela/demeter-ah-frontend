@@ -1,9 +1,15 @@
 import React from 'react';
 
 const Button = (props) => {
-  const { classes, type, name } = props;
+  const {
+    clicked, classes, type, name
+  } = props;
   return (
-    <button className={classes} type={type}>
+    <button
+      onClick={clicked}
+      className={classes}
+      type={type}
+    >
       {name}
     </button>
   );

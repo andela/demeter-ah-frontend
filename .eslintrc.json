@@ -11,6 +11,9 @@
     "parser": "babel-eslint",
     "plugins": ["react", "json"],
     "rules": {
+      "react/button-has-type": "off",
+      "jsx-a11y/label-has-for": "off",
+      "react/prop-types": "off",
       "no-unused-expressions": "off",
       "global-require": "off",
       "import/no-dynamic-require": "off",

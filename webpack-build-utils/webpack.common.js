@@ -1,6 +1,10 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const webpack = require('webpack');
+const dotenv = require('dotenv');
+
+dotenv.config();
 
 module.exports = {
   entry: './src/index.jsx',
@@ -40,5 +44,8 @@ module.exports = {
       filename: 'app.css',
       chunkFilename: '[id].css',
     }),
+    new webpack.DefinePlugin({
+      'process.env.APP_URL': JSON.stringify(process.env.APP_URL)
+    })
   ],
 };

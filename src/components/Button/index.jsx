@@ -1,9 +1,18 @@
 import React from 'react';
 
-const Button = () => (
-  <button className="btn" type="submit">
-      Button
-  </button>
-);
+const Button = (props) => {
+  const {
+    clicked, classes, type, name
+  } = props;
+  return (
+    <button
+      onClick={clicked}
+      className={classes}
+      type={type}
+    >
+      {name}
+    </button>
+  );
+};
 
 export default Button;

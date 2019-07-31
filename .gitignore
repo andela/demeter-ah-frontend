@@ -2,3 +2,7 @@ node_modules
 package-lock.json
 dist
 template.log
+.env
+tests_output
+*.log
+.DS_Store

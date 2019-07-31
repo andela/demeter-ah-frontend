@@ -4,7 +4,8 @@
 	"description": "author haven frontend ",
 	"main": "index.js",
 	"scripts": {
-		"test": "jest",
+		"test": "jest && npm run e2e",
+		"e2e": "nightwatch",
 		"webpack": "webpack --env.mode development",
 		"client:build": "rimraf dist && mkdir dist && webpack --env.mode production",
 		"dev:start": "webpack-dev-server --env.mode development --open --hot"
@@ -58,7 +59,8 @@
 		"webpack-cli": "^3.3.6",
 		"webpack-merge": "^4.2.1",
 		"enzyme": "^3.10.0",
-		"enzyme-adapter-react-16": "^1.14.0"
+		"enzyme-adapter-react-16": "^1.14.0",
+		"chromedriver": "^75.1.0"
 	},
 	"devDependencies": {
 		"babel-eslint": "^10.0.2",
@@ -73,6 +75,7 @@
 		"jest-config": "^24.8.0",
 		"jest-enzyme": "^7.0.2",
 		"lint-staged": "^9.2.1",
+		"nightwatch": "^1.1.13",
 		"webpack-dev-server": "^3.7.2"
 	}
 }

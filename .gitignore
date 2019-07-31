@@ -3,3 +3,4 @@ package-lock.json
 dist
 template.log
 .env
+**/*.DS_Store

@@ -1,0 +1,23 @@
+.signup{
+  .vline{
+    @apply w-px bg-gray-150 h-32
+  }
+  .left-con{
+    @apply flex-grow flex flex-row flex-wrap content-around relative px-5 w-112
+  }
+  .right-con{
+    @apply flex-grow flex flex-col items-center flex-wrap relative px-5 w-112
+  }
+
+  .input{
+    @apply w-full px-2
+  }
+
+  .inputcon-full{
+    @apply w-full px-2 py-1
+  }
+
+  .inputcon-half{
+    @apply w-1/2 px-2 py-1
+  }
+}

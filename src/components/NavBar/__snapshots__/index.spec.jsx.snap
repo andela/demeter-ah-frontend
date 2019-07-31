@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavBar Component Should render along with children componenet 1`] = `
+<BrowserRouter>
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "createHref": [Function],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "pathname": "/",
+          "search": "",
+          "state": undefined,
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
+  >
+    <NavBar>
+      <nav
+        className="flex items-center justify-between flex-wrap bg-white-500 pt-2 p-3 z-40 shadow"
+      >
+        <div
+          className="flex items-center flex-shrink-0 text-dark mr-6"
+        >
+          <Link
+            to="/"
+          >
+            <a
+              href="/"
+              onClick={[Function]}
+            >
+              <img
+                alt="Author's Haven"
+                className="w-4/12"
+                src="src/assets/images/logo.png"
+              />
+            </a>
+          </Link>
+        </div>
+        <div
+          className=""
+        >
+          <Button
+            classes="btn-purple"
+            name="Sign Up"
+            type="button"
+          >
+            <button
+              className="btn btn-purple"
+              type="button"
+            >
+              Sign Up
+            </button>
+          </Button>
+          <Button
+            classes="btn-white ml-2"
+            name="Sign In"
+            type="button"
+          >
+            <button
+              className="btn btn-white ml-2"
+              type="button"
+            >
+              Sign In
+            </button>
+          </Button>
+        </div>
+      </nav>
+    </NavBar>
+  </Router>
+</BrowserRouter>
+`;
+
+exports[`NavBar Component Should render without errors 1`] = `
+<nav
+  className="flex items-center justify-between flex-wrap bg-white-500 pt-2 p-3 z-40 shadow"
+>
+  <div
+    className="flex items-center flex-shrink-0 text-dark mr-6"
+  >
+    <Link
+      to="/"
+    >
+      <img
+        alt="Author's Haven"
+        className="w-4/12"
+        src="src/assets/images/logo.png"
+      />
+    </Link>
+  </div>
+  <div
+    className=""
+  >
+    <Button
+      classes="btn-purple"
+      name="Sign Up"
+      type="button"
+    />
+    <Button
+      classes="btn-white ml-2"
+      name="Sign In"
+      type="button"
+    />
+  </div>
+</nav>
+`;

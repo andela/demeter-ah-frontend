@@ -1,11 +1,10 @@
-
 import React from 'react';
 import { shallow } from 'enzyme';
-import Button from './index';
+import Label from './index';
 
-describe('Button Component', () => {
+describe('Label Component', () => {
   it('Should render without errors', () => {
-    const component = shallow(<Button />);
+    const component = shallow(<Label debug />);
     expect(component).toMatchSnapshot();
   });
 });

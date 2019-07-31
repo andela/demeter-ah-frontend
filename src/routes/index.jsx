@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, HashRouter as Router } from 'react-router-dom';
 import Home from '../views/Home';
 import SignIn from '../views/SignIn';
-import SignUp from '../views/Signup';
+import SignUp from '../views/SignUp';
 
 const Routes = () => (
   <Router>

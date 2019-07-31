@@ -9,7 +9,7 @@ dotenv.config();
 module.exports = {
   entry: './src/index.jsx',
   output: {
-    path: path.join(__dirname, '/dist'),
+    path: path.join(__dirname, '../dist'),
     filename: 'bundle.js',
   },
   module: {
@@ -26,6 +26,7 @@ module.exports = {
             loader: 'file-loader',
             options: {
               name: '[path][name]-[hash:8].[ext]',
+              outputPath: 'img/',
             },
           },
         ],

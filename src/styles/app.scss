@@ -4,6 +4,27 @@
 
 @tailwind utilities;
 
-body {
-	background: white;
+.btn {
+	@apply px-4 py-2 rounded-full
+}
+
+.btn-purple{
+	@apply bg-purple-650 text-white
+}
+
+.btn-white{
+	@apply bg-white text-purple-650 border-solid border border-purple-650
+}
+
+.bg{
+  background: url('/src/assets/images/bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 93vh;
+  @apply flex flex-col items-center
+}
+
+.card{
+  @apply flex flex-row flex-wrap content-around items-center relative
+  px-0 mt-32 w-auto bg-white shadow rounded-2xl p-10;
 }

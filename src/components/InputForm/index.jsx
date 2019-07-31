@@ -4,11 +4,11 @@ import Label from '../Label';
 
 const InputForm = ({
   labelname, name, inputType,
-  classes, inputClass, labelClass,
+  classes, inputClass, labelClass, ...rest
 }) => (
   <div className={classes}>
-    <Label labelname={labelname} name={name} className={labelClass} />
-    <Input inputType={inputType} className={inputClass} />
+    <Label labelname={labelname} name={name} classes={labelClass} />
+    <Input inputType={inputType} classes={inputClass} {...rest} />
   </div>
 );
 

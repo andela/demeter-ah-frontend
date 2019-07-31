@@ -18,9 +18,7 @@ const authReducer = (state = initState, action) => {
       };
     case 'CLEAN_UP':
       return {
-        error: null,
-        user: {},
-        isAuthenticated: false,
+        ...initState
       };
     default:
       return state;

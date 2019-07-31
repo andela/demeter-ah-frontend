@@ -1,11 +1,10 @@
-
 import React from 'react';
 import { shallow } from 'enzyme';
-import Button from './index';
+import Input from './index';
 
-describe('Button Component', () => {
+describe('Input Component', () => {
   it('Should render without errors', () => {
-    const component = shallow(<Button />);
+    const component = shallow(<Input />);
     expect(component).toMatchSnapshot();
   });
 });

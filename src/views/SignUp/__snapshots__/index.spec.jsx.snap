@@ -1,0 +1,461 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavBar Component Should render along with children componenet 1`] = `
+<BrowserRouter>
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "createHref": [Function],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "pathname": "/",
+          "search": "",
+          "state": undefined,
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
+  >
+    <Connect(Signup)
+      store={
+        Object {
+          "dispatch": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+          Symbol(observable): [Function],
+        }
+      }
+    >
+      <Signup
+        error={null}
+        isAuthenticated={false}
+        onSignUp={[Function]}
+        store={
+          Object {
+            "dispatch": [Function],
+            "getState": [Function],
+            "replaceReducer": [Function],
+            "subscribe": [Function],
+            Symbol(observable): [Function],
+          }
+        }
+        user={Object {}}
+      >
+        <div
+          className="signup"
+        >
+          <NavBar>
+            <nav
+              className="flex items-center justify-between flex-wrap bg-white-500 pt-2 p-3 z-40 shadow"
+            >
+              <div
+                className="flex items-center flex-shrink-0 text-dark mr-6"
+              >
+                <Link
+                  to="/"
+                >
+                  <a
+                    href="/"
+                    onClick={[Function]}
+                  >
+                    <img
+                      alt="Author's Haven"
+                      className="w-4/12"
+                      src="src/assets/images/logo.png"
+                    />
+                  </a>
+                </Link>
+              </div>
+              <div
+                className=""
+              >
+                <Button
+                  classes="btn-purple"
+                  name="Sign Up"
+                  type="button"
+                >
+                  <button
+                    className="btn btn-purple"
+                    type="button"
+                  >
+                    Sign Up
+                  </button>
+                </Button>
+                <Button
+                  classes="btn-white ml-2"
+                  name="Sign In"
+                  type="button"
+                >
+                  <button
+                    className="btn btn-white ml-2"
+                    type="button"
+                  >
+                    Sign In
+                  </button>
+                </Button>
+              </div>
+            </nav>
+          </NavBar>
+          <div
+            className="bg"
+          >
+            <form
+              onSubmit={[Function]}
+            >
+              <div
+                className="card"
+              >
+                <h1
+                  className="w-full px-7 mb-0 text-2xl text-purple-650"
+                >
+                  Sign up
+                </h1>
+                <div
+                  className="left-con"
+                >
+                  <InputForm
+                    classes="inputcon-full"
+                    id="email"
+                    inputClass="input"
+                    inputType="text"
+                    labelClass="block mb-1"
+                    labelname="Email"
+                    name="email"
+                    placeholder="johndoe@examle.com"
+                  >
+                    <div
+                      className="inputcon-full"
+                    >
+                      <Label
+                        classes="block mb-1"
+                        labelname="Email"
+                        name="email"
+                      >
+                        <label
+                          className="block mb-1"
+                          htmlFor="email"
+                        >
+                          Email
+                        </label>
+                      </Label>
+                      <Input
+                        classes="input"
+                        id="email"
+                        inputType="text"
+                        placeholder="johndoe@examle.com"
+                      >
+                        <input
+                          className="shadow border rounded py-1 bg-purple-150 input"
+                          id="email"
+                          placeholder="johndoe@examle.com"
+                          required={true}
+                          type="text"
+                        />
+                      </Input>
+                    </div>
+                  </InputForm>
+                  <InputForm
+                    classes="inputcon-half"
+                    inputClass="input"
+                    inputType="text"
+                    labelClass="block mb-1"
+                    labelname="First Name"
+                    name="firstname"
+                    placeholder="First Name"
+                  >
+                    <div
+                      className="inputcon-half"
+                    >
+                      <Label
+                        classes="block mb-1"
+                        labelname="First Name"
+                        name="firstname"
+                      >
+                        <label
+                          className="block mb-1"
+                          htmlFor="firstname"
+                        >
+                          First Name
+                        </label>
+                      </Label>
+                      <Input
+                        classes="input"
+                        inputType="text"
+                        placeholder="First Name"
+                      >
+                        <input
+                          className="shadow border rounded py-1 bg-purple-150 input"
+                          placeholder="First Name"
+                          required={true}
+                          type="text"
+                        />
+                      </Input>
+                    </div>
+                  </InputForm>
+                  <InputForm
+                    classes="inputcon-half"
+                    id="lastName"
+                    inputClass="input"
+                    inputType="text"
+                    labelClass="block mb-1"
+                    labelname="Last Name"
+                    name="lastname"
+                    placeholder="Last Name"
+                  >
+                    <div
+                      className="inputcon-half"
+                    >
+                      <Label
+                        classes="block mb-1"
+                        labelname="Last Name"
+                        name="lastname"
+                      >
+                        <label
+                          className="block mb-1"
+                          htmlFor="lastname"
+                        >
+                          Last Name
+                        </label>
+                      </Label>
+                      <Input
+                        classes="input"
+                        id="lastName"
+                        inputType="text"
+                        placeholder="Last Name"
+                      >
+                        <input
+                          className="shadow border rounded py-1 bg-purple-150 input"
+                          id="lastName"
+                          placeholder="Last Name"
+                          required={true}
+                          type="text"
+                        />
+                      </Input>
+                    </div>
+                  </InputForm>
+                  <InputForm
+                    classes="inputcon-full"
+                    id="username"
+                    inputClass="input"
+                    inputType="text"
+                    labelClass="block mb-1"
+                    labelname="Username"
+                    name="username"
+                    placeholder="Username"
+                  >
+                    <div
+                      className="inputcon-full"
+                    >
+                      <Label
+                        classes="block mb-1"
+                        labelname="Username"
+                        name="username"
+                      >
+                        <label
+                          className="block mb-1"
+                          htmlFor="username"
+                        >
+                          Username
+                        </label>
+                      </Label>
+                      <Input
+                        classes="input"
+                        id="username"
+                        inputType="text"
+                        placeholder="Username"
+                      >
+                        <input
+                          className="shadow border rounded py-1 bg-purple-150 input"
+                          id="username"
+                          placeholder="Username"
+                          required={true}
+                          type="text"
+                        />
+                      </Input>
+                    </div>
+                  </InputForm>
+                  <InputForm
+                    classes="inputcon-half"
+                    id="password"
+                    inputClass="input"
+                    inputType="text"
+                    labelClass="block mb-1"
+                    labelname="Password"
+                    name="password"
+                    placeholder="Password"
+                  >
+                    <div
+                      className="inputcon-half"
+                    >
+                      <Label
+                        classes="block mb-1"
+                        labelname="Password"
+                        name="password"
+                      >
+                        <label
+                          className="block mb-1"
+                          htmlFor="password"
+                        >
+                          Password
+                        </label>
+                      </Label>
+                      <Input
+                        classes="input"
+                        id="password"
+                        inputType="text"
+                        placeholder="Password"
+                      >
+                        <input
+                          className="shadow border rounded py-1 bg-purple-150 input"
+                          id="password"
+                          placeholder="Password"
+                          required={true}
+                          type="text"
+                        />
+                      </Input>
+                    </div>
+                  </InputForm>
+                  <InputForm
+                    classes="inputcon-half"
+                    id="confirmPassword"
+                    inputClass="input"
+                    inputType="text"
+                    labelClass="block mb-1"
+                    labelname="Confirm Password"
+                    name="conf-password"
+                    placeholder="Confirm Password"
+                  >
+                    <div
+                      className="inputcon-half"
+                    >
+                      <Label
+                        classes="block mb-1"
+                        labelname="Confirm Password"
+                        name="conf-password"
+                      >
+                        <label
+                          className="block mb-1"
+                          htmlFor="conf-password"
+                        >
+                          Confirm Password
+                        </label>
+                      </Label>
+                      <Input
+                        classes="input"
+                        id="confirmPassword"
+                        inputType="text"
+                        placeholder="Confirm Password"
+                      >
+                        <input
+                          className="shadow border rounded py-1 bg-purple-150 input"
+                          id="confirmPassword"
+                          placeholder="Confirm Password"
+                          required={true}
+                          type="text"
+                        />
+                      </Input>
+                    </div>
+                  </InputForm>
+                  <div
+                    className="w-full flex justify-end"
+                  >
+                    <p
+                      className="flex-grow mx-2 my-8"
+                    >
+                      Have an account? 
+                      <span
+                        className="text-purple-650"
+                      >
+                        Login
+                      </span>
+                    </p>
+                    <Button
+                      classes="btn-purple w-1/3 mx-2 my-7"
+                      name="Register"
+                      type="button"
+                    >
+                      <button
+                        className="btn btn-purple w-1/3 mx-2 my-7"
+                        type="button"
+                      >
+                        Register
+                      </button>
+                    </Button>
+                  </div>
+                </div>
+                <div
+                  className="flex flex-col items-center relative"
+                >
+                  <hr
+                    className="vline"
+                  />
+                  <span>
+                    Or
+                  </span>
+                  <hr
+                    className="vline"
+                  />
+                </div>
+                <div
+                  className="right-con"
+                >
+                  <img
+                    alt="Authors Haven"
+                    src="./src/assets/images/brand-logo.png"
+                  />
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </Signup>
+    </Connect(Signup)>
+  </Router>
+</BrowserRouter>
+`;
+
+exports[`NavBar Component Should render without errors 1`] = `
+<Router
+  history={
+    Object {
+      "action": "POP",
+      "block": [Function],
+      "createHref": [Function],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "length": 1,
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "pathname": "/",
+        "search": "",
+        "state": undefined,
+      },
+      "push": [Function],
+      "replace": [Function],
+    }
+  }
+>
+  <Connect(Signup)
+    store={
+      Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+        Symbol(observable): [Function],
+      }
+    }
+  />
+</Router>
+`;

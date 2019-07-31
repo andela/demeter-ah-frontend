@@ -1,3 +1,4 @@
+
 const { colors } = require('tailwindcss/defaultTheme');
 
 module.exports = {
@@ -19,7 +20,9 @@ module.exports = {
         72: '18rem',
         84: '21rem',
         96: '24rem',
+        108: '26rem',
         112: '28rem',
+        118: '32rem',
       },
       borderRadius: {
         '2xl': '1.5rem',

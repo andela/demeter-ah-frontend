@@ -10,8 +10,8 @@ const NavBar = () => (
       </Link>
     </div>
     <div className="">
-      <Button type="button" name="Sign Up" classes="btn-purple" />
-      <Button type="button" name="Sign In" classes="btn-white ml-2" />
+      <Button type="button" name="Sign Up" classes="btn-purple w-32" />
+      <Button type="button" name="Sign In" classes="btn-white w-32 ml-2 border border-solid border-purple-650 text-purple-650" />
     </div>
   </nav>
 );

@@ -1,10 +1,12 @@
 import './index.scss';
 import React, { Fragment, useState } from 'react';
 import { connect } from 'react-redux';
+import { toast } from 'react-toastify';
 import InputForm from '../../components/InputForm';
 import NavBar from '../../components/NavBar';
 import Button from '../../components/Button';
 import { signUpAction } from '../../store/actions/auth';
+import '../../styles/react-toastify.css';
 
 const Signup = (props) => {
   const [values, setValues] = useState({
@@ -24,8 +26,8 @@ const Signup = (props) => {
   const submit = (e) => {
     e.preventDefault();
     if (values.password !== values.confirmPassword) {
-      const result = e.target.querySelector('#confirmPassword');
-      result.setCustomValidity('Password must match');
+      toast.error(<h4 className="text-center">password must match</h4>);
+      return;
     }
     props.onSignUp(values);
   };
@@ -35,61 +37,65 @@ const Signup = (props) => {
       <div className="signup">
         <NavBar />
         <div
-          className="bg"
+          className="bg card-wrapper flex justify-center items-center"
         >
-          <form onSubmit={submit}>
-            <div className="card">
-              <h1 className="w-full px-7 mb-0 text-2xl text-purple-650">Sign up</h1>
-              <div className="left-con">
+          <div className="card">
+            <form onSubmit={submit} className="left-con">
+              <h1 className="w-full mb-4 text-2xl text-purple-650 font-semibold">Sign up</h1>
+              <div className="input-wrap pr-8 flex flex-col justify-center w-full mt-4">
                 <InputForm
-                  classes="inputcon-full"
+                  classes="inputcon-full mb-4 pl-0"
                   labelname="Email"
                   name="email"
-                  labelClass="block mb-1"
+                  labelClass="block mb-1 text-sm"
                   inputType="text"
                   id="email"
-                  inputClass="input"
+                  inputClass="input text-sm"
                   placeholder="johndoe@examle.com"
                   onChange={onChange}
                   autoComplete="off"
                   pattern="^[\w.]+@[\w]{2,20}.[a-z]{2,10}$"
                   title="must be a valid email"
                 />
+                <div className="flex justify-center align-center">
+                  <InputForm
+                    classes="inputcon-half mb-4 mr-2"
+                    labelname="First Name"
+                    name="firstname"
+                    labelClass="block mb-1 text-sm"
+                    inputType="text"
+                    inputClass="input text-sm"
+                    placeholder="First Name"
+                    onChange={onChange}
+                    id="firstName"
+                    pattern="^[\w]{3,20}$"
+                    title="first name is required and must be more than 3 character"
+                    autoComplete="off"
+                  />
+
+                  <InputForm
+                    classes="inputcon-half mb-4 ml-2"
+                    labelname="Last Name"
+                    name="lastname"
+                    labelClass="block mb-1 text-sm"
+                    inputType="text"
+                    inputClass="input text-sm"
+                    placeholder="Last Name"
+                    id="lastName"
+                    onChange={onChange}
+                    pattern="^[\w]{3,20}$"
+                    title="last name is required and must be more than 3 character"
+                    autoComplete="off"
+                  />
+                </div>
+
                 <InputForm
-                  classes="inputcon-half"
-                  labelname="First Name"
-                  name="firstname"
-                  labelClass="block mb-1"
-                  inputType="text"
-                  inputClass="input"
-                  placeholder="First Name"
-                  onChange={onChange}
-                  id="firstName"
-                  pattern="^[\w]{3,20}$"
-                  title="first name is required and must be more than 3 character"
-                  autoComplete="off"
-                />
-                <InputForm
-                  classes="inputcon-half"
-                  labelname="Last Name"
-                  name="lastname"
-                  labelClass="block mb-1"
-                  inputType="text"
-                  inputClass="input"
-                  placeholder="Last Name"
-                  id="lastName"
-                  onChange={onChange}
-                  pattern="^[\w]{3,20}$"
-                  title="last name is required and must be more than 3 character"
-                  autoComplete="off"
-                />
-                <InputForm
-                  classes="inputcon-full"
+                  classes="inputcon-full mb-4"
                   labelname="Username"
                   name="username"
-                  labelClass="block mb-1"
+                  labelClass="block mb-1 text-sm"
                   inputType="text"
-                  inputClass="input"
+                  inputClass="input text-sm"
                   placeholder="username"
                   id="username"
                   onChange={onChange}
@@ -97,52 +103,56 @@ const Signup = (props) => {
                   title="username is required and must be more than 3 character"
                   autoComplete="off"
                 />
-                <InputForm
-                  classes="inputcon-half"
-                  labelname="Password"
-                  name="password"
-                  labelClass="block mb-1"
-                  inputType="password"
-                  inputClass="input"
-                  placeholder="Password"
-                  id="password"
-                  onChange={onChange}
-                  pattern="^[\w]{8,20}$"
-                  title="password is required and must be more than 8 character"
-                  autoComplete="off"
-                />
-                <InputForm
-                  classes="inputcon-half"
-                  labelname="Confirm Password"
-                  name="conf-password"
-                  labelClass="block mb-1"
-                  inputType="password"
-                  inputClass="input"
-                  placeholder="Confirm Password"
-                  id="confirmPassword"
-                  onChange={onChange}
-                  autoComplete="off"
-                />
-                <div className="w-full flex justify-end">
-                  <p className="flex-grow mx-2 my-8">
-                    {'Have an account? '}
-                    <span className="text-purple-650">
-                      {'Login'}
-                    </span>
-                  </p>
-                  <Button type="submit" name="Register" classes="btn-purple w-1/3 mx-2 my-7" />
+
+                <div className="flex justify-center align-center">
+                  <InputForm
+                    classes="inputcon-half mb-4 mr-2"
+                    labelname="Password"
+                    name="password"
+                    labelClass="block mb-1 text-sm"
+                    inputType="password"
+                    inputClass="input text-sm"
+                    placeholder="Password"
+                    id="password"
+                    onChange={onChange}
+                    pattern="^[\w]{8,20}$"
+                    title="password is required and must be more than 8 character"
+                    autoComplete="off"
+                  />
+                  <InputForm
+                    classes="inputcon-half mb-4 ml-2"
+                    labelname="Confirm Password"
+                    name="conf-password"
+                    labelClass="block mb-1 text-sm"
+                    inputType="password"
+                    inputClass="input text-sm"
+                    placeholder="Confirm Password"
+                    id="confirmPassword"
+                    onChange={onChange}
+                    autoComplete="off"
+                  />
+
                 </div>
               </div>
-              <div className="flex flex-col items-center relative">
-                <hr className="vline" />
-                <span>Or</span>
-                <hr className="vline" />
+              <div className="w-full flex justify-end">
+                <p className="flex-grow flex items-center my-8 text-sm">
+                  {'Have an account? '}
+                  <span className="text-purple-650 ml-2 font-semibold cursor-pointer">
+                    {'Sign in'}
+                  </span>
+                </p>
+                <Button type="button" name="Register" classes="btn-purple w-1/3 mx-8 my-7" />
               </div>
-              <div className="right-con">
-                <img src="./src/assets/images/brand-logo.png" alt="Authors Haven" />
-              </div>
+            </form>
+            <div className="flex flex-grow flex-col items-center relative">
+              <hr className="vline" />
+              <span>OR</span>
+              <hr className="vline" />
             </div>
-          </form>
+            <div className="right-con flex justify-center">
+              <img src="./src/assets/images/brand-logo.png" alt="Authors Haven" />
+            </div>
+          </div>
         </div>
       </div>
     </Fragment>

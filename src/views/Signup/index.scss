@@ -1,0 +1,25 @@
+.signup{
+  font-family: 'Montserrat', sans-serif;
+  .vline{
+    @apply w-px bg-gray-150;
+    height: 48%;
+  }
+  .left-con{
+    @apply flex-grow flex flex-row flex-wrap content-around relative px-5 w-112
+  }
+  .input-wrap {
+    height: 300px;
+  }
+  .right-con{
+    @apply flex-grow flex flex-col items-center flex-wrap relative px-5 w-108
+  }
+  .input{
+    @apply w-full px-2
+  }
+  .inputcon-full{
+    @apply w-full px-0 py-1
+  }
+  .inputcon-half{
+    @apply w-1/2 px-0 py-1
+  }
+}

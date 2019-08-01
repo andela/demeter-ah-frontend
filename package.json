@@ -4,11 +4,12 @@
 	"description": "author haven frontend ",
 	"main": "index.js",
 	"scripts": {
-		"test": "jest && npm run e2e",
+		"test": "jest --coverage",
+		"test:watch": "jest --watch",
 		"e2e": "nightwatch",
 		"webpack": "webpack --env.mode development",
 		"client:build": "rimraf dist && mkdir dist && webpack --env.mode production",
-		"dev:start": "webpack-dev-server --env.mode development --open --hot"
+		"dev:start": "webpack-dev-server --env.mode development --hot"
 	},
 	"husky": {
 		"hooks": {
@@ -38,11 +39,15 @@
 		"@babel/preset-react": "^7.0.0",
 		"@fullhuman/postcss-purgecss": "^1.2.0",
 		"autoprefixer": "^9.6.1",
+		"axios": "^0.19.0",
 		"babel-loader": "^8.0.6",
 		"css-loader": "^3.1.0",
 		"dotenv": "^8.0.0",
+		"enzyme": "^3.10.0",
+		"enzyme-adapter-react-16": "^1.14.0",
 		"file-loader": "^4.1.0",
 		"html-webpack-plugin": "^3.2.0",
+		"jsdom": "^15.1.1",
 		"mini-css-extract-plugin": "^0.8.0",
 		"node-sass": "^4.12.0",
 		"postcss-loader": "^3.0.0",
@@ -50,6 +55,7 @@
 		"react-dom": "^16.8.6",
 		"react-redux": "^7.1.0",
 		"react-router-dom": "^5.0.1",
+		"react-toastify": "^5.3.2",
 		"redux": "^4.0.4",
 		"redux-devtools-extension": "^2.13.8",
 		"redux-thunk": "^2.3.0",
@@ -58,8 +64,6 @@
 		"webpack": "^4.38.0",
 		"webpack-cli": "^3.3.6",
 		"webpack-merge": "^4.2.1",
-		"enzyme": "^3.10.0",
-		"enzyme-adapter-react-16": "^1.14.0",
 		"chromedriver": "^75.1.0"
 	},
 	"devDependencies": {
@@ -76,6 +80,7 @@
 		"jest-enzyme": "^7.0.2",
 		"lint-staged": "^9.2.1",
 		"nightwatch": "^1.1.13",
+		"redux-mock-store": "^1.5.3",
 		"webpack-dev-server": "^3.7.2"
 	}
 }

@@ -1,0 +1,540 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavBar Component Should render along with children componenet 1`] = `
+<BrowserRouter>
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "createHref": [Function],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "pathname": "/",
+          "search": "",
+          "state": undefined,
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
+  >
+    <Connect(Signup)
+      store={
+        Object {
+          "dispatch": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+          Symbol(observable): [Function],
+        }
+      }
+    >
+      <Signup
+        cleanup={[Function]}
+        error={null}
+        isAuthenticated={false}
+        isCompleted={false}
+        isSubmit={false}
+        onSignUp={[Function]}
+        store={
+          Object {
+            "dispatch": [Function],
+            "getState": [Function],
+            "replaceReducer": [Function],
+            "subscribe": [Function],
+            Symbol(observable): [Function],
+          }
+        }
+        user={Object {}}
+      >
+        <div
+          className="signup"
+        >
+          <NavBar>
+            <nav
+              className="flex items-center justify-between flex-wrap bg-white-500 pt-2 p-3 z-40 shadow"
+            >
+              <div
+                className="flex items-center flex-shrink-0 text-dark mr-6"
+              >
+                <Link
+                  to="/"
+                >
+                  <a
+                    href="/"
+                    onClick={[Function]}
+                  >
+                    <img
+                      alt="Author's Haven"
+                      className="w-4/12"
+                      id="logo"
+                      src="src/assets/images/logo.png"
+                    />
+                  </a>
+                </Link>
+              </div>
+              <div
+                className=""
+              >
+                <Button
+                  classes="btn-purple w-32"
+                  id="signup-menu"
+                  name="Sign Up"
+                  type="button"
+                >
+                  <button
+                    className="btn btn-purple w-32"
+                    id="signup-menu"
+                    type="button"
+                  >
+                    Sign Up
+                  </button>
+                </Button>
+                <Button
+                  classes="btn-white w-32 ml-2 border border-solid border-purple-650 text-purple-650"
+                  id="signin-menu"
+                  name="Sign In"
+                  type="button"
+                >
+                  <button
+                    className="btn btn-white w-32 ml-2 border border-solid border-purple-650 text-purple-650"
+                    id="signin-menu"
+                    type="button"
+                  >
+                    Sign In
+                  </button>
+                </Button>
+              </div>
+            </nav>
+          </NavBar>
+          <div
+            className="bg card-wrapper flex justify-center items-center"
+          >
+            <div
+              className="card"
+            >
+              <form
+                className="left-con"
+                onSubmit={[Function]}
+              >
+                <h1
+                  className="w-full mb-4 text-2xl text-purple-650 font-semibold"
+                >
+                  Sign up
+                </h1>
+                <div
+                  className="input-wrap pr-8 flex flex-col justify-center w-full mt-4"
+                >
+                  <InputForm
+                    classes="inputcon-full mb-4 pl-0"
+                    id="email"
+                    inputClass="input text-sm"
+                    inputType="text"
+                    labelClass="block mb-1 text-sm"
+                    labelname="Email"
+                    name="email"
+                    onChange={[Function]}
+                    pattern="^[\\\\w.]+@[\\\\w]{2,20}.[a-z]{2,10}$"
+                    placeholder="johndoe@examle.com"
+                    title="must be a valid email"
+                  >
+                    <div
+                      className="inputcon-full mb-4 pl-0"
+                    >
+                      <Label
+                        classes="block mb-1 text-sm"
+                        labelname="Email"
+                        name="email"
+                      >
+                        <label
+                          className="block mb-1 text-sm"
+                          htmlFor="email"
+                        >
+                          Email
+                        </label>
+                      </Label>
+                      <Input
+                        classes="input text-sm"
+                        id="email"
+                        inputType="text"
+                        onChange={[Function]}
+                        pattern="^[\\\\w.]+@[\\\\w]{2,20}.[a-z]{2,10}$"
+                        placeholder="johndoe@examle.com"
+                        title="must be a valid email"
+                      >
+                        <input
+                          className="shadow border rounded py-1 bg-purple-150 input text-sm"
+                          id="email"
+                          onChange={[Function]}
+                          pattern="^[\\\\w.]+@[\\\\w]{2,20}.[a-z]{2,10}$"
+                          placeholder="johndoe@examle.com"
+                          required={true}
+                          title="must be a valid email"
+                          type="text"
+                        />
+                      </Input>
+                    </div>
+                  </InputForm>
+                  <div
+                    className="flex justify-center align-center"
+                  >
+                    <InputForm
+                      classes="inputcon-half mb-4 mr-2"
+                      id="firstName"
+                      inputClass="input text-sm"
+                      inputType="text"
+                      labelClass="block mb-1 text-sm"
+                      labelname="First Name"
+                      name="firstname"
+                      onChange={[Function]}
+                      pattern="^[\\\\w]{3,20}$"
+                      placeholder="First Name"
+                      title="first name is required and must be more than 3 character"
+                    >
+                      <div
+                        className="inputcon-half mb-4 mr-2"
+                      >
+                        <Label
+                          classes="block mb-1 text-sm"
+                          labelname="First Name"
+                          name="firstname"
+                        >
+                          <label
+                            className="block mb-1 text-sm"
+                            htmlFor="firstname"
+                          >
+                            First Name
+                          </label>
+                        </Label>
+                        <Input
+                          classes="input text-sm"
+                          id="firstName"
+                          inputType="text"
+                          onChange={[Function]}
+                          pattern="^[\\\\w]{3,20}$"
+                          placeholder="First Name"
+                          title="first name is required and must be more than 3 character"
+                        >
+                          <input
+                            className="shadow border rounded py-1 bg-purple-150 input text-sm"
+                            id="firstName"
+                            onChange={[Function]}
+                            pattern="^[\\\\w]{3,20}$"
+                            placeholder="First Name"
+                            required={true}
+                            title="first name is required and must be more than 3 character"
+                            type="text"
+                          />
+                        </Input>
+                      </div>
+                    </InputForm>
+                    <InputForm
+                      classes="inputcon-half mb-4 ml-2"
+                      id="lastName"
+                      inputClass="input text-sm"
+                      inputType="text"
+                      labelClass="block mb-1 text-sm"
+                      labelname="Last Name"
+                      name="lastname"
+                      onChange={[Function]}
+                      pattern="^[\\\\w]{3,20}$"
+                      placeholder="Last Name"
+                      title="last name is required and must be more than 3 character"
+                    >
+                      <div
+                        className="inputcon-half mb-4 ml-2"
+                      >
+                        <Label
+                          classes="block mb-1 text-sm"
+                          labelname="Last Name"
+                          name="lastname"
+                        >
+                          <label
+                            className="block mb-1 text-sm"
+                            htmlFor="lastname"
+                          >
+                            Last Name
+                          </label>
+                        </Label>
+                        <Input
+                          classes="input text-sm"
+                          id="lastName"
+                          inputType="text"
+                          onChange={[Function]}
+                          pattern="^[\\\\w]{3,20}$"
+                          placeholder="Last Name"
+                          title="last name is required and must be more than 3 character"
+                        >
+                          <input
+                            className="shadow border rounded py-1 bg-purple-150 input text-sm"
+                            id="lastName"
+                            onChange={[Function]}
+                            pattern="^[\\\\w]{3,20}$"
+                            placeholder="Last Name"
+                            required={true}
+                            title="last name is required and must be more than 3 character"
+                            type="text"
+                          />
+                        </Input>
+                      </div>
+                    </InputForm>
+                  </div>
+                  <InputForm
+                    classes="inputcon-full mb-4"
+                    id="username"
+                    inputClass="input text-sm"
+                    inputType="text"
+                    labelClass="block mb-1 text-sm"
+                    labelname="Username"
+                    name="username"
+                    onChange={[Function]}
+                    pattern="^[\\\\w]{3,20}$"
+                    placeholder="username"
+                    title="username is required and must be more than 3 character"
+                  >
+                    <div
+                      className="inputcon-full mb-4"
+                    >
+                      <Label
+                        classes="block mb-1 text-sm"
+                        labelname="Username"
+                        name="username"
+                      >
+                        <label
+                          className="block mb-1 text-sm"
+                          htmlFor="username"
+                        >
+                          Username
+                        </label>
+                      </Label>
+                      <Input
+                        classes="input text-sm"
+                        id="username"
+                        inputType="text"
+                        onChange={[Function]}
+                        pattern="^[\\\\w]{3,20}$"
+                        placeholder="username"
+                        title="username is required and must be more than 3 character"
+                      >
+                        <input
+                          className="shadow border rounded py-1 bg-purple-150 input text-sm"
+                          id="username"
+                          onChange={[Function]}
+                          pattern="^[\\\\w]{3,20}$"
+                          placeholder="username"
+                          required={true}
+                          title="username is required and must be more than 3 character"
+                          type="text"
+                        />
+                      </Input>
+                    </div>
+                  </InputForm>
+                  <div
+                    className="flex justify-center align-center"
+                  >
+                    <InputForm
+                      autoComplete="off"
+                      classes="inputcon-half mb-4 mr-2"
+                      id="password"
+                      inputClass="input text-sm"
+                      inputType="password"
+                      labelClass="block mb-1 text-sm"
+                      labelname="Password"
+                      name="password"
+                      onChange={[Function]}
+                      pattern="^[\\\\w]{8,20}$"
+                      placeholder="Password"
+                      title="password is required and must be more than 8 character"
+                    >
+                      <div
+                        className="inputcon-half mb-4 mr-2"
+                      >
+                        <Label
+                          classes="block mb-1 text-sm"
+                          labelname="Password"
+                          name="password"
+                        >
+                          <label
+                            className="block mb-1 text-sm"
+                            htmlFor="password"
+                          >
+                            Password
+                          </label>
+                        </Label>
+                        <Input
+                          autoComplete="off"
+                          classes="input text-sm"
+                          id="password"
+                          inputType="password"
+                          onChange={[Function]}
+                          pattern="^[\\\\w]{8,20}$"
+                          placeholder="Password"
+                          title="password is required and must be more than 8 character"
+                        >
+                          <input
+                            autoComplete="off"
+                            className="shadow border rounded py-1 bg-purple-150 input text-sm"
+                            id="password"
+                            onChange={[Function]}
+                            pattern="^[\\\\w]{8,20}$"
+                            placeholder="Password"
+                            required={true}
+                            title="password is required and must be more than 8 character"
+                            type="password"
+                          />
+                        </Input>
+                      </div>
+                    </InputForm>
+                    <InputForm
+                      autoComplete="off"
+                      classes="inputcon-half mb-4 ml-2"
+                      id="confirmPassword"
+                      inputClass="input text-sm"
+                      inputType="password"
+                      labelClass="block mb-1 text-sm"
+                      labelname="Confirm Password"
+                      name="conf-password"
+                      onChange={[Function]}
+                      placeholder="Confirm Password"
+                    >
+                      <div
+                        className="inputcon-half mb-4 ml-2"
+                      >
+                        <Label
+                          classes="block mb-1 text-sm"
+                          labelname="Confirm Password"
+                          name="conf-password"
+                        >
+                          <label
+                            className="block mb-1 text-sm"
+                            htmlFor="conf-password"
+                          >
+                            Confirm Password
+                          </label>
+                        </Label>
+                        <Input
+                          autoComplete="off"
+                          classes="input text-sm"
+                          id="confirmPassword"
+                          inputType="password"
+                          onChange={[Function]}
+                          placeholder="Confirm Password"
+                        >
+                          <input
+                            autoComplete="off"
+                            className="shadow border rounded py-1 bg-purple-150 input text-sm"
+                            id="confirmPassword"
+                            onChange={[Function]}
+                            placeholder="Confirm Password"
+                            required={true}
+                            type="password"
+                          />
+                        </Input>
+                      </div>
+                    </InputForm>
+                  </div>
+                </div>
+                <div
+                  className="w-full flex justify-end"
+                >
+                  <p
+                    className="flex-grow flex items-center my-8 text-sm"
+                  >
+                    Have an account? 
+                    <span
+                      className="text-purple-650 ml-2 font-semibold cursor-pointer"
+                    >
+                      Sign in
+                    </span>
+                  </p>
+                  <Button
+                    classes="btn-purple w-1/3 mx-8 my-7"
+                    id="register"
+                    isSubmit={false}
+                    name="Register"
+                    type="submit"
+                  >
+                    <button
+                      className="btn btn-purple w-1/3 mx-8 my-7"
+                      disabled={false}
+                      id="register"
+                      type="submit"
+                    >
+                      Register
+                    </button>
+                  </Button>
+                </div>
+              </form>
+              <div
+                className="flex flex-grow flex-col items-center relative"
+              >
+                <hr
+                  className="vline"
+                />
+                <span>
+                  OR
+                </span>
+                <hr
+                  className="vline"
+                />
+              </div>
+              <div
+                className="right-con flex justify-center"
+              >
+                <img
+                  alt="Authors Haven"
+                  id="brand-logo"
+                  src="./src/assets/images/brand-logo.png"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </Signup>
+    </Connect(Signup)>
+  </Router>
+</BrowserRouter>
+`;
+
+exports[`NavBar Component Should render without errors 1`] = `
+<Router
+  history={
+    Object {
+      "action": "POP",
+      "block": [Function],
+      "createHref": [Function],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "length": 1,
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "pathname": "/",
+        "search": "",
+        "state": undefined,
+      },
+      "push": [Function],
+      "replace": [Function],
+    }
+  }
+>
+  <Connect(Signup)
+    store={
+      Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+        Symbol(observable): [Function],
+      }
+    }
+  />
+</Router>
+`;

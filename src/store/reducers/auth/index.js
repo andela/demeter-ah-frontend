@@ -1,7 +1,8 @@
 const initState = {
   error: null,
   user: {},
-  isAuthenticated: false
+  isAuthenticated: false,
+  isSubmit: false,
 };
 const authReducer = (state = initState, action) => {
   switch (action.type) {
@@ -9,18 +10,23 @@ const authReducer = (state = initState, action) => {
       return {
         ...state,
         user: action.payload,
-        isAuthenticated: true
+        isAuthenticated: true,
+        isSubmit: false,
       };
     case 'SIGNUP_ERROR':
       return {
         ...state,
-        error: action.payload
+        error: action.payload,
+        isSubmit: false,
       };
     case 'CLEAN_UP':
       return {
-        error: null,
-        user: {},
-        isAuthenticated: false,
+        ...initState
+      };
+    case 'SIGNUP':
+      return {
+        ...state,
+        ...action.payload
       };
     default:
       return state;

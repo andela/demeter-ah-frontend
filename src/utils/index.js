@@ -11,8 +11,12 @@ export const axiosCall = async ({
   return data;
 };
 
-export const saveToLocationStorage = (user) => {
-  const { token } = user.token;
+export const saveToLocalStorage = (user) => {
+  const { token } = user;
   localStorage.setItem('token', token);
   localStorage.setItem('user', user);
+};
+
+export const clearLocalStorage = () => {
+  localStorage.clear();
 };

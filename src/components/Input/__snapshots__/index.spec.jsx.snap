@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input Component Should render without errors 1`] = `
+<input
+  className="shadow border rounded py-1 bg-purple-150 undefined"
+  required={true}
+/>
+`;

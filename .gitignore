@@ -6,3 +6,5 @@ template.log
 tests_output
 *.log
 .DS_Store
+**/*.DS_Store
+coverage

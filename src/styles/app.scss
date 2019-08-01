@@ -1,9 +1,32 @@
 @tailwind base;
-
 @tailwind components;
-
 @tailwind utilities;
-
-body {
-	background: white;
+input, button {
+  &:focus {
+    outline: none;
+  }
+}
+.btn {
+    @apply px-4 py-2
+}
+.btn-purple{
+  @apply bg-purple-650 text-white text-sm rounded-full;
+  box-shadow: 4px 4px 10px rgba(124, 123, 123, 0.4);
+  padding: 0.6em;
+}
+.btn-white{
+  @apply bg-white text-sm rounded-full;
+  box-shadow: 4px 4px 10px rgba(124, 123, 123, 0.4);
+  padding: 0.6em;
+}
+.bg{
+  background: url('/src/assets/images/bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 93vh;
+  @apply flex flex-col items-center
+}
+.card{
+  @apply flex flex-row content-around relative
+  px-0 w-auto bg-white shadow rounded-2xl p-10;
 }

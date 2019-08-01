@@ -9,6 +9,6 @@ module.exports = {
     '\\.(jpg|gif|ttf|otf|eot|svg)$': '<rootDir>/__mocks__/filesMock.js',
   },
   moduleFileExtensions: [...defaults.moduleFileExtensions, 'js'],
-  setupFilesAfterEnv: ['./src/setupTest/setupTest.js'],
+  setupFilesAfterEnv: ['./tests/setupTest.js'],
   snapshotSerializers: ['enzyme-to-json/serializer'],
 };

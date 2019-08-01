@@ -1,11 +1,15 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const webpack = require('webpack');
+const dotenv = require('dotenv');
+
+dotenv.config();
 
 module.exports = {
   entry: './src/index.jsx',
   output: {
-    path: path.join(__dirname, '/dist'),
+    path: path.join(__dirname, '../dist'),
     filename: 'bundle.js',
   },
   module: {
@@ -22,6 +26,7 @@ module.exports = {
             loader: 'file-loader',
             options: {
               name: '[path][name]-[hash:8].[ext]',
+              outputPath: 'img/',
             },
           },
         ],
@@ -40,5 +45,8 @@ module.exports = {
       filename: 'app.css',
       chunkFilename: '[id].css',
     }),
+    new webpack.DefinePlugin({
+      'process.env.APP_URL': JSON.stringify(process.env.APP_URL)
+    })
   ],
 };

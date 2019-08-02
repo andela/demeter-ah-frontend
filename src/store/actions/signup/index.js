@@ -1,10 +1,10 @@
 // import { toast } from 'react-toastify';
 import { axiosCall, saveToLocalStorage } from '../../../utils';
 
-const signUpSuccess = user => ({ type: 'SIGNUP_SUCCESS', payload: { user, isCompleted: true, isAuthenticated: true } });
-const signUp = () => ({ type: 'SIGNUP', payload: { isSubmit: true } });
-const signUpError = payload => ({ type: 'SIGNUP_ERROR', payload });
-const setUpUser = payload => ({ type: 'SETUP_USER', payload });
+export const signUpSuccess = user => ({ type: 'SIGNUP_SUCCESS', payload: { user, isCompleted: true, isAuthenticated: true } });
+export const signUp = () => ({ type: 'SIGNUP', payload: { isSubmit: true } });
+export const signUpError = payload => ({ type: 'SIGNUP_ERROR', payload });
+export const setUpUser = payload => ({ type: 'SETUP_USER', payload });
 export const cleanUpAuth = () => ({ type: 'CLEAN_UP' });
 
 export const signUpAction = values => async (dispatch) => {

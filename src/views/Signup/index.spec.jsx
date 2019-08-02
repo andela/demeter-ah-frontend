@@ -21,7 +21,7 @@ describe('NavBar Component', () => {
       </Router>
     );
     expect(component).toMatchSnapshot();
-    expect(component.find('button')).toHaveLength(3);
+    expect(component.find('submit')).toHaveLength(0);
     expect(component.find('input')).toHaveLength(6);
     expect(component.find('img')).toHaveLength(2);
   });

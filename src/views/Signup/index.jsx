@@ -186,7 +186,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  onSignUp: (newUser, history) => dispatch(signUpAction(newUser, history)),
+  onSignUp: newUser => dispatch(signUpAction(newUser)),
   cleanup: () => dispatch(cleanUpAuth())
 });
 

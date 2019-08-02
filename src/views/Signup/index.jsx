@@ -1,14 +1,17 @@
 import './index.scss';
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { toast } from 'react-toastify';
 import InputForm from '../../components/InputForm';
 import NavBar from '../../components/NavBar';
 import Button from '../../components/Button';
-import { signUpAction } from '../../store/actions/auth';
+import { signUpAction, cleanUpAuth } from '../../store/actions/signup';
 import '../../styles/react-toastify.css';
 
 const Signup = (props) => {
+  const {
+    isCompleted, history, isSubmit, error
+  } = props;
   const [values, setValues] = useState({
     firstName: '',
     lastName: '',
@@ -17,8 +20,6 @@ const Signup = (props) => {
     password: '',
     confirmPassword: ''
   });
-
-  const { isSubmit } = props;
 
   const onChange = (e) => {
     e.persist();
@@ -33,6 +34,25 @@ const Signup = (props) => {
     }
     props.onSignUp(values);
   };
+
+  useEffect(() => {
+    if (isCompleted) {
+      toast.success(<h4 className="text-center">Registration successful</h4>);
+      history.push('/');
+    }
+    if (error) {
+      if (Array.isArray(error)) {
+        for (let i = 0; i < error.length; i += 1) {
+          toast.error(<h4 className="text-center">{error[i].message}</h4>);
+        }
+      } else {
+        toast.error(<h4 className="text-center">{error}</h4>);
+      }
+    }
+    return () => {
+      props.cleanup();
+    };
+  }, [isCompleted, error]);
 
   return (
     <Fragment>
@@ -55,7 +75,6 @@ const Signup = (props) => {
                   inputClass="input text-sm"
                   placeholder="johndoe@examle.com"
                   onChange={onChange}
-                  autoComplete="off"
                   pattern="^[\w.]+@[\w]{2,20}.[a-z]{2,10}$"
                   title="must be a valid email"
                 />
@@ -72,7 +91,6 @@ const Signup = (props) => {
                     id="firstName"
                     pattern="^[\w]{3,20}$"
                     title="first name is required and must be more than 3 character"
-                    autoComplete="off"
                   />
 
                   <InputForm
@@ -87,7 +105,6 @@ const Signup = (props) => {
                     onChange={onChange}
                     pattern="^[\w]{3,20}$"
                     title="last name is required and must be more than 3 character"
-                    autoComplete="off"
                   />
                 </div>
 
@@ -103,7 +120,6 @@ const Signup = (props) => {
                   onChange={onChange}
                   pattern="^[\w]{3,20}$"
                   title="username is required and must be more than 3 character"
-                  autoComplete="off"
                 />
 
                 <div className="flex justify-center align-center">
@@ -143,7 +159,7 @@ const Signup = (props) => {
                     {'Sign in'}
                   </span>
                 </p>
-                <Button id="register" type="button" name="Register" classes="btn-purple w-1/3 mx-8 my-7" isSubmit={isSubmit} />
+                <Button id="register" type="submit" name="Register" classes="btn-purple w-1/3 mx-8 my-7" isSubmit={isSubmit} />
               </div>
             </form>
             <div className="flex flex-grow flex-col items-center relative">
@@ -165,11 +181,13 @@ const mapStateToProps = state => ({
   error: state.auth.error,
   user: state.auth.user,
   isAuthenticated: state.auth.isAuthenticated,
-  isSubmit: state.auth.isSubmit
+  isSubmit: state.auth.isSubmit,
+  isCompleted: state.auth.isCompleted
 });
 
 const mapDispatchToProps = dispatch => ({
-  onSignUp: (newUser, history) => dispatch(signUpAction(newUser, history))
+  onSignUp: (newUser, history) => dispatch(signUpAction(newUser, history)),
+  cleanup: () => dispatch(cleanUpAuth())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Signup);

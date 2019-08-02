@@ -2,6 +2,7 @@ const initState = {
   error: null,
   user: {},
   isAuthenticated: false,
+  isCompleted: false,
   isSubmit: false,
 };
 const authReducer = (state = initState, action) => {
@@ -9,8 +10,7 @@ const authReducer = (state = initState, action) => {
     case 'SIGNUP_SUCCESS':
       return {
         ...state,
-        user: action.payload,
-        isAuthenticated: true,
+        ...action.payload,
         isSubmit: false,
       };
     case 'SIGNUP_ERROR':
@@ -21,7 +21,15 @@ const authReducer = (state = initState, action) => {
       };
     case 'CLEAN_UP':
       return {
-        ...initState
+        ...state,
+        isCompleted: false,
+        error: null
+      };
+    case 'SETUP_USER':
+      return {
+        ...state,
+        isAuthenticated: true,
+        user: { ...action.payload },
       };
     case 'SIGNUP':
       return {

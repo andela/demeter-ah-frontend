@@ -4,14 +4,16 @@ import { ToastContainer } from 'react-toastify';
 import Home from '../views/Home';
 import SignIn from '../views/SignIn';
 import SignUp from '../views/Signup';
-import GuestRoute from './GuestRoute';
+import SetUser from './SetUser';
+// import Route from './PrivateRoute';
 
 const Routes = () => (
   <>
     <Router>
+      <SetUser path="*" component={() => ('')} />
       <Route exact path="/" component={Home} />
       <Route path="/signin" component={SignIn} />
-      <GuestRoute path="/signup" component={SignUp} />
+      <Route path="/signup" component={SignUp} />
     </Router>
     <ToastContainer autoClose={5000} position="top-center" hideProgressBar rtl={false} pauseOnHover />
   </>

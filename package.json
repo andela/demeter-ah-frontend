@@ -5,10 +5,11 @@
 	"main": "index.js",
 	"scripts": {
 		"test": "jest --coverage",
+		"test:watch": "jest --watch",
 		"e2e": "nightwatch",
 		"webpack": "webpack --env.mode development",
 		"client:build": "rimraf dist && mkdir dist && webpack --env.mode production",
-		"dev:start": "webpack-dev-server --env.mode development --open --hot"
+		"dev:start": "webpack-dev-server --env.mode development --hot"
 	},
 	"husky": {
 		"hooks": {
@@ -79,6 +80,7 @@
 		"jest-enzyme": "^7.0.2",
 		"lint-staged": "^9.2.1",
 		"nightwatch": "^1.1.13",
+		"redux-mock-store": "^1.5.3",
 		"webpack-dev-server": "^3.7.2"
 	}
 }

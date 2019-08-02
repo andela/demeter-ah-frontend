@@ -57,7 +57,7 @@ exports[`NavBar Component Should render along with children componenet 1`] = `
             type="button"
           >
             <button
-              className="btn-purple w-32"
+              className="btn btn-purple w-32"
               id="signup-menu"
               type="button"
             >
@@ -71,7 +71,7 @@ exports[`NavBar Component Should render along with children componenet 1`] = `
             type="button"
           >
             <button
-              className="btn-white w-32 ml-2 border border-solid border-purple-650 text-purple-650"
+              className="btn btn-white w-32 ml-2 border border-solid border-purple-650 text-purple-650"
               id="signin-menu"
               type="button"
             >

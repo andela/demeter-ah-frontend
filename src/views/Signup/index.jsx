@@ -58,8 +58,7 @@ const Signup = (props) => {
 
   return (
     <Fragment>
-      <div className="signup">
-        {/* <NavBar /> */}
+      <div className="signup w-100 md:w-auto">
         <div
           className="bg card-wrapper flex justify-center md:items-center"
         >
@@ -97,7 +96,7 @@ const Signup = (props) => {
                     />
 
                     <InputForm
-                      classes="block inputcon-full mb-4 ml-2"
+                      classes="block inputcon-full mb-4 md:ml-2"
                       labelname="Last Name"
                       name="lastName"
                       labelClass="block mb-1 text-sm"
@@ -141,7 +140,7 @@ const Signup = (props) => {
                       autoComplete="off"
                     />
                     <InputForm
-                      classes="block inputcon-full mb-4 ml-2"
+                      classes="block inputcon-full mb-4 md:ml-2"
                       labelname="Confirm Password"
                       name="confirmPassword"
                       labelClass="block mb-1 text-sm"

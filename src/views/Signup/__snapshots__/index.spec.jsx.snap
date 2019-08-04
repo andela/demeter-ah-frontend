@@ -54,7 +54,7 @@ exports[`NavBar Component Should render along with children componenet 1`] = `
         user={Object {}}
       >
         <div
-          className="signup"
+          className="signup w-100 md:w-auto"
         >
           <div
             className="bg card-wrapper flex justify-center md:items-center"
@@ -185,7 +185,7 @@ exports[`NavBar Component Should render along with children componenet 1`] = `
                         </div>
                       </InputForm>
                       <InputForm
-                        classes="block inputcon-full mb-4 ml-2"
+                        classes="block inputcon-full mb-4 md:ml-2"
                         id="lastName"
                         inputClass="input text-sm"
                         inputType="text"
@@ -198,7 +198,7 @@ exports[`NavBar Component Should render along with children componenet 1`] = `
                         title="last name is required and must be more than 3 character"
                       >
                         <div
-                          className="block inputcon-full mb-4 ml-2"
+                          className="block inputcon-full mb-4 md:ml-2"
                         >
                           <Label
                             classes="block mb-1 text-sm"
@@ -349,7 +349,7 @@ exports[`NavBar Component Should render along with children componenet 1`] = `
                       </InputForm>
                       <InputForm
                         autoComplete="off"
-                        classes="block inputcon-full mb-4 ml-2"
+                        classes="block inputcon-full mb-4 md:ml-2"
                         id="confirmPassword"
                         inputClass="input text-sm"
                         inputType="password"
@@ -360,7 +360,7 @@ exports[`NavBar Component Should render along with children componenet 1`] = `
                         placeholder="Confirm Password"
                       >
                         <div
-                          className="block inputcon-full mb-4 ml-2"
+                          className="block inputcon-full mb-4 md:ml-2"
                         >
                           <Label
                             classes="block mb-1 text-sm"

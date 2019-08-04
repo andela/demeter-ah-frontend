@@ -56,63 +56,6 @@ exports[`NavBar Component Should render along with children componenet 1`] = `
         <div
           className="signup"
         >
-          <NavBar>
-            <nav
-              className="flex items-center justify-between flex-wrap bg-white-500 pt-2 p-3 z-40 shadow"
-            >
-              <div
-                className="flex items-center flex-shrink-0 text-dark mr-6"
-              >
-                <Link
-                  to="/"
-                >
-                  <a
-                    href="/"
-                    onClick={[Function]}
-                  >
-                    <img
-                      alt="Author's Haven"
-                      className="w-4/12"
-                      id="logo"
-                      src="src/assets/images/logo.png"
-                    />
-                  </a>
-                </Link>
-              </div>
-              <div
-                className=""
-              >
-                <Button
-                  classes="btn-purple w-32"
-                  id="signup-menu"
-                  name="Sign Up"
-                  type="button"
-                >
-                  <button
-                    className="btn btn-purple w-32"
-                    id="signup-menu"
-                    type="button"
-                  >
-                    Sign Up
-                  </button>
-                </Button>
-                <Button
-                  classes="btn-white w-32 ml-2 border border-solid border-purple-650 text-purple-650"
-                  id="signin-menu"
-                  name="Sign In"
-                  type="button"
-                >
-                  <button
-                    className="btn btn-white w-32 ml-2 border border-solid border-purple-650 text-purple-650"
-                    id="signin-menu"
-                    type="button"
-                  >
-                    Sign In
-                  </button>
-                </Button>
-              </div>
-            </nav>
-          </NavBar>
           <div
             className="bg card-wrapper flex justify-center items-center"
           >
@@ -163,6 +106,7 @@ exports[`NavBar Component Should render along with children componenet 1`] = `
                         classes="input text-sm"
                         id="email"
                         inputType="text"
+                        name="email"
                         onChange={[Function]}
                         pattern="^[\\\\w.]+@[\\\\w]{2,20}.[a-z]{2,10}$"
                         placeholder="johndoe@examle.com"
@@ -171,6 +115,7 @@ exports[`NavBar Component Should render along with children componenet 1`] = `
                         <input
                           className="shadow border rounded py-1 bg-purple-150 input text-sm"
                           id="email"
+                          name="email"
                           onChange={[Function]}
                           pattern="^[\\\\w.]+@[\\\\w]{2,20}.[a-z]{2,10}$"
                           placeholder="johndoe@examle.com"
@@ -191,7 +136,7 @@ exports[`NavBar Component Should render along with children componenet 1`] = `
                       inputType="text"
                       labelClass="block mb-1 text-sm"
                       labelname="First Name"
-                      name="firstname"
+                      name="firstName"
                       onChange={[Function]}
                       pattern="^[\\\\w]{3,20}$"
                       placeholder="First Name"
@@ -203,11 +148,11 @@ exports[`NavBar Component Should render along with children componenet 1`] = `
                         <Label
                           classes="block mb-1 text-sm"
                           labelname="First Name"
-                          name="firstname"
+                          name="firstName"
                         >
                           <label
                             className="block mb-1 text-sm"
-                            htmlFor="firstname"
+                            htmlFor="firstName"
                           >
                             First Name
                           </label>
@@ -216,6 +161,7 @@ exports[`NavBar Component Should render along with children componenet 1`] = `
                           classes="input text-sm"
                           id="firstName"
                           inputType="text"
+                          name="firstName"
                           onChange={[Function]}
                           pattern="^[\\\\w]{3,20}$"
                           placeholder="First Name"
@@ -224,6 +170,7 @@ exports[`NavBar Component Should render along with children componenet 1`] = `
                           <input
                             className="shadow border rounded py-1 bg-purple-150 input text-sm"
                             id="firstName"
+                            name="firstName"
                             onChange={[Function]}
                             pattern="^[\\\\w]{3,20}$"
                             placeholder="First Name"
@@ -241,7 +188,7 @@ exports[`NavBar Component Should render along with children componenet 1`] = `
                       inputType="text"
                       labelClass="block mb-1 text-sm"
                       labelname="Last Name"
-                      name="lastname"
+                      name="lastName"
                       onChange={[Function]}
                       pattern="^[\\\\w]{3,20}$"
                       placeholder="Last Name"
@@ -253,11 +200,11 @@ exports[`NavBar Component Should render along with children componenet 1`] = `
                         <Label
                           classes="block mb-1 text-sm"
                           labelname="Last Name"
-                          name="lastname"
+                          name="lastName"
                         >
                           <label
                             className="block mb-1 text-sm"
-                            htmlFor="lastname"
+                            htmlFor="lastName"
                           >
                             Last Name
                           </label>
@@ -266,6 +213,7 @@ exports[`NavBar Component Should render along with children componenet 1`] = `
                           classes="input text-sm"
                           id="lastName"
                           inputType="text"
+                          name="lastName"
                           onChange={[Function]}
                           pattern="^[\\\\w]{3,20}$"
                           placeholder="Last Name"
@@ -274,6 +222,7 @@ exports[`NavBar Component Should render along with children componenet 1`] = `
                           <input
                             className="shadow border rounded py-1 bg-purple-150 input text-sm"
                             id="lastName"
+                            name="lastName"
                             onChange={[Function]}
                             pattern="^[\\\\w]{3,20}$"
                             placeholder="Last Name"
@@ -317,6 +266,7 @@ exports[`NavBar Component Should render along with children componenet 1`] = `
                         classes="input text-sm"
                         id="username"
                         inputType="text"
+                        name="username"
                         onChange={[Function]}
                         pattern="^[\\\\w]{3,20}$"
                         placeholder="username"
@@ -325,6 +275,7 @@ exports[`NavBar Component Should render along with children componenet 1`] = `
                         <input
                           className="shadow border rounded py-1 bg-purple-150 input text-sm"
                           id="username"
+                          name="username"
                           onChange={[Function]}
                           pattern="^[\\\\w]{3,20}$"
                           placeholder="username"
@@ -372,6 +323,7 @@ exports[`NavBar Component Should render along with children componenet 1`] = `
                           classes="input text-sm"
                           id="password"
                           inputType="password"
+                          name="password"
                           onChange={[Function]}
                           pattern="^[\\\\w]{8,20}$"
                           placeholder="Password"
@@ -381,6 +333,7 @@ exports[`NavBar Component Should render along with children componenet 1`] = `
                             autoComplete="off"
                             className="shadow border rounded py-1 bg-purple-150 input text-sm"
                             id="password"
+                            name="password"
                             onChange={[Function]}
                             pattern="^[\\\\w]{8,20}$"
                             placeholder="Password"
@@ -399,7 +352,7 @@ exports[`NavBar Component Should render along with children componenet 1`] = `
                       inputType="password"
                       labelClass="block mb-1 text-sm"
                       labelname="Confirm Password"
-                      name="conf-password"
+                      name="confirmPassword"
                       onChange={[Function]}
                       placeholder="Confirm Password"
                     >
@@ -409,11 +362,11 @@ exports[`NavBar Component Should render along with children componenet 1`] = `
                         <Label
                           classes="block mb-1 text-sm"
                           labelname="Confirm Password"
-                          name="conf-password"
+                          name="confirmPassword"
                         >
                           <label
                             className="block mb-1 text-sm"
-                            htmlFor="conf-password"
+                            htmlFor="confirmPassword"
                           >
                             Confirm Password
                           </label>
@@ -423,6 +376,7 @@ exports[`NavBar Component Should render along with children componenet 1`] = `
                           classes="input text-sm"
                           id="confirmPassword"
                           inputType="password"
+                          name="confirmPassword"
                           onChange={[Function]}
                           placeholder="Confirm Password"
                         >
@@ -430,6 +384,7 @@ exports[`NavBar Component Should render along with children componenet 1`] = `
                             autoComplete="off"
                             className="shadow border rounded py-1 bg-purple-150 input text-sm"
                             id="confirmPassword"
+                            name="confirmPassword"
                             onChange={[Function]}
                             placeholder="Confirm Password"
                             required={true}

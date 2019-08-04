@@ -11,4 +11,5 @@ module.exports = {
   moduleFileExtensions: [...defaults.moduleFileExtensions, 'js'],
   setupFilesAfterEnv: ['./tests/setupTest.js'],
   snapshotSerializers: ['enzyme-to-json/serializer'],
+  coveragePathIgnorePatterns: ['/src/utils/'],
 };

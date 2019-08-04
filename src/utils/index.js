@@ -3,7 +3,7 @@ import axios from 'axios';
 export const axiosCall = async ({
   path, payload, method,
 }) => {
-  const app = process.env.APP_URL;
+  const app = process.env.SERVER_URL;
   const url = `${app}${path}`;
   const result = await axios[method](url, payload);
 

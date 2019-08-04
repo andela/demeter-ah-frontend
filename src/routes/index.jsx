@@ -4,13 +4,12 @@ import { ToastContainer } from 'react-toastify';
 import Home from '../views/Home';
 import SignIn from '../views/SignIn';
 import SignUp from '../views/Signup';
-import SetUser from './SetUser';
-// import Route from './PrivateRoute';
+import NavBar from '../components/NavBar';
 
 const Routes = () => (
   <>
     <Router>
-      <SetUser path="*" component={() => ('')} />
+      <NavBar />
       <Route exact path="/" component={Home} />
       <Route path="/signin" component={SignIn} />
       <Route path="/signup" component={SignUp} />

@@ -1,4 +1,3 @@
-// import { toast } from 'react-toastify';
 import { axiosCall, saveToLocalStorage } from '../../../utils';
 
 export const signUpSuccess = user => ({ type: 'SIGNUP_SUCCESS', payload: { user, isCompleted: true, isAuthenticated: true } });
@@ -15,14 +14,18 @@ export const signUpAction = values => async (dispatch) => {
     saveToLocalStorage(result.user);
     dispatch(signUpSuccess(result.user));
   } catch (error) {
+    /* istanbul ignore next */
     const { response } = error;
+    /* istanbul ignore next */
     const message = response.data.message || response;
+    /* istanbul ignore next */
     dispatch(signUpError(message));
   }
 };
 
-export const getUser = isAuth => (dispatch) => {
-  if (!isAuth && localStorage.token && localStorage.user) {
+export const getUser = () => (dispatch) => {
+  /* istanbul ignore next */
+  if (localStorage.token && localStorage.user) {
     let user = localStorage.getItem('user');
     user = JSON.parse(user);
     dispatch(setUpUser(user));

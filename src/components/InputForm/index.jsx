@@ -8,7 +8,7 @@ const InputForm = ({
 }) => (
   <div className={classes}>
     <Label labelname={labelname} name={name} classes={labelClass} />
-    <Input inputType={inputType} classes={inputClass} {...rest} />
+    <Input inputType={inputType} name={name} classes={inputClass} {...rest} />
   </div>
 );
 

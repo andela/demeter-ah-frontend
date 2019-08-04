@@ -24,9 +24,9 @@ input, button {
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 93vh;
-  @apply flex flex-col items-center
+  @apply flex flex-col
 }
 .card{
-  @apply flex flex-row content-around relative
-  px-0 w-auto bg-white shadow rounded-2xl p-10;
+  @apply flex flex-col content-around relative
+  w-auto bg-white shadow rounded-2xl px-2 py-10 m-10;
 }

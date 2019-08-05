@@ -6,6 +6,8 @@ module.exports = {
     browser
       .url(app)
       .waitForElementVisible('.welcome')
-      .assert.containsText('.welcome', 'Welcome to Demeter Team Frontend');
+      .assert.containsText('.welcome', 'Welcome to Demeter Team Frontend')
+      .pause(500)
+      .end();
   },
 };

@@ -6,7 +6,7 @@ module.exports = {
   verbose: true,
   moduleNameMapper: {
     '\\.(css|scss)$': '<rootDir>/__mock__/stylesMock.js',
-    '\\.(jpg|gif|ttf|otf|eot|svg)$': '<rootDir>/__mock__/filesMock.js',
+    '\\.(jpg|jpeg|png|gif|ttf|otf|eot|svg)$': '<rootDir>/__mock__/filesMock.js',
   },
   moduleFileExtensions: [...defaults.moduleFileExtensions, 'js'],
   setupFilesAfterEnv: ['./tests/setupTest.js'],

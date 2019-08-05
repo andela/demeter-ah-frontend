@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Button from '../Button';
+import logo from '../../assets/images/logo.png';
 
 const NavBar = () => (
   <nav className="flex items-center justify-between flex-wrap bg-white-500 pt-2 p-3 z-40 shadow">
     <div className="flex items-center md:flex-shrink-0 text-dark mr-6">
       <Link to="/">
-        <img id="logo" className="w-1/2 md:w-4/12" src="src/assets/images/logo.png" alt="Author's Haven" />
+        <img id="logo" className="w-1/2 md:w-4/12" src={logo} alt="Author's Haven" />
       </Link>
     </div>
     <div className="">

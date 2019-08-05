@@ -6,6 +6,7 @@ import InputForm from '../../components/InputForm';
 import Button from '../../components/Button';
 import { signUpAction, cleanUpAuth } from '../../store/actions/signup';
 import '../../styles/react-toastify.css';
+import brandLogo from '../../assets/images/brand-logo.png';
 
 const Signup = (props) => {
   const {
@@ -170,7 +171,7 @@ const Signup = (props) => {
                 <hr className="vline hidden md:block" />
               </div>
               <div className="order-1 md:order-3 right-con md:w-108 justify-center">
-                <img id="brand-logo" className="hidden md:block" src="./src/assets/images/brand-logo.png" alt="Authors Haven" />
+                <img id="brand-logo" className="hidden md:block" src={brandLogo} alt="Authors Haven" />
               </div>
             </div>
           </div>

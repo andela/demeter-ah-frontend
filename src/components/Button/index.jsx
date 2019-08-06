@@ -1,20 +1,17 @@
 import React from 'react';
 
-const Button = (props) => {
-  const {
-    clicked, classes, type, name, children, isSubmit, ...rest
-  } = props;
-  return (
-    <button
-      onClick={clicked}
-      className={`btn ${classes}`}
-      type={type}
-      disabled={isSubmit}
-      {...rest}
-    >
-      {children || name}
-    </button>
-  );
-};
+const Button = ({
+  onClick, classes, type, name, children, isSubmit, ...rest
+}) => (
+  <button
+    onClick={onClick}
+    className={`btn ${classes}`}
+    type={type}
+    disabled={isSubmit || false}
+    {...rest}
+  >
+    { !isSubmit ? (children || name) : 'Loading...'}
+  </button>
+);
 
 export default Button;

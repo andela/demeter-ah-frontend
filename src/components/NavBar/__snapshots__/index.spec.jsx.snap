@@ -26,10 +26,10 @@ exports[`NavBar Component Should render along with children componenet 1`] = `
   >
     <NavBar>
       <nav
-        className="flex items-center justify-between flex-wrap bg-white-500 pt-2 p-3 z-40 shadow"
+        className="flex items-center justify-between flex-wrap bg-white-500 pt-2 p-3 z-40 shadow-md"
       >
         <div
-          className="flex w-6/12 sm:w-3/12 lg:w-2/12 items-center md:flex-shrink-0 text-dark mr-6"
+          className="flex items-center flex-shrink-0 text-dark mr-6"
         >
           <Link
             to="/"
@@ -40,7 +40,7 @@ exports[`NavBar Component Should render along with children componenet 1`] = `
             >
               <img
                 alt="Author's Haven"
-                className="w-full h-full"
+                className="w-3/12"
                 id="logo"
                 src="test-file-stub"
               />
@@ -50,34 +50,50 @@ exports[`NavBar Component Should render along with children componenet 1`] = `
         <div
           className=""
         >
-          <Button
-            classes="btn-purple hidden md:inline w-32"
-            id="signup-menu"
-            name="Sign Up"
-            type="button"
+          <Link
+            to="/signup"
           >
-            <button
-              className="btn btn-purple hidden md:inline w-32"
-              id="signup-menu"
-              type="button"
+            <a
+              href="/signup"
+              onClick={[Function]}
             >
-              Sign Up
-            </button>
-          </Button>
-          <Button
-            classes="btn-white hidden md:inline w-32 ml-2 border border-solid border-purple-650 text-purple-650"
-            id="signin-menu"
-            name="Sign In"
-            type="button"
+              <Button
+                classes="btn-purple w-32 hidden md:inline"
+                name="Sign Up"
+                type="button"
+              >
+                <button
+                  className="btn btn-purple w-32 hidden md:inline"
+                  disabled={false}
+                  type="button"
+                >
+                  Sign Up
+                </button>
+              </Button>
+            </a>
+          </Link>
+          <Link
+            to="/signin"
           >
-            <button
-              className="btn btn-white hidden md:inline w-32 ml-2 border border-solid border-purple-650 text-purple-650"
-              id="signin-menu"
-              type="button"
+            <a
+              href="/signin"
+              onClick={[Function]}
             >
-              Sign In
-            </button>
-          </Button>
+              <Button
+                classes=" cursor-pointer btn-white w-32 ml-2 text-purple-650 border hidden md:inline border-solid border-purple-650"
+                name="Sign In"
+                type="button"
+              >
+                <button
+                  className="btn  cursor-pointer btn-white w-32 ml-2 text-purple-650 border hidden md:inline border-solid border-purple-650"
+                  disabled={false}
+                  type="button"
+                >
+                  Sign In
+                </button>
+              </Button>
+            </a>
+          </Link>
         </div>
       </nav>
     </NavBar>
@@ -87,17 +103,17 @@ exports[`NavBar Component Should render along with children componenet 1`] = `
 
 exports[`NavBar Component Should render without errors 1`] = `
 <nav
-  className="flex items-center justify-between flex-wrap bg-white-500 pt-2 p-3 z-40 shadow"
+  className="flex items-center justify-between flex-wrap bg-white-500 pt-2 p-3 z-40 shadow-md"
 >
   <div
-    className="flex w-6/12 sm:w-3/12 lg:w-2/12 items-center md:flex-shrink-0 text-dark mr-6"
+    className="flex items-center flex-shrink-0 text-dark mr-6"
   >
     <Link
       to="/"
     >
       <img
         alt="Author's Haven"
-        className="w-full h-full"
+        className="w-3/12"
         id="logo"
         src="test-file-stub"
       />
@@ -106,18 +122,24 @@ exports[`NavBar Component Should render without errors 1`] = `
   <div
     className=""
   >
-    <Button
-      classes="btn-purple hidden md:inline w-32"
-      id="signup-menu"
-      name="Sign Up"
-      type="button"
-    />
-    <Button
-      classes="btn-white hidden md:inline w-32 ml-2 border border-solid border-purple-650 text-purple-650"
-      id="signin-menu"
-      name="Sign In"
-      type="button"
-    />
+    <Link
+      to="/signup"
+    >
+      <Button
+        classes="btn-purple w-32 hidden md:inline"
+        name="Sign Up"
+        type="button"
+      />
+    </Link>
+    <Link
+      to="/signin"
+    >
+      <Button
+        classes=" cursor-pointer btn-white w-32 ml-2 text-purple-650 border hidden md:inline border-solid border-purple-650"
+        name="Sign In"
+        type="button"
+      />
+    </Link>
   </div>
 </nav>
 `;

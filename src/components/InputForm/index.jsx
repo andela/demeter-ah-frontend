@@ -4,7 +4,7 @@ import Label from '../Label';
 
 const InputForm = ({
   labelname, name, inputType,
-  classes, inputClass, labelClass, ...rest
+  classes, inputClass, labelClass, ...rest,
 }) => (
     <div className={classes}>
       <Label labelname={labelname} name={name} classes={labelClass} />

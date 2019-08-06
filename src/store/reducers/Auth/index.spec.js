@@ -10,6 +10,7 @@ describe('Sign Up Reducer', () => {
       isAuthenticated: false,
       isCompleted: false,
       isSubmit: false,
+      isLoading: false,
     };
   });
 
@@ -30,14 +31,13 @@ describe('Sign Up Reducer', () => {
       }
     })).toEqual(
       {
-        error: null,
+        ...initialState,
         user: {
           id: 1,
           name: 'frank',
         },
         isCompleted: true,
         isAuthenticated: true,
-        isSubmit: false,
       }
     );
   });
@@ -97,14 +97,72 @@ describe('Sign Up Reducer', () => {
       }
     })).toEqual(
       {
-        error: null,
+        ...initialState,
         user: {
           id: 1,
           name: 'frank',
         },
         isCompleted: true,
+        isAuthenticated: true
+      }
+    );
+  });
+
+
+  it('should handle SIGNIN_PENDING', () => {
+    expect(signUpReducer(initialState, {
+      type: 'SIGNIN_PENDING',
+      payload: {
+        isCompleted: false,
+        isLoading: true,
+        error: null
+      }
+    })).toEqual(
+      {
+        ...initialState,
+        isCompleted: false,
+        isLoading: true,
+        error: null
+      }
+    );
+  });
+
+
+  it('should handle SIGNIN_SUCCESS', () => {
+    expect(signUpReducer(initialState, {
+      type: 'SIGNIN_SUCCESS',
+      payload: {
+        isLoading: false,
+        user: { name: 'frank' },
+        isCompleted: true,
         isAuthenticated: true,
-        isSubmit: false,
+      }
+    })).toEqual(
+      {
+        ...initialState,
+        isLoading: false,
+        user: { name: 'frank' },
+        isCompleted: true,
+        isAuthenticated: true,
+      }
+    );
+  });
+
+
+  it('should handle SIGNIN_ERROR', () => {
+    expect(signUpReducer(initialState, {
+      type: 'SIGNIN_ERROR',
+      payload: {
+        error: 'some error',
+        isCompleted: true,
+        isLoading: false,
+      }
+    })).toEqual(
+      {
+        ...initialState,
+        error: 'some error',
+        isCompleted: true,
+        isLoading: false,
       }
     );
   });

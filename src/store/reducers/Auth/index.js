@@ -1,12 +1,28 @@
 const initState = {
   error: null,
+  isLoading: false,
   user: {},
   isAuthenticated: false,
   isCompleted: false,
   isSubmit: false,
 };
-const signUpReducer = (state = initState, action) => {
+const authReducer = (state = initState, action) => {
   switch (action.type) {
+    case 'SIGNIN_PENDING':
+      return {
+        ...state,
+        ...action.payload
+      };
+    case 'SIGNIN_SUCCESS':
+      return {
+        ...state,
+        ...action.payload
+      };
+    case 'SIGNIN_ERROR':
+      return {
+        ...state,
+        ...action.payload
+      };
     case 'SIGNUP_SUCCESS':
       return {
         ...state,
@@ -41,4 +57,4 @@ const signUpReducer = (state = initState, action) => {
   }
 };
 
-export default signUpReducer;
+export default authReducer;

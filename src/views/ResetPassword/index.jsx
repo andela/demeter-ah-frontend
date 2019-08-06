@@ -12,21 +12,21 @@ const ResetPassword = ({
 }) => {
   useEffect(() => {
     cleanUpReset();
-  }, []);
+  }, [authResponse]);
 
-  const [values, setValues] = useState({ email: '' });
+  const [email, setEmail] = useState({ email: '' });
 
   if (authResponse.message && isSubmitting === false) callToast(authResponse.message, 'success');
   else if (authResponse.error && isSubmitting === false) callToast(authResponse.error, 'error');
 
   const onChange = (e) => {
     e.persist();
-    setValues(prevState => ({ ...prevState, [e.target.name]: e.target.value }));
+    setEmail(prevState => ({ ...prevState, [e.target.name]: e.target.value }));
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    sendResetLink(values);
+    sendResetLink(email);
   };
 
   return (

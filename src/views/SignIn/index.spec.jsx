@@ -3,18 +3,18 @@ import { shallow, mount } from 'enzyme';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import { BrowserRouter as Router } from 'react-router-dom';
-import Signup, { SingUpComponent, cleanup } from './index';
+import SignIn, { SignInComponent, cleanUp } from './index';
 import store from '../../store';
 
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 
-describe('Sign up Component', () => {
+describe('Sign In Component', () => {
   it('Should render without errors', () => {
     const component = shallow(
       <Router>
-        <Signup store={store} />
+        <SignIn store={store} />
       </Router>
     );
     expect(component).toMatchSnapshot();
@@ -23,35 +23,81 @@ describe('Sign up Component', () => {
   it('Should render along with children componenet', () => {
     const component = mount(
       <Router>
-        <Signup store={store} />
+        <SignIn store={store} />
       </Router>
     );
     expect(component).toMatchSnapshot();
     expect(component.find('button')).toHaveLength(4);
-    expect(component.find('input')).toHaveLength(6);
+    expect(component.find('input')).toHaveLength(2);
     expect(component.find('img')).toHaveLength(4);
   });
 
   it('should call on change props', () => {
     const event = {
       preventDefault() { },
-      target: { value: 'frank', name: 'email' }
+      target: { value: 'vinay@email.com', name: 'email' }
     };
-    const mockOnSignUpFn = jest.fn();
+    const mockOnSignInFn = jest.fn();
     const component = mount(
       <Router>
-        <SingUpComponent onSignUp={mockOnSignUpFn} />
+        <SignInComponent onSignIn={mockOnSignInFn} />
       </Router>
     );
-    const inputTag = component.find('input').at(0);
-    const submitBtn = component.find('button').at(0);
+    const inputTag = component.find('InputForm').at(0);
+    const submitBtn = component.find('Button').at(0);
     inputTag.simulate('change', event);
     submitBtn.simulate('submit',
       { preventDefault() { } });
-    expect(mockOnSignUpFn.mock.calls.length).toBe(1);
+    expect(mockOnSignInFn.mock.calls.length).toBe(0);
   });
 
-  test('Should call toast isCompleted is true in signup use effect ', () => {
+  test('Should run errors if error exist and is array', () => {
+    const signInStore = mockStore({
+      auth:
+      {
+        error: [{ message: 'some error' }],
+        user: {},
+        isAuthenticated: false,
+        isCompleted: false,
+        isSubmit: false
+      }
+    });
+    const component = mount(
+      <Router>
+        <SignIn store={signInStore} />
+      </Router>
+    );
+
+    const label = component.find('label').at(0);
+    expect(label.text()).toEqual('Email');
+  });
+
+  test('Should run errors if error exist and is string', () => {
+    const SignInStore = mockStore({
+      auth:
+      {
+        error: 'some error',
+        user: {},
+        isAuthenticated: false,
+        isCompleted: false,
+        isSubmit: false
+      }
+    });
+    const component = mount(
+      <Router>
+        <SignIn store={SignInStore} />
+      </Router>
+    );
+
+    const label = component.find('label').at(0);
+    expect(label.text()).toEqual('Email');
+  });
+
+  test('clean up action ', () => {
+    expect(cleanUp()).toEqual({ type: 'CLEAN_UP', payload: { error: null, isCompleted: false } });
+  });
+
+  test('Should call toast if is completed', () => {
     const signupStore = mockStore({
       auth:
       {
@@ -64,66 +110,19 @@ describe('Sign up Component', () => {
     });
     const component = mount(
       <Router>
-        <Signup store={signupStore} />
+        <SignIn store={signupStore} />
       </Router>
     );
 
     const label = component.find('label').at(0);
     expect(label.text()).toEqual('Email');
   });
-
-  test('Should run errors if error exist and is array', () => {
-    const signupStore = mockStore({
-      auth:
-      {
-        error: [{ message: 'some error' }],
-        user: {},
-        isAuthenticated: false,
-        isCompleted: false,
-        isSubmit: false
-      }
-    });
-    const component = mount(
-      <Router>
-        <Signup store={signupStore} />
-      </Router>
-    );
-
-    const label = component.find('label').at(0);
-    expect(label.text()).toEqual('Email');
-  });
-
-  test('Should run errors if error exist and is string', () => {
-    const signupStore = mockStore({
-      auth:
-      {
-        error: 'some error',
-        user: {},
-        isAuthenticated: false,
-        isCompleted: false,
-        isSubmit: false
-      }
-    });
-    const component = mount(
-      <Router>
-        <Signup store={signupStore} />
-      </Router>
-    );
-
-    const label = component.find('label').at(0);
-    expect(label.text()).toEqual('Email');
-  });
-
-  test('clean up action ', () => {
-    expect(cleanup()).toEqual({ type: 'CLEAN_UP' });
-  });
-
 
   it('should test that password is match is called', () => {
     const mockOnSignUpFn = jest.fn();
     const component = mount(
       <Router>
-        <SingUpComponent onSignUp={mockOnSignUpFn} />
+        <SignInComponent onSignIn={mockOnSignUpFn} />
       </Router>
     );
     const inputTag = component.find('input');
@@ -133,34 +132,23 @@ describe('Sign up Component', () => {
     });
     inputTag.at(1).simulate('change', {
       target:
-        { name: 'firstName', value: 'frank' }
+        { name: 'password', value: '123456789' }
     });
-    inputTag.at(2).simulate('change', {
+    inputTag.at(1).simulate('change', {
       target:
-        { name: 'lastName', value: 'angee' }
-    });
-    inputTag.at(3).simulate('change', {
-      target:
-        { name: 'username', value: 'frankiii' }
-    });
-    inputTag.at(4).simulate('change', {
-      target:
-        { name: 'password', value: '12345678' }
-    });
-    inputTag.at(5).simulate('change', {
-      target:
-        { name: 'confirmPassword', value: 'adfaedefe' }
+        { name: 'password', value: '123456789' }
     });
     const submitBtn = component.find('button').at(0);
     submitBtn.simulate('submit',
       { preventDefault() { } });
-    expect(mockOnSignUpFn.mock.calls.length).toBe(0);
+    expect(mockOnSignUpFn.mock.calls.length).toBe(1);
   });
+
 
   it('should singin with social login', () => {
     const component = mount(
       <Router>
-        <SingUpComponent />
+        <SignInComponent />
       </Router>
     );
     const buttonTag = component.find('button');
@@ -169,5 +157,34 @@ describe('Sign up Component', () => {
       { id: 'google' }
     });
     expect(localStorage.socialLogin).toEqual('false');
+  });
+
+  it('should authenticate user signin with social login', () => {
+    const location = {
+      search: '?token=eyJhbGciOiJIUzI&username=kel'
+    };
+    const callSocialSignIn = jest.fn(() => {});
+    mount(
+      <Router>
+        <SignInComponent location={location} socialSignIn={callSocialSignIn} />
+      </Router>
+    );
+    expect(location.search).toEqual('?token=eyJhbGciOiJIUzI&username=kel');
+  });
+
+  it('should redirect to signin if username and token does not exist', () => {
+    const location = {
+      search: ''
+    };
+    const history = {
+      push: e => e
+    };
+    const callSocialSignIn = jest.fn(() => {});
+    mount(
+      <Router>
+        <SignInComponent location={location} socialSignIn={callSocialSignIn} history={history} />
+      </Router>
+    );
+    expect(location.search).toEqual('');
   });
 });

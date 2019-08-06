@@ -27,12 +27,18 @@ describe('RESET PASSWORD COMPONENT', () => {
 
   it('should call onChange function', () => {
     const event = {
-      preventDefault() { },
-      target: { value: 'frank@gmail.com', name: 'email' }
+      preventDefault() {},
+      target: { value: 'frank@gmail.com', name: 'email' },
     };
     const mockOnResetFn = jest.fn();
     const component = mount(
-      <ResetPasswordComp authResponse={{ error: 'bad data' }} cleanUpReset={() => { }} isSubmitting={false} sendResetLink={() => { }} onSignUp={mockOnResetFn} />
+      <ResetPasswordComp
+        authResponse={{ error: 'bad data' }}
+        cleanUpReset={() => {}}
+        isSubmitting={false}
+        sendResetLink={() => {}}
+        onSignUp={mockOnResetFn}
+      />
     );
     const inputTag = component.find('input').at(0);
     inputTag.simulate('change', event);
@@ -42,7 +48,13 @@ describe('RESET PASSWORD COMPONENT', () => {
     const mockOnResetFn = jest.fn();
     const fakeEvent = { preventDefault: mockOnResetFn };
     const component = shallow(
-      <ResetPasswordComp authResponse={{ message: 'welcome' }} cleanUpReset={() => { }} isSubmitting={false} sendResetLink={() => { }} onSignUp={mockOnResetFn} />
+      <ResetPasswordComp
+        authResponse={{ message: 'welcome' }}
+        cleanUpReset={() => {}}
+        isSubmitting={false}
+        sendResetLink={() => {}}
+        onSignUp={mockOnResetFn}
+      />
     );
     component.find('form').simulate('submit', fakeEvent);
     expect(mockOnResetFn.mock.calls.length).toBe(1);
@@ -50,8 +62,13 @@ describe('RESET PASSWORD COMPONENT', () => {
 
   it('should change button value from reset to loading on submit', () => {
     const component = mount(
-      <ResetPasswordComp authResponse={{ message: 'welcome' }} cleanUpReset={() => { }} isSubmitting sendResetLink={() => { }} />
+      <ResetPasswordComp
+        authResponse={{ message: 'welcome' }}
+        cleanUpReset={() => {}}
+        isSubmitting
+        sendResetLink={() => {}}
+      />
     );
-    expect(component.find('button').text()).toEqual('Loading');
+    expect(component.find('button').text()).toEqual('Loading...');
   });
 });

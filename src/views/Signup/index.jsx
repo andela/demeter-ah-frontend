@@ -1,11 +1,17 @@
 import './index.scss';
 import React, { Fragment, useState, useEffect } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import callToast from '../../components/Toast';
 import InputForm from '../../components/InputForm';
 import Button from '../../components/Button';
 import { signUpAction, cleanUpAuth } from '../../store/actions/signup';
+import { socialSignInAction } from '../../store/actions/SignIn';
+import '../../styles/react-toastify.css';
 import brandLogo from '../../assets/images/brand-logo.png';
+import goggleIcon from '../../assets/images/google.png';
+import facebookIcon from '../../assets/images/facebook.png';
+import twitterIcon from '../../assets/images/twitter.png';
 
 const Signup = (props) => {
   const {
@@ -56,13 +62,19 @@ const Signup = (props) => {
     };
   }, [isCompleted, error]);
 
+  const handleSocial = (e) => {
+    const { id } = e.target;
+    localStorage.setItem('socialLogin', false);
+    window.location = `${process.env.SERVER_URL}/auth/${id}`;
+  };
+
   return (
     <Fragment>
       <div className="signup w-100 md:w-auto">
         <div
           className="bg card-wrapper flex justify-center md:items-center"
         >
-          <div className="card md:p-10">
+          <div className="card md:p-10 flex-col w-auto px-2 py-10 m-10">
             <h1 className="w-full mb-4 px-5 text-center md:text-left text-xl md:text-2xl text-purple-650 font-semibold">Sign up</h1>
             <div className="flex flex-col md:flex-row">
               <form onSubmit={submit} className="left-con md:w-112 order-3 md:order-1">
@@ -83,7 +95,7 @@ const Signup = (props) => {
                   <div className="block md:flex justify-center align-center">
                     <InputForm
                       classes="block inputcon-full mb-4 mr-2"
-                      labelname="First Name"
+                      labelname="First-name"
                       name="firstName"
                       labelClass="block mb-1 text-sm"
                       inputType="text"
@@ -97,7 +109,7 @@ const Signup = (props) => {
 
                     <InputForm
                       classes="block inputcon-full mb-4 md:ml-2"
-                      labelname="Last Name"
+                      labelname="Last-name"
                       name="lastName"
                       labelClass="block mb-1 text-sm"
                       inputType="text"
@@ -157,9 +169,12 @@ const Signup = (props) => {
                 <div className="w-full flex flex-col items-center md:flex-row justify-end">
                   <p className="flex-grow order-last md:order-first flex items-center my-0 md:my-8 text-sm">
                     {'Have an account? '}
-                    <span className="text-purple-650 ml-2 font-semibold cursor-pointer">
+                    <Link
+                      to="/signin"
+                      className="text-purple-650 ml-2 font-semibold cursor-pointer"
+                    >
                       {'Sign in'}
-                    </span>
+                    </Link>
                   </p>
                   <Button id="register" type="submit" name="Register" classes="btn-purple w-1/3 md:mx-8 my-4 md:my-7" isSubmit={isSubmit} />
                 </div>
@@ -171,6 +186,42 @@ const Signup = (props) => {
               </div>
               <div className="order-1 md:order-3 right-con md:w-108 justify-center">
                 <img id="brand-logo" className="hidden md:block" src={brandLogo} alt="Authors Haven" />
+                <Button
+                  onClick={handleSocial}
+                  id="google"
+                  type="button"
+                  name="Login"
+                  classes="w-64 flex items-center justify-around shadow-md rounded-lg mx-2 my-3 text-sm"
+                >
+                  <img src={goggleIcon} alt="Authors Haven" />
+                Sign up with Google
+                </Button>
+                <Button
+                  onClick={handleSocial}
+                  id="facebook"
+                  type="button"
+                  name="Login"
+                  classes="w-64 flex items-center justify-around shadow-md rounded-lg mx-2 my-3 text-sm"
+                >
+                  <img
+                    src={facebookIcon}
+                    alt="Authors Haven"
+                  />
+                Sign up with Facebook
+                </Button>
+                <Button
+                  onClick={handleSocial}
+                  id="twitter"
+                  type="button"
+                  name="Login"
+                  classes="w-64 flex items-center justify-around shadow-md rounded-lg mx-2 my-3 text-sm"
+                >
+                  <img
+                    src={twitterIcon}
+                    alt="Authors Haven"
+                  />
+                Sign up with Twitter
+                </Button>
               </div>
             </div>
           </div>
@@ -192,6 +243,9 @@ const mapStateToProps = state => ({
 export const onSignUp = newUser => signUpAction(newUser);
 export const cleanup = () => cleanUpAuth();
 
+/* istanbul ignore next */
+export const socialSignUp = userObj => socialSignInAction(userObj);
+
 export const SingUpComponent = Signup;
 
-export default connect(mapStateToProps, { onSignUp, cleanup })(Signup);
+export default connect(mapStateToProps, { onSignUp, cleanup, socialSignUp })(Signup);

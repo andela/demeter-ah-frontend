@@ -17,13 +17,14 @@ const NavBar = () => (
     </div>
     <div className="">
       <Link to="/signup">
-        <Button type="button" name="Sign Up" classes="btn-purple w-32 hidden md:inline" />
+        <Button id="signup-menu" type="button" name="Sign Up" classes="btn-purple w-32 hidden md:inline" />
       </Link>
       <Link to="/signin">
         <Button
+          id="signin-menu"
           type="button"
           name="Sign In"
-          classes=" cursor-pointer btn-white w-32 ml-2 text-purple-650 border hidden md:inline border-solid border-purple-650"
+          classes="cursor-pointer btn-white w-32 ml-2 text-purple-650 border hidden md:inline border-solid border-purple-650"
         />
       </Link>
     </div>

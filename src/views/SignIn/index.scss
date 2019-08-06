@@ -1,0 +1,35 @@
+.signin{
+  font-family: 'Montserrat', sans-serif;
+
+  .card {
+    width: 95%;
+  }
+
+   h1 {
+    top: 1.5em;
+   }
+
+  .vline{
+    @apply w-px bg-gray-150;
+    height: 48%;
+  }
+  .left-con{
+    @apply flex-grow flex flex-wrap content-around px-5
+  }
+
+  .right-con{
+    @apply flex-grow flex flex-col items-center flex-wrap relative px-5;
+  }
+
+  .input{
+    @apply w-full px-2
+  }
+
+  .inputcon-full{
+    @apply w-full px-2 py-1;
+  }
+
+  .inputcon-half{
+    @apply w-1/2 px-2 py-1
+  }
+}

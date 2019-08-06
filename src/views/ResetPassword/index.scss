@@ -2,7 +2,8 @@
   background: url('../../assets/images/bg.png');
   background-size: cover;
   background-repeat: no-repeat;
-  @apply flex h-screen items-center font-montserrat flex-grow;
+  font-family: 'Montserrat', sans-serif;
+  @apply flex h-screen items-center flex-grow;
   form {
     @apply py-12 mx-auto bg-white;
     box-shadow: .2rem .2rem 1rem rgba(0,0,0, .1);

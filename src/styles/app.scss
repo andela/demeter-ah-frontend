@@ -1,3 +1,4 @@
+    
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -28,9 +29,9 @@ input, button {
   @apply flex flex-col
 }
 .card{
-	@apply flex flex-col content-around relative
-	w-auto bg-white shadow rounded-2xl px-2 py-10 m-10;
+	@apply flex  content-around relative bg-white shadow rounded-2xl ;
 }
-#app{
+
+#app {
 	@apply flex flex-col h-screen;
 }

@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
-import signUpReducer from './signup';
+import authReducer from './Auth';
 import resetPassword from './resetPassword';
 
 const reducers = combineReducers({
-  auth: signUpReducer,
+  auth: authReducer,
   resetPassword,
 });
 

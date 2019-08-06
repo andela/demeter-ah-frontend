@@ -4,18 +4,12 @@
     "es6": true,
     "jest": true
   },
-  "extends": [
-    "airbnb",
-    "plugin:react/recommended"
-  ],
+  "extends": ["airbnb", "plugin:react/recommended"],
   "parserOptions": {
     "ecmaVersion": 9
   },
   "parser": "babel-eslint",
-  "plugins": [
-    "react",
-    "json"
-  ],
+  "plugins": ["react", "json"],
   "rules": {
     "import/prefer-default-export": "off",
     "jsx-a11y/label-has-associated-control": "off",
@@ -32,35 +26,12 @@
     "array-callback-return": 0,
     "no-console": 1,
     "no-param-reassign": 0,
-    "class-methods-use-this": "off",
+    "class-methods-use-this":"off",
     "comma-dangle": 0,
-    "curly": [
-      "error",
-      "multi-line"
-    ],
-    "import/no-unresolved": [
-      2,
-      {
-        "commonjs": true
-      }
-    ],
-    "no-shadow": [
-      "error",
-      {
-        "allow": [
-          "req",
-          "res",
-          "err"
-        ]
-      }
-    ],
-    "quotes": [
-      "error",
-      "single"
-    ],
-    "semi": [
-      "error",
-      "always"
-    ]
+    "curly": ["error", "multi-line"],
+    "import/no-unresolved": [2, { "commonjs": true }],
+    "no-shadow": ["error", { "allow": ["req", "res", "err"] }],
+    "quotes": ["error", "single"],
+    "semi": ["error", "always"]
   }
 }

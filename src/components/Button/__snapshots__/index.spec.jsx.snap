@@ -3,5 +3,6 @@
 exports[`Button Component Should render without errors 1`] = `
 <button
   className="btn undefined"
+  disabled={false}
 />
 `;

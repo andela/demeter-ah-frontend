@@ -1,0 +1,17 @@
+{
+  "env": {},
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ],
+  "description": "",
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "name": "Author's Haven",
+  "scripts": {},
+  "stack": "heroku-18"
+}

@@ -20,16 +20,12 @@ module.exports = {
         use: ['babel-loader'],
       },
       {
-        test: /.(jpg|jpeg|png|gif|mp3|svg)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[path][name]-[hash:8].[ext]',
-              outputPath: 'img/',
-            },
-          },
-        ],
+        test: /\.(jpe?g|png|gif|mp3|svg)$/,
+        exclude: /node-modules/,
+        loader: 'file-loader',
+        options: {
+          outputPath: 'img/'
+        }
       },
     ],
   },

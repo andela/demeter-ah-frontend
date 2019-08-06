@@ -449,7 +449,7 @@ exports[`NavBar Component Should render along with children componenet 1`] = `
                     alt="Authors Haven"
                     className="hidden md:block"
                     id="brand-logo"
-                    src="./src/assets/images/brand-logo.png"
+                    src="test-file-stub"
                   />
                 </div>
               </div>

@@ -1,8 +1,10 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const webpack = require('webpack');
 const dotenv = require('dotenv');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
+dotenv.config();
 
 dotenv.config();
 
@@ -36,6 +38,9 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/index.html',
       inject: 'body',
+    }),
+    new webpack.DefinePlugin({
+      'process.env.SERVER_URL': JSON.stringify(process.env.SERVER_URL),
     }),
     new MiniCssExtractPlugin({
       filename: 'app.css',

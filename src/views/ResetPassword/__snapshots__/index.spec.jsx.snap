@@ -1,0 +1,160 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RESET PASSWORD COMPONENT Should render along with children componenet 1`] = `
+<BrowserRouter>
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "createHref": [Function],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "pathname": "/",
+          "search": "",
+          "state": undefined,
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
+  >
+    <Connect(ResetPassword)
+      store={
+        Object {
+          "dispatch": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+          Symbol(observable): [Function],
+        }
+      }
+    >
+      <ResetPassword
+        authResponse={Object {}}
+        cleanUpReset={[Function]}
+        isSubmitting={false}
+        sendResetLink={[Function]}
+        store={
+          Object {
+            "dispatch": [Function],
+            "getState": [Function],
+            "replaceReducer": [Function],
+            "subscribe": [Function],
+            Symbol(observable): [Function],
+          }
+        }
+      >
+        <main
+          className="reset"
+        >
+          <form
+            autoComplete="off"
+            className="lg:w-5/12 sm:w-3/5 w-full min-w-min sm:rounded-2xl rounded-none"
+            onSubmit={[Function]}
+          >
+            <h3
+              className="text-center text-white text-3xl font-semibold"
+            >
+              Reset Password
+            </h3>
+            <InputForm
+              classes="my-8 w-3/5 mx-auto"
+              inputType="email"
+              labelname="Email"
+              name="email"
+              onChange={[Function]}
+              pattern="^[\\\\w.]+@[\\\\w]{2,20}.[a-z]{2,10}$"
+            >
+              <div
+                className="my-8 w-3/5 mx-auto"
+              >
+                <Label
+                  labelname="Email"
+                  name="email"
+                >
+                  <label
+                    htmlFor="email"
+                  >
+                    Email
+                  </label>
+                </Label>
+                <Input
+                  inputType="email"
+                  name="email"
+                  onChange={[Function]}
+                  pattern="^[\\\\w.]+@[\\\\w]{2,20}.[a-z]{2,10}$"
+                >
+                  <input
+                    className="shadow border rounded py-1 bg-purple-150 undefined"
+                    name="email"
+                    onChange={[Function]}
+                    pattern="^[\\\\w.]+@[\\\\w]{2,20}.[a-z]{2,10}$"
+                    required={true}
+                    type="email"
+                  />
+                </Input>
+              </div>
+            </InputForm>
+            <Button
+              className="submitBtn"
+              isSubmit={false}
+              type="submit"
+            >
+              <button
+                className="submitBtn"
+                disabled={false}
+                type="submit"
+              >
+                Reset
+              </button>
+            </Button>
+          </form>
+        </main>
+      </ResetPassword>
+    </Connect(ResetPassword)>
+  </Router>
+</BrowserRouter>
+`;
+
+exports[`RESET PASSWORD COMPONENT Should render without errors 1`] = `
+<Router
+  history={
+    Object {
+      "action": "POP",
+      "block": [Function],
+      "createHref": [Function],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "length": 1,
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "pathname": "/",
+        "search": "",
+        "state": undefined,
+      },
+      "push": [Function],
+      "replace": [Function],
+    }
+  }
+>
+  <Connect(ResetPassword)
+    store={
+      Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+        Symbol(observable): [Function],
+      }
+    }
+  />
+</Router>
+`;

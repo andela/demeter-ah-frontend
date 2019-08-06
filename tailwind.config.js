@@ -2,6 +2,14 @@ const { colors } = require('tailwindcss/defaultTheme');
 
 module.exports = {
   theme: {
+    fontFamily: {
+      montserrat: ['Montserrat'],
+    },
+    minWidth: {
+      0: '0',
+      min: '20rem',
+      full: '100%',
+    },
     extend: {
       colors: {
         purple: {

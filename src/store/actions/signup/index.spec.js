@@ -81,7 +81,7 @@ describe('Sign up Actions', () => {
       localStorage.clear();
     });
 
-    test('should sing up user and call sign up actions', (done) => {
+    test('should sign up user and call sign up actions', (done) => {
       const expectedActions = ['CLEAN_UP', 'SIGNUP', 'SIGNUP_SUCCESS'];
       axiosCall.mockResolvedValue({
         user: {

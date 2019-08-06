@@ -1,8 +1,8 @@
 import React from 'react';
 import { Provider } from 'react-redux';
+import { useSetUser } from '../store/hooks';
 import Routes from '../routes';
 import store from '../store';
-import { useSetUser } from '../store/hooks';
 
 const App = () => {
   useSetUser({ ...store });

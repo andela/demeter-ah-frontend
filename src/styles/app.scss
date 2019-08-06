@@ -1,23 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 input, button {
   &:focus {
     outline: none;
   }
 }
 .btn {
-    @apply px-4 py-2
+	@apply px-4 py-2;
 }
 .btn-purple{
-  @apply bg-purple-650 text-white text-sm rounded-full;
-  box-shadow: 4px 4px 10px rgba(124, 123, 123, 0.4);
-  padding: 0.6em;
+	@apply bg-purple-650 text-white text-sm rounded-full;
+	box-shadow: 4px 4px 10px rgba(124, 123, 123, 0.4);
+	padding: 0.6em;
 }
 .btn-white{
-  @apply bg-white text-sm rounded-full;
-  box-shadow: 4px 4px 10px rgba(124, 123, 123, 0.4);
-  padding: 0.6em;
+	@apply bg-white text-sm rounded-full;
+	box-shadow: 4px 4px 10px rgba(124, 123, 123, 0.4);
+	padding: 0.6em;
 }
 .bg{
   background: url('../assets/images/bg.png');
@@ -27,6 +28,9 @@ input, button {
   @apply flex flex-col
 }
 .card{
-  @apply flex flex-col content-around relative
-  w-auto bg-white shadow rounded-2xl px-2 py-10 m-10;
+	@apply flex flex-col content-around relative
+	w-auto bg-white shadow rounded-2xl px-2 py-10 m-10;
+}
+#app{
+	@apply flex flex-col h-screen;
 }

@@ -1,11 +1,10 @@
 import './index.scss';
 import React, { Fragment, useState, useEffect } from 'react';
 import { connect } from 'react-redux';
-import { toast } from 'react-toastify';
+import callToast from '../../components/Toast';
 import InputForm from '../../components/InputForm';
 import Button from '../../components/Button';
 import { signUpAction, cleanUpAuth } from '../../store/actions/signup';
-import '../../styles/react-toastify.css';
 import brandLogo from '../../assets/images/brand-logo.png';
 
 const Signup = (props) => {
@@ -29,7 +28,7 @@ const Signup = (props) => {
   const submit = (e) => {
     e.preventDefault();
     if (values.password !== values.confirmPassword) {
-      toast.error(<h4 className="text-center">password must match</h4>);
+      callToast('password must match', 'error');
       return;
     }
     props.onSignUp(values);
@@ -37,17 +36,17 @@ const Signup = (props) => {
 
   useEffect(() => {
     if (isCompleted) {
-      toast.success(<h4 id="toast-success" className="text-center">Registration successful</h4>);
+      callToast('Registration successful', 'success');
       /* istanbul ignore next */
       history && history.push('/');
     }
     if (error) {
       if (Array.isArray(error)) {
         for (let i = 0; i < error.length; i += 1) {
-          toast.error(<h4 className="text-center">{error[i].message}</h4>);
+          callToast(error[i].message, 'error');
         }
       } else {
-        toast.error(<h4 className="text-center">{error}</h4>);
+        callToast(error, 'error');
       }
     }
     /* istanbul ignore next */
@@ -188,7 +187,6 @@ const mapStateToProps = state => ({
   isSubmit: state.auth.isSubmit,
   isCompleted: state.auth.isCompleted
 });
-
 
 /* istanbul ignore next */
 export const onSignUp = newUser => signUpAction(newUser);

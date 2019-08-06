@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Toast Component Should render without errors 1`] = `
+<h4
+  className="text-center p-2"
+>
+  welcome
+</h4>
+`;

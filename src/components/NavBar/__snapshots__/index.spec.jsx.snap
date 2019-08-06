@@ -29,7 +29,7 @@ exports[`NavBar Component Should render along with children componenet 1`] = `
         className="flex items-center justify-between flex-wrap bg-white-500 pt-2 p-3 z-40 shadow"
       >
         <div
-          className="flex items-center md:flex-shrink-0 text-dark mr-6"
+          className="flex w-6/12 sm:w-3/12 lg:w-2/12 items-center md:flex-shrink-0 text-dark mr-6"
         >
           <Link
             to="/"
@@ -40,7 +40,7 @@ exports[`NavBar Component Should render along with children componenet 1`] = `
             >
               <img
                 alt="Author's Haven"
-                className="w-1/2 md:w-4/12"
+                className="w-full h-full"
                 id="logo"
                 src="test-file-stub"
               />
@@ -90,14 +90,14 @@ exports[`NavBar Component Should render without errors 1`] = `
   className="flex items-center justify-between flex-wrap bg-white-500 pt-2 p-3 z-40 shadow"
 >
   <div
-    className="flex items-center md:flex-shrink-0 text-dark mr-6"
+    className="flex w-6/12 sm:w-3/12 lg:w-2/12 items-center md:flex-shrink-0 text-dark mr-6"
   >
     <Link
       to="/"
     >
       <img
         alt="Author's Haven"
-        className="w-1/2 md:w-4/12"
+        className="w-full h-full"
         id="logo"
         src="test-file-stub"
       />

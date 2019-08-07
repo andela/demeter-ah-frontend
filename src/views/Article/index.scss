@@ -1,0 +1,22 @@
+.editor{
+  .uploadbtn {
+    left: -3em;
+    top: 50%;
+  }
+  .articleImg{
+    width: 100%;
+    min-height: 25rem;
+  }
+
+  .article-title{
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.codex-editor{
+  .ce-block__content{
+    
+  }
+}

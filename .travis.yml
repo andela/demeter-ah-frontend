@@ -8,12 +8,16 @@ before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
+  - LATEST_CHROMEDRIVER_VERSION=`curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE"`
+  - curl "https://chromedriver.storage.googleapis.com/${LATEST_CHROMEDRIVER_VERSION}/chromedriver_linux64.zip" -O
+  - unzip chromedriver_linux64.zip -d ~/bin
 after_script:
+  - npm run e2e
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 dist: trusty
-addon:
+addons:
   chrome: stable
 before_install:
   - google-chrome-stable --headless --disable-gpu --remote-debugging-port-9222 http://localhost &
 scripts:
-  - xvfb-run npm run e2e
+  - xvfb-run

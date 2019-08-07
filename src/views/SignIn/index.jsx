@@ -139,6 +139,7 @@ const SignIn = ({
                   </Link>
                 </p>
                 <Button
+                  id="signin"
                   type="submit"
                   name="Login"
                   isSubmit={isLoading}
@@ -153,6 +154,7 @@ const SignIn = ({
             </div>
             <div className="right-con mt-10 mb-4 md:my-0 flex justify-center min-w-84 sm:w-full md:w-5/12">
               <img
+                id="brand-logo"
                 src={brandLogo}
                 className="mb-4 hidden md:block sm:hidden lg:block"
                 alt="Authors Haven"

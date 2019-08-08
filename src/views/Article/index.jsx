@@ -1,13 +1,13 @@
-import React, { Fragment, useState, useRef } from 'react';
-import EditorJS from '@editorjs/editorjs';
-import Header from '@editorjs/header';
-import List from '@editorjs/list';
-import CheckList from '@editorjs/checklist';
-import TextArea from 'react-textarea-autosize';
+import React, {
+  Fragment, useState, useRef,
+} from 'react';
+import { connect } from 'react-redux';
 import Button from '../../components/Button';
 import callToast from '../../components/Toast';
 import uploadBtn from '../../assets/images/upload-img.png';
 import defaultImage from '../../assets/images/default-img.png';
+import PublishForm from './PublishForm';
+import Editor from './Editor';
 import './index.scss';
 
 const Article = () => {
@@ -39,34 +39,6 @@ const Article = () => {
     }
   };
 
-  const editor = new EditorJS({
-    holderId: 'codex-editor',
-    placeholder: 'Write your ideas',
-    tools: {
-      header: {
-        class: Header,
-        inlineToolbar: ['link', 'bold', 'italic'],
-        config: {
-          placeholder: 'Header'
-        },
-        shortcut: 'CMD+SHIFT+H'
-      },
-      list: {
-        class: List,
-        inlineToolbar: true,
-      },
-      checkList: {
-        class: CheckList,
-        inlineToolbar: true
-      }
-    },
-    data: {}
-  });
-
-  const save = () => {
-    console.log('===', editor.holderId);
-  };
-
   return (
     <Fragment>
       <div className=" editor w-3/4 mx-auto mt-12">
@@ -77,10 +49,11 @@ const Article = () => {
             }
             name="upload"
             className="uploadbtn absolute"
+            title=" change Image"
           >
-            <img src={uploadBtn} alt="upload button" />
+            <img src={uploadBtn} alt="upload button" title="change image" />
           </Button>
-          <div style={{ background: `linear-gradient(180deg, rgba(0, 0, 0, 0.5) 99.98%, rgba(255, 255, 255, 0) 99.99%, rgba(255, 255, 255, 0.2) 100%), url(${image})` }} className="articleImg w-full object-cover mx-0 relative" alt={imageName} >
+          <div style={{ background: `linear-gradient(180deg, rgba(0, 0, 0, 0.5) 99.98%, rgba(255, 255, 255, 0) 99.99%, rgba(255, 255, 255, 0.2) 100%), url(${image})` }} className="articleImg w-full object-cover mx-0 relative" alt={imageName}>
             <textarea type="text" onChange={onChange} value={title} name="title" maxLength="100" className="absolute article-title bg-transparent font-light resize-none text-white text-4xl text-center w-10/12" placeholder="Title" />
           </div>
           <input
@@ -92,16 +65,15 @@ const Article = () => {
             }
           />
         </div>
-        <div id="codex-editor" className="codex-editor" />
-        <Button
-          name="save"
-          type="button"
-          classes="w-64 flex items-center justify-around shadow-md rounded-lg mx-2 my-3 text-sm"
-          onClick={save}
-        />
+        <Editor />
       </div>
+      <PublishForm />
     </Fragment>
   );
 };
 
-export default Article;
+const mapStateToProps = state => ({
+  isOpen: state.articles.openPublishModal
+});
+
+export default connect(mapStateToProps)(Article);

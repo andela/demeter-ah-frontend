@@ -1,15 +1,17 @@
 .tag-input-con{
-  @apply rounded-lg border-purple-500 border-solid items-center flex overflow-hidden w-full;
+  @apply rounded-lg border-purple-650 border-solid items-baseline flex overflow-hidden w-full;
   border-width: .07rem;
-  padding: 0 .4rem;
+  padding: 0 .4rem .4rem;
+  flex-wrap: wrap;
+
   .tag-input{
-    @apply rounded-lg flex-grow px-2;
+    @apply rounded-lg min-w-40 flex-grow px-2;
     height: 2.5rem;
   }
   .tag-con{
-    @apply text-xs rounded bg-purple-650 text-white flex items-center;
-    margin: 0 0 0 .3rem;
-    padding: .2rem .4rem;
+    @apply text-xs rounded bg-purple-500 text-white flex items-center;
+    margin: .4rem .3rem 0;
+    padding: .15rem .4rem;
     p{
       width: max-content;
     }

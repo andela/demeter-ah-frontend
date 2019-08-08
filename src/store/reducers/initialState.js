@@ -5,6 +5,6 @@ export const resetPassword = {
 
 export const articles = {
   openPublishModal: false,
-  articleBody: {},
-  articleTag: []
+  isSubmitting: false,
+  response: {},
 };

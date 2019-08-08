@@ -1,10 +1,8 @@
 import React, { Fragment, useEffect, } from 'react';
-import { connect } from 'react-redux';
 import EditorJS from '@editorjs/editorjs';
 import Header from '@editorjs/header';
 import List from '@editorjs/list';
 import CheckList from '@editorjs/checklist';
-import * as actions from '../../../store/actions/articles';
 
 const editor = new EditorJS({
   holder: 'codex-editor',
@@ -34,8 +32,8 @@ const Editor = ({ isOpen, articleBody }) => {
   const save = async () => {
     try {
       await editor.isReady;
-      const data = await editor.save();
-      articleBody(data);
+      const body = await editor.save();
+      articleBody({ body });
     } catch (error) {
       console.log('errr', error);
     }
@@ -54,12 +52,4 @@ const Editor = ({ isOpen, articleBody }) => {
   );
 };
 
-const mapStateToProps = state => ({
-  isOpen: state.articles.openPublishModal
-});
-
-const mapDispatchToProps = {
-  articleBody: actions.setArticleBody
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Editor);
+export default Editor;

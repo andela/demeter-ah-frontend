@@ -1,79 +1,74 @@
 import React, {
-  Fragment, useState, useRef,
+  Fragment, useState, useEffect
 } from 'react';
 import { connect } from 'react-redux';
-import Button from '../../components/Button';
 import callToast from '../../components/Toast';
-import uploadBtn from '../../assets/images/upload-img.png';
-import defaultImage from '../../assets/images/default-img.png';
-import PublishForm from './PublishForm';
-import Editor from './Editor';
 import './index.scss';
+import * as actions from '../../store/actions/articles';
+import PublishForm from './PublishForm';
+import FeaturedImage from './FeaturedImage';
+import Editor from './Editor';
 
-const Article = () => {
-  const inputEl = useRef(null);
-  const [image, setImage] = useState(defaultImage);
-  const [imageName, setImageName] = useState('');
-  const [title, setTitle] = useState('');
+const Article = ({
+  isOpen, closeModal, response, cleanUpResponse,
+  createArticle, isPublishing, isDrafting
+}) => {
+  useEffect(() => {
+    cleanUpResponse();
+  }, [response]);
 
-  const onChange = (e) => {
-    e.persist();
-    setTitle(e.target.value);
-  };
+  const [formData, setformData] = useState({ body: {} });
 
-  const selectArticleImage = (e) => {
-    const { files } = e.target;
-    let selectedImage;
+  if (response.message && (!isPublishing || !isDrafting)) callToast(response.message, 'success');
+  else if (response.error && (!isPublishing || !isDrafting)) callToast(response.error, 'error');
 
-    if (files && files) {
-      [selectedImage] = files;
-      if (!selectedImage.type.match(/image/)) {
-        callToast('Please select only an image.', 'error');
-        return;
-      }
 
-      setImageName(e.target.value.split(/(\\|\/)/g).pop());
-      const reader = new FileReader();
-      reader.onload = ev => setImage(ev.target.result);
-      reader.readAsDataURL(selectedImage);
-    }
+  const submitForm = (publishData) => {
+    createArticle({ ...formData, ...publishData });
   };
 
   return (
     <Fragment>
-      <div className=" editor w-3/4 mx-auto mt-12">
-        <div className="flex bg-gray-200 relative mb-8">
-          <Button
-            type="button"
-            onClick={() => inputEl.current.click()
-            }
-            name="upload"
-            className="uploadbtn absolute"
-            title=" change Image"
-          >
-            <img src={uploadBtn} alt="upload button" title="change image" />
-          </Button>
-          <div style={{ background: `linear-gradient(180deg, rgba(0, 0, 0, 0.5) 99.98%, rgba(255, 255, 255, 0) 99.99%, rgba(255, 255, 255, 0.2) 100%), url(${image})` }} className="articleImg w-full object-cover mx-0 relative" alt={imageName}>
-            <textarea type="text" onChange={onChange} value={title} name="title" maxLength="100" className="absolute article-title bg-transparent font-light resize-none text-white text-4xl text-center w-10/12" placeholder="Title" />
-          </div>
-          <input
-            type="file"
-            className="hidden"
-            ref={inputEl}
-            onChange={
-              selectArticleImage
-            }
-          />
-        </div>
-        <Editor />
+      <div className="editor w-3/4 mx-auto mt-12">
+        <FeaturedImage
+          isOpen={isOpen}
+          articleBanner={
+            data => setformData({ ...formData, ...data })
+          }
+        />
+
+        <Editor
+          isOpen={isOpen}
+          articleBody={
+            data => setformData({ ...formData, ...data })
+          }
+        />
       </div>
-      <PublishForm />
+
+      <PublishForm
+        isOpen={isOpen}
+        isPublishing={isPublishing}
+        isDrafting={isDrafting}
+        closeModal={closeModal}
+        articleBody={formData.body.blocks}
+        sendFormData={submitForm}
+      />
     </Fragment>
   );
 };
 
 const mapStateToProps = state => ({
-  isOpen: state.articles.openPublishModal
+  isOpen: state.articles.openPublishModal,
+  isPublishing: state.articles.isPublishing,
+  isDrafting: state.articles.isDrafting,
+  response: state.articles.response,
 });
 
-export default connect(mapStateToProps)(Article);
+const matchDispatchToProps = {
+  closeModal: actions.closePublishModal,
+  createArticle: actions.createArticle,
+  cleanUpResponse: actions.cleanUpArticle,
+};
+
+export const ArticleComp = Article;
+export default connect(mapStateToProps, matchDispatchToProps)(Article);

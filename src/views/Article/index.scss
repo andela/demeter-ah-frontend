@@ -53,7 +53,7 @@ h6 { font-size: .75em; margin: 1.67em 0 }
       background-size: 2rem;
       @apply rounded-lg w-full border-purple-650 px-4;
       border-width: .07rem;
-      height: 2.5rem;
+      height: 3rem;
       background-color: white;
       background-image: url('../../assets/images/arrow.png');
       background-position: right;
@@ -64,14 +64,23 @@ h6 { font-size: .75em; margin: 1.67em 0 }
   }
   .closebtn{
     img{
-      width: 2rem;
-      height: 2rem;
+      width: 1.5rem;
+      height: 1.5rem;
       opacity: .3;
     }
     @apply absolute;
     top: 2rem;
     right: 5rem;
     cursor: pointer;
+  }
+  .publishbtn{
+    @apply w-32;
+  }
+  .draftbtn{
+    @apply opacity-50 font-thin;
+    &:hover{
+      @apply font-normal;
+    }
   }
 }
 

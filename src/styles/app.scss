@@ -3,7 +3,11 @@
 @tailwind components;
 @tailwind utilities;
 
-input, button {
+body {
+	@apply font-montserrat;
+}
+
+input, button, select {
   &:focus {
     outline: none;
   }
@@ -12,7 +16,7 @@ input, button {
 	@apply px-4 py-2;
 }
 .btn-purple{
-	@apply bg-purple-650 text-white text-sm rounded-full;
+	@apply bg-purple-650 text-white text-sm font-montserrat rounded-full;
 	box-shadow: 4px 4px 10px rgba(124, 123, 123, 0.4);
 	padding: 0.6em;
 }
@@ -26,10 +30,10 @@ input, button {
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 93vh;
-  @apply flex flex-col
+  @apply flex flex-col;
 }
 .card{
-	@apply flex  content-around relative bg-white shadow rounded-2xl ;
+	@apply flex  content-around relative bg-white shadow rounded-2xl;
 }
 
 #app {

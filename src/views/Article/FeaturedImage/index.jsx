@@ -6,7 +6,7 @@ import Button from '../../../components/Button';
 import callToast from '../../../components/Toast';
 import uploadBtn from '../../../assets/images/upload-img.png';
 
-const FeaturedImage = ({ articleBanner, isOpen }) => {
+const FeaturedImage = ({ articleBanner, articleTitle }) => {
   /* call article banner isOpen is true and send it { title, image } */
   const inputEl = useRef(null);
   const [image, setImage] = useState(defaultImage);
@@ -16,6 +16,10 @@ const FeaturedImage = ({ articleBanner, isOpen }) => {
   const onChange = (e) => {
     e.persist();
     setTitle(e.target.value);
+  };
+
+  const onBlur = () => {
+    articleTitle(title);
   };
 
   const selectArticleImage = (e) => {
@@ -32,6 +36,7 @@ const FeaturedImage = ({ articleBanner, isOpen }) => {
       setImageName(e.target.value.split(/(\\|\/)/g).pop());
       const reader = new FileReader();
       reader.onload = ev => setImage(ev.target.result);
+      articleBanner(selectedImage);
       reader.readAsDataURL(selectedImage);
     }
   };
@@ -49,7 +54,7 @@ const FeaturedImage = ({ articleBanner, isOpen }) => {
         <img src={uploadBtn} alt="upload button" title="change image" />
       </Button>
       <div style={{ background: `linear-gradient(180deg, rgba(0, 0, 0, 0.5) 99.98%, rgba(255, 255, 255, 0) 99.99%, rgba(255, 255, 255, 0.2) 100%), url(${image})` }} className="articleImg w-full object-cover mx-0 relative" alt={imageName}>
-        <textarea type="text" onChange={onChange} value={title} name="title" maxLength="100" className="absolute article-title bg-transparent font-light resize-none text-white text-4xl text-center w-10/12" placeholder="Title" />
+        <textarea type="text" onChange={onChange} onBlur={onBlur} value={title} name="title" maxLength="100" className="absolute article-title bg-transparent font-light resize-none text-white text-4xl text-center w-10/12" placeholder="Title" />
       </div>
       <input
         type="file"

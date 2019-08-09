@@ -25,7 +25,7 @@ export const AuthNav = ({ history }) => (
   </>
 );
 
-export const CreateArticleNav = ({ history, openModal }) => (
+export const CreateArticleNav = ({ openModal }) => (
   <>
     <Button type="button" onClick={() => openModal()} name="Ready To Publish?" classes="btn-purple w-40 hidden md:inline" />
     <Thumbnail />

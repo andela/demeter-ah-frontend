@@ -35,13 +35,9 @@ const NavBar = ({ history, openModal }) => {
   );
 };
 
-function mapStateToProps() {
-  return {};
-}
-
 const matchDispatchToProps = {
   openModal: actions.openPublishModal
 };
 
 export const NavBarComp = NavBar;
-export default connect(mapStateToProps, matchDispatchToProps)(withRouter(NavBar));
+export default connect(null, matchDispatchToProps)(withRouter(NavBar));

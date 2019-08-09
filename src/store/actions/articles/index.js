@@ -26,12 +26,18 @@ export const createArticle = payload => async (dispatch) => {
     ? dispatch(publishArticle(true))
     : dispatch(draftArticle(true));
 
+  payload.body = JSON.stringify(payload.body);
+  payload.tags = payload.tags.join(',');
+
   try {
     const result = await axiosCall({ path: '/api/v1/articles', payload, method: 'post' });
     dispatch(createArticleSuccess(result.message));
   } catch (err) {
+    /* istanbul ignore next */
     const { response } = err;
-    const error = response.data.message || response;
+    /* istanbul ignore next */
+    const error = (response && response.data && response.data.message) || response || 'an error occured';
+    /* istanbul ignore next */
     dispatch(createArticleError(error));
   }
 };

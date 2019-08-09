@@ -10,10 +10,13 @@ const Tag = ({ tag, index }) => (
   </div>
 );
 
-export default function TagInput({ emitTags }) {
+export default function TagInput({ emitTags, onBlur }) {
   const [tags, setTags] = useState([]);
 
-  if (tags.length > 0) emitTags(tags);
+  if (tags.length > 0) {
+    emitTags(tags);
+    onBlur(tags);
+  }
 
   const makeTag = (e) => {
     const tagName = e.target.value;

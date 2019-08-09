@@ -28,3 +28,13 @@ export const decryptQuery = (string) => {
   const decryptedString = cryptr.decrypt(string);
   return decryptedString;
 };
+
+export const cardStyle = (imgURL) => {
+  const card = {
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center center',
+    backgroundImage: `url(${imgURL})`,
+  };
+  return card;
+};

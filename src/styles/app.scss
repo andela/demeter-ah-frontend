@@ -37,5 +37,5 @@ input, button, select, textarea {
 }
 
 #app {
-	@apply flex flex-col h-screen;
+	@apply flex flex-col h-screen overflow-x-hidden ;
 }

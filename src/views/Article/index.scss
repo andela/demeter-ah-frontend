@@ -1,0 +1,118 @@
+.editor{
+  .uploadbtn {
+    left: -3em;
+    top: 50%;
+    &:hover{
+      
+    } 
+  }
+  .articleImg{
+    width: 100%;
+    min-height: 25rem;
+  }
+
+  .article-title{
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+h1 { font-size: 2em; margin: .67em 0; font-weight: 700 }
+h2 { font-size: 1.5em; margin: .75em 0; font-weight: 600 }
+h3 { font-size: 1.17em; margin: .83em 0; font-weight: 500 }
+h4 { margin: 1.12em 0; font-weight: 400 }
+h5 { font-size: .83em; margin: 1.5em 0 }
+h6 { font-size: .75em; margin: 1.67em 0 }
+#codex-editor .ce-block__content{
+  @apply mx-auto w-full my-6;
+}
+
+.publish{
+  @apply bg-white absolute w-full h-full z-40 py-24 px-48;
+  .description {
+    @apply border-none w-full border-purple-650 border-solid py-2;
+    outline: none;
+    border-bottom-width: .07rem;
+    &[placeholder]:focus::-webkit-input-placeholder {
+        transition: text-indent 1.2s 0s ease; 
+        text-indent: -100%;
+        opacity: .5;
+    }
+  }
+  label{
+    @apply opacity-50;
+    line-height: 2rem;
+  }
+  .category-div{
+    width: 45%;
+    select {
+      -webkit-appearance: none; 
+      -moz-appearance: none;
+      appearance: none; 
+      background-repeat: no-repeat;
+      background-size: 2rem;
+      @apply rounded-lg w-full border-purple-650 px-4;
+      border-width: .07rem;
+      height: 3rem;
+      background-color: white;
+      background-image: url('../../assets/images/arrow.png');
+      background-position: right;
+    }
+  }
+  .tag-div{
+    width: 45%;
+  }
+  .closebtn{
+    img{
+      width: 1.5rem;
+      height: 1.5rem;
+      opacity: .3;
+    }
+    @apply absolute;
+    top: 2rem;
+    right: 5rem;
+    cursor: pointer;
+  }
+  .publishbtn{
+    @apply w-32;
+  }
+  .draftbtn{
+    @apply opacity-50 font-thin;
+    &:hover{
+      @apply font-normal;
+    }
+  }
+}
+
+.ce-block__content {
+  margin: 0 !important;
+  margin-right: 0;
+  max-width: 100%;
+  width: 100%;
+ }
+ .ce-toolbar__content {
+  max-width: 100%;
+ }
+ .cdx-block,
+ .ce--block {
+  padding: .7em 0;
+ }
+ .cdx-block a{
+  color: #335bcf;
+ }
+ .ce-paragraph {
+  line-height: 1.6em;
+  font-weight: 400;
+  outline: none;
+  font-size: 18px;
+  p {
+    line-height: 1.7em;
+    font-family: auto;
+  }
+  a {
+    text-decoration: underline;
+  }
+  code {
+    font-size: inherit;
+  }
+ }

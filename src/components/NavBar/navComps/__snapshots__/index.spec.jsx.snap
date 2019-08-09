@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavBar header Component Should render without errors 1`] = `
+<Fragment>
+  <Button
+    classes="btn-purple w-32 hidden md:inline"
+    name="Sign Up"
+    onClick={[Function]}
+    type="button"
+  />
+  <Button
+    classes="cursor-pointer btn-white w-32 ml-2 text-purple-650 border hidden md:inline border-solid border-purple-650"
+    name="Sign In"
+    onClick={[Function]}
+    type="button"
+  />
+</Fragment>
+`;

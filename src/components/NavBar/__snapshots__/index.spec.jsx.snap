@@ -24,7 +24,15 @@ exports[`NavBar Component Should render along with children componenet 1`] = `
       }
     }
   >
-    <NavBar>
+    <NavBar
+      history={
+        Object {
+          "location": Object {
+            "pathname": "/article/create",
+          },
+        }
+      }
+    >
       <nav
         className="flex items-center justify-between flex-wrap bg-white-500 pt-2 p-3 z-40 shadow-md"
       >
@@ -48,52 +56,45 @@ exports[`NavBar Component Should render along with children componenet 1`] = `
           </Link>
         </div>
         <div
-          className=""
+          className="flex w-56 justify-between"
         >
-          <Link
-            to="/signup"
+          <CreateArticleNav
+            history={
+              Object {
+                "location": Object {
+                  "pathname": "/article/create",
+                },
+              }
+            }
           >
-            <a
-              href="/signup"
+            <Button
+              classes="btn-purple w-40 hidden md:inline"
+              name="Ready To Publish?"
               onClick={[Function]}
+              type="button"
             >
-              <Button
-                classes="btn-purple w-32 hidden md:inline"
-                name="Sign Up"
+              <button
+                className="btn btn-purple w-40 hidden md:inline"
+                disabled={false}
+                onClick={[Function]}
                 type="button"
               >
-                <button
-                  className="btn btn-purple w-32 hidden md:inline"
-                  disabled={false}
-                  type="button"
-                >
-                  Sign Up
-                </button>
-              </Button>
-            </a>
-          </Link>
-          <Link
-            to="/signin"
-          >
-            <a
-              href="/signin"
-              onClick={[Function]}
-            >
-              <Button
-                classes=" cursor-pointer btn-white w-32 ml-2 text-purple-650 border hidden md:inline border-solid border-purple-650"
-                name="Sign In"
-                type="button"
+                Ready To Publish?
+              </button>
+            </Button>
+            <Thumbnail>
+              <div
+                className="w-10"
               >
-                <button
-                  className="btn  cursor-pointer btn-white w-32 ml-2 text-purple-650 border hidden md:inline border-solid border-purple-650"
-                  disabled={false}
-                  type="button"
-                >
-                  Sign In
-                </button>
-              </Button>
-            </a>
-          </Link>
+                <img
+                  alt="Author's Haven"
+                  className="w-full"
+                  id="logo"
+                  src="test-file-stub"
+                />
+              </div>
+            </Thumbnail>
+          </CreateArticleNav>
         </div>
       </nav>
     </NavBar>
@@ -120,26 +121,17 @@ exports[`NavBar Component Should render without errors 1`] = `
     </Link>
   </div>
   <div
-    className=""
+    className="flex w-56 justify-between"
   >
-    <Link
-      to="/signup"
-    >
-      <Button
-        classes="btn-purple w-32 hidden md:inline"
-        name="Sign Up"
-        type="button"
-      />
-    </Link>
-    <Link
-      to="/signin"
-    >
-      <Button
-        classes=" cursor-pointer btn-white w-32 ml-2 text-purple-650 border hidden md:inline border-solid border-purple-650"
-        name="Sign In"
-        type="button"
-      />
-    </Link>
+    <AuthNav
+      history={
+        Object {
+          "location": Object {
+            "pathname": "/signup",
+          },
+        }
+      }
+    />
   </div>
 </nav>
 `;

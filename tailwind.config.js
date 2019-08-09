@@ -10,6 +10,9 @@ module.exports = {
       lg: '1024px',
       xl: '1280px',
     },
+    fontFamily: {
+      montserrat: ['Montserrat'],
+    },
     extend: {
       colors: {
         purple: {
@@ -32,6 +35,7 @@ module.exports = {
       },
       minWidth: {
         ...minWidth,
+        40: '10rem',
         min: '20rem',
         84: '21rem',
         96: '24rem',

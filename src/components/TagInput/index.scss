@@ -1,0 +1,23 @@
+.tag-input-con{
+  @apply rounded-lg border-purple-650 border-solid items-baseline flex overflow-hidden w-full;
+  border-width: .07rem;
+  padding: 0 .4rem .4rem;
+  flex-wrap: wrap;
+
+  .tag-input{
+    @apply rounded-lg min-w-40 flex-grow px-2;
+    height: 2.5rem;
+  }
+  .tag-con{
+    @apply text-xs rounded bg-purple-500 text-white flex items-center;
+    margin: .4rem .3rem 0;
+    padding: .15rem .4rem;
+    p{
+      width: max-content;
+    }
+    button {
+      @apply font-light;
+      margin: 0 0 0 .6rem;
+    }
+  }
+}

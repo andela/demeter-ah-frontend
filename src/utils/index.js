@@ -5,7 +5,8 @@ export const axiosCall = async ({
   path, payload, method,
 }) => {
   const url = `${process.env.SERVER_URL}${path}`;
-  const result = await axios[method](url, payload);
+  const { token } = localStorage;
+  const result = await axios[method](url, payload, { headers: { 'x-access-token': token } });
   const data = result && result.data;
   return data;
 };

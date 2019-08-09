@@ -11,6 +11,7 @@ describe('Sign Up Reducer', () => {
       isCompleted: false,
       isSubmit: false,
       isLoading: false,
+      isSettingAuth: true
     };
   });
 
@@ -76,6 +77,7 @@ describe('Sign Up Reducer', () => {
       {
         ...initialState,
         isAuthenticated: true,
+        isSettingAuth: false,
         user: {
           id: 1,
           name: 'frank',

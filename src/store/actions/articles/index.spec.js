@@ -5,7 +5,7 @@ import axios from 'axios';
 import {
   cleanUpArticle, openPublishModal, draftArticle, publishArticle,
   createArticleSuccess, createArticleError, closePublishModal,
-  createArticle
+  createArticle, getCategories
 } from './index';
 import { axiosCall } from '../../../utils';
 
@@ -167,6 +167,24 @@ describe('ARTICLE ACTIONS', () => {
         expect(actionTypes).toEqual(expectedActions);
       });
       done();
+    });
+
+    test('getCategories', async () => {
+      const data = [
+        {
+          id: 1,
+          name: 'others',
+        },
+        {
+          id: 2,
+          name: 'programming',
+        },
+      ];
+      axiosCall.mockResolvedValue({
+        data,
+      });
+      const r = await getCategories()();
+      expect(r.data).toEqual(data);
     });
   });
 });

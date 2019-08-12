@@ -12,14 +12,18 @@ import Editor from './Editor';
 
 const Article = ({
   isOpen, closeModal, response, cleanUpResponse,
-  createArticle, isPublishing, isDrafting, history
+  createArticle, isPublishing, isDrafting, history, getCategories
 }) => {
+  const [category, setCategory] = useState(null);
   useEffect(() => {
     cleanUpResponse();
+    getCategories().then((res) => {
+      setCategory(res);
+    });
   }, [response]);
 
   const [formData, setformData] = useState({
-    body: {}, title: '', image: null
+    body: {}, title: ''
   });
 
   if (response.message && (!isPublishing || !isDrafting)) {
@@ -99,6 +103,7 @@ const Article = ({
         sendFormData={submitForm}
         articleTitle={formData.title}
         otherFormData={otherFormData}
+        categories={category}
       />
     </Fragment>
   );
@@ -115,6 +120,7 @@ const matchDispatchToProps = {
   closeModal: actions.closePublishModal,
   createArticle: actions.createArticle,
   cleanUpResponse: actions.cleanUpArticle,
+  getCategories: actions.getCategories
 };
 
 export const ArticleComp = Article;

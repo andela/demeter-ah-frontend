@@ -17,10 +17,12 @@ const submitBtn = (submit, isDrafting, isPublishing) => (
 const PublishForm = ({
   isOpen, sendFormData, closeModal,
   articleBody, isDrafting, isPublishing, articleTitle,
-  otherFormData
+  otherFormData, categories
 }) => {
   const hasbody = articleBody && articleBody.length;
   const hasTitle = articleTitle;
+
+  const categoryData = categories && categories.categories;
 
   const formData = {};
   const onChange = (key, value) => { formData[key] = value; };
@@ -60,8 +62,8 @@ const PublishForm = ({
                 }
                 onBlur={e => onBlur('categoryId', e.target.value)}
               >
-                <option value="1">Programming</option>
-                <option value="2">Nigeria</option>
+                <option disabled>Select Category</option>
+                {categoryData.map(e => <option value={e.id} key={e.id}>{e.name}</option>)}
               </select>
             </span>
             <span className="tag-div">

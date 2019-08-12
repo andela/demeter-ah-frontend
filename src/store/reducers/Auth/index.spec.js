@@ -70,18 +70,15 @@ describe('Sign Up Reducer', () => {
     expect(signUpReducer(initialState, {
       type: 'SETUP_USER',
       payload: {
-        id: 1,
-        name: 'frank',
+        user: {},
+        isAuthenticated: false
       },
     })).toEqual(
       {
         ...initialState,
-        isAuthenticated: true,
+        isAuthenticated: false,
         isSettingAuth: false,
-        user: {
-          id: 1,
-          name: 'frank',
-        },
+        user: {},
       }
     );
   });

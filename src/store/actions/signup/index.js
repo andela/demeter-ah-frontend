@@ -25,9 +25,26 @@ export const signUpAction = values => async (dispatch) => {
 
 export const getUser = () => (dispatch) => {
   /* istanbul ignore next */
-  if (localStorage.token && localStorage.user) {
+  // if (localStorage.token && localStorage.user) {
+  try {
     let user = localStorage.getItem('user');
     user = JSON.parse(user);
-    dispatch(setUpUser(user));
+    if (user) {
+      const payload = {
+        user,
+        isAuthenticated: true
+      };
+      dispatch(setUpUser(payload));
+    } else {
+      // eslint-disable-next-line no-throw-literal
+      throw null;
+    }
+  } catch (error) {
+    const payload = {
+      user: {},
+      isAuthenticated: false
+    };
+    dispatch(setUpUser(payload));
   }
+  // }
 };

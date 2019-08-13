@@ -5,6 +5,7 @@ const initState = {
   isAuthenticated: false,
   isCompleted: false,
   isSubmit: false,
+  isSettingAuth: true
 };
 const authReducer = (state = initState, action) => {
   switch (action.type) {
@@ -44,8 +45,8 @@ const authReducer = (state = initState, action) => {
     case 'SETUP_USER':
       return {
         ...state,
-        isAuthenticated: true,
-        user: { ...action.payload },
+        isSettingAuth: false,
+        ...action.payload,
       };
     case 'SIGNUP':
       return {

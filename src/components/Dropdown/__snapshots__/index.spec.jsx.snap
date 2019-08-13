@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DropDown Component Should render without errors 1`] = `
+<ContextProvider
+  value={null}
+>
+  <dropDown
+    dispatch={[Function]}
+    isAuthenticated={false}
+    store={
+      Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+        Symbol(observable): [Function],
+      }
+    }
+    user={Object {}}
+  />
+</ContextProvider>
+`;

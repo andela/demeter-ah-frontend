@@ -54,7 +54,7 @@ export const socialSignInAction = ({ username, token, history }) => async (dispa
   try {
     await dispatch(signInPending());
     const result = await axiosCall({ method: 'get', path: `/api/v1/profiles/${username}` });
-    saveToLocalStorage({ user: result.profile, token });
+    saveToLocalStorage({ ...result.user, token });
     await localStorage.setItem('socialLogin', true);
     await dispatch(signInSuccess(result.user));
     history.push('/');

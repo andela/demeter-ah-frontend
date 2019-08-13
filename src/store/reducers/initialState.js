@@ -8,3 +8,17 @@ export const articles = {
   isSubmitting: false,
   response: {},
 };
+
+export const editProfile = {
+  error: null,
+  isLoading: false,
+  isCompleted: false,
+  pictureFile: null
+};
+
+export const viewProfile = {
+  user: {},
+  error: null,
+  isLoading: false,
+  isCompleted: false,
+};

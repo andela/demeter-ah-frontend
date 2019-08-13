@@ -23,9 +23,10 @@ export const axiosCall = async ({
 
 export const saveToLocalStorage = (user) => {
   if (user) {
-    const { token } = user;
+    const token = user.token || localStorage.getItem('token');
     localStorage.setItem('token', token);
     localStorage.setItem('user', JSON.stringify(user));
+    token ? localStorage.setItem('isAuthenticated', true) : '';
   }
 };
 

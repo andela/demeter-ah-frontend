@@ -1,7 +1,7 @@
 const { defaults } = require('jest-config');
 
 module.exports = {
-  testPathIgnorePatterns: ['/node_modules/'],
+  testPathIgnorePatterns: ['/node_modules/', '/src/assets/'],
   testEnvironment: 'jsdom',
   verbose: true,
   moduleNameMapper: {

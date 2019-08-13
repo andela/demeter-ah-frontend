@@ -1,0 +1,799 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Menutab Component Should render along with children component when username does not matches the current user 1`] = `
+<Provider
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+      Symbol(observable): [Function],
+    }
+  }
+>
+  <BrowserRouter>
+    <Router
+      history={
+        Object {
+          "action": "POP",
+          "block": [Function],
+          "createHref": [Function],
+          "go": [Function],
+          "goBack": [Function],
+          "goForward": [Function],
+          "length": 1,
+          "listen": [Function],
+          "location": Object {
+            "hash": "",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          },
+          "push": [Function],
+          "replace": [Function],
+        }
+      }
+    >
+      <menuTab
+        history={
+          Object {
+            "action": "POP",
+            "block": [Function],
+            "createHref": [Function],
+            "go": [Function],
+            "goBack": [Function],
+            "goForward": [Function],
+            "length": 1,
+            "listen": [Function],
+            "location": Object {
+              "hash": "",
+              "pathname": "/",
+              "search": "",
+              "state": undefined,
+            },
+            "push": [Function],
+            "replace": [Function],
+          }
+        }
+        match={
+          Object {
+            "params": Object {
+              "username": "kelvin",
+            },
+          }
+        }
+        user={
+          Object {
+            "email": "frank@me.com",
+            "firstName": "frank",
+            "lastName": "angle",
+            "password": "12345678",
+            "username": "agnfr",
+          }
+        }
+      >
+        <div
+          className="menuTab min-w-96 w-10/12 px-2 md:w-11/12 md:px-0  lg:w-10/12 lg:justify-start  my-0 mx-auto flex justify-center"
+        >
+          <menu
+            id="articles"
+            name="menuTabs"
+            to="/profile/kelvin/articles"
+          >
+            <div
+              className="menu h-12 flex relative flex-grow w-1/6 max-w-42 bg-white"
+            >
+              <NavLink
+                className="flex w-full text-gray-250 border-solid border-b-2 border-transparent text-center flext text-sm items-center justify-center"
+                to="/profile/kelvin/articles"
+              >
+                <Link
+                  aria-current={null}
+                  className="flex w-full text-gray-250 border-solid border-b-2 border-transparent text-center flext text-sm items-center justify-center"
+                  to="/profile/kelvin/articles"
+                >
+                  <a
+                    aria-current={null}
+                    className="flex w-full text-gray-250 border-solid border-b-2 border-transparent text-center flext text-sm items-center justify-center"
+                    href="/profile/kelvin/articles"
+                    onClick={[Function]}
+                  >
+                    <div
+                      className="menuIcon"
+                    >
+                      <articleIcon>
+                        <svg
+                          fill="none"
+                          height="20"
+                          viewBox="0 0 17 20"
+                          width="17"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M10.8791 6.87231H1.87352C1.77727 6.87231 1.69946 6.94383 1.69946 7.03231C1.69946 7.12079 1.77727 7.19231 1.87352 7.19231H10.8791C10.9753 7.19231 11.0532 7.12079 11.0532 7.03231C11.0532 6.94383 10.9753 6.87231 10.8791 6.87231Z"
+                            fill="black"
+                            fillOpacity="0.5"
+                          />
+                          <path
+                            d="M10.8791 8.43423H1.87352C1.77727 8.43423 1.69946 8.50575 1.69946 8.59423C1.69946 8.68271 1.77727 8.75423 1.87352 8.75423H10.8791C10.9753 8.75423 11.0532 8.68271 11.0532 8.59423C11.0532 8.50575 10.9753 8.43423 10.8791 8.43423Z"
+                            fill="black"
+                            fillOpacity="0.5"
+                          />
+                          <path
+                            d="M10.8791 9.99631H1.87352C1.77727 9.99631 1.69946 10.0678 1.69946 10.1563C1.69946 10.2448 1.77727 10.3163 1.87352 10.3163H10.8791C10.9753 10.3163 11.0532 10.2448 11.0532 10.1563C11.0532 10.0678 10.9753 9.99631 10.8791 9.99631Z"
+                            fill="black"
+                            fillOpacity="0.5"
+                          />
+                          <path
+                            d="M10.8791 11.5581H1.87352C1.77727 11.5581 1.69946 11.6296 1.69946 11.7181C1.69946 11.8066 1.77727 11.8781 1.87352 11.8781H10.8791C10.9753 11.8781 11.0532 11.8066 11.0532 11.7181C11.0532 11.6296 10.9753 11.5581 10.8791 11.5581Z"
+                            fill="black"
+                            fillOpacity="0.5"
+                          />
+                          <path
+                            d="M15.1267 13.12H8.83983C8.74358 13.12 8.66577 13.1915 8.66577 13.28C8.66577 13.3685 8.74358 13.44 8.83983 13.44H15.1267C15.223 13.44 15.3008 13.3685 15.3008 13.28C15.3008 13.1915 15.223 13.12 15.1267 13.12Z"
+                            fill="black"
+                            fillOpacity="0.5"
+                          />
+                          <path
+                            d="M15.1267 14.6819H8.83983C8.74358 14.6819 8.66577 14.7535 8.66577 14.8419C8.66577 14.9304 8.74358 15.0019 8.83983 15.0019H15.1267C15.223 15.0019 15.3008 14.9304 15.3008 14.8419C15.3008 14.7535 15.223 14.6819 15.1267 14.6819Z"
+                            fill="black"
+                            fillOpacity="0.5"
+                          />
+                          <path
+                            d="M15.1267 16.2437H8.83983C8.74358 16.2437 8.66577 16.3152 8.66577 16.4037C8.66577 16.4921 8.74358 16.5637 8.83983 16.5637H15.1267C15.223 16.5637 15.3008 16.4921 15.3008 16.4037C15.3008 16.3152 15.223 16.2437 15.1267 16.2437Z"
+                            fill="black"
+                            fillOpacity="0.5"
+                          />
+                          <path
+                            d="M15.1267 17.8058H8.83983C8.74358 17.8058 8.66577 17.8773 8.66577 17.9658C8.66577 18.0542 8.74358 18.1258 8.83983 18.1258H15.1267C15.223 18.1258 15.3008 18.0542 15.3008 17.9658C15.3008 17.8773 15.223 17.8058 15.1267 17.8058Z"
+                            fill="black"
+                            fillOpacity="0.5"
+                          />
+                          <path
+                            d="M15.1268 6.87231H12.4082C12.3119 6.87231 12.2341 6.94383 12.2341 7.03231C12.2341 7.12079 12.3119 7.19231 12.4082 7.19231H15.1268C15.2231 7.19231 15.3009 7.12079 15.3009 7.03231C15.3009 6.94383 15.2231 6.87231 15.1268 6.87231Z"
+                            fill="black"
+                            fillOpacity="0.5"
+                          />
+                          <path
+                            d="M15.1268 8.43423H12.4082C12.3119 8.43423 12.2341 8.50575 12.2341 8.59423C12.2341 8.68271 12.3119 8.75423 12.4082 8.75423H15.1268C15.2231 8.75423 15.3009 8.68271 15.3009 8.59423C15.3009 8.50575 15.2231 8.43423 15.1268 8.43423Z"
+                            fill="black"
+                            fillOpacity="0.5"
+                          />
+                          <path
+                            d="M15.1268 9.99631H12.4082C12.3119 9.99631 12.2341 10.0678 12.2341 10.1563C12.2341 10.2448 12.3119 10.3163 12.4082 10.3163H15.1268C15.2231 10.3163 15.3009 10.2448 15.3009 10.1563C15.3009 10.0678 15.2231 9.99631 15.1268 9.99631Z"
+                            fill="black"
+                            fillOpacity="0.5"
+                          />
+                          <path
+                            d="M15.1268 11.5581H12.4082C12.3119 11.5581 12.2341 11.6296 12.2341 11.7181C12.2341 11.8066 12.3119 11.8781 12.4082 11.8781H15.1268C15.2231 11.8781 15.3009 11.8066 15.3009 11.7181C15.3009 11.6296 15.2231 11.5581 15.1268 11.5581Z"
+                            fill="black"
+                            fillOpacity="0.5"
+                          />
+                          <path
+                            d="M16.4862 0H0.514001C0.23063 0 0 0.21184 0 0.47232V19.5277C0 19.7882 0.23063 20 0.514001 20H16.4862C16.7695 20 17 19.7882 17 19.5277V0.47232C17 0.21184 16.7695 0 16.4862 0ZM16.6519 19.5277C16.6519 19.6117 16.5776 19.68 16.4862 19.68H0.514001C0.42262 19.68 0.348122 19.6117 0.348122 19.5277V0.47232C0.348122 0.38832 0.42262 0.32 0.514001 0.32H16.4862C16.5776 0.32 16.6519 0.38832 16.6519 0.47232V19.5277Z"
+                            fill="black"
+                            fillOpacity="0.5"
+                          />
+                          <path
+                            d="M15.127 1.87424H1.87352C1.77727 1.87424 1.69946 1.94576 1.69946 2.03424V5.4704C1.69946 5.55888 1.77727 5.6304 1.87352 5.6304H15.1269C15.2231 5.6304 15.3009 5.55888 15.3011 5.4704V2.03424C15.3011 1.94576 15.2233 1.87424 15.127 1.87424ZM14.953 5.3104H2.04758V2.19424H14.953V5.3104Z"
+                            fill="black"
+                            fillOpacity="0.5"
+                          />
+                          <path
+                            d="M6.97107 13.12H1.87352C1.77727 13.12 1.69946 13.1915 1.69946 13.28V17.9658C1.69946 18.0542 1.77727 18.1258 1.87352 18.1258H6.97107C7.06733 18.1258 7.14513 18.0542 7.14513 17.9658V13.28C7.14513 13.1915 7.06733 13.12 6.97107 13.12ZM6.79701 17.8058H2.04758V13.44H6.79701V17.8058Z"
+                            fill="black"
+                            fillOpacity="0.5"
+                          />
+                        </svg>
+                      </articleIcon>
+                    </div>
+                    <span
+                      className="hidden md:block"
+                    >
+                      Articles
+                    </span>
+                  </a>
+                </Link>
+              </NavLink>
+            </div>
+          </menu>
+          <menu
+            id="following"
+            name="menuTabs"
+            to="/profile/kelvin/following"
+          >
+            <div
+              className="menu h-12 flex relative flex-grow w-1/6 max-w-42 bg-white"
+            >
+              <NavLink
+                className="flex w-full text-gray-250 border-solid border-b-2 border-transparent text-center flext text-sm items-center justify-center"
+                to="/profile/kelvin/following"
+              >
+                <Link
+                  aria-current={null}
+                  className="flex w-full text-gray-250 border-solid border-b-2 border-transparent text-center flext text-sm items-center justify-center"
+                  to="/profile/kelvin/following"
+                >
+                  <a
+                    aria-current={null}
+                    className="flex w-full text-gray-250 border-solid border-b-2 border-transparent text-center flext text-sm items-center justify-center"
+                    href="/profile/kelvin/following"
+                    onClick={[Function]}
+                  >
+                    <div
+                      className="menuIcon"
+                    >
+                      <img
+                        alt="following"
+                        className="h-5 w-5"
+                        src="test-file-stub"
+                      />
+                    </div>
+                    <span
+                      className="hidden md:block"
+                    >
+                      Following
+                    </span>
+                  </a>
+                </Link>
+              </NavLink>
+            </div>
+          </menu>
+          <menu
+            id="followers"
+            name="menuTabs"
+            to="/profile/kelvin/followers"
+          >
+            <div
+              className="menu h-12 flex relative flex-grow w-1/6 max-w-42 bg-white"
+            >
+              <NavLink
+                className="flex w-full text-gray-250 border-solid border-b-2 border-transparent text-center flext text-sm items-center justify-center"
+                to="/profile/kelvin/followers"
+              >
+                <Link
+                  aria-current={null}
+                  className="flex w-full text-gray-250 border-solid border-b-2 border-transparent text-center flext text-sm items-center justify-center"
+                  to="/profile/kelvin/followers"
+                >
+                  <a
+                    aria-current={null}
+                    className="flex w-full text-gray-250 border-solid border-b-2 border-transparent text-center flext text-sm items-center justify-center"
+                    href="/profile/kelvin/followers"
+                    onClick={[Function]}
+                  >
+                    <div
+                      className="menuIcon"
+                    >
+                      <img
+                        alt="followers"
+                        className="h-5 w-5"
+                        src="test-file-stub"
+                      />
+                    </div>
+                    <span
+                      className="hidden md:block"
+                    >
+                      Followers
+                    </span>
+                  </a>
+                </Link>
+              </NavLink>
+            </div>
+          </menu>
+        </div>
+      </menuTab>
+    </Router>
+  </BrowserRouter>
+</Provider>
+`;
+
+exports[`Menutab Component Should render along with children component when username matches the current user 1`] = `
+<Provider
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+      Symbol(observable): [Function],
+    }
+  }
+>
+  <BrowserRouter>
+    <Router
+      history={
+        Object {
+          "action": "POP",
+          "block": [Function],
+          "createHref": [Function],
+          "go": [Function],
+          "goBack": [Function],
+          "goForward": [Function],
+          "length": 1,
+          "listen": [Function],
+          "location": Object {
+            "hash": "",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          },
+          "push": [Function],
+          "replace": [Function],
+        }
+      }
+    >
+      <menuTab
+        history={
+          Object {
+            "action": "POP",
+            "block": [Function],
+            "createHref": [Function],
+            "go": [Function],
+            "goBack": [Function],
+            "goForward": [Function],
+            "length": 1,
+            "listen": [Function],
+            "location": Object {
+              "hash": "",
+              "pathname": "/",
+              "search": "",
+              "state": undefined,
+            },
+            "push": [Function],
+            "replace": [Function],
+          }
+        }
+        match={
+          Object {
+            "params": Object {
+              "username": "kelvin",
+            },
+          }
+        }
+        user={
+          Object {
+            "email": "frank@me.com",
+            "firstName": "frank",
+            "lastName": "angle",
+            "password": "12345678",
+            "username": "kelvin",
+          }
+        }
+      >
+        <div
+          className="menuTab min-w-96 w-10/12 px-2 md:w-11/12 md:px-0  lg:w-10/12 lg:justify-start  my-0 mx-auto flex justify-center"
+        >
+          <menu
+            id="articles"
+            name="menuTabs"
+            to="/profile/kelvin/articles"
+          >
+            <div
+              className="menu h-12 flex relative flex-grow w-1/6 max-w-42 bg-white"
+            >
+              <NavLink
+                className="flex w-full text-gray-250 border-solid border-b-2 border-transparent text-center flext text-sm items-center justify-center"
+                to="/profile/kelvin/articles"
+              >
+                <Link
+                  aria-current={null}
+                  className="flex w-full text-gray-250 border-solid border-b-2 border-transparent text-center flext text-sm items-center justify-center"
+                  to="/profile/kelvin/articles"
+                >
+                  <a
+                    aria-current={null}
+                    className="flex w-full text-gray-250 border-solid border-b-2 border-transparent text-center flext text-sm items-center justify-center"
+                    href="/profile/kelvin/articles"
+                    onClick={[Function]}
+                  >
+                    <div
+                      className="menuIcon"
+                    >
+                      <articleIcon>
+                        <svg
+                          fill="none"
+                          height="20"
+                          viewBox="0 0 17 20"
+                          width="17"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M10.8791 6.87231H1.87352C1.77727 6.87231 1.69946 6.94383 1.69946 7.03231C1.69946 7.12079 1.77727 7.19231 1.87352 7.19231H10.8791C10.9753 7.19231 11.0532 7.12079 11.0532 7.03231C11.0532 6.94383 10.9753 6.87231 10.8791 6.87231Z"
+                            fill="black"
+                            fillOpacity="0.5"
+                          />
+                          <path
+                            d="M10.8791 8.43423H1.87352C1.77727 8.43423 1.69946 8.50575 1.69946 8.59423C1.69946 8.68271 1.77727 8.75423 1.87352 8.75423H10.8791C10.9753 8.75423 11.0532 8.68271 11.0532 8.59423C11.0532 8.50575 10.9753 8.43423 10.8791 8.43423Z"
+                            fill="black"
+                            fillOpacity="0.5"
+                          />
+                          <path
+                            d="M10.8791 9.99631H1.87352C1.77727 9.99631 1.69946 10.0678 1.69946 10.1563C1.69946 10.2448 1.77727 10.3163 1.87352 10.3163H10.8791C10.9753 10.3163 11.0532 10.2448 11.0532 10.1563C11.0532 10.0678 10.9753 9.99631 10.8791 9.99631Z"
+                            fill="black"
+                            fillOpacity="0.5"
+                          />
+                          <path
+                            d="M10.8791 11.5581H1.87352C1.77727 11.5581 1.69946 11.6296 1.69946 11.7181C1.69946 11.8066 1.77727 11.8781 1.87352 11.8781H10.8791C10.9753 11.8781 11.0532 11.8066 11.0532 11.7181C11.0532 11.6296 10.9753 11.5581 10.8791 11.5581Z"
+                            fill="black"
+                            fillOpacity="0.5"
+                          />
+                          <path
+                            d="M15.1267 13.12H8.83983C8.74358 13.12 8.66577 13.1915 8.66577 13.28C8.66577 13.3685 8.74358 13.44 8.83983 13.44H15.1267C15.223 13.44 15.3008 13.3685 15.3008 13.28C15.3008 13.1915 15.223 13.12 15.1267 13.12Z"
+                            fill="black"
+                            fillOpacity="0.5"
+                          />
+                          <path
+                            d="M15.1267 14.6819H8.83983C8.74358 14.6819 8.66577 14.7535 8.66577 14.8419C8.66577 14.9304 8.74358 15.0019 8.83983 15.0019H15.1267C15.223 15.0019 15.3008 14.9304 15.3008 14.8419C15.3008 14.7535 15.223 14.6819 15.1267 14.6819Z"
+                            fill="black"
+                            fillOpacity="0.5"
+                          />
+                          <path
+                            d="M15.1267 16.2437H8.83983C8.74358 16.2437 8.66577 16.3152 8.66577 16.4037C8.66577 16.4921 8.74358 16.5637 8.83983 16.5637H15.1267C15.223 16.5637 15.3008 16.4921 15.3008 16.4037C15.3008 16.3152 15.223 16.2437 15.1267 16.2437Z"
+                            fill="black"
+                            fillOpacity="0.5"
+                          />
+                          <path
+                            d="M15.1267 17.8058H8.83983C8.74358 17.8058 8.66577 17.8773 8.66577 17.9658C8.66577 18.0542 8.74358 18.1258 8.83983 18.1258H15.1267C15.223 18.1258 15.3008 18.0542 15.3008 17.9658C15.3008 17.8773 15.223 17.8058 15.1267 17.8058Z"
+                            fill="black"
+                            fillOpacity="0.5"
+                          />
+                          <path
+                            d="M15.1268 6.87231H12.4082C12.3119 6.87231 12.2341 6.94383 12.2341 7.03231C12.2341 7.12079 12.3119 7.19231 12.4082 7.19231H15.1268C15.2231 7.19231 15.3009 7.12079 15.3009 7.03231C15.3009 6.94383 15.2231 6.87231 15.1268 6.87231Z"
+                            fill="black"
+                            fillOpacity="0.5"
+                          />
+                          <path
+                            d="M15.1268 8.43423H12.4082C12.3119 8.43423 12.2341 8.50575 12.2341 8.59423C12.2341 8.68271 12.3119 8.75423 12.4082 8.75423H15.1268C15.2231 8.75423 15.3009 8.68271 15.3009 8.59423C15.3009 8.50575 15.2231 8.43423 15.1268 8.43423Z"
+                            fill="black"
+                            fillOpacity="0.5"
+                          />
+                          <path
+                            d="M15.1268 9.99631H12.4082C12.3119 9.99631 12.2341 10.0678 12.2341 10.1563C12.2341 10.2448 12.3119 10.3163 12.4082 10.3163H15.1268C15.2231 10.3163 15.3009 10.2448 15.3009 10.1563C15.3009 10.0678 15.2231 9.99631 15.1268 9.99631Z"
+                            fill="black"
+                            fillOpacity="0.5"
+                          />
+                          <path
+                            d="M15.1268 11.5581H12.4082C12.3119 11.5581 12.2341 11.6296 12.2341 11.7181C12.2341 11.8066 12.3119 11.8781 12.4082 11.8781H15.1268C15.2231 11.8781 15.3009 11.8066 15.3009 11.7181C15.3009 11.6296 15.2231 11.5581 15.1268 11.5581Z"
+                            fill="black"
+                            fillOpacity="0.5"
+                          />
+                          <path
+                            d="M16.4862 0H0.514001C0.23063 0 0 0.21184 0 0.47232V19.5277C0 19.7882 0.23063 20 0.514001 20H16.4862C16.7695 20 17 19.7882 17 19.5277V0.47232C17 0.21184 16.7695 0 16.4862 0ZM16.6519 19.5277C16.6519 19.6117 16.5776 19.68 16.4862 19.68H0.514001C0.42262 19.68 0.348122 19.6117 0.348122 19.5277V0.47232C0.348122 0.38832 0.42262 0.32 0.514001 0.32H16.4862C16.5776 0.32 16.6519 0.38832 16.6519 0.47232V19.5277Z"
+                            fill="black"
+                            fillOpacity="0.5"
+                          />
+                          <path
+                            d="M15.127 1.87424H1.87352C1.77727 1.87424 1.69946 1.94576 1.69946 2.03424V5.4704C1.69946 5.55888 1.77727 5.6304 1.87352 5.6304H15.1269C15.2231 5.6304 15.3009 5.55888 15.3011 5.4704V2.03424C15.3011 1.94576 15.2233 1.87424 15.127 1.87424ZM14.953 5.3104H2.04758V2.19424H14.953V5.3104Z"
+                            fill="black"
+                            fillOpacity="0.5"
+                          />
+                          <path
+                            d="M6.97107 13.12H1.87352C1.77727 13.12 1.69946 13.1915 1.69946 13.28V17.9658C1.69946 18.0542 1.77727 18.1258 1.87352 18.1258H6.97107C7.06733 18.1258 7.14513 18.0542 7.14513 17.9658V13.28C7.14513 13.1915 7.06733 13.12 6.97107 13.12ZM6.79701 17.8058H2.04758V13.44H6.79701V17.8058Z"
+                            fill="black"
+                            fillOpacity="0.5"
+                          />
+                        </svg>
+                      </articleIcon>
+                    </div>
+                    <span
+                      className="hidden md:block"
+                    >
+                      Articles
+                    </span>
+                  </a>
+                </Link>
+              </NavLink>
+            </div>
+          </menu>
+          <menu
+            id="following"
+            name="menuTabs"
+            to="/profile/kelvin/following"
+          >
+            <div
+              className="menu h-12 flex relative flex-grow w-1/6 max-w-42 bg-white"
+            >
+              <NavLink
+                className="flex w-full text-gray-250 border-solid border-b-2 border-transparent text-center flext text-sm items-center justify-center"
+                to="/profile/kelvin/following"
+              >
+                <Link
+                  aria-current={null}
+                  className="flex w-full text-gray-250 border-solid border-b-2 border-transparent text-center flext text-sm items-center justify-center"
+                  to="/profile/kelvin/following"
+                >
+                  <a
+                    aria-current={null}
+                    className="flex w-full text-gray-250 border-solid border-b-2 border-transparent text-center flext text-sm items-center justify-center"
+                    href="/profile/kelvin/following"
+                    onClick={[Function]}
+                  >
+                    <div
+                      className="menuIcon"
+                    >
+                      <img
+                        alt="following"
+                        className="h-5 w-5"
+                        src="test-file-stub"
+                      />
+                    </div>
+                    <span
+                      className="hidden md:block"
+                    >
+                      Following
+                    </span>
+                  </a>
+                </Link>
+              </NavLink>
+            </div>
+          </menu>
+          <menu
+            id="followers"
+            name="menuTabs"
+            to="/profile/kelvin/followers"
+          >
+            <div
+              className="menu h-12 flex relative flex-grow w-1/6 max-w-42 bg-white"
+            >
+              <NavLink
+                className="flex w-full text-gray-250 border-solid border-b-2 border-transparent text-center flext text-sm items-center justify-center"
+                to="/profile/kelvin/followers"
+              >
+                <Link
+                  aria-current={null}
+                  className="flex w-full text-gray-250 border-solid border-b-2 border-transparent text-center flext text-sm items-center justify-center"
+                  to="/profile/kelvin/followers"
+                >
+                  <a
+                    aria-current={null}
+                    className="flex w-full text-gray-250 border-solid border-b-2 border-transparent text-center flext text-sm items-center justify-center"
+                    href="/profile/kelvin/followers"
+                    onClick={[Function]}
+                  >
+                    <div
+                      className="menuIcon"
+                    >
+                      <img
+                        alt="followers"
+                        className="h-5 w-5"
+                        src="test-file-stub"
+                      />
+                    </div>
+                    <span
+                      className="hidden md:block"
+                    >
+                      Followers
+                    </span>
+                  </a>
+                </Link>
+              </NavLink>
+            </div>
+          </menu>
+          <menu
+            id="bookmark"
+            name="menuTabs"
+            to="/profile/kelvin/bookmark"
+          >
+            <div
+              className="menu h-12 flex relative flex-grow w-1/6 max-w-42 bg-white"
+            >
+              <NavLink
+                className="flex w-full text-gray-250 border-solid border-b-2 border-transparent text-center flext text-sm items-center justify-center"
+                to="/profile/kelvin/bookmark"
+              >
+                <Link
+                  aria-current={null}
+                  className="flex w-full text-gray-250 border-solid border-b-2 border-transparent text-center flext text-sm items-center justify-center"
+                  to="/profile/kelvin/bookmark"
+                >
+                  <a
+                    aria-current={null}
+                    className="flex w-full text-gray-250 border-solid border-b-2 border-transparent text-center flext text-sm items-center justify-center"
+                    href="/profile/kelvin/bookmark"
+                    onClick={[Function]}
+                  >
+                    <div
+                      className="menuIcon"
+                    >
+                      <bookmarkIcon>
+                        <svg
+                          fill="none"
+                          height="20"
+                          viewBox="0 0 14 20"
+                          width="14"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M13.7869 0.661109C13.6446 0.414194 13.4531 0.233627 13.2127 0.119082C13.0595 0.0398638 12.8991 0.000185198 12.7313 0.000185198V0H1.26868C1.101 0 0.940681 0.0396786 0.787521 0.118897C0.54694 0.233349 0.35547 0.414148 0.213305 0.660924C0.0711783 0.9077 0 1.18077 0 1.48047V18.5195C0 18.8193 0.0711783 19.0923 0.213305 19.3393C0.35547 19.586 0.54694 19.7668 0.787521 19.8812C0.940528 19.9604 1.101 20 1.26868 20C1.61151 20 1.91396 19.8545 2.17653 19.564L7.00004 13.9589L11.8235 19.5641C12.0788 19.8456 12.3814 19.9867 12.7313 19.9867C12.9136 19.9867 13.0741 19.9517 13.2126 19.8811C13.4531 19.7667 13.6446 19.586 13.7868 19.3389C13.929 19.0923 14 18.8192 14 18.5195V1.48065C14 1.18096 13.9289 0.907885 13.7869 0.661109ZM12.6001 18.1095L7.97351 12.7427L7.00004 11.6193L6.02664 12.7427L1.40012 18.1095V1.6922H12.6001V18.1095Z"
+                            fill="black"
+                            fillOpacity="0.5"
+                          />
+                        </svg>
+                      </bookmarkIcon>
+                    </div>
+                    <span
+                      className="hidden md:block"
+                    >
+                      Bookmarks
+                    </span>
+                  </a>
+                </Link>
+              </NavLink>
+            </div>
+          </menu>
+          <menu
+            id="stat"
+            name="menuTabs"
+            to="/profile/kelvin/stat"
+          >
+            <div
+              className="menu h-12 flex relative flex-grow w-1/6 max-w-42 bg-white"
+            >
+              <NavLink
+                className="flex w-full text-gray-250 border-solid border-b-2 border-transparent text-center flext text-sm items-center justify-center"
+                to="/profile/kelvin/stat"
+              >
+                <Link
+                  aria-current={null}
+                  className="flex w-full text-gray-250 border-solid border-b-2 border-transparent text-center flext text-sm items-center justify-center"
+                  to="/profile/kelvin/stat"
+                >
+                  <a
+                    aria-current={null}
+                    className="flex w-full text-gray-250 border-solid border-b-2 border-transparent text-center flext text-sm items-center justify-center"
+                    href="/profile/kelvin/stat"
+                    onClick={[Function]}
+                  >
+                    <div
+                      className="menuIcon"
+                    >
+                      <statIcon>
+                        <svg
+                          fill="none"
+                          height="20"
+                          viewBox="0 0 22 20"
+                          width="22"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M21.5416 19.0908H21.0833V4.99997C21.0833 4.74872 20.8783 4.54541 20.6249 4.54541H17.8749C17.6216 4.54541 17.4166 4.74872 17.4166 4.99997V19.0909H15.5832V11.3636C15.5832 11.1123 15.3782 10.909 15.1249 10.909H12.3749C12.1215 10.909 11.9165 11.1123 11.9165 11.3636V19.0908H10.0832V8.63632C10.0832 8.38507 9.8782 8.18176 9.62485 8.18176H6.87486C6.62151 8.18176 6.41651 8.38507 6.41651 8.63632V19.0908H4.58317V14.0909C4.58317 13.8396 4.37816 13.6363 4.12482 13.6363H1.375C1.12165 13.6363 0.916651 13.8396 0.916651 14.0909V19.0908H0.458347C0.205004 19.0908 0 19.2942 0 19.5454C0 19.7967 0.205004 20 0.458347 20H21.5417C21.795 20 22 19.7967 22 19.5454C22 19.2942 21.795 19.0908 21.5416 19.0908ZM3.66665 19.0908H1.83334V14.5454H3.66669V19.0908H3.66665ZM9.16663 19.0908H7.33329V9.09088H9.16663V19.0908ZM14.6666 19.0908H12.8333V11.8182H14.6666V19.0908ZM20.1666 19.0908H18.3333V5.45449H20.1666V19.0908Z"
+                            fill="black"
+                            fillOpacity="0.5"
+                          />
+                          <path
+                            d="M2.75007 10.909C3.25538 10.909 3.66672 10.5011 3.66672 9.99997C3.66672 9.92147 3.64047 9.8512 3.62152 9.77846L8.02671 5.40967C8.10006 5.42846 8.17087 5.4545 8.25006 5.4545C8.43311 5.4545 8.59411 5.38743 8.73737 5.2953L12.8456 7.33244C12.8783 7.80434 13.2661 8.18177 13.75 8.18177C14.2553 8.18177 14.6667 7.77383 14.6667 7.2727C14.6667 7.16872 14.6394 7.0725 14.6068 6.97939L19.0946 1.78692C19.1471 1.79625 19.1949 1.81815 19.25 1.81815C19.7554 1.81815 20.1667 1.41021 20.1667 0.909076C20.1667 0.40794 19.7554 0 19.25 0C18.7447 0 18.3334 0.40794 18.3334 0.909076C18.3334 1.01305 18.3607 1.10928 18.3932 1.20239L13.9054 6.39477C13.853 6.38552 13.8051 6.36358 13.7501 6.36358C13.5669 6.36358 13.4059 6.43065 13.2626 6.52287L9.15455 4.48568C9.12177 4.01382 8.73406 3.63631 8.25011 3.63631C7.74479 3.63631 7.33346 4.04425 7.33346 4.54538C7.33346 4.62388 7.35971 4.69415 7.37866 4.76689L2.97342 9.13572C2.90008 9.11693 2.82926 9.09089 2.75007 9.09089C2.24476 9.09089 1.83342 9.49883 1.83342 9.99997C1.83342 10.5011 2.24476 10.909 2.75007 10.909Z"
+                            fill="black"
+                            fillOpacity="0.5"
+                          />
+                        </svg>
+                      </statIcon>
+                    </div>
+                    <span
+                      className="hidden md:block"
+                    >
+                      Read Articles
+                    </span>
+                  </a>
+                </Link>
+              </NavLink>
+            </div>
+          </menu>
+          <menu
+            id="settings"
+            name="menuTabs"
+            to="/profile/kelvin/editprofile"
+          >
+            <div
+              className="menu h-12 flex relative flex-grow w-1/6 max-w-42 bg-white"
+            >
+              <NavLink
+                className="flex w-full text-gray-250 border-solid border-b-2 border-transparent text-center flext text-sm items-center justify-center"
+                to="/profile/kelvin/editprofile"
+              >
+                <Link
+                  aria-current={null}
+                  className="flex w-full text-gray-250 border-solid border-b-2 border-transparent text-center flext text-sm items-center justify-center"
+                  to="/profile/kelvin/editprofile"
+                >
+                  <a
+                    aria-current={null}
+                    className="flex w-full text-gray-250 border-solid border-b-2 border-transparent text-center flext text-sm items-center justify-center"
+                    href="/profile/kelvin/editprofile"
+                    onClick={[Function]}
+                  >
+                    <div
+                      className="menuIcon"
+                    >
+                      <settingsIcon>
+                        <svg
+                          fill="none"
+                          height="20"
+                          viewBox="0 0 19 20"
+                          width="19"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            clipRule="evenodd"
+                            d="M18.9405 8.88961C18.9105 8.60847 18.5991 8.39721 18.3298 8.39721C17.4592 8.39721 16.6866 7.85912 16.3626 7.02694C16.0316 6.1746 16.2451 5.18057 16.8939 4.55407C17.0982 4.35755 17.123 4.02856 16.9517 3.80003C16.5061 3.20442 15.9996 2.6664 15.4466 2.20012C15.2301 2.01721 14.9124 2.04266 14.7246 2.26151C14.1583 2.92164 13.1412 3.16699 12.3552 2.82178C11.5372 2.45961 11.0214 1.58717 11.0719 0.650665C11.0885 0.356505 10.8843 0.100743 10.6057 0.0665863C9.89604 -0.0198088 9.18018 -0.0224878 8.46842 0.0606331C8.19299 0.0926314 7.98875 0.342366 7.99801 0.632806C8.02898 1.56008 7.50696 2.41726 6.69714 2.76642C5.92055 3.10031 4.91053 2.85705 4.34539 2.2028C4.15861 1.9873 3.84606 1.96081 3.62846 2.13933C3.05908 2.60955 2.54124 3.14801 2.09154 3.73872C1.91615 3.96836 1.94195 4.30121 2.14824 4.49878C2.80945 5.12907 3.02295 6.13173 2.67945 6.9939C2.35149 7.81588 1.54061 8.34564 0.612309 8.34564C0.311075 8.33544 0.0965142 8.54827 0.0635701 8.83655C-0.019992 9.58784 -0.0209818 10.3533 0.0594697 11.1107C0.0893032 11.3931 0.41019 11.6025 0.682439 11.6025C1.50972 11.5802 2.30398 12.1193 2.63717 12.9728C2.9693 13.8251 2.7558 14.8186 2.10596 15.4456C1.90271 15.6421 1.87691 15.9706 2.04821 16.1991C2.48963 16.7909 2.99616 17.3295 3.55112 17.7996C3.76879 17.9842 4.08551 17.9582 4.2742 17.7393C4.84259 17.0776 5.85968 16.8327 6.64257 17.1786C7.46256 17.5396 7.97836 18.412 7.92788 19.349C7.91141 19.6433 8.11664 19.8995 8.39412 19.9332C8.75714 19.9777 9.12235 20 9.48855 20C9.83617 20 10.1838 19.9799 10.5315 19.9392C10.807 19.9072 11.0111 19.6574 11.0018 19.3665C10.9699 18.4397 11.4928 17.5826 12.3016 17.234C13.0834 16.8979 14.0892 17.1439 14.6544 17.7975C14.8423 18.0125 15.1526 18.0385 15.3714 17.8606C15.9397 17.3915 16.4565 16.8534 16.9083 16.2611C17.0837 16.032 17.0589 15.6986 16.8516 15.5011C16.1903 14.8708 15.9758 13.868 16.3193 13.0064C16.6422 12.1954 17.423 11.6508 18.2628 11.6508L18.3803 11.654C18.6527 11.6773 18.9033 11.4565 18.9363 11.1638C19.02 10.4118 19.021 9.647 18.9405 8.88961ZM9.51507 13.3567C7.76761 13.3567 6.34621 11.8605 6.34621 10.0212C6.34621 8.18185 7.76761 6.6856 9.51507 6.6856C11.2624 6.6856 12.6839 8.18185 12.6839 10.0212C12.6839 11.8605 11.2624 13.3567 9.51507 13.3567Z"
+                            fill="black"
+                            fillOpacity="0.5"
+                            fillRule="evenodd"
+                          />
+                        </svg>
+                      </settingsIcon>
+                    </div>
+                    <span
+                      className="hidden md:block"
+                    >
+                      Edit Profile
+                    </span>
+                  </a>
+                </Link>
+              </NavLink>
+            </div>
+          </menu>
+        </div>
+      </menuTab>
+    </Router>
+  </BrowserRouter>
+</Provider>
+`;
+
+exports[`Menutab Component Should render without errors 1`] = `
+<Router
+  history={
+    Object {
+      "action": "POP",
+      "block": [Function],
+      "createHref": [Function],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "length": 1,
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "pathname": "/",
+        "search": "",
+        "state": undefined,
+      },
+      "push": [Function],
+      "replace": [Function],
+    }
+  }
+>
+  <menuTab
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "createHref": [Function],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "pathname": "/",
+          "search": "",
+          "state": undefined,
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
+    store={
+      Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+        Symbol(observable): [Function],
+      }
+    }
+  />
+</Router>
+`;

@@ -63,6 +63,8 @@ const FeaturedImage = ({ articleBanner, articleTitle }) => {
         onChange={
           selectArticleImage
         }
+        accept="image/*"
+        data-max-size="2000"
       />
     </div>
   );

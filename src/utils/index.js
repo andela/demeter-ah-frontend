@@ -2,11 +2,21 @@ import axios from 'axios';
 import Cryptr from 'cryptr';
 
 export const axiosCall = async ({
-  path, payload, method,
+  path, payload, method, contentType
 }) => {
   const url = `${process.env.SERVER_URL}${path}`;
-  const { token } = localStorage;
-  const result = await axios[method](url, payload, { headers: { 'x-access-token': token } });
+  const headers = {
+    'x-access-token': localStorage.token,
+    'Content-Type': contentType || 'application/json',
+  };
+  const axiosdata = {
+    method,
+    url,
+    data: payload,
+    headers,
+    json: true,
+  };
+  const result = await axios(axiosdata);
   const data = result && result.data;
   return data;
 };

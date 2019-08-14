@@ -2,8 +2,12 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Routes from '../../routes';
 
-const AuthWrapper = connect(({ auth }) => ({ auth }))(({ auth }) => (auth.isSettingAuth ? (
-  null
-) : <Routes />));
+const AuthWrapper = ({ isSettingAuth }) => (
+  isSettingAuth ? (null) : <Routes />
+);
 
-export default AuthWrapper;
+const mapStateToProps = state => ({
+  isSettingAuth: state.auth.isSettingAuth
+});
+
+export default connect(mapStateToProps)(AuthWrapper);

@@ -1,0 +1,378 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserInfo Component Should render along with children component 1`] = `
+<Provider
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+      Symbol(observable): [Function],
+    }
+  }
+>
+  <BrowserRouter>
+    <Router
+      history={
+        Object {
+          "action": "POP",
+          "block": [Function],
+          "createHref": [Function],
+          "go": [Function],
+          "goBack": [Function],
+          "goForward": [Function],
+          "length": 1,
+          "listen": [Function],
+          "location": Object {
+            "hash": "",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          },
+          "push": [Function],
+          "replace": [Function],
+        }
+      }
+    >
+      <Connect(userInfo)
+        setImage={[Function]}
+        store={
+          Object {
+            "dispatch": [Function],
+            "getState": [Function],
+            "replaceReducer": [Function],
+            "subscribe": [Function],
+            Symbol(observable): [Function],
+          }
+        }
+        user={
+          Object {
+            "email": "kevo@me.com",
+            "firstName": "kevo",
+            "image": "somelink",
+            "lastName": "baba",
+            "username": "frankobaba",
+          }
+        }
+      >
+        <userInfo
+          isCompleted={false}
+          loggedInUser={Object {}}
+          setImage={[Function]}
+          store={
+            Object {
+              "dispatch": [Function],
+              "getState": [Function],
+              "replaceReducer": [Function],
+              "subscribe": [Function],
+              Symbol(observable): [Function],
+            }
+          }
+          user={
+            Object {
+              "email": "kevo@me.com",
+              "firstName": "kevo",
+              "image": "somelink",
+              "lastName": "baba",
+              "username": "frankobaba",
+            }
+          }
+        >
+          <div
+            className="userInfo w-full lg:w-10/12 mx-auto flex justify-center lg:justify-start items-center py-10"
+          >
+            <div
+              className="profileImg relative sm:min-w-32 sm:mr-4 sm:ml-2 md:mr-12"
+            >
+              <img
+                alt=""
+                className="prodilePic shadow-md h-32 w-32 md:h-40 md:w-40  lg:h-48 lg:w-48 object-cover rounded-full"
+                src="somelink"
+              />
+              <div
+                className="upload absolute rounded-full hide"
+              >
+                <label
+                  htmlFor="changePhoto"
+                >
+                  <img
+                    alt=""
+                    className=" m-0 h-9 w-9 rounded-full cursor-pointer border-4 border-solid border-white"
+                    src="test-file-stub"
+                  />
+                </label>
+                <input
+                  accept="image/*"
+                  className="hidden"
+                  data-max-size="2000"
+                  id="changePhoto"
+                  onChange={[Function]}
+                  type="file"
+                />
+              </div>
+            </div>
+            <div
+              className="info text-left h-full px-2"
+            >
+              <p
+                className="username my-2 font-semibold text-1.5xl md:text-3xl"
+              >
+                frankobaba
+              </p>
+              <p
+                className="fullname mb-2 text-sm md:text-1.5xl text-gray-550"
+              >
+                kevo  baba
+              </p>
+              <div
+                className="membership flex mb-2"
+              >
+                <div
+                  className="mr-5 flex  sm:flex-row flex-col items-start items-center"
+                >
+                  <strong
+                    className="md:mr-1 text-sm text-left w-full md:text-base font-semibold"
+                  />
+                  <small
+                    className="text-gray-550 text-xs font-semibold"
+                  >
+                    Following
+                  </small>
+                </div>
+                <div
+                  className="flex flex-col sm:flex-row items-start items-center"
+                >
+                  <strong
+                    className="md:mr-1 text-sm text-left w-full md:text-base font-semibold"
+                  />
+                  <small
+                    className="text-gray-550 font-semibold"
+                  >
+                    Followers
+                  </small>
+                </div>
+              </div>
+              <p
+                className="bio text-xs md:text-sm max-w-86 md:max-w-118 lg:max-w-122"
+              />
+            </div>
+          </div>
+        </userInfo>
+      </Connect(userInfo)>
+    </Router>
+  </BrowserRouter>
+</Provider>
+`;
+
+exports[`UserInfo Component Should render along with children component wher image is null 1`] = `
+<Provider
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+      Symbol(observable): [Function],
+    }
+  }
+>
+  <BrowserRouter>
+    <Router
+      history={
+        Object {
+          "action": "POP",
+          "block": [Function],
+          "createHref": [Function],
+          "go": [Function],
+          "goBack": [Function],
+          "goForward": [Function],
+          "length": 1,
+          "listen": [Function],
+          "location": Object {
+            "hash": "",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          },
+          "push": [Function],
+          "replace": [Function],
+        }
+      }
+    >
+      <Connect(userInfo)
+        setImage={[Function]}
+        store={
+          Object {
+            "dispatch": [Function],
+            "getState": [Function],
+            "replaceReducer": [Function],
+            "subscribe": [Function],
+            Symbol(observable): [Function],
+          }
+        }
+        user={
+          Object {
+            "email": "kevo@me.com",
+            "firstName": "kevo",
+            "image": null,
+            "lastName": "baba",
+            "username": "frankobaba",
+          }
+        }
+      >
+        <userInfo
+          isCompleted={false}
+          loggedInUser={Object {}}
+          setImage={[Function]}
+          store={
+            Object {
+              "dispatch": [Function],
+              "getState": [Function],
+              "replaceReducer": [Function],
+              "subscribe": [Function],
+              Symbol(observable): [Function],
+            }
+          }
+          user={
+            Object {
+              "email": "kevo@me.com",
+              "firstName": "kevo",
+              "image": null,
+              "lastName": "baba",
+              "username": "frankobaba",
+            }
+          }
+        >
+          <div
+            className="userInfo w-full lg:w-10/12 mx-auto flex justify-center lg:justify-start items-center py-10"
+          >
+            <div
+              className="profileImg relative sm:min-w-32 sm:mr-4 sm:ml-2 md:mr-12"
+            >
+              <img
+                alt=""
+                className="prodilePic shadow-md h-32 w-32 md:h-40 md:w-40  lg:h-48 lg:w-48 object-cover rounded-full"
+                src="https://i.imgur.com/wtjaVfi.png"
+              />
+              <div
+                className="upload absolute rounded-full hide"
+              >
+                <label
+                  htmlFor="changePhoto"
+                >
+                  <img
+                    alt=""
+                    className=" m-0 h-9 w-9 rounded-full cursor-pointer border-4 border-solid border-white"
+                    src="test-file-stub"
+                  />
+                </label>
+                <input
+                  accept="image/*"
+                  className="hidden"
+                  data-max-size="2000"
+                  id="changePhoto"
+                  onChange={[Function]}
+                  type="file"
+                />
+              </div>
+            </div>
+            <div
+              className="info text-left h-full px-2"
+            >
+              <p
+                className="username my-2 font-semibold text-1.5xl md:text-3xl"
+              >
+                frankobaba
+              </p>
+              <p
+                className="fullname mb-2 text-sm md:text-1.5xl text-gray-550"
+              >
+                kevo  baba
+              </p>
+              <div
+                className="membership flex mb-2"
+              >
+                <div
+                  className="mr-5 flex  sm:flex-row flex-col items-start items-center"
+                >
+                  <strong
+                    className="md:mr-1 text-sm text-left w-full md:text-base font-semibold"
+                  />
+                  <small
+                    className="text-gray-550 text-xs font-semibold"
+                  >
+                    Following
+                  </small>
+                </div>
+                <div
+                  className="flex flex-col sm:flex-row items-start items-center"
+                >
+                  <strong
+                    className="md:mr-1 text-sm text-left w-full md:text-base font-semibold"
+                  />
+                  <small
+                    className="text-gray-550 font-semibold"
+                  >
+                    Followers
+                  </small>
+                </div>
+              </div>
+              <p
+                className="bio text-xs md:text-sm max-w-86 md:max-w-118 lg:max-w-122"
+              />
+            </div>
+          </div>
+        </userInfo>
+      </Connect(userInfo)>
+    </Router>
+  </BrowserRouter>
+</Provider>
+`;
+
+exports[`UserInfo Component Should render without errors 1`] = `
+<Router
+  history={
+    Object {
+      "action": "POP",
+      "block": [Function],
+      "createHref": [Function],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "length": 1,
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "pathname": "/",
+        "search": "",
+        "state": undefined,
+      },
+      "push": [Function],
+      "replace": [Function],
+    }
+  }
+>
+  <Connect(userInfo)
+    setImage={[Function]}
+    store={
+      Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+        Symbol(observable): [Function],
+      }
+    }
+    user={
+      Object {
+        "email": "kevo@me.com",
+        "firstName": "kevo",
+        "image": "somelink",
+        "lastName": "baba",
+        "username": "frankobaba",
+      }
+    }
+  />
+</Router>
+`;

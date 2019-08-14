@@ -1,0 +1,21 @@
+.menuTab {
+  font-family: 'Montserrat', sans-serif;
+  .menu{
+      .menuIcon {
+        margin-right: 10%;
+      }
+      
+    .active {
+      color: black;
+      font-weight: 600;
+      border-color: #835BD8;
+    }
+    .active path {
+      fill-opacity: 100;
+    }
+    .active img {
+      fill-opacity: 100;
+    }
+    
+  }
+}

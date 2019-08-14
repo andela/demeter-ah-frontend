@@ -1,0 +1,20 @@
+.content {
+  font-family: 'Montserrat', sans-serif;
+  form {
+    input {
+        background-color: #c4c4c410;
+        box-shadow: none;
+    }
+    .uploadBtn {
+      border-radius: 5px;
+      background-color: #AD93E6;
+      box-shadow: none;
+    }
+
+    textarea {
+      resize: none;
+    }
+   
+  }
+ 
+}

@@ -2,20 +2,20 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { shallow, mount } from 'enzyme';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { createBrowserHistory } from 'history';
-import NavBar from './index';
+import UserNavInfo from './index';
 import store from '../../store';
 
-let history;
-describe('NavBar Component', () => {
-  beforeEach(() => {
-    history = createBrowserHistory();
-  });
-
+const user = {
+  firstName: 'frank',
+  lastName: 'angle',
+  username: 'agnfr',
+  email: 'frank@me.com',
+};
+describe('UserNav Component', () => {
   it('Should render without errors', () => {
     const component = shallow(
       <Router>
-        <NavBar store={store} history={history} />
+        <UserNavInfo store={store} user={user} />
       </Router>
     );
     expect(component).toMatchSnapshot();
@@ -25,12 +25,11 @@ describe('NavBar Component', () => {
     const component = mount(
       <Provider store={store}>
         <Router>
-          <NavBar history={history} />
+          <UserNavInfo />
         </Router>
       </Provider>
     );
     expect(component).toMatchSnapshot();
-    expect(component.find('button')).toHaveLength(2);
     expect(component.find('img')).toHaveLength(1);
   });
 });

@@ -5,7 +5,7 @@ const {
   minHeight,
   maxHeight,
   fontSize,
-} = require ('tailwindcss/defaultTheme');
+} = require('tailwindcss/defaultTheme');
 
 module.exports = {
   theme: {
@@ -120,10 +120,10 @@ module.exports = {
         xls0: '140px',
         xls1: '180px',
         xls2: '210px',
-        xls2x: '170px',
+        ' xls2x': '170px',
         xls3: '295px',
         xlx1: '400px',
-        '4xl': '3rem',
+        xl4: '3rem',
       },
       height: {
         sm: '8px',

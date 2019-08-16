@@ -1,0 +1,6 @@
+.following, .followers{
+  @apply flex-grow flex overflow-y-auto justify-center w-full border-t-2 border-solid border-gray-20 bg-purple-50 mb-6;
+  .list{
+    @apply px-4 m-6 cursor-pointer;
+  }
+}

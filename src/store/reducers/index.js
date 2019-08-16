@@ -4,6 +4,7 @@ import resetPassword from './resetPassword';
 import articles from './articles';
 import editProfile from './editProfile';
 import viewProfile from './viewProfile';
+import membership from './Membership';
 
 const reducers = combineReducers({
   auth: authReducer,
@@ -11,6 +12,7 @@ const reducers = combineReducers({
   articles,
   editProfile,
   viewProfile,
+  membership,
 });
 
 export default reducers;

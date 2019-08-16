@@ -8,9 +8,7 @@ import callToast from '../../components/Toast';
 
 const Profile = (props) => {
   const {
-    user: {
-      firstName, lastName, username, bio
-    },
+    user,
     isLoading,
     error,
     isCompleted,
@@ -18,7 +16,9 @@ const Profile = (props) => {
     history,
     match,
   } = props;
-
+  const {
+    firstName, lastName, username, bio
+  } = user;
   const [values, setValues] = useState({
     firstName,
     lastName,
@@ -47,20 +47,19 @@ const Profile = (props) => {
     () => {
       if (match.params.username !== username) {
         history.push('/');
-      } else {
-        if (error) {
-          callToast(error, 'error');
-        }
-
-        if (isCompleted && !error) {
-          callToast('Profile updated successfully', 'success');
-        }
       }
+      if (error) {
+        callToast(error, 'error');
+      }
+      if (isCompleted) {
+        callToast('Profile updated successfully', 'success');
+      }
+
       return () => {
         props.editProfileCleanUp();
       };
     },
-    [isCompleted, error, match.params.username]
+    [user, error, match.params.username]
   );
 
   return (

@@ -3,7 +3,12 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import './index.scss';
 
-const dropDown = ({ user, handleDropDown }) => {
+const dropDown = ({ user, handleDropDown, handleSignOut }) => {
+  const signOut = () => {
+    handleDropDown();
+    handleSignOut();
+  };
+
   const username = user && user.username;
   return (
     <div className="dropdown absolute min-w-48 flex flex-col">
@@ -14,7 +19,7 @@ const dropDown = ({ user, handleDropDown }) => {
       <ul className="">
         <Link onClick={handleDropDown} to="/article/create">
           <li className="text-xs-2 border-b-2 border-gray-40 py-3 px-8 bg-white cursor-pointer text-center text-gray-550">
-              Write a Story
+            Write a Story
           </li>
         </Link>
         <Link onClick={handleDropDown} to={`/profile/${username}/followers`}>
@@ -37,11 +42,11 @@ const dropDown = ({ user, handleDropDown }) => {
             Article Stats
           </li>
         </Link>
-        <Link onClick={handleDropDown} to="/signup">
+        <div onClick={signOut} role="button" onKeyPress={signOut} tabIndex={0}>
           <li className="text-xs-2 border-b-2 border-gray-40 py-3 px-8 bg-white cursor-pointer text-center text-gray-550">
             Sign out
           </li>
-        </Link>
+        </div>
       </ul>
     </div>
   );

@@ -1,25 +1,34 @@
 import React, { useState, Fragment } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import * as actions from '../../store/actions/articles';
+import { signOutAction } from '../../store/actions/signOut';
 import { AuthNav, CreateArticleNav } from './navComps';
 import logo from '../../assets/images/logo.png';
 import UserNavInfo from '../UserNavInfo';
 import Search from '../Search';
 import Dropdown from '../Dropdown';
 
-const NavBar = ({ history, isAuthenticated, openModal }) => {
+const NavBar = ({
+  history, isAuthenticated, openModal, onSignOut
+}) => {
   const [toggle, setToggle] = useState(false);
   const path = history.location.pathname;
+
   const handleDropDown = () => {
     setToggle(prevState => !prevState);
+  };
+
+  const handleSignOut = () => {
+    onSignOut();
+    return (<Redirect to="/" />);
   };
 
   const showNavComp = () => (
     <Fragment>
       <UserNavInfo onClick={handleDropDown} />
-      { path === '/article/create' ? <CreateArticleNav history={history} openModal={openModal} /> : '' }
-      { toggle ? <Dropdown handleDropDown={handleDropDown} /> : ''}
+      {path === '/article/create' ? <CreateArticleNav history={history} openModal={openModal} /> : ''}
+      {toggle ? <Dropdown handleDropDown={handleDropDown} handleSignOut={handleSignOut} /> : ''}
     </Fragment>
   );
 
@@ -32,7 +41,7 @@ const NavBar = ({ history, isAuthenticated, openModal }) => {
       </div>
       <div className="flex relative">
         <Search />
-        { isAuthenticated ? showNavComp() : <AuthNav /> }
+        {isAuthenticated ? showNavComp() : <AuthNav />}
       </div>
     </nav>
   );
@@ -44,4 +53,5 @@ const mapStateToProps = state => ({
 
 export default connect(mapStateToProps, {
   openModal: actions.openPublishModal,
+  onSignOut: signOutAction,
 })(NavBar);

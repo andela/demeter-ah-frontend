@@ -1,5 +1,15 @@
 import axios from 'axios';
 import Cryptr from 'cryptr';
+import toast from '../components/Toast';
+
+let history = {};
+export const setHistory = ({ routeHistory }) => {
+  history = routeHistory;
+};
+
+export const clearLocalStorage = () => {
+  localStorage.clear();
+};
 
 export const axiosCall = async ({
   path, payload, method, contentType
@@ -16,9 +26,21 @@ export const axiosCall = async ({
     headers,
     json: true,
   };
-  const result = await axios(axiosdata);
-  const data = result && result.data;
-  return data;
+
+  try {
+    const result = await axios(axiosdata);
+    const data = result && result.data;
+    return data;
+  } catch (error) {
+    const { response } = error;
+    if (response.data.message === 'Unauthorized access') {
+      clearLocalStorage();
+      toast('Kindly login', 'error');
+      history.push('/');
+      return;
+    }
+    throw error;
+  }
 };
 
 export const saveToLocalStorage = (user) => {
@@ -28,10 +50,6 @@ export const saveToLocalStorage = (user) => {
     localStorage.setItem('user', JSON.stringify(user));
     token ? localStorage.setItem('isAuthenticated', true) : '';
   }
-};
-
-export const clearLocalStorage = () => {
-  localStorage.clear();
 };
 
 export const decryptQuery = (string) => {
@@ -48,4 +66,29 @@ export const cardStyle = (imgURL) => {
     backgroundImage: `url(${imgURL})`,
   };
   return card;
+};
+
+export const setUpUser = payload => ({ type: 'SETUP_USER', payload });
+
+export const getUser = () => (dispatch) => {
+  try {
+    let user = localStorage.getItem('user');
+    user = JSON.parse(user);
+    if (user) {
+      const payload = {
+        user,
+        isAuthenticated: true
+      };
+      dispatch(setUpUser(payload));
+    } else {
+      // eslint-disable-next-line no-throw-literal
+      throw null;
+    }
+  } catch (error) {
+    const payload = {
+      user: {},
+      isAuthenticated: false
+    };
+    dispatch(setUpUser(payload));
+  }
 };

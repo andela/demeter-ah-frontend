@@ -22,3 +22,11 @@ export const viewProfile = {
   isLoading: false,
   isCompleted: false,
 };
+
+export const membership = {
+  followers: [],
+  following: [],
+  error: null,
+  isLoading: false,
+  isCompleted: false,
+};

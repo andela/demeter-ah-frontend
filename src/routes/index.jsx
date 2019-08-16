@@ -8,22 +8,31 @@ import SignUp from '../views/Signup';
 import SignIn from '../views/SignIn';
 import ArticleCreate from '../views/Article';
 import Profile from '../views/Profile';
+import Following from '../views/Following';
+import Followers from '../views/Followers';
 import Dashboard from '../views/Dashboard';
 import PrivateRoute from './PrivateRoute';
+import { setHistory } from '../utils';
+import PublicRoute from './PublicRoute';
 
-const app = ({ history }) => (
-  <Fragment>
-    <NavBar history={history} />
-    <Route exact path="/" component={Home} />
-    <Route path="/signup" component={SignUp} />
-    <Route path="/signin" component={SignIn} />
-    <PrivateRoute path="/article/create" component={ArticleCreate} />
-    <Route path="/reset-password" component={ResetPassword} />
-    <Route path="/profile/:username" component={Dashboard} />
-    <PrivateRoute path="/profile/:username/editprofile" component={Profile} />
-    <ToastContainer autoClose={5000} position="top-center" hideProgressBar rtl={false} pauseOnHover />
-  </Fragment>
-);
+const app = ({ history }) => {
+  setHistory(history);
+  return (
+    <Fragment>
+      <NavBar history={history} />
+      <Route exact path="/" component={Home} />
+      <PublicRoute path="/signup" component={SignUp} />
+      <PublicRoute path="/signin" component={SignIn} />
+      <PrivateRoute path="/article/create" component={ArticleCreate} />
+      <PublicRoute path="/reset-password" component={ResetPassword} />
+      <Route path="/profile/:username" component={Dashboard} />
+      <PrivateRoute path="/profile/:username/editprofile" component={Profile} />
+      <PrivateRoute path="/profile/:username/following" component={Following} />
+      <PrivateRoute path="/profile/:username/followers" component={Followers} />
+      <ToastContainer autoClose={5000} position="top-center" hideProgressBar rtl={false} pauseOnHover />
+    </Fragment>
+  );
+};
 
 const AppWithRouter = withRouter(app);
 

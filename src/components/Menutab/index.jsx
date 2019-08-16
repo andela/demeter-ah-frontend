@@ -12,7 +12,7 @@ const menuTab = ({ user, match }) => {
   const username = user && user.username;
   const params = match.params.username;
   return (
-    <div className="menuTab min-w-96 w-10/12 px-2 md:w-11/12 md:px-0  lg:w-10/12 lg:justify-start  my-0 mx-auto flex justify-center">
+    <div className="menuTab min-w-96 w-10/12 px-2 md:w-11/12 md:px-0  lg:w-10/12 lg:justify-around  my-0 mx-auto flex justify-center">
       <Menu id="articles" name="menuTabs" to={`/profile/${params}/articles`}>
         <div className="menuIcon">
           <ArticleIcon />
@@ -31,7 +31,7 @@ const menuTab = ({ user, match }) => {
         </div>
         <span className="hidden md:block">Followers</span>
       </Menu>
-      { username === params ? (
+      {username === params ? (
         <Fragment>
           <Menu id="bookmark" name="menuTabs" to={`/profile/${username}/bookmark`}>
             <div className="menuIcon">

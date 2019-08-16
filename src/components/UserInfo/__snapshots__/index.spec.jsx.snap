@@ -132,7 +132,7 @@ exports[`UserInfo Component Should render along with children component 1`] = `
                   className="mr-5 flex  sm:flex-row flex-col items-start items-center"
                 >
                   <strong
-                    className="md:mr-1 text-sm text-left w-full md:text-base font-semibold"
+                    className="mr-1 text-sm text-left w-full md:text-base font-semibold"
                   />
                   <small
                     className="text-gray-550 text-xs font-semibold"
@@ -144,7 +144,7 @@ exports[`UserInfo Component Should render along with children component 1`] = `
                   className="flex flex-col sm:flex-row items-start items-center"
                 >
                   <strong
-                    className="md:mr-1 text-sm text-left w-full md:text-base font-semibold"
+                    className="mr-1 text-sm text-left w-full md:text-base font-semibold"
                   />
                   <small
                     className="text-gray-550 font-semibold"
@@ -156,6 +156,15 @@ exports[`UserInfo Component Should render along with children component 1`] = `
               <p
                 className="bio text-xs md:text-sm max-w-86 md:max-w-118 lg:max-w-122"
               />
+              <Connect(Followbtn)>
+                <Followbtn
+                  followAction={[Function]}
+                  getFollower={[Function]}
+                  updateProfile={[Function]}
+                  user={Object {}}
+                  viewedUser={Object {}}
+                />
+              </Connect(Followbtn)>
             </div>
           </div>
         </userInfo>
@@ -297,7 +306,7 @@ exports[`UserInfo Component Should render along with children component wher ima
                   className="mr-5 flex  sm:flex-row flex-col items-start items-center"
                 >
                   <strong
-                    className="md:mr-1 text-sm text-left w-full md:text-base font-semibold"
+                    className="mr-1 text-sm text-left w-full md:text-base font-semibold"
                   />
                   <small
                     className="text-gray-550 text-xs font-semibold"
@@ -309,7 +318,7 @@ exports[`UserInfo Component Should render along with children component wher ima
                   className="flex flex-col sm:flex-row items-start items-center"
                 >
                   <strong
-                    className="md:mr-1 text-sm text-left w-full md:text-base font-semibold"
+                    className="mr-1 text-sm text-left w-full md:text-base font-semibold"
                   />
                   <small
                     className="text-gray-550 font-semibold"
@@ -321,6 +330,15 @@ exports[`UserInfo Component Should render along with children component wher ima
               <p
                 className="bio text-xs md:text-sm max-w-86 md:max-w-118 lg:max-w-122"
               />
+              <Connect(Followbtn)>
+                <Followbtn
+                  followAction={[Function]}
+                  getFollower={[Function]}
+                  updateProfile={[Function]}
+                  user={Object {}}
+                  viewedUser={Object {}}
+                />
+              </Connect(Followbtn)>
             </div>
           </div>
         </userInfo>

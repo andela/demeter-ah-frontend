@@ -74,7 +74,7 @@ exports[`Menutab Component Should render along with children component when user
         }
       >
         <div
-          className="menuTab min-w-96 w-10/12 px-2 md:w-11/12 md:px-0  lg:w-10/12 lg:justify-start  my-0 mx-auto flex justify-center"
+          className="menuTab min-w-96 w-10/12 px-2 md:w-11/12 md:px-0  lg:w-10/12 lg:justify-around  my-0 mx-auto flex justify-center"
         >
           <menu
             id="articles"
@@ -363,7 +363,7 @@ exports[`Menutab Component Should render along with children component when user
         }
       >
         <div
-          className="menuTab min-w-96 w-10/12 px-2 md:w-11/12 md:px-0  lg:w-10/12 lg:justify-start  my-0 mx-auto flex justify-center"
+          className="menuTab min-w-96 w-10/12 px-2 md:w-11/12 md:px-0  lg:w-10/12 lg:justify-around  my-0 mx-auto flex justify-center"
         >
           <menu
             id="articles"

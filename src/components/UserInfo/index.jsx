@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import './index.scss';
 import uploadIcon from '../../assets/images/upload.png';
 import { setProfileImage } from '../../store/actions/editProfile';
+import FollowBtn from '../FollowButton';
 
 const userInfo = ({ user, setImage, loggedInUser }) => {
   const [userData, setUser] = useState({
@@ -70,7 +71,7 @@ const userInfo = ({ user, setImage, loggedInUser }) => {
         <p className="fullname mb-2 text-sm md:text-1.5xl text-gray-550">{`${userData.firstName}  ${userData.lastName}`}</p>
         <div className="membership flex mb-2">
           <div className="mr-5 flex  sm:flex-row flex-col items-start items-center">
-            <strong className="md:mr-1 text-sm text-left w-full md:text-base font-semibold">
+            <strong className="mr-1 text-sm text-left w-full md:text-base font-semibold">
               {userData.followingNo}
             </strong>
             <small className="text-gray-550 text-xs font-semibold">
@@ -78,7 +79,7 @@ const userInfo = ({ user, setImage, loggedInUser }) => {
             </small>
           </div>
           <div className="flex flex-col sm:flex-row items-start items-center">
-            <strong className="md:mr-1 text-sm text-left w-full md:text-base font-semibold">
+            <strong className="mr-1 text-sm text-left w-full md:text-base font-semibold">
               {userData.followersNo}
             </strong>
             <small className="text-gray-550 font-semibold">Followers</small>
@@ -87,6 +88,7 @@ const userInfo = ({ user, setImage, loggedInUser }) => {
         <p className="bio text-xs md:text-sm max-w-86 md:max-w-118 lg:max-w-122">
           {userData.bio}
         </p>
+        <FollowBtn />
       </div>
     </div>
   );

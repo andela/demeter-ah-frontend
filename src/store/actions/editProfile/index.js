@@ -4,7 +4,7 @@ import { setUpUser } from '../signup';
 import { profileSuccess } from '../viewProfile';
 
 export const editProfileCleanUp = () => ({
-  type: types.EDIT_PROFILE_CLEAN_UP
+  type: types.EDIT_PROFILE_CLEAN_UP,
 });
 
 export const updateProfile = () => ({
@@ -29,7 +29,11 @@ export const saveLocalImage = pictureFile => ({
   payload: { pictureFile },
 });
 
-export const editProfile = ({ values, pictureFile }, username, history) => async (dispatch) => {
+export const editProfile = (
+  { values, pictureFile },
+  username,
+  history
+) => async (dispatch) => {
   dispatch(updateProfile());
   const profileForm = new FormData();
   Object.keys(values).map(async (key) => {
@@ -45,17 +49,38 @@ export const editProfile = ({ values, pictureFile }, username, history) => async
       method: 'put',
       contentType: 'multipart/form-data',
     });
+    dispatch(editProfileSuccess());
     saveToLocalStorage(result.user);
-    dispatch(setUpUser(result.user));
+    dispatch(setUpUser({ user: result.user }));
     dispatch(profileSuccess(result.user));
     history.push(`/profile/${result.user.username}/editprofile`);
-    dispatch(editProfileSuccess());
   } catch (err) {
     /* istanbul ignore next */
     const { response } = err;
     /* istanbul ignore next */
-    const error = response ? response.data.message : err.message;
+    const error = (response
+        && response.data
+        && (response.data.message || response.data.error))
+      || err.message;
     dispatch(editProfileError(error));
+  }
+};
+
+export const updateProfileInfo = user => async (dispatch) => {
+  try {
+    const result = await axiosCall({
+      method: 'get',
+      path: `/api/v1/profiles/${user.username}`,
+    });
+    saveToLocalStorage(result.user);
+    dispatch(setUpUser({ user: result.user }));
+  } catch (err) {
+    const { response } = err;
+    const error = (response
+        && response.data
+        && (response.data.message || response.data.error))
+      || err.message;
+    console.log('error', error);
   }
 };
 

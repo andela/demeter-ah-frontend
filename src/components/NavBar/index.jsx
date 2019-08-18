@@ -2,7 +2,7 @@ import React, {
   useState, useRef, useEffect, Fragment,
 } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import * as actions from '../../store/actions/articles';
 import { AuthNav, CreateArticleNav } from './navComps';
 import logo from '../../assets/images/logo.png';
@@ -26,8 +26,8 @@ const NavBar = ({ history, isAuthenticated, openModal }) => {
   const showNavComp = () => (
     <Fragment>
       <UserNavInfo onClick={handleDropDown} refname={dropdownIcon} />
-      { path === '/article/create' ? <CreateArticleNav history={history} openModal={openModal} /> : '' }
-      { toggle ? <Dropdown handleDropDown={handleDropDown} /> : ''}
+      {path === '/article/create' ? <CreateArticleNav history={history} openModal={openModal} /> : ''}
+      {toggle ? <Dropdown handleDropDown={handleDropDown} /> : ''}
     </Fragment>
   );
 
@@ -59,4 +59,4 @@ const mapStateToProps = state => ({
 
 export default connect(mapStateToProps, {
   openModal: actions.openPublishModal,
-})(NavBar);
+})(withRouter(NavBar));

@@ -26,8 +26,6 @@ const FollowList = ({
   }
   const thisUser = (match.params.username === user.username);
 
-  console.log(member.bio, '<<<<<');
-
   const handleFollow = async ({ target: { id } }) => {
     setIsFollowing(true);
     await followUserAction(id);
@@ -61,7 +59,6 @@ const FollowList = ({
             </div>
           )}
       </Link>
-
       <div className="info">
         <Link to={`/profile/${member.username}/articles`}><h4 className="fullname">{`${member.firstName} ${member.lastName}`}</h4></Link>
         <p className="bio">{member.bio}</p>

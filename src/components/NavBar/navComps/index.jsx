@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Button from '../../Button';
-import User from '../../../assets/images/user.png';
 
 export const AuthNav = () => (
   <>
@@ -23,5 +22,5 @@ export const AuthNav = () => (
 );
 
 export const CreateArticleNav = ({ openModal }) => (
-  <Button type="button" onClick={() => openModal()} name="Ready To Publish?" classes="btn-purple w-40 hidden md:inline" />
+  <Button type="button" onClick={() => openModal()} name="Next Step" classes="btn-purple" />
 );

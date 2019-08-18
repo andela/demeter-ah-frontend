@@ -1,6 +1,7 @@
 .tag-input-con{
-  @apply rounded-lg border-purple-650 border-solid items-baseline flex overflow-hidden w-full;
+  @apply border-purple-650 border-solid items-baseline flex overflow-hidden w-full;
   border-width: .07rem;
+  border-radius: .5rem;
   padding: 0 .4rem .4rem;
   flex-wrap: wrap;
 

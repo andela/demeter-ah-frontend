@@ -63,7 +63,7 @@ const Profile = (props) => {
   );
 
   return (
-    <div className="flex-grow border-t-2 border-solid border-gray-20 content bg-purple-50 mb-6">
+    <div className="flex-grow border-t-2 border-solid border-gray-20 overflow-y-auto content bg-purple-50 mb-6">
       <form
         className=" flex flex-col min-w-96 max-w-180 w-3/4 m-auto text-left justify-center p-2"
         onSubmit={onUpdate}
@@ -100,7 +100,7 @@ const Profile = (props) => {
           labelClass="block mb-1 text-sm"
           inputType="text"
           onChange={onChange}
-          inputClass="w-full px-2 py-3 text-sm order border-solid border-gray-350 text-gray-250"
+          inputClass="w-full px-2 py-3 text-sm border border-solid border-gray-350 text-gray-250"
           value={values.username}
         />
         <div className="my-4 w-full">

@@ -10,7 +10,6 @@ const Dashboard = ({
   history,
   match,
   user,
-  isLoading,
   viewedUser,
   getUserInfo,
   setUserInfo,
@@ -23,11 +22,11 @@ const Dashboard = ({
     } else if (username === user.username) {
       setUserInfo(user);
     }
-  }, [username, viewedUser, user]);
+  }, [username, user]);
 
   return (
     <Fragment>
-      {isLoading ? <Loader /> : <UserInfo user={viewedUser} />}
+      {!viewedUser.username ? <Loader /> : <UserInfo user={viewedUser} />}
       <MenuTab match={match} user={user} history={history} />
     </Fragment>
   );
@@ -39,7 +38,6 @@ const mapStateToProps = state => ({
   isFollowed: state.viewProfile.isFollowed,
   isCompleted: state.viewProfile.isCompleted,
   error: state.viewProfile.error,
-  isLoading: state.viewProfile.isLoading
 });
 
 const mapDispatchToProps = {

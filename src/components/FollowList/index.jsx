@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import './index.scss';
 import { getFollowingAction, getFollowersAction, followUser } from '../../store/actions/Membership';
 import { updateProfileInfo } from '../../store/actions/editProfile';
@@ -16,49 +17,55 @@ const FollowList = ({
   followUserAction,
 }) => {
   const [isFollowing, setIsFollowing] = useState(false);
-
   let followStatus = null;
-  let button = 'Unfollow';
+  let button = 'Following';
+
   if (member.followers) {
     followStatus = (member.followers.length !== 0);
-    button = followStatus ? 'Unfollow' : 'Follow';
+    button = followStatus ? 'Following' : 'Follow';
   }
+  const thisUser = (match.params.username === user.username);
+
+  console.log(member.bio, '<<<<<');
 
   const handleFollow = async ({ target: { id } }) => {
     setIsFollowing(true);
-    await followUserAction({ viewedUser: { id }, user });
-    if (match.params.username === user.username) {
+    await followUserAction(id);
+    if (thisUser) {
       await getFollowing();
-      await updateProfile(user);
     } else {
       type === 'follower' ? await getFollowers(match.params.username) : await getFollowing(match.params.username);
-      await updateProfile(user);
       setIsFollowing(false);
     }
+    await updateProfile(user);
   };
 
   return (
     <li key={member.id} className="followList">
-      {member.image
-        ? (
-          <div
-            style={{ backgroundImage: `url(${member.image})` }}
-            className="dp"
-          />
-        )
-        : (
-          <div className="dp bg-purple-500">
-            <p className="altDp">
-              {String(member.firstName)
-                .substring(1, 0)
-                .toUpperCase()}
-            </p>
-          </div>
-        )}
+      <Link to={`/profile/${member.username}/articles`}>
+        {member.image
+          ? (
+
+            <div
+              style={{ backgroundImage: `url(${member.image})` }}
+              className="dp"
+            />
+          )
+          : (
+            <div className="dp bg-purple-500">
+              <p className="altDp">
+                {String(member.firstName)
+                  .substring(1, 0)
+                  .toUpperCase()}
+              </p>
+            </div>
+          )}
+      </Link>
+
       <div className="info">
-        <h4 className="fullname">{`${member.firstName} ${member.lastName}`}</h4>
+        <Link to={`/profile/${member.username}/articles`}><h4 className="fullname">{`${member.firstName} ${member.lastName}`}</h4></Link>
         <p className="bio">{member.bio}</p>
-      </div>
+      </div> 
       {
         (showButton && (user.username !== member.username))
           ? (
@@ -66,7 +73,7 @@ const FollowList = ({
               id={member.id}
               type="button"
               disabled={isFollowing}
-              className={followStatus ? 'unfollow' : 'follow'}
+              className={button === 'Following' ? 'unfollow' : 'follow'}
               onClick={handleFollow}
             >
               { isFollowing ? 'Loading..' : button}

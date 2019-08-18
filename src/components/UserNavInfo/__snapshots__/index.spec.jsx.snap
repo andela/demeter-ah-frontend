@@ -64,40 +64,44 @@ exports[`UserNav Component Should render along with children component 1`] = `
                 </svg>
               </notifIcon>
             </div>
-            <img
-              alt=""
-              className="h-10 w-10 mx-2 rounded-full object-cover"
-              src="https://i.imgur.com/wtjaVfi.png"
-            />
-            <dropdown
-              classes="mx-2 cursor-pointer"
+            <div
+              className="flex items-center cursor-pointer"
             >
-              <svg
-                className="mx-2 cursor-pointer"
-                fill="none"
-                height="8"
-                viewBox="0 0 11 8"
-                width="11"
-                xmlns="http://www.w3.org/2000/svg"
+              <img
+                alt=""
+                className="h-10 w-10 mx-2 rounded-full object-cover"
+                src="https://i.imgur.com/wtjaVfi.png"
+              />
+              <dropdown
+                classes="mx-2 cursor-pointer"
               >
-                <rect
-                  fill="#a0a0a0"
-                  height="7.82521"
-                  transform="rotate(-135 5.46698 7.50476)"
-                  width="2.70873"
-                  x="5.46698"
-                  y="7.50476"
-                />
-                <rect
-                  fill="#a0a0a0"
-                  height="7.82521"
-                  transform="rotate(136.839 7.32864 5.70798)"
-                  width="2.70873"
-                  x="7.32864"
-                  y="5.70798"
-                />
-              </svg>
-            </dropdown>
+                <svg
+                  className="mx-2 cursor-pointer"
+                  fill="none"
+                  height="8"
+                  viewBox="0 0 11 8"
+                  width="11"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect
+                    fill="#a0a0a0"
+                    height="7.82521"
+                    transform="rotate(-135 5.46698 7.50476)"
+                    width="2.70873"
+                    x="5.46698"
+                    y="7.50476"
+                  />
+                  <rect
+                    fill="#a0a0a0"
+                    height="7.82521"
+                    transform="rotate(136.839 7.32864 5.70798)"
+                    width="2.70873"
+                    x="7.32864"
+                    y="5.70798"
+                  />
+                </svg>
+              </dropdown>
+            </div>
           </div>
         </userNav>
       </Connect(userNav)>

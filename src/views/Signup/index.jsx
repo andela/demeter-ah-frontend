@@ -70,12 +70,12 @@ const Signup = (props) => {
 
   return (
     <Fragment>
-      <div className="signup w-100 md:w-auto">
+      <div className="signup w-12/12 md:w-auto">
         <div
           className="bg card-wrapper flex justify-center md:items-center"
         >
-          <div className="card md:p-10 flex-col w-auto px-2 py-10 m-10">
-            <h1 className="w-full mb-4 px-5 text-center md:text-left text-xl md:text-2xl text-purple-650 font-semibold">Sign up</h1>
+          <div className="card md:px-8 flex-col w-auto px-2 py-6 m-10 mx-auto max-w-108 sm:max-w-108 md:max-w-220 ">
+            <h1 className="w-full mb-4 md:m-0 px-5 text-center md:text-left text-xl md:text-2xl text-purple-650 font-semibold">Sign up</h1>
             <div className="flex flex-col md:flex-row">
               <form onSubmit={submit} className="left-con md:w-112 order-3 md:order-1">
                 <div className="md:pr-8 flex flex-col justify-center w-full mt-4">
@@ -83,7 +83,7 @@ const Signup = (props) => {
                     classes="inputcon-full mb-4 pl-0"
                     labelname="Email"
                     name="email"
-                    labelClass="block mb-1 text-sm"
+                    labelClass="block mb-1 text-sm pl-1"
                     inputType="text"
                     id="email"
                     inputClass="input text-sm"
@@ -97,7 +97,7 @@ const Signup = (props) => {
                       classes="block inputcon-full mb-4 mr-2"
                       labelname="First-name"
                       name="firstName"
-                      labelClass="block mb-1 text-sm"
+                      labelClass="block mb-1 text-sm pl-1"
                       inputType="text"
                       inputClass="input text-sm"
                       placeholder="First Name"
@@ -111,7 +111,7 @@ const Signup = (props) => {
                       classes="block inputcon-full mb-4 md:ml-2"
                       labelname="Last-name"
                       name="lastName"
-                      labelClass="block mb-1 text-sm"
+                      labelClass="block mb-1 text-sm pl-1"
                       inputType="text"
                       inputClass="input text-sm"
                       placeholder="Last Name"
@@ -126,7 +126,7 @@ const Signup = (props) => {
                     classes="inputcon-full mb-4"
                     labelname="Username"
                     name="username"
-                    labelClass="block mb-1 text-sm"
+                    labelClass="block mb-1 text-sm pl-1"
                     inputType="text"
                     inputClass="input text-sm"
                     placeholder="username"
@@ -141,7 +141,7 @@ const Signup = (props) => {
                       classes="block inputcon-full mb-4 mr-2"
                       labelname="Password"
                       name="password"
-                      labelClass="block mb-1 text-sm"
+                      labelClass="block mb-1 text-sm pl-1"
                       inputType="password"
                       inputClass="input text-sm"
                       placeholder="Password"
@@ -155,7 +155,7 @@ const Signup = (props) => {
                       classes="block inputcon-full mb-4 md:ml-2"
                       labelname="Confirm Password"
                       name="confirmPassword"
-                      labelClass="block mb-1 text-sm"
+                      labelClass="block mb-1 text-sm pl-1"
                       inputType="password"
                       inputClass="input text-sm"
                       placeholder="Confirm Password"

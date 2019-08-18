@@ -3,17 +3,27 @@ import { connect } from 'react-redux';
 import Button from '../Button';
 import './index.scss';
 import { followUser, getFollowersAction } from '../../store/actions/Membership';
+import { getViewedUser } from '../../store/actions/viewProfile';
 import { updateProfileInfo } from '../../store/actions/editProfile';
 
 const Followbtn = ({
-  user, viewedUser, followAction, isFollowed, getFollower, updateProfile,
+  user, viewedUser, followAction, isFollowed, getFollower, updateProfile, getViewedUserInfo,
 }) => {
   const [isFollowing, setIsFollowing] = useState(false);
 
   const handleFollow = async () => {
     setIsFollowing(true);
-    await followAction({ viewedUser, user });
+    // follow user
+    await followAction(viewedUser.id);
+    // get viewed user updated info
+    await getViewedUserInfo({
+      username: viewedUser.username,
+      user
+    });
+    setIsFollowing(false);
+    // update his following list
     await getFollower(viewedUser.username);
+    // update user profile
     await updateProfile(user);
   };
   return user.username !== viewedUser.username
@@ -24,7 +34,7 @@ const Followbtn = ({
         isSubmit={isFollowing}
         onClick={handleFollow}
       >
-        {isFollowed ? 'Unfollow' : 'Follow'}
+        {isFollowed ? 'Following' : 'Follow'}
       </Button>
     )
     : '';
@@ -39,6 +49,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = {
   getFollower: getFollowersAction,
   followAction: followUser,
+  getViewedUserInfo: getViewedUser,
   updateProfile: updateProfileInfo
 };
 

@@ -1,42 +1,53 @@
-import React, { useEffect } from 'react';
+/* eslint-disable no-nested-ternary */
+import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import './index.scss';
 import { getFollowingAction } from '../../store/actions/Membership';
 import FollowList from '../../components/FollowList';
-import callToast from '../../components/Toast';
+import Loader from '../../components/Loader';
 
 const Following = (props) => {
   const {
     user,
-    history,
     getFollowingAction: getFollowing,
-    response = {},
     match,
-    membership: { following, error },
+    membership: { following },
   } = props;
+
+  const [isMounted, setIsMounted] = useState(false);
+  const fetchFollowingList = async () => {
+    (match.params.username !== user.username)
+      ? await getFollowing(match.params.username)
+      : await getFollowing();
+    setIsMounted(true);
+  };
 
   useEffect(
     () => {
-      if (match.params.username !== user.username) {
-        getFollowing(match.params.username);
-      } else {
-        getFollowing();
-      }
-      if (response.error) {
-        callToast(response.error, 'error');
-      } else if (response.message || response.user) {
-        callToast(response.message || 'Follow successful', 'success');
-      }
+      fetchFollowingList();
     },
-    [match.params.username, error, JSON.stringify(following)]
+    [match.params.username]
   );
 
   return (
     <div className="following">
       <ul className="list w-11/12 md:w-3/5">
-        {following.map(({ followed }) => (
-          <FollowList key={followed.id} match={match} showButton member={followed} />
-        ))}
+        {!isMounted
+          ? <Loader />
+          : (following.length === 0)
+            ? (
+              <div className="w-full flex h-full justify-center items-center">
+                <p className="text-center font-semibold text-lg opacity-25">No followings yet</p>
+              </div>
+            )
+            : following.map(({ followed }) => (
+              <FollowList
+                key={followed.id}
+                match={match}
+                showButton
+                member={followed}
+              />
+            ))}
       </ul>
     </div>
   );

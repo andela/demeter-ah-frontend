@@ -128,6 +128,7 @@ exports[`Sign In Component Should render along with children componenet 1`] = `
                     </div>
                   </InputForm>
                   <InputForm
+                    autoComplete="off"
                     classes="inputcon-full"
                     id="password"
                     inputClass="input text-sm"
@@ -156,6 +157,7 @@ exports[`Sign In Component Should render along with children componenet 1`] = `
                         </label>
                       </Label>
                       <Input
+                        autoComplete="off"
                         classes="input text-sm"
                         id="password"
                         inputType="password"
@@ -166,6 +168,7 @@ exports[`Sign In Component Should render along with children componenet 1`] = `
                         title="Password is invalid"
                       >
                         <input
+                          autoComplete="off"
                           className="forminput rounded py-2 bg-purple-150 input text-sm"
                           id="password"
                           name="password"

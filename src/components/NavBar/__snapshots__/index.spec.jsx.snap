@@ -79,6 +79,7 @@ exports[`NavBar Component Should render along with children component 1`] = `
             }
           }
           isAuthenticated={false}
+          onSignOut={[Function]}
           openModal={[Function]}
         >
           <NavBar
@@ -119,6 +120,7 @@ exports[`NavBar Component Should render along with children component 1`] = `
                 "url": "/",
               }
             }
+            onSignOut={[Function]}
             openModal={[Function]}
           >
             <nav

@@ -123,6 +123,7 @@ const SignIn = ({
                   id="password"
                   pattern="^[\w@.]{7,20}$"
                   title="Password is invalid"
+                  autoComplete="off"
                 />
               </div>
               <Link to="/reset-password" className="flex items-center text-purple-650 text-sm mx-2 mb-6 cursor-pointer">

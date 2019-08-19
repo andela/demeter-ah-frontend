@@ -12,15 +12,16 @@ import Following from '../views/Following';
 import Followers from '../views/Followers';
 import Dashboard from '../views/Dashboard';
 import PrivateRoute from './PrivateRoute';
+import PublicRoute from './PublicRoute';
 
 const app = ({ history }) => (
   <Fragment>
     <NavBar history={history} />
     <Route exact path="/" component={Home} />
-    <Route path="/signup" component={SignUp} />
-    <Route path="/signin" component={SignIn} />
+    <PublicRoute path="/signup" component={SignUp} />
+    <PublicRoute path="/signin" component={SignIn} />
     <PrivateRoute path="/article/create" component={ArticleCreate} />
-    <Route path="/reset-password" component={ResetPassword} />
+    <PublicRoute path="/reset-password" component={ResetPassword} />
     <Route path="/profile/:username" component={Dashboard} />
     <PrivateRoute path="/profile/:username/editprofile" component={Profile} />
     <PrivateRoute path="/profile/:username/following" component={Following} />

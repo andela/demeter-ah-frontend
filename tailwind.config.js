@@ -5,6 +5,7 @@ const {
   minHeight,
   maxHeight,
   fontSize,
+  inset,
 } = require('tailwindcss/defaultTheme');
 
 module.exports = {
@@ -24,11 +25,15 @@ module.exports = {
       'xs-2': '0.85em',
       xxs: '0.7em',
     },
+    inset: {
+      ...inset,
+      1.5: '1.5rem',
+    },
     extend: {
       colors: {
         purple: {
           ...colors.purple,
-          150: '#835bd824',
+          150: '#835bd815',
           650: '#835BD8',
           250: '#AD93E6',
           50: 'rgba(197, 172, 250, 0.05)',
@@ -52,6 +57,7 @@ module.exports = {
       },
       maxWidth: {
         ...maxWidth,
+        56: '13rem',
         85: '17rem',
         42: '11em',
         86: '22rem',

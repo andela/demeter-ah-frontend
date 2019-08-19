@@ -94,7 +94,7 @@ const SignIn = ({
               onSubmit={submit}
               className="left-con flex flex-col flex-grow sm:px-2 md:px-5 min-w-84 sm:w-full md:w-6/12"
             >
-              <h1 className="w-full pt-4 px-12 lg:px-16 left-0 top-0 text-center md:text-left absolute m-0 p-0  text-2xl text-purple-650 font-semibold">
+              <h1 className="w-full pt-4 px-12 lg:px-16 left-0 sm:top-0  md:top-1.5 text-center md:text-left absolute m-0 p-0 text-2xl text-purple-650 font-semibold">
                 Sign in
               </h1>
               <div className="mb-6 md:mb-0 mt-6 pr-0 flex-grow flex flex-col justify-center w-full">
@@ -102,7 +102,7 @@ const SignIn = ({
                   classes="inputcon-full mb-8"
                   labelname="Email"
                   name="email"
-                  labelClass="block mb-1 text-sm"
+                  labelClass="block mb-1 text-sm pl-1"
                   inputType="text"
                   onChange={onChange}
                   id="email"
@@ -115,7 +115,7 @@ const SignIn = ({
                   classes="inputcon-full"
                   labelname="Password"
                   name="password"
-                  labelClass="block mb-1 text-sm"
+                  labelClass="block mb-1 text-sm pl-1"
                   inputType="password"
                   onChange={onChange}
                   inputClass="input text-sm"
@@ -125,8 +125,8 @@ const SignIn = ({
                   title="Password is invalid"
                 />
               </div>
-              <Link to="/reset-password" className="flex items-center text-sm mx-2 mb-6 cursor-pointer">
-                Forget password ?
+              <Link to="/reset-password" className="flex items-center text-purple-650 text-sm mx-2 mb-6 cursor-pointer">
+                Forgot password ?
               </Link>
               <div className="w-full flex flex-col-reverse items-center mb-4 md:mb-0 md:mt-4 md:flex-row md:justify-between">
                 <p className="flex items-center mx-2 my-0 text-sm">

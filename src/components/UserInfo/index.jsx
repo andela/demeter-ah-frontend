@@ -65,10 +65,10 @@ const userInfo = ({ user, setImage, loggedInUser }) => {
         </div>
       </div>
       <div className="info text-left h-full px-2">
-        <p className="username my-2 font-semibold text-1.5xl md:text-3xl">
+        <p className="username sm:max-w-56 md:max-w-xs my-2 font-semibold text-1.5xl md:text-3xl">
           {userData.username}
         </p>
-        <p className="fullname mb-2 text-sm md:text-1.5xl text-gray-550">{`${userData.firstName}  ${userData.lastName}`}</p>
+        <p className="fullname mb-2 sm:max-w-56 md:max-w-xs text-sm md:text-1.5xl text-gray-550">{`${userData.firstName}  ${userData.lastName}`}</p>
         <div className="membership flex mb-2">
           <div className="mr-5 flex  sm:flex-row flex-col items-start items-center">
             <strong className="mr-1 text-sm text-left w-full md:text-base font-semibold">
@@ -85,8 +85,8 @@ const userInfo = ({ user, setImage, loggedInUser }) => {
             <small className="text-gray-550 font-semibold">Followers</small>
           </div>
         </div>
-        <p className="bio text-xs md:text-sm max-w-86 md:max-w-118 lg:max-w-122">
-          {userData.bio}
+        <p className="bio text-xs sm:max-w-56 md:max-w-86 md:text-sm max-w-86 md:max-w-118 lg:max-w-122">
+          {userData.bio === 'null' ? '' : userData.bio}
         </p>
         <FollowBtn />
       </div>

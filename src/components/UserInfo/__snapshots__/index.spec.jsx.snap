@@ -116,12 +116,12 @@ exports[`UserInfo Component Should render along with children component 1`] = `
               className="info text-left h-full px-2"
             >
               <p
-                className="username my-2 font-semibold text-1.5xl md:text-3xl"
+                className="username sm:max-w-56 md:max-w-xs my-2 font-semibold text-1.5xl md:text-3xl"
               >
                 frankobaba
               </p>
               <p
-                className="fullname mb-2 text-sm md:text-1.5xl text-gray-550"
+                className="fullname mb-2 sm:max-w-56 md:max-w-xs text-sm md:text-1.5xl text-gray-550"
               >
                 kevo  baba
               </p>
@@ -154,7 +154,7 @@ exports[`UserInfo Component Should render along with children component 1`] = `
                 </div>
               </div>
               <p
-                className="bio text-xs md:text-sm max-w-86 md:max-w-118 lg:max-w-122"
+                className="bio text-xs sm:max-w-56 md:max-w-86 md:text-sm max-w-86 md:max-w-118 lg:max-w-122"
               />
               <Connect(Followbtn)>
                 <Followbtn
@@ -291,12 +291,12 @@ exports[`UserInfo Component Should render along with children component wher ima
               className="info text-left h-full px-2"
             >
               <p
-                className="username my-2 font-semibold text-1.5xl md:text-3xl"
+                className="username sm:max-w-56 md:max-w-xs my-2 font-semibold text-1.5xl md:text-3xl"
               >
                 frankobaba
               </p>
               <p
-                className="fullname mb-2 text-sm md:text-1.5xl text-gray-550"
+                className="fullname mb-2 sm:max-w-56 md:max-w-xs text-sm md:text-1.5xl text-gray-550"
               >
                 kevo  baba
               </p>
@@ -329,7 +329,7 @@ exports[`UserInfo Component Should render along with children component wher ima
                 </div>
               </div>
               <p
-                className="bio text-xs md:text-sm max-w-86 md:max-w-118 lg:max-w-122"
+                className="bio text-xs sm:max-w-56 md:max-w-86 md:text-sm max-w-86 md:max-w-118 lg:max-w-122"
               />
               <Connect(Followbtn)>
                 <Followbtn

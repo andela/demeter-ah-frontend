@@ -1,11 +1,23 @@
 .userInfo {
   font-family: 'Montserrat', sans-serif;
+  .username {
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  
+  .fullname {
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  .bio {
+    overflow: hidden;
+    overflow-wrap: break-word; 
+  }
   .profileImg {
     .upload {
       right: 15%;
       bottom: -5%;
     }
-
     .hide {
       display: none;
     }

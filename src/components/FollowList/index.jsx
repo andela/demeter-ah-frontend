@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import './index.scss';
 import { getFollowingAction, getFollowersAction, followUser } from '../../store/actions/Membership';
 import { updateProfileInfo } from '../../store/actions/editProfile';
@@ -39,26 +40,29 @@ const FollowList = ({
 
   return (
     <li key={member.id} className="followList">
-      {member.image
-        ? (
-          <div
-            style={{ backgroundImage: `url(${member.image})` }}
-            className="dp"
-          />
-        )
-        : (
-          <div className="dp bg-purple-500">
-            <p className="altDp">
-              {String(member.firstName)
-                .substring(1, 0)
-                .toUpperCase()}
-            </p>
-          </div>
-        )}
+      <Link to={`/profile/${member.username}/articles`}>
+        {member.image
+          ? (
+
+            <div
+              style={{ backgroundImage: `url(${member.image})` }}
+              className="dp"
+            />
+          )
+          : (
+            <div className="dp bg-purple-500">
+              <p className="altDp">
+                {String(member.firstName)
+                  .substring(1, 0)
+                  .toUpperCase()}
+              </p>
+            </div>
+          )}
+      </Link>
       <div className="info">
-        <h4 className="fullname">{`${member.firstName} ${member.lastName}`}</h4>
+        <Link to={`/profile/${member.username}/articles`}><h4 className="fullname">{`${member.firstName} ${member.lastName}`}</h4></Link>
         <p className="bio">{member.bio}</p>
-      </div>
+      </div> 
       {
         (showButton && (user.username !== member.username))
           ? (

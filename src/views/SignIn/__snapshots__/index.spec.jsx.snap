@@ -68,7 +68,7 @@ exports[`Sign In Component Should render along with children componenet 1`] = `
                 onSubmit={[Function]}
               >
                 <h1
-                  className="w-full pt-4 px-12 lg:px-16 left-0 top-0 text-center md:text-left absolute m-0 p-0  text-2xl text-purple-650 font-semibold"
+                  className="w-full pt-4 px-12 lg:px-16 left-0 sm:top-0  md:top-1.5 text-center md:text-left absolute m-0 p-0 text-2xl text-purple-650 font-semibold"
                 >
                   Sign in
                 </h1>
@@ -80,7 +80,7 @@ exports[`Sign In Component Should render along with children componenet 1`] = `
                     id="email"
                     inputClass="input text-sm py-1"
                     inputType="text"
-                    labelClass="block mb-1 text-sm"
+                    labelClass="block mb-1 text-sm pl-1"
                     labelname="Email"
                     name="email"
                     onChange={[Function]}
@@ -92,12 +92,12 @@ exports[`Sign In Component Should render along with children componenet 1`] = `
                       className="inputcon-full mb-8"
                     >
                       <Label
-                        classes="block mb-1 text-sm"
+                        classes="block mb-1 text-sm pl-1"
                         labelname="Email"
                         name="email"
                       >
                         <label
-                          className="block mb-1 text-sm"
+                          className="block mb-1 text-sm pl-1"
                           htmlFor="email"
                         >
                           Email
@@ -114,7 +114,7 @@ exports[`Sign In Component Should render along with children componenet 1`] = `
                         title="johndoe@example.com"
                       >
                         <input
-                          className="shadow border rounded py-1 bg-purple-150 input text-sm py-1"
+                          className="forminput rounded py-2 bg-purple-150 input text-sm py-1"
                           id="email"
                           name="email"
                           onChange={[Function]}
@@ -132,7 +132,7 @@ exports[`Sign In Component Should render along with children componenet 1`] = `
                     id="password"
                     inputClass="input text-sm"
                     inputType="password"
-                    labelClass="block mb-1 text-sm"
+                    labelClass="block mb-1 text-sm pl-1"
                     labelname="Password"
                     name="password"
                     onChange={[Function]}
@@ -144,12 +144,12 @@ exports[`Sign In Component Should render along with children componenet 1`] = `
                       className="inputcon-full"
                     >
                       <Label
-                        classes="block mb-1 text-sm"
+                        classes="block mb-1 text-sm pl-1"
                         labelname="Password"
                         name="password"
                       >
                         <label
-                          className="block mb-1 text-sm"
+                          className="block mb-1 text-sm pl-1"
                           htmlFor="password"
                         >
                           Password
@@ -166,7 +166,7 @@ exports[`Sign In Component Should render along with children componenet 1`] = `
                         title="Password is invalid"
                       >
                         <input
-                          className="shadow border rounded py-1 bg-purple-150 input text-sm"
+                          className="forminput rounded py-2 bg-purple-150 input text-sm"
                           id="password"
                           name="password"
                           onChange={[Function]}
@@ -181,15 +181,15 @@ exports[`Sign In Component Should render along with children componenet 1`] = `
                   </InputForm>
                 </div>
                 <Link
-                  className="flex items-center text-sm mx-2 mb-6 cursor-pointer"
+                  className="flex items-center text-purple-650 text-sm mx-2 mb-6 cursor-pointer"
                   to="/reset-password"
                 >
                   <a
-                    className="flex items-center text-sm mx-2 mb-6 cursor-pointer"
+                    className="flex items-center text-purple-650 text-sm mx-2 mb-6 cursor-pointer"
                     href="/reset-password"
                     onClick={[Function]}
                   >
-                    Forget password ?
+                    Forgot password ?
                   </a>
                 </Link>
                 <div

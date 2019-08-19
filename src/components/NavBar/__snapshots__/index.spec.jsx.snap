@@ -35,7 +35,7 @@ exports[`NavBar Component Should render along with children component 1`] = `
         }
       }
     >
-      <Connect(NavBar)
+      <Connect(withRouter(NavBar))
         history={
           Object {
             "action": "POP",
@@ -57,7 +57,7 @@ exports[`NavBar Component Should render along with children component 1`] = `
           }
         }
       >
-        <NavBar
+        <withRouter(NavBar)
           history={
             Object {
               "action": "POP",
@@ -81,108 +81,149 @@ exports[`NavBar Component Should render along with children component 1`] = `
           isAuthenticated={false}
           openModal={[Function]}
         >
-          <nav
-            className="flex items-center justify-between relative flex-wrap bg-white-500 pt-2 p-3 z-40 shadow-md"
+          <NavBar
+            history={
+              Object {
+                "action": "POP",
+                "block": [Function],
+                "createHref": [Function],
+                "go": [Function],
+                "goBack": [Function],
+                "goForward": [Function],
+                "length": 1,
+                "listen": [Function],
+                "location": Object {
+                  "hash": "",
+                  "pathname": "/",
+                  "search": "",
+                  "state": undefined,
+                },
+                "push": [Function],
+                "replace": [Function],
+              }
+            }
+            isAuthenticated={false}
+            location={
+              Object {
+                "hash": "",
+                "pathname": "/",
+                "search": "",
+                "state": undefined,
+              }
+            }
+            match={
+              Object {
+                "isExact": true,
+                "params": Object {},
+                "path": "/",
+                "url": "/",
+              }
+            }
+            openModal={[Function]}
           >
-            <div
-              className="flex items-center flex-shrink-0 text-dark"
+            <nav
+              className="flex items-center justify-between relative flex-wrap bg-white-500 pt-2 p-3 z-40 shadow-md"
             >
-              <Link
-                to="/"
+              <div
+                className="flex items-center flex-shrink-0 text-dark"
               >
-                <a
-                  href="/"
-                  onClick={[Function]}
-                >
-                  <img
-                    alt="Author's Haven"
-                    id="logo"
-                    src="test-file-stub"
-                  />
-                </a>
-              </Link>
-            </div>
-            <div
-              className="flex relative"
-            >
-              <search>
-                <div
-                  className="search relative flex items-center justify-center p-0 mr-6"
-                >
-                  <input
-                    className="border hidden md:inline-flex border-solid border-gray-350 bg-gray-20 rounded-4xl h-9 w-64 pr-2 pl-4"
-                    placeholder="Search..."
-                    type="text"
-                  />
-                  <searchIcon
-                    classes="searchIcon cursor-pointer absolute right-0"
-                  >
-                    <svg
-                      className="searchIcon cursor-pointer absolute right-0"
-                      fill="none"
-                      height="20"
-                      viewBox="0 0 112 113"
-                      width="20"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M109.339 102.925L81.9692 74.9538C89.0066 66.7336 92.8624 56.3909 92.8624 45.6237C92.8624 20.4672 72.033 0 46.4312 0C20.8294 0 0 20.4672 0 45.6237C0 70.7802 20.8294 91.2474 46.4312 91.2474C56.0425 91.2474 65.2015 88.3989 73.0322 82.9915L100.61 111.175C101.763 112.351 103.313 113 104.975 113C106.548 113 108.039 112.411 109.172 111.34C111.578 109.064 111.655 105.292 109.339 102.925ZM46.4312 11.9018C65.3549 11.9018 80.7499 27.0291 80.7499 45.6237C80.7499 64.2183 65.3549 79.3456 46.4312 79.3456C27.5075 79.3456 12.1125 64.2183 12.1125 45.6237C12.1125 27.0291 27.5075 11.9018 46.4312 11.9018Z"
-                        fill="#606060"
-                      />
-                    </svg>
-                  </searchIcon>
-                </div>
-              </search>
-              <AuthNav>
                 <Link
-                  to="/signup"
+                  to="/"
                 >
                   <a
-                    href="/signup"
+                    href="/"
                     onClick={[Function]}
                   >
-                    <Button
-                      classes="btn-purple w-32 hidden md:inline"
-                      name="Sign Up"
-                      type="button"
-                    >
-                      <button
-                        className="btn btn-purple w-32 hidden md:inline"
-                        disabled={false}
-                        type="button"
-                      >
-                        Sign Up
-                      </button>
-                    </Button>
+                    <img
+                      alt="Author's Haven"
+                      id="logo"
+                      src="test-file-stub"
+                    />
                   </a>
                 </Link>
-                <Link
-                  to="/signin"
-                >
-                  <a
-                    href="/signin"
-                    onClick={[Function]}
+              </div>
+              <div
+                className="flex relative"
+              >
+                <search>
+                  <div
+                    className="search relative flex items-center justify-center p-0 mr-6"
                   >
-                    <Button
-                      classes=" cursor-pointer btn-white w-32 ml-2 text-purple-650 border hidden md:inline border-solid border-purple-650"
-                      name="Sign In"
-                      type="button"
+                    <input
+                      className="border hidden md:inline-flex border-solid border-gray-350 bg-gray-20 rounded-4xl h-9 w-64 pr-2 pl-4"
+                      placeholder="Search..."
+                      type="text"
+                    />
+                    <searchIcon
+                      classes="searchIcon cursor-pointer absolute right-0"
                     >
-                      <button
-                        className="btn  cursor-pointer btn-white w-32 ml-2 text-purple-650 border hidden md:inline border-solid border-purple-650"
-                        disabled={false}
+                      <svg
+                        className="searchIcon cursor-pointer absolute right-0"
+                        fill="none"
+                        height="20"
+                        viewBox="0 0 112 113"
+                        width="20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M109.339 102.925L81.9692 74.9538C89.0066 66.7336 92.8624 56.3909 92.8624 45.6237C92.8624 20.4672 72.033 0 46.4312 0C20.8294 0 0 20.4672 0 45.6237C0 70.7802 20.8294 91.2474 46.4312 91.2474C56.0425 91.2474 65.2015 88.3989 73.0322 82.9915L100.61 111.175C101.763 112.351 103.313 113 104.975 113C106.548 113 108.039 112.411 109.172 111.34C111.578 109.064 111.655 105.292 109.339 102.925ZM46.4312 11.9018C65.3549 11.9018 80.7499 27.0291 80.7499 45.6237C80.7499 64.2183 65.3549 79.3456 46.4312 79.3456C27.5075 79.3456 12.1125 64.2183 12.1125 45.6237C12.1125 27.0291 27.5075 11.9018 46.4312 11.9018Z"
+                          fill="#606060"
+                        />
+                      </svg>
+                    </searchIcon>
+                  </div>
+                </search>
+                <AuthNav>
+                  <Link
+                    to="/signup"
+                  >
+                    <a
+                      href="/signup"
+                      onClick={[Function]}
+                    >
+                      <Button
+                        classes="btn-purple w-32 hidden md:inline"
+                        name="Sign Up"
                         type="button"
                       >
-                        Sign In
-                      </button>
-                    </Button>
-                  </a>
-                </Link>
-              </AuthNav>
-            </div>
-          </nav>
-        </NavBar>
-      </Connect(NavBar)>
+                        <button
+                          className="btn btn-purple w-32 hidden md:inline"
+                          disabled={false}
+                          type="button"
+                        >
+                          Sign Up
+                        </button>
+                      </Button>
+                    </a>
+                  </Link>
+                  <Link
+                    to="/signin"
+                  >
+                    <a
+                      href="/signin"
+                      onClick={[Function]}
+                    >
+                      <Button
+                        classes=" cursor-pointer btn-white w-32 ml-2 text-purple-650 border hidden md:inline border-solid border-purple-650"
+                        name="Sign In"
+                        type="button"
+                      >
+                        <button
+                          className="btn  cursor-pointer btn-white w-32 ml-2 text-purple-650 border hidden md:inline border-solid border-purple-650"
+                          disabled={false}
+                          type="button"
+                        >
+                          Sign In
+                        </button>
+                      </Button>
+                    </a>
+                  </Link>
+                </AuthNav>
+              </div>
+            </nav>
+          </NavBar>
+        </withRouter(NavBar)>
+      </Connect(withRouter(NavBar))>
     </Router>
   </BrowserRouter>
 </Provider>
@@ -211,7 +252,7 @@ exports[`NavBar Component Should render without errors 1`] = `
     }
   }
 >
-  <Connect(NavBar)
+  <Connect(withRouter(NavBar))
     history={
       Object {
         "action": "POP",

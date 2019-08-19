@@ -3,6 +3,9 @@
   .menu{
       .menuIcon {
         margin-right: 10%;
+        img {
+          filter: opacity(0.4);
+        }
       }
       
     .active {
@@ -14,7 +17,7 @@
       fill-opacity: 100;
     }
     .active img {
-      fill-opacity: 100;
+      filter: opacity(0.99);
     }
     
   }

@@ -55,16 +55,16 @@ exports[`Sign up Component Should render along with children componenet 1`] = `
         user={Object {}}
       >
         <div
-          className="signup w-100 md:w-auto"
+          className="signup w-12/12 md:w-auto"
         >
           <div
             className="bg card-wrapper flex justify-center md:items-center"
           >
             <div
-              className="card md:p-10 flex-col w-auto px-2 py-10 m-10"
+              className="card md:px-8 flex-col w-auto px-2 py-6 m-10 mx-auto max-w-108 sm:max-w-108 md:max-w-220 "
             >
               <h1
-                className="w-full mb-4 px-5 text-center md:text-left text-xl md:text-2xl text-purple-650 font-semibold"
+                className="w-full mb-4 md:m-0 px-5 text-center md:text-left text-xl md:text-2xl text-purple-650 font-semibold"
               >
                 Sign up
               </h1>
@@ -83,7 +83,7 @@ exports[`Sign up Component Should render along with children componenet 1`] = `
                       id="email"
                       inputClass="input text-sm"
                       inputType="text"
-                      labelClass="block mb-1 text-sm"
+                      labelClass="block mb-1 text-sm pl-1"
                       labelname="Email"
                       name="email"
                       onChange={[Function]}
@@ -95,12 +95,12 @@ exports[`Sign up Component Should render along with children componenet 1`] = `
                         className="inputcon-full mb-4 pl-0"
                       >
                         <Label
-                          classes="block mb-1 text-sm"
+                          classes="block mb-1 text-sm pl-1"
                           labelname="Email"
                           name="email"
                         >
                           <label
-                            className="block mb-1 text-sm"
+                            className="block mb-1 text-sm pl-1"
                             htmlFor="email"
                           >
                             Email
@@ -117,7 +117,7 @@ exports[`Sign up Component Should render along with children componenet 1`] = `
                           title="must be a valid email"
                         >
                           <input
-                            className="shadow border rounded py-1 bg-purple-150 input text-sm"
+                            className="forminput rounded py-2 bg-purple-150 input text-sm"
                             id="email"
                             name="email"
                             onChange={[Function]}
@@ -138,7 +138,7 @@ exports[`Sign up Component Should render along with children componenet 1`] = `
                         id="firstName"
                         inputClass="input text-sm"
                         inputType="text"
-                        labelClass="block mb-1 text-sm"
+                        labelClass="block mb-1 text-sm pl-1"
                         labelname="First-name"
                         name="firstName"
                         onChange={[Function]}
@@ -150,12 +150,12 @@ exports[`Sign up Component Should render along with children componenet 1`] = `
                           className="block inputcon-full mb-4 mr-2"
                         >
                           <Label
-                            classes="block mb-1 text-sm"
+                            classes="block mb-1 text-sm pl-1"
                             labelname="First-name"
                             name="firstName"
                           >
                             <label
-                              className="block mb-1 text-sm"
+                              className="block mb-1 text-sm pl-1"
                               htmlFor="firstName"
                             >
                               First-name
@@ -172,7 +172,7 @@ exports[`Sign up Component Should render along with children componenet 1`] = `
                             title="first name is required and must be more than 3 character"
                           >
                             <input
-                              className="shadow border rounded py-1 bg-purple-150 input text-sm"
+                              className="forminput rounded py-2 bg-purple-150 input text-sm"
                               id="firstName"
                               name="firstName"
                               onChange={[Function]}
@@ -190,7 +190,7 @@ exports[`Sign up Component Should render along with children componenet 1`] = `
                         id="lastName"
                         inputClass="input text-sm"
                         inputType="text"
-                        labelClass="block mb-1 text-sm"
+                        labelClass="block mb-1 text-sm pl-1"
                         labelname="Last-name"
                         name="lastName"
                         onChange={[Function]}
@@ -202,12 +202,12 @@ exports[`Sign up Component Should render along with children componenet 1`] = `
                           className="block inputcon-full mb-4 md:ml-2"
                         >
                           <Label
-                            classes="block mb-1 text-sm"
+                            classes="block mb-1 text-sm pl-1"
                             labelname="Last-name"
                             name="lastName"
                           >
                             <label
-                              className="block mb-1 text-sm"
+                              className="block mb-1 text-sm pl-1"
                               htmlFor="lastName"
                             >
                               Last-name
@@ -224,7 +224,7 @@ exports[`Sign up Component Should render along with children componenet 1`] = `
                             title="last name is required and must be more than 3 character"
                           >
                             <input
-                              className="shadow border rounded py-1 bg-purple-150 input text-sm"
+                              className="forminput rounded py-2 bg-purple-150 input text-sm"
                               id="lastName"
                               name="lastName"
                               onChange={[Function]}
@@ -243,7 +243,7 @@ exports[`Sign up Component Should render along with children componenet 1`] = `
                       id="username"
                       inputClass="input text-sm"
                       inputType="text"
-                      labelClass="block mb-1 text-sm"
+                      labelClass="block mb-1 text-sm pl-1"
                       labelname="Username"
                       name="username"
                       onChange={[Function]}
@@ -255,12 +255,12 @@ exports[`Sign up Component Should render along with children componenet 1`] = `
                         className="inputcon-full mb-4"
                       >
                         <Label
-                          classes="block mb-1 text-sm"
+                          classes="block mb-1 text-sm pl-1"
                           labelname="Username"
                           name="username"
                         >
                           <label
-                            className="block mb-1 text-sm"
+                            className="block mb-1 text-sm pl-1"
                             htmlFor="username"
                           >
                             Username
@@ -277,7 +277,7 @@ exports[`Sign up Component Should render along with children componenet 1`] = `
                           title="username is required and must be more than 3 character"
                         >
                           <input
-                            className="shadow border rounded py-1 bg-purple-150 input text-sm"
+                            className="forminput rounded py-2 bg-purple-150 input text-sm"
                             id="username"
                             name="username"
                             onChange={[Function]}
@@ -299,7 +299,7 @@ exports[`Sign up Component Should render along with children componenet 1`] = `
                         id="password"
                         inputClass="input text-sm"
                         inputType="password"
-                        labelClass="block mb-1 text-sm"
+                        labelClass="block mb-1 text-sm pl-1"
                         labelname="Password"
                         name="password"
                         onChange={[Function]}
@@ -311,12 +311,12 @@ exports[`Sign up Component Should render along with children componenet 1`] = `
                           className="block inputcon-full mb-4 mr-2"
                         >
                           <Label
-                            classes="block mb-1 text-sm"
+                            classes="block mb-1 text-sm pl-1"
                             labelname="Password"
                             name="password"
                           >
                             <label
-                              className="block mb-1 text-sm"
+                              className="block mb-1 text-sm pl-1"
                               htmlFor="password"
                             >
                               Password
@@ -335,7 +335,7 @@ exports[`Sign up Component Should render along with children componenet 1`] = `
                           >
                             <input
                               autoComplete="off"
-                              className="shadow border rounded py-1 bg-purple-150 input text-sm"
+                              className="forminput rounded py-2 bg-purple-150 input text-sm"
                               id="password"
                               name="password"
                               onChange={[Function]}
@@ -354,7 +354,7 @@ exports[`Sign up Component Should render along with children componenet 1`] = `
                         id="confirmPassword"
                         inputClass="input text-sm"
                         inputType="password"
-                        labelClass="block mb-1 text-sm"
+                        labelClass="block mb-1 text-sm pl-1"
                         labelname="Confirm Password"
                         name="confirmPassword"
                         onChange={[Function]}
@@ -364,12 +364,12 @@ exports[`Sign up Component Should render along with children componenet 1`] = `
                           className="block inputcon-full mb-4 md:ml-2"
                         >
                           <Label
-                            classes="block mb-1 text-sm"
+                            classes="block mb-1 text-sm pl-1"
                             labelname="Confirm Password"
                             name="confirmPassword"
                           >
                             <label
-                              className="block mb-1 text-sm"
+                              className="block mb-1 text-sm pl-1"
                               htmlFor="confirmPassword"
                             >
                               Confirm Password
@@ -386,7 +386,7 @@ exports[`Sign up Component Should render along with children componenet 1`] = `
                           >
                             <input
                               autoComplete="off"
-                              className="shadow border rounded py-1 bg-purple-150 input text-sm"
+                              className="forminput rounded py-2 bg-purple-150 input text-sm"
                               id="confirmPassword"
                               name="confirmPassword"
                               onChange={[Function]}

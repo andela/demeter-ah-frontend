@@ -6,12 +6,12 @@ import './index.scss';
 const dropDown = ({ user, handleDropDown }) => {
   const username = user && user.username;
   return (
-    <div className="dropdown absolute min-w-48 flex flex-col">
-      <div className="w-full py-2 bg-gray-30 text-center">
-        <p className="username text-gray-550 py-2">{`@${username}`}</p>
-        <p className="fullname py-2 text-gray-550 font-semibold">{`${user.firstName} ${user.lastName}`}</p>
+    <div className="dropdown absolute max-w-85 min-w-48 flex flex-col">
+      <div className="userinfo w-full py-2 bg-gray-30 text-center">
+        <p className="username overflow-hidden p-2 text-gray-550 py-2">{`@${username}`}</p>
+        <p className="fullname overflow-hidden p-2 text-gray-550 font-semibold whitespace-no-wrap">{`${user.firstName} ${user.lastName}`}</p>
       </div>
-      <ul className="">
+      <ul>
         <Link onClick={handleDropDown} to="/article/create">
           <li className="text-xs-2 border-b-2 border-gray-40 py-3 px-8 bg-white cursor-pointer text-center text-gray-550">
               Write a Story

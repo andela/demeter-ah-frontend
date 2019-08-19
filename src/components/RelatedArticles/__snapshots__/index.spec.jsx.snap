@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RelatedArticles Component Should render without errors 1`] = `
+<p
+  className="text-xs text-center"
+>
+  No related articles yet
+</p>
+`;

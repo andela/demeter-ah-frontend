@@ -45,6 +45,7 @@ module.exports = {
           150: '#EAEAEA',
           250: '#606060',
           350: '#d4d4d4',
+          400: '#80808024',
           550: 'rgba(0, 0, 0, 0.5)',
           50: '#c4c4c4',
           40: '#c4c4c450',
@@ -76,6 +77,8 @@ module.exports = {
       maxHeight: {
         ...maxHeight,
         85: '14rem',
+        48: '14rem',
+        85: '17rem',
         86: '22rem',
         108: '26rem',
         112: '28rem',
@@ -94,9 +97,13 @@ module.exports = {
         96: '24rem',
         108: '26rem',
         112: '30rem',
+        118: '32rem',
       },
       minHeight: {
         ...minHeight,
+        46: '13rem',
+        48: '14rem',
+        83: '20rem',
         84: '21rem',
         96: '24rem',
         108: '26rem',
@@ -146,6 +153,7 @@ module.exports = {
         xlx1: '18rem',
         xlx2: '24rem',
         xlx3: '420px',
+        82: '82%'
       },
       width: {
         xl: '1125px',

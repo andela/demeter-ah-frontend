@@ -5,6 +5,7 @@ import './index.scss';
 import { getFollowingAction } from '../../store/actions/Membership';
 import FollowList from '../../components/FollowList';
 import Loader from '../../components/Loader';
+import NoItem from '../../components/NoItem';
 
 const Following = (props) => {
   const {
@@ -36,9 +37,7 @@ const Following = (props) => {
           ? <Loader />
           : (following.length === 0)
             ? (
-              <div className="w-full flex h-full justify-center items-center">
-                <p className="text-center font-semibold text-lg opacity-25">No followings yet</p>
-              </div>
+              <NoItem message="No followings yet" />
             )
             : following.map(({ followed }) => (
               <FollowList

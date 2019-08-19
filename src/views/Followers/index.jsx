@@ -5,6 +5,7 @@ import '../Following/index.scss';
 import { getFollowersAction } from '../../store/actions/Membership';
 import FollowList from '../../components/FollowList';
 import Loader from '../../components/Loader';
+import NoItem from '../../components/NoItem';
 
 const Followers = (props) => {
   const {
@@ -44,16 +45,14 @@ const Followers = (props) => {
           ? <Loader />
           : (followers.length === 0)
             ? (
-              <div className="w-full flex h-full justify-center items-center">
-                <p className="text-center font-semibold text-lg opacity-25">No followers yet</p>
-              </div>
+              <NoItem message="No followers yet" />
             )
             : followers.map(({ follower }) => (
               <FollowList key={follower.id} showButton={showButton} match={match} member={follower} type="follower" />
             ))
         }
       </ul>
-    </div >
+    </div>
   );
 };
 

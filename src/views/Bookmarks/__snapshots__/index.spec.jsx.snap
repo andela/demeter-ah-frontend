@@ -1,0 +1,261 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Sign In Component Should call toast isCompleted is true in signup use effect  1`] = `
+<BrowserRouter>
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "createHref": [Function],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "pathname": "/",
+          "search": "",
+          "state": undefined,
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
+  >
+    <Connect(Bookmark)
+      store={
+        Object {
+          "clearActions": [Function],
+          "dispatch": [Function],
+          "getActions": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+        }
+      }
+    >
+      <Bookmark
+        articles={Array []}
+        bookmarkArticleAction={[Function]}
+        bookmarkArticleCleanUp={[Function]}
+        bookmarkCompleted={true}
+        store={
+          Object {
+            "clearActions": [Function],
+            "dispatch": [Function],
+            "getActions": [Function],
+            "getState": [Function],
+            "replaceReducer": [Function],
+            "subscribe": [Function],
+          }
+        }
+        viewBookmarkCleanUp={[Function]}
+        viewBookmarkedArticle={[Function]}
+      >
+        <div
+          className="border-t-2 bg-purple-50 mb-6 overflow-y-auto"
+        >
+          <loader>
+            <div
+              className="h-72 flex items-center justify-center"
+            >
+              <img
+                alt=""
+                className="w-8 h-8"
+                src="test-file-stub"
+              />
+            </div>
+          </loader>
+        </div>
+      </Bookmark>
+    </Connect(Bookmark)>
+  </Router>
+</BrowserRouter>
+`;
+
+exports[`Sign In Component Should render along with children componenet 1`] = `
+<BrowserRouter>
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "createHref": [Function],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "pathname": "/",
+          "search": "",
+          "state": undefined,
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
+  >
+    <Connect(Bookmark)
+      store={
+        Object {
+          "dispatch": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+          Symbol(observable): [Function],
+        }
+      }
+    >
+      <Bookmark
+        articles={Array []}
+        bookmarkArticleAction={[Function]}
+        bookmarkArticleCleanUp={[Function]}
+        bookmarkCompleted={false}
+        store={
+          Object {
+            "dispatch": [Function],
+            "getState": [Function],
+            "replaceReducer": [Function],
+            "subscribe": [Function],
+            Symbol(observable): [Function],
+          }
+        }
+        viewBookmarkCleanUp={[Function]}
+        viewBookmarkedArticle={[Function]}
+      >
+        <div
+          className="border-t-2 bg-purple-50 mb-6 overflow-y-auto"
+        >
+          <loader>
+            <div
+              className="h-72 flex items-center justify-center"
+            >
+              <img
+                alt=""
+                className="w-8 h-8"
+                src="test-file-stub"
+              />
+            </div>
+          </loader>
+        </div>
+      </Bookmark>
+    </Connect(Bookmark)>
+  </Router>
+</BrowserRouter>
+`;
+
+exports[`Sign In Component Should render without errors 1`] = `
+<Router
+  history={
+    Object {
+      "action": "POP",
+      "block": [Function],
+      "createHref": [Function],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "length": 1,
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "pathname": "/",
+        "search": "",
+        "state": undefined,
+      },
+      "push": [Function],
+      "replace": [Function],
+    }
+  }
+>
+  <Connect(Bookmark)
+    store={
+      Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+        Symbol(observable): [Function],
+      }
+    }
+  />
+</Router>
+`;
+
+exports[`Sign In Component Should run errors if error exist 1`] = `
+<BrowserRouter>
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "createHref": [Function],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "pathname": "/",
+          "search": "",
+          "state": undefined,
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
+  >
+    <Connect(Bookmark)
+      store={
+        Object {
+          "clearActions": [Function],
+          "dispatch": [Function],
+          "getActions": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+        }
+      }
+    >
+      <Bookmark
+        articles={Array []}
+        bookmarkArticleAction={[Function]}
+        bookmarkArticleCleanUp={[Function]}
+        bookmarkCompleted={true}
+        store={
+          Object {
+            "clearActions": [Function],
+            "dispatch": [Function],
+            "getActions": [Function],
+            "getState": [Function],
+            "replaceReducer": [Function],
+            "subscribe": [Function],
+          }
+        }
+        viewBookmarkCleanUp={[Function]}
+        viewBookmarkedArticle={[Function]}
+      >
+        <div
+          className="border-t-2 bg-purple-50 mb-6 overflow-y-auto"
+        >
+          <loader>
+            <div
+              className="h-72 flex items-center justify-center"
+            >
+              <img
+                alt=""
+                className="w-8 h-8"
+                src="test-file-stub"
+              />
+            </div>
+          </loader>
+        </div>
+      </Bookmark>
+    </Connect(Bookmark)>
+  </Router>
+</BrowserRouter>
+`;

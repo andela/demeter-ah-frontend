@@ -91,3 +91,35 @@ export const relatedArticleImg = (imgURL) => {
   };
   return style;
 };
+export const ImageStyle = (imgURL) => {
+  const card = {
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center center',
+    backgroundImage: `linear-gradient(180deg, rgba(0, 0, 0, 0.5) 99.98%, rgba(255, 255, 255, 0) 99.99%, rgba(255, 255, 255, 0.2) 100%), url(${imgURL})`,
+  };
+  return card;
+};
+
+export const authorImage = img => ({
+  backgroundSize: 'cover',
+  backgroundPosition: 'center center',
+  backgroundImage: `url(${img})`,
+  borderRadius: '9999px'
+});
+
+export const bookmarkImg = img => ({
+  backgroundSize: 'cover',
+  backgroundPosition: 'center center',
+  backgroundImage: `url(${img})`,
+  alignSelf: 'flex-end',
+  cursor: 'pointer'
+});
+
+export const starImg = img => ({
+  backgroundSize: 'cover',
+  backgroundPosition: 'center center',
+  backgroundImage: `url(${img})`,
+  alignSelf: 'flex-end',
+  cursor: 'pointer'
+});

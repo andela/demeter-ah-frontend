@@ -1,0 +1,286 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Sign In Component Should render along with children componenet 1`] = `
+<BrowserRouter>
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "createHref": [Function],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "pathname": "/",
+          "search": "",
+          "state": undefined,
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
+  >
+    <ArticleCard
+      store={
+        Object {
+          "dispatch": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+          Symbol(observable): [Function],
+        }
+      }
+    >
+      <div
+        className="md:flex md:flex-row flex-row lg:min-w-96 max-w-5xl m-auto text-left justify-start p-2 bg-white rounded-sm border-b-2 border-gray-350 mb-3 md:min-w-84"
+      >
+        <div
+          className="m-4 ml-0 min-w-108 min-h-48 rounded shadow-lg sm:min-w-min lg:min-w-96"
+          style={
+            Object {
+              "backgroundImage": "linear-gradient(180deg, rgba(0, 0, 0, 0.5) 99.98%, rgba(255, 255, 255, 0) 99.99%, rgba(255, 255, 255, 0.2) 100%), url(test-file-stub)",
+              "backgroundPosition": "center center",
+              "backgroundRepeat": "no-repeat",
+              "backgroundSize": "cover",
+            }
+          }
+        >
+          <div
+            className="m-5 flex flex-col justify-between h-82"
+          >
+            <p
+              className="text-xl font-medium text-white lg:mt-0 mt-4"
+            />
+            <div
+              className="flex justify-between mt-16"
+            >
+              <div>
+                <div
+                  className="h-16 w-16"
+                  style={
+                    Object {
+                      "backgroundImage": "url(test-file-stub)",
+                      "backgroundPosition": "center center",
+                      "backgroundSize": "cover",
+                      "borderRadius": "9999px",
+                    }
+                  }
+                />
+                <p
+                  className="text-xl font-medium text-white"
+                >
+                  Paul Igabu
+                </p>
+              </div>
+              <span
+                className="h-8 w-8"
+                style={
+                  Object {
+                    "alignSelf": "flex-end",
+                    "cursor": "pointer",
+                  }
+                }
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          className="ml-0 flex-grow-0 justify-between flex flex-col max-h-48"
+        >
+          <div
+            className="flex flex-col"
+          >
+            <Link
+              to="/articles/undefined"
+            >
+              <a
+                href="/articles/undefined"
+                onClick={[Function]}
+              >
+                <h2
+                  className="text-1.5xl lg:text-2xl capitalize"
+                >
+                  Title of this amazing article
+                </h2>
+              </a>
+            </Link>
+            <p
+              className="text-xs"
+            >
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. mus nihil eum iste! Dolorum, voluptatum officiis.
+            </p>
+          </div>
+          <div
+            className="flex justify-between mt-5 lg:min-w-118 md:min-w-96"
+          >
+            <div
+              className="flex text-sm"
+            >
+              <p
+                className="pr-10"
+              >
+                6 min
+              </p>
+              <p
+                className="font-semibold"
+              >
+                July 12 2019
+              </p>
+            </div>
+            <div
+              className="flex items-center"
+            >
+              <Star
+                key="0"
+              >
+                <svg
+                  fill="none"
+                  height="12"
+                  viewBox="0 0 13 12"
+                  width="13"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M6.67928 0L8.09837 4.49139H12.6907L8.97542 7.26722L10.3945 11.7586L6.67928 8.98278L2.96403 11.7586L4.38313 7.26722L0.66788 4.49139H5.26018L6.67928 0Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M6.67928 1.65959L7.6216 4.64203L7.73199 4.99139H8.09837H11.1861L8.67616 6.86667L8.39166 7.07923L8.49866 7.41786L9.44998 10.4288L6.97854 8.58223L6.67928 8.35863L6.38001 8.58223L3.90857 10.4288L4.85989 7.41786L4.96689 7.07923L4.68239 6.86667L2.17246 4.99139H5.26018H5.62656L5.73695 4.64203L6.67928 1.65959Z"
+                    stroke="#C4C4C4"
+                    strokeOpacity="0.6"
+                  />
+                </svg>
+              </Star>
+              <Star
+                key="1"
+              >
+                <svg
+                  fill="none"
+                  height="12"
+                  viewBox="0 0 13 12"
+                  width="13"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M6.67928 0L8.09837 4.49139H12.6907L8.97542 7.26722L10.3945 11.7586L6.67928 8.98278L2.96403 11.7586L4.38313 7.26722L0.66788 4.49139H5.26018L6.67928 0Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M6.67928 1.65959L7.6216 4.64203L7.73199 4.99139H8.09837H11.1861L8.67616 6.86667L8.39166 7.07923L8.49866 7.41786L9.44998 10.4288L6.97854 8.58223L6.67928 8.35863L6.38001 8.58223L3.90857 10.4288L4.85989 7.41786L4.96689 7.07923L4.68239 6.86667L2.17246 4.99139H5.26018H5.62656L5.73695 4.64203L6.67928 1.65959Z"
+                    stroke="#C4C4C4"
+                    strokeOpacity="0.6"
+                  />
+                </svg>
+              </Star>
+              <Star
+                key="2"
+              >
+                <svg
+                  fill="none"
+                  height="12"
+                  viewBox="0 0 13 12"
+                  width="13"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M6.67928 0L8.09837 4.49139H12.6907L8.97542 7.26722L10.3945 11.7586L6.67928 8.98278L2.96403 11.7586L4.38313 7.26722L0.66788 4.49139H5.26018L6.67928 0Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M6.67928 1.65959L7.6216 4.64203L7.73199 4.99139H8.09837H11.1861L8.67616 6.86667L8.39166 7.07923L8.49866 7.41786L9.44998 10.4288L6.97854 8.58223L6.67928 8.35863L6.38001 8.58223L3.90857 10.4288L4.85989 7.41786L4.96689 7.07923L4.68239 6.86667L2.17246 4.99139H5.26018H5.62656L5.73695 4.64203L6.67928 1.65959Z"
+                    stroke="#C4C4C4"
+                    strokeOpacity="0.6"
+                  />
+                </svg>
+              </Star>
+              <Star
+                key="3"
+              >
+                <svg
+                  fill="none"
+                  height="12"
+                  viewBox="0 0 13 12"
+                  width="13"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M6.67928 0L8.09837 4.49139H12.6907L8.97542 7.26722L10.3945 11.7586L6.67928 8.98278L2.96403 11.7586L4.38313 7.26722L0.66788 4.49139H5.26018L6.67928 0Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M6.67928 1.65959L7.6216 4.64203L7.73199 4.99139H8.09837H11.1861L8.67616 6.86667L8.39166 7.07923L8.49866 7.41786L9.44998 10.4288L6.97854 8.58223L6.67928 8.35863L6.38001 8.58223L3.90857 10.4288L4.85989 7.41786L4.96689 7.07923L4.68239 6.86667L2.17246 4.99139H5.26018H5.62656L5.73695 4.64203L6.67928 1.65959Z"
+                    stroke="#C4C4C4"
+                    strokeOpacity="0.6"
+                  />
+                </svg>
+              </Star>
+              <Star
+                key="4"
+              >
+                <svg
+                  fill="none"
+                  height="12"
+                  viewBox="0 0 13 12"
+                  width="13"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M6.67928 0L8.09837 4.49139H12.6907L8.97542 7.26722L10.3945 11.7586L6.67928 8.98278L2.96403 11.7586L4.38313 7.26722L0.66788 4.49139H5.26018L6.67928 0Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M6.67928 1.65959L7.6216 4.64203L7.73199 4.99139H8.09837H11.1861L8.67616 6.86667L8.39166 7.07923L8.49866 7.41786L9.44998 10.4288L6.97854 8.58223L6.67928 8.35863L6.38001 8.58223L3.90857 10.4288L4.85989 7.41786L4.96689 7.07923L4.68239 6.86667L2.17246 4.99139H5.26018H5.62656L5.73695 4.64203L6.67928 1.65959Z"
+                    stroke="#C4C4C4"
+                    strokeOpacity="0.6"
+                  />
+                </svg>
+              </Star>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ArticleCard>
+  </Router>
+</BrowserRouter>
+`;
+
+exports[`Sign In Component Should render without errors 1`] = `
+<Router
+  history={
+    Object {
+      "action": "POP",
+      "block": [Function],
+      "createHref": [Function],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "length": 1,
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "pathname": "/",
+        "search": "",
+        "state": undefined,
+      },
+      "push": [Function],
+      "replace": [Function],
+    }
+  }
+>
+  <ArticleCard
+    store={
+      Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+        Symbol(observable): [Function],
+      }
+    }
+  />
+</Router>
+`;

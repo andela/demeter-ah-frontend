@@ -12,6 +12,7 @@ export const articles = {
   openPublishModal: false,
   isSubmitting: false,
   response: {},
+  usernameArticles: []
 };
 
 export const editProfile = {
@@ -45,4 +46,18 @@ export const relatedArticlesState = {
   error: null,
   isLoading: false,
   isCompleted: false,
+};
+
+export const viewBookmarkedArticle = {
+  error: null,
+  isLoading: false,
+  isCompleted: false,
+  articles: [],
+};
+
+export const bookmarkArticle = {
+  error: null,
+  isLoading: false,
+  isCompleted: false,
+  bookmark: {}
 };

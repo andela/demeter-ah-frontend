@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NoItem Component Should render without errors 1`] = `
+<Fragment>
+  <div
+    className="w-full flex h-full justify-center items-center"
+  >
+    <p
+      className="text-center font-semibold text-lg opacity-25"
+    />
+  </div>
+</Fragment>
+`;

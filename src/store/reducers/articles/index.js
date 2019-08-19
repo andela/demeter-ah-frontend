@@ -21,6 +21,10 @@ export default function articlesReducer(state = articles, action) {
       return {
         ...state, response: action.resp, isPublishing: false, isDrafting: false
       };
+    case types.SET_USERNAME_ARTICLES:
+      return {
+        ...state, usernameArticles: action.payload
+      };
     default:
       return state;
   }

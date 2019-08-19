@@ -13,6 +13,8 @@ import Following from '../views/Following';
 import Followers from '../views/Followers';
 import Dashboard from '../views/Dashboard';
 import SpecificArticle from '../views/SpecificArticle';
+import Bookmarks from '../views/Bookmarks';
+import AuthorArticles from '../views/AuthorArticles';
 import PrivateRoute from './PrivateRoute';
 import PublicRoute from './PublicRoute';
 
@@ -30,7 +32,9 @@ const app = ({ history }) => (
     <PrivateRoute path="/profile/:username/editprofile" component={Profile} />
     <PrivateRoute path="/profile/:username/following" component={Following} />
     <PrivateRoute path="/profile/:username/followers" component={Followers} />
-    <ToastContainer autoClose={5000} position="top-center" hideProgressBar rtl={false} pauseOnHover />
+    <PrivateRoute path="/profile/:username/bookmark" component={Bookmarks} />
+    <Route path="/profile/:username/articles" component={AuthorArticles} />
+    <ToastContainer autoClose={5000} position="top-right" hideProgressBar={false} rtl={false} pauseOnHover />
   </Fragment>
 );
 

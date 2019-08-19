@@ -39,7 +39,7 @@ const SignIn = ({
         history && history.push('/');
       }
       if (error) {
-        callToast('Invalid email or password', 'error');
+        callToast(error, 'error');
       }
       if (localStorage.socialLogin === 'false' && location.search) {
         const urlParams = new URLSearchParams(location.search);

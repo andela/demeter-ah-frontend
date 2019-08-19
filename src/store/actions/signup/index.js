@@ -16,6 +16,10 @@ export const signUpAction = values => async (dispatch) => {
   } catch (error) {
     /* istanbul ignore next */
     const { response } = error;
+    if (!response) {
+      dispatch(signUpError('Network error Try again'));
+      return;
+    }
     /* istanbul ignore next */
     const message = response.data.message || response;
     /* istanbul ignore next */

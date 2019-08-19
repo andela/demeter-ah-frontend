@@ -1,7 +1,6 @@
 import * as types from '../actionTypes';
 import { axiosCall } from '../../../utils';
 import callToast from '../../../components/Toast';
-import { getViewedUser } from '../viewProfile';
 
 export const membersPending = () => ({
   type: types.MEMBERS_PENDING,
@@ -63,6 +62,7 @@ export const getFollowersAction = username => async (dispatch) => {
       && (response.data.message || response.data.error))
       || err.message;
     dispatch(membersError(error));
+    callToast('Invalid operation', 'error');
   }
 };
 
@@ -92,23 +92,17 @@ export const getFollowingAction = username => async (dispatch) => {
       && (response.data.message || response.data.error))
       || err.message;
     dispatch(membersError(error));
+    callToast('Invalid operation', 'error');
   }
 };
 
-export const followUser = ({ viewedUser, user }) => async (dispatch) => {
+export const followUser = followId => async (dispatch) => {
   try {
     await axiosCall({
       path: '/api/v1/members',
       method: 'post',
-      payload: { followId: viewedUser.id }
+      payload: { followId }
     });
-
-    if (viewedUser.username) {
-      await dispatch(getViewedUser({
-        username: viewedUser.username,
-        user
-      }));
-    }
   } catch (err) {
     /* istanbul ignore next */
     const { response } = err;

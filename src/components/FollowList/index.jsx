@@ -16,25 +16,25 @@ const FollowList = ({
   followUserAction,
 }) => {
   const [isFollowing, setIsFollowing] = useState(false);
-
   let followStatus = null;
-  let button = 'Unfollow';
+  let button = 'Following';
+
   if (member.followers) {
     followStatus = (member.followers.length !== 0);
-    button = followStatus ? 'Unfollow' : 'Follow';
+    button = followStatus ? 'Following' : 'Follow';
   }
+  const thisUser = (match.params.username === user.username);
 
   const handleFollow = async ({ target: { id } }) => {
     setIsFollowing(true);
-    await followUserAction({ viewedUser: { id }, user });
-    if (match.params.username === user.username) {
+    await followUserAction(id);
+    if (thisUser) {
       await getFollowing();
-      await updateProfile(user);
     } else {
       type === 'follower' ? await getFollowers(match.params.username) : await getFollowing(match.params.username);
-      await updateProfile(user);
       setIsFollowing(false);
     }
+    await updateProfile(user);
   };
 
   return (
@@ -66,7 +66,7 @@ const FollowList = ({
               id={member.id}
               type="button"
               disabled={isFollowing}
-              className={followStatus ? 'unfollow' : 'follow'}
+              className={button === 'Following' ? 'unfollow' : 'follow'}
               onClick={handleFollow}
             >
               { isFollowing ? 'Loading..' : button}

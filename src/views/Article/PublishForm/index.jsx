@@ -53,7 +53,7 @@ const PublishForm = ({
             }
             onBlur={e => onBlur('description', e.target.value)}
           />
-          <div className="flex justify-between w-full mt-24">
+          <div className="meta-div">
             <span className="category-div">
               <label className="category-div">Category</label>
               <select
@@ -76,7 +76,7 @@ const PublishForm = ({
               />
             </span>
           </div>
-          <div className="submitForm mt-12">
+          <div className="submitForm my-12">
             {submitTags}
           </div>
         </form>

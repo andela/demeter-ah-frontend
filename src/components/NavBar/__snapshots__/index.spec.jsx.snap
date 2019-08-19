@@ -85,7 +85,7 @@ exports[`NavBar Component Should render along with children component 1`] = `
             className="flex items-center justify-between relative flex-wrap bg-white-500 pt-2 p-3 z-40 shadow-md"
           >
             <div
-              className="flex items-center flex-shrink-0 text-dark mr-6"
+              className="flex items-center flex-shrink-0 text-dark"
             >
               <Link
                 to="/"
@@ -96,7 +96,6 @@ exports[`NavBar Component Should render along with children component 1`] = `
                 >
                   <img
                     alt="Author's Haven"
-                    className="w-32"
                     id="logo"
                     src="test-file-stub"
                   />

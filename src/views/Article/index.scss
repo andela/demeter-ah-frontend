@@ -1,18 +1,22 @@
 .editor{
   .uploadbtn {
-    left: -3em;
-    top: 50%;
+    @apply z-40 px-2 py-0;
+    background-color: rgba(255, 255, 255, .1);
+    width: 9rem;
+    height: 3rem;
     &:hover{
       
     } 
   }
   .articleImg{
+    background-size: cover;
+    background-position: center;
     width: 100%;
     min-height: 25rem;
   }
 
   .article-title{
-    top: 50%;
+    top: 65%;
     left: 50%;
     transform: translateX(-50%);
   }
@@ -28,7 +32,13 @@ h6 { font-size: .75em; margin: 1.67em 0 }
 }
 
 .publish{
-  @apply bg-white absolute w-full h-full z-40 py-24 px-48;
+  @apply bg-white absolute w-full h-full z-40 py-24 px-8;
+  @media(min-width: 768px){
+    @apply bg-white absolute w-full h-full z-40 py-24 px-20;
+  }
+  @media(min-width: 1024px){
+    @apply bg-white absolute w-full h-full z-40 py-24 px-48;
+  }
   .description {
     @apply border-none w-full border-purple-650 border-solid py-2;
     outline: none;
@@ -43,15 +53,25 @@ h6 { font-size: .75em; margin: 1.67em 0 }
     @apply opacity-50;
     line-height: 2rem;
   }
+  .meta-div{
+    @apply flex flex-col justify-between w-full mt-24;
+    @media(min-width: 768px){
+      @apply flex-row;
+    }
+  }
   .category-div{
-    width: 45%;
+    @apply w-full mb-8;
+    @media(min-width: 768px){
+      width: 45%;
+    }
     select {
       -webkit-appearance: none; 
       -moz-appearance: none;
       appearance: none; 
       background-repeat: no-repeat;
       background-size: 2rem;
-      @apply rounded-lg w-full border-purple-650 px-4;
+      border-radius: .5rem;
+      @apply w-full border-purple-650 px-4;
       border-width: .07rem;
       height: 3rem;
       background-color: white;
@@ -60,7 +80,10 @@ h6 { font-size: .75em; margin: 1.67em 0 }
     }
   }
   .tag-div{
-    width: 45%;
+    @apply w-full mb-8;
+    @media(min-width: 768px){
+      width: 45%;
+    }
   }
   .closebtn{
     img{
@@ -70,7 +93,11 @@ h6 { font-size: .75em; margin: 1.67em 0 }
     }
     @apply absolute;
     top: 2rem;
-    right: 5rem;
+    right: 2rem;
+    @media(min-width: 768px){
+      top: 2rem;
+      right: 5rem;
+    }
     cursor: pointer;
   }
   .publishbtn{

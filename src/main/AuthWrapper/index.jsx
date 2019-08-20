@@ -1,10 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Routes from '../../routes';
-import Loader from '../../components/skeleton';
+import ArticleLoader from '../../components/ArticleLoader';
 
 const AuthWrapper = ({ isSettingAuth }) => (
-  isSettingAuth ? (<Loader />) : <Routes />
+  isSettingAuth ? (<ArticleLoader />) : <Routes />
 );
 
 const mapStateToProps = state => ({

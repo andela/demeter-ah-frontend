@@ -10,9 +10,9 @@ export const draftArticle = () => ({ type: types.ARTICLE_DRAFT });
 
 export const publishArticle = () => ({ type: types.ARTICLE_PUBLISH });
 
-export const createArticleSuccess = message => ({
+export const createArticleSuccess = ({ message, slug }) => ({
   type: types.CREATE_ARTICLE_SUCCESS,
-  resp: { message }
+  resp: { message, slug }
 });
 
 export const createArticleError = error => ({ type: types.CREATE_ARTICLE_ERROR, resp: { error } });
@@ -29,9 +29,9 @@ export const getCategories = () => async () => {
     return result;
   } catch (err) {
     /* istanbul ignore next */
+    // eslint-disable-next-line no-unused-vars
     const { response } = err;
     /* istanbul ignore next */
-    console.log('---', response);
   }
 };
 
@@ -51,7 +51,8 @@ export const createArticle = payload => async (dispatch) => {
     const result = await axiosCall({
       path: '/api/v1/articles', payload: ArticlePayload, method: 'post', contentType: 'multipart/form-data'
     });
-    dispatch(createArticleSuccess(result.message));
+
+    dispatch(createArticleSuccess({ message: result.message, slug: result.article.slug }));
   } catch (err) {
     /* istanbul ignore next */
     const { response } = err;

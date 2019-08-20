@@ -22,6 +22,7 @@ module.exports = {
     fontSize: {
       ...fontSize,
       '1.5xl': '1.2em',
+      '1.6xl': '5em',
       'xs-2': '0.85em',
       xxs: '0.7em',
     },
@@ -36,6 +37,7 @@ module.exports = {
           150: '#835bd815',
           650: '#835BD8',
           250: '#AD93E6',
+          200: '#A88CE4',
           50: 'rgba(197, 172, 250, 0.05)',
         },
         gray: {
@@ -68,9 +70,12 @@ module.exports = {
         122: '38rem',
         180: '50rem',
         220: '60rem',
+        xl: '48rem',
+        page: '1800px'
       },
       maxHeight: {
         ...maxHeight,
+        85: '14rem',
         86: '22rem',
         108: '26rem',
         112: '28rem',
@@ -88,6 +93,7 @@ module.exports = {
         84: '21rem',
         96: '24rem',
         108: '26rem',
+        112: '30rem',
       },
       minHeight: {
         ...minHeight,
@@ -100,6 +106,7 @@ module.exports = {
         '5.5/12': '45%',
         7: '1.75rem',
         9: '2.2rem',
+        60: '9rem',
         72: '17rem',
         84: '21rem',
         86: '22rem',
@@ -138,9 +145,21 @@ module.exports = {
         xl: '48px',
         xlx1: '18rem',
         xlx2: '24rem',
+        xlx3: '420px',
       },
+      width: {
+        xl: '1125px',
+      },
+      inset: {
+        0: 0,
+        auto: 'auto',
+        '1/2': '50%',
+      }
     },
   },
-  variants: {},
+  variants: {
+    // ...
+    inset: ['responsive', 'hover', 'focus'],
+  },
   plugins: [],
 };

@@ -11,6 +11,7 @@ import Profile from '../views/Profile';
 import Following from '../views/Following';
 import Followers from '../views/Followers';
 import Dashboard from '../views/Dashboard';
+import SpecificArticle from '../views/SpecificArticle';
 import PrivateRoute from './PrivateRoute';
 import PublicRoute from './PublicRoute';
 
@@ -22,6 +23,7 @@ const app = ({ history }) => (
     <PublicRoute path="/signin" component={SignIn} />
     <PrivateRoute path="/article/create" component={ArticleCreate} />
     <PublicRoute path="/reset-password" component={ResetPassword} />
+    <Route path="/articles/:slug" component={SpecificArticle} />
     <Route path="/profile/:username" component={Dashboard} />
     <PrivateRoute path="/profile/:username/editprofile" component={Profile} />
     <PrivateRoute path="/profile/:username/following" component={Following} />

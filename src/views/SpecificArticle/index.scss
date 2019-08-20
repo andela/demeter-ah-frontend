@@ -1,0 +1,39 @@
+.viewedArticle {
+  .hr-line {
+  border-bottom: #dfdfdf solid 1px;
+  font-weight: lighter !important;
+}
+
+.action {
+  transform: translateY(-50%);
+}
+
+.flo {
+  direction: rtl;
+}
+
+.related {
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+}
+p {
+  font-family: 'Montserrat', sans-serif;
+}
+.cdx-list--ordered{
+  padding-left:1rem;
+}
+
+.rel {
+    width: 25rem;
+    overflow-wrap: break-word;
+    
+  .title {
+    overflow-wrap: break-word;
+    height: 4rem;
+    overflow-y: scroll;
+    padding: 0px 10px !important;
+    }
+}
+.icons{
+  border: 2px #a9a8a8 solid;
+}
+}

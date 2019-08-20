@@ -29,7 +29,7 @@ const Article = ({
   if (response.message && (!isPublishing || !isDrafting)) {
     callToast(response.message, 'success');
     closeModal();
-    history.push('/');
+    history.push(`/articles/${response.slug}`);
   } else if (response.error && (!isPublishing || !isDrafting)) {
     const { error } = response;
     if (error) {

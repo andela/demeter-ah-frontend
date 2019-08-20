@@ -1,5 +1,17 @@
 import axios from 'axios';
 import Cryptr from 'cryptr';
+import toast from '../components/Toast';
+// eslint-disable-next-line import/no-cycle
+import { getUser } from '../store/actions/signup';
+
+let callDispatch;
+export const setDispatch = ({ dispatch }) => {
+  callDispatch = dispatch;
+};
+
+export const clearLocalStorage = () => {
+  localStorage.clear();
+};
 
 export const axiosCall = async ({
   path, payload, method, contentType
@@ -16,9 +28,21 @@ export const axiosCall = async ({
     headers,
     json: true,
   };
-  const result = await axios(axiosdata);
-  const data = result && result.data;
-  return data;
+
+  try {
+    const result = await axios(axiosdata);
+    const data = result && result.data;
+    return data;
+  } catch (error) {
+    const { response } = error;
+    if (response.data.message === 'Unauthorized access') {
+      clearLocalStorage();
+      toast('Kindly login', 'error');
+      callDispatch(getUser());
+      return;
+    }
+    throw error;
+  }
 };
 
 export const saveToLocalStorage = (user) => {
@@ -28,10 +52,6 @@ export const saveToLocalStorage = (user) => {
     localStorage.setItem('user', JSON.stringify(user));
     token ? localStorage.setItem('isAuthenticated', true) : '';
   }
-};
-
-export const clearLocalStorage = () => {
-  localStorage.clear();
 };
 
 export const decryptQuery = (string) => {

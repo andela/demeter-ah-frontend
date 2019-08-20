@@ -23,15 +23,19 @@ export const signUpAction = values => async (dispatch) => {
   }
 };
 
-export const getUser = () => (dispatch) => {
+export const getUser = () => async (dispatch) => {
   /* istanbul ignore next */
   // if (localStorage.token && localStorage.user) {
   try {
     let user = localStorage.getItem('user');
     user = JSON.parse(user);
     if (user) {
+      const result = await axiosCall({
+        method: 'get',
+        path: `/api/v1/profiles/${user.username}`,
+      });
       const payload = {
-        user,
+        user: result.user,
         isAuthenticated: true
       };
       dispatch(setUpUser(payload));

@@ -11,6 +11,7 @@
   "parser": "babel-eslint",
   "plugins": ["react", "json"],
   "rules": {
+    "import/no-named-as-default": "off",
     "import/prefer-default-export": "off",
     "jsx-a11y/label-has-associated-control": "off",
     "react/button-has-type": "off",

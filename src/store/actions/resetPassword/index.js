@@ -7,6 +7,7 @@ export const resetSuccess = message => ({ type: types.RESET_SUCCESS, reset: { me
 export const resetError = error => ({ type: types.RESET_ERROR, reset: { error } });
 
 export const sendResetLink = payload => async (dispatch) => {
+  dispatch(cleanUpReset());
   dispatch(submitReset(true));
   try {
     const result = await axiosCall({ path: '/api/v1/users/reset-password', payload, method: 'post' });

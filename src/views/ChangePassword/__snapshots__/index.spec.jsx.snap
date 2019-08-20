@@ -1,0 +1,273 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CHANGE PASSWORD COMPONENT Should render along with children componenet 1`] = `
+<BrowserRouter>
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "createHref": [Function],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "pathname": "/",
+          "search": "",
+          "state": undefined,
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
+  >
+    <Connect(ChangePassword)
+      store={
+        Object {
+          "dispatch": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+          Symbol(observable): [Function],
+        }
+      }
+    >
+      <ChangePassword
+        authResponse={Object {}}
+        changePassword={[Function]}
+        cleanUpPasswordChange={[Function]}
+        isSubmitting={false}
+        store={
+          Object {
+            "dispatch": [Function],
+            "getState": [Function],
+            "replaceReducer": [Function],
+            "subscribe": [Function],
+            Symbol(observable): [Function],
+          }
+        }
+      >
+        <main
+          className="change-password"
+        >
+          <form
+            autoComplete="off"
+            className="lg:w-5/12 md:w-3/5 sm:w-4/5 w-full min-w-min sm:rounded-2xl rounded-none"
+            onSubmit={[Function]}
+          >
+            <h3
+              className="text-center text-white text-3xl font-semibold"
+            >
+              Change Password
+            </h3>
+            <InputForm
+              classes="my-8 md:w-3/5 w-4/5 mx-auto"
+              inputType="password"
+              labelname="Password"
+              name="password"
+              onChange={[Function]}
+              placeholder="password"
+            >
+              <div
+                className="my-8 md:w-3/5 w-4/5 mx-auto"
+              >
+                <Label
+                  labelname="Password"
+                  name="password"
+                >
+                  <label
+                    htmlFor="password"
+                  >
+                    Password
+                  </label>
+                </Label>
+                <Input
+                  inputType="password"
+                  name="password"
+                  onChange={[Function]}
+                  placeholder="password"
+                >
+                  <input
+                    className="forminput rounded py-2 bg-purple-150 undefined"
+                    name="password"
+                    onChange={[Function]}
+                    placeholder="password"
+                    required={true}
+                    type="password"
+                  />
+                </Input>
+              </div>
+            </InputForm>
+            <InputForm
+              classes="my-8 md:w-3/5 w-4/5 mx-auto"
+              inputType="password"
+              labelname="Confirm Password"
+              name="confirmPassword"
+              onChange={[Function]}
+              placeholder="confirm password"
+            >
+              <div
+                className="my-8 md:w-3/5 w-4/5 mx-auto"
+              >
+                <Label
+                  labelname="Confirm Password"
+                  name="confirmPassword"
+                >
+                  <label
+                    htmlFor="confirmPassword"
+                  >
+                    Confirm Password
+                  </label>
+                </Label>
+                <Input
+                  inputType="password"
+                  name="confirmPassword"
+                  onChange={[Function]}
+                  placeholder="confirm password"
+                >
+                  <input
+                    className="forminput rounded py-2 bg-purple-150 undefined"
+                    name="confirmPassword"
+                    onChange={[Function]}
+                    placeholder="confirm password"
+                    required={true}
+                    type="password"
+                  />
+                </Input>
+              </div>
+            </InputForm>
+            <Button
+              className="submitBtn"
+              isSubmit={false}
+              type="submit"
+            >
+              <button
+                className="submitBtn"
+                disabled={false}
+                type="submit"
+              >
+                Submit
+              </button>
+            </Button>
+          </form>
+        </main>
+      </ChangePassword>
+    </Connect(ChangePassword)>
+  </Router>
+</BrowserRouter>
+`;
+
+exports[`CHANGE PASSWORD COMPONENT Should render status view after reset success 1`] = `
+<BrowserRouter>
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "createHref": [Function],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "pathname": "/",
+          "search": "",
+          "state": undefined,
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
+  >
+    <ChangePassword
+      authResponse={
+        Object {
+          "message": "welcome",
+        }
+      }
+      changePassword={[Function]}
+      cleanUpPasswordChange={[Function]}
+      isSubmitting={false}
+    >
+      <main
+        className="change-password"
+      >
+        <Status
+          height="h-86"
+          status="welcome"
+          width="w-2/4"
+        >
+          <div
+            className="w-2/4 h-86 container"
+          >
+            <h3
+              className="status"
+            >
+              welcome
+            </h3>
+            <div
+              className="actions"
+            >
+              <Link
+                to="/signin"
+              >
+                <a
+                  href="/signin"
+                  onClick={[Function]}
+                >
+                  Go to Sign In   
+                  <b>
+                    &gt;
+                  </b>
+                </a>
+              </Link>
+            </div>
+          </div>
+        </Status>
+      </main>
+    </ChangePassword>
+  </Router>
+</BrowserRouter>
+`;
+
+exports[`CHANGE PASSWORD COMPONENT Should render without errors 1`] = `
+<Router
+  history={
+    Object {
+      "action": "POP",
+      "block": [Function],
+      "createHref": [Function],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "length": 1,
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "pathname": "/",
+        "search": "",
+        "state": undefined,
+      },
+      "push": [Function],
+      "replace": [Function],
+    }
+  }
+>
+  <Connect(ChangePassword)
+    store={
+      Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+        Symbol(observable): [Function],
+      }
+    }
+  />
+</Router>
+`;

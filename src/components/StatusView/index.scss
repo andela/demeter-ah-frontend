@@ -1,0 +1,13 @@
+.container{
+  @apply flex justify-center flex-col items-center absolute inset-0 m-auto bg-white p-4;
+  box-shadow: .2rem .2rem 1rem rgba(0,0,0, .1);
+  h3{
+    @apply text-2xl font-normal opacity-50 text-center;
+  }
+  .actions{
+    @apply flex justify-around my-8;
+    a{
+      @apply text-purple-650 font-normal text-lg;
+    }
+  }
+}

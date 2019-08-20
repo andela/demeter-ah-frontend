@@ -3,6 +3,11 @@ export const resetPassword = {
   isSubmitting: false,
 };
 
+export const changePassword = {
+  response: {},
+  isSubmitting: false,
+};
+
 export const articles = {
   openPublishModal: false,
   isSubmitting: false,

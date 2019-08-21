@@ -7,7 +7,14 @@ import { getViewedUser } from '../../store/actions/viewProfile';
 import { updateProfileInfo } from '../../store/actions/editProfile';
 
 const Followbtn = ({
-  user, viewedUser, followAction, isFollowed, getFollower, updateProfile, getViewedUserInfo,
+  user,
+  viewedUser,
+  followAction,
+  isFollowed,
+  getFollower,
+  updateProfile,
+  getViewedUserInfo,
+  isAuthenticated,
 }) => {
   const [isFollowing, setIsFollowing] = useState(false);
 
@@ -26,7 +33,7 @@ const Followbtn = ({
     // update user profile
     await updateProfile(user);
   };
-  return user.username !== viewedUser.username
+  return (user.username !== viewedUser.username && isAuthenticated)
     ? (
       <Button
         type="submit"
@@ -42,6 +49,7 @@ const Followbtn = ({
 
 const mapStateToProps = state => ({
   user: state.auth.user,
+  isAuthenticated: state.auth.isAuthenticated,
   viewedUser: state.viewProfile.user,
   isFollowed: state.viewProfile.user.isFollowed
 });

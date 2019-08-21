@@ -1,0 +1,15 @@
+.comment {
+  .comment-box {
+    @apply resize-none border mb-2 rounded-1xl text-xs text-black border-gray-50 p-2 text-sm w-86 w-10/12
+  }
+
+  .reactions {
+  .update-btn {
+    @apply text-xs mr-2 cursor-pointer border-solid border-purple-250 rounded-xs font-bold text-black text-left py-2 border text-purple-250 px-4
+  }
+
+  .cancel-btn {
+    @apply text-xs cursor-pointer border-solid border-gray-250 rounded-xs font-bold text-gray-250 pr-4 text-left py-2;
+  }
+}
+}

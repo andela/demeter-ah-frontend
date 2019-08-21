@@ -161,6 +161,7 @@ exports[`UserInfo Component Should render along with children component 1`] = `
                   followAction={[Function]}
                   getFollower={[Function]}
                   getViewedUserInfo={[Function]}
+                  isAuthenticated={false}
                   updateProfile={[Function]}
                   user={Object {}}
                   viewedUser={Object {}}
@@ -336,6 +337,7 @@ exports[`UserInfo Component Should render along with children component wher ima
                   followAction={[Function]}
                   getFollower={[Function]}
                   getViewedUserInfo={[Function]}
+                  isAuthenticated={false}
                   updateProfile={[Function]}
                   user={Object {}}
                   viewedUser={Object {}}

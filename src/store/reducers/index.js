@@ -10,6 +10,7 @@ import viewArticle from './viewArticle';
 import relatedArticles from './relatedArticles';
 import bookmarks from './bookmarks';
 import bookmarkArticle from './bookmarkArticle';
+import comments from './Comments';
 
 const reducers = combineReducers({
   auth: authReducer,
@@ -22,7 +23,8 @@ const reducers = combineReducers({
   viewArticle,
   relatedArticles,
   bookmarks,
-  bookmarkArticle
+  bookmarkArticle,
+  comments
 });
 
 export default reducers;

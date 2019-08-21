@@ -1,5 +1,7 @@
 import './index.scss';
-import React, { Fragment, useEffect, useState } from 'react';
+import React, {
+  useEffect, useState, useRef, Fragment,
+} from 'react';
 import ReactHtmlParser from 'react-html-parser';
 import { connect } from 'react-redux';
 import { viewArticleAction, cleanUpArticle } from '../../store/actions/viewArticle';
@@ -11,10 +13,10 @@ import ShareAndDate from '../../components/ShareAndDate/index';
 import Reactions from '../../components/Reactions/index';
 import FlagArticle from '../../components/FlagArticle/index';
 import ArticleTags from '../../components/ArticleTags/index';
-import Loader from '../../components/Loader';
 import convertFromJSON from '../../utils/convertFromJSON';
 import { featuredImgStyle, relatedArticleImg } from '../../utils';
 import { bookmarkArticle } from '../../store/actions/bookmarkArticle';
+import Comment from '../../components/Comment';
 
 const SpecificArticle = (props) => {
   const getBody = (raw) => {
@@ -32,7 +34,6 @@ const SpecificArticle = (props) => {
       title, body, image, readTime, createdAt, category, author, tags, bookmarks, slug
     },
     articles,
-    relatedIsLoading,
     match,
     history,
     articleError,
@@ -55,18 +56,28 @@ const SpecificArticle = (props) => {
   const [bodyValue, setbodyValue] = useState(null);
   const [onbookmark, setOnBookmark] = useState(false);
   const [getRelatedArticles, setGetRelatedArticles] = useState(true);
-  const [hasBody, SetHasBody] = useState(true);
 
   const bookmarkthisArticle = async (e) => {
     const articleSlug = e.target.dataset.slug;
     await bookmarkArticleAction(articleSlug);
     setOnBookmark(true);
   };
+  const commentNode = useRef();
+
+  const gotoComment = () => {
+    window.scrollTo({
+      top: commentNode.current.offsetTop,
+      behavior: 'smooth',
+    });
+  };
 
   useEffect(() => {
     if (articleError) {
       history.push('/');
     }
+    return () => {
+      props.cleanUpArticle();
+    };
   }, [articleError]);
 
   useEffect(() => {
@@ -81,17 +92,12 @@ const SpecificArticle = (props) => {
       props.relatedArticlesAction(match.params.slug, category);
       setGetRelatedArticles(false);
     }
-    if (body && hasBody) {
-      parsedData = body && JSON.parse(body);
-      parsedBody = getBody(parsedData);
-      setbodyValue(parsedBody && ReactHtmlParser(parsedBody));
-      SetHasBody(false);
-    }
 
-    return () => {
-      props.cleanUpArticle();
-    };
+    parsedData = body && JSON.parse(body);
+    parsedBody = getBody(parsedData);
+    setbodyValue(parsedBody && ReactHtmlParser(parsedBody));
   }, [article, match.params.slug, onbookmark]);
+
 
   const detail = (
     <div className="viewedArticle w-full text-center">
@@ -106,13 +112,12 @@ const SpecificArticle = (props) => {
             author={author}
             readTime={readTime}
           />
-          <ShareAndDate createdAt={createdAt} category={category} bookmarks={bookmarks} />
+          <ShareAndDate createdAt={createdAt} category={category} />
         </div>
         <div className="hr-line mt-2 mb-8" />
         <div className="flex section-three mb-8">
           <div className="text-gray-900 text-justify">
-            {/* {articleIsLoading ? <Loader /> : bodyValue} */}
-            {bodyValue}
+            { bodyValue}
           </div>
         </div>
         <div className="sm:flex-row md:flex section-four tags mb-8">
@@ -126,18 +131,20 @@ const SpecificArticle = (props) => {
           isBookmarked={bookmarks && bookmarks.length}
           slug={slug}
           bookmarkArticle={bookmarkthisArticle}
+          commentNo={article.commentNo}
+          viewComment={gotoComment}
         />
         <div className="flex flex-col section-five mb-8 bg-gray-100 justify-center">
           <h2 className="w-8/12 mx-auto sm:text-center lg:text-left">Related Articles</h2>
           <div className="flex flex-row w-8/12 mx-auto sm:max-w-32 md:max-w-84 lg:max-w-96">
-            {relatedIsLoading ? <Loader />
-              : (
-                <RelatedArticles
-                  articles={articles}
-                  relatedArticleImg={relatedArticleImg}
-                />
-              )}
+            <RelatedArticles
+              articles={articles}
+              relatedArticleImg={relatedArticleImg}
+            />
           </div>
+        </div>
+        <div ref={commentNode} className="commentWrapper">
+          <Comment commentNo={article.commentNo} match={match} slug={match.params.slug} />
         </div>
       </div>
     </div>

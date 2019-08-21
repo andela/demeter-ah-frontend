@@ -31,7 +31,8 @@ export const cleanUpArticle = () => ({
   type: types.VIEW_ARTICLE_CLEANUP,
   payload: {
     error: null,
-    isCompleted: false
+    isCompleted: false,
+    article: null,
   }
 });
 

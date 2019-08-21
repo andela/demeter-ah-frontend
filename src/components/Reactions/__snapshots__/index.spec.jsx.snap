@@ -49,9 +49,7 @@ exports[`Reactions Component Should render without errors 1`] = `
       </div>
       <p
         className="text-sm mx-auto text-gray-600"
-      >
-        2
-      </p>
+      />
     </div>
     <div
       className="sm:mt-4 sm:ml-5 md:ml-0 md:flex-col text-center"

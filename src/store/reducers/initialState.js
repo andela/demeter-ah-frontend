@@ -61,3 +61,10 @@ export const bookmarkArticle = {
   isCompleted: false,
   bookmark: {}
 };
+
+export const comments = {
+  comments: null,
+  error: null,
+  isLoading: false,
+  isCompleted: false,
+};

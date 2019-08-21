@@ -7,7 +7,7 @@ const AuthorProfile = ({ author, readTime }) => (
     <div className="flex sm:flex-row flex-wrap">
       <img
         src={author && author.image ? author.image : profilePic}
-        className="m-1 bg-purple-650 rounded-full sm:h-20 sm:w-20 md:w-20 md:h-20 lg:h-24 lg:w-24 flex"
+        className="m-1 bg-purple-650 object-cover rounded-full sm:h-20 sm:w-20 md:w-20 md:h-20 lg:h-24 lg:w-24 flex"
         alt="Author"
       />
       <div className="text-left">

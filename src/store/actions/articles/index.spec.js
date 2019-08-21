@@ -50,11 +50,12 @@ describe('ARTICLE ACTIONS', () => {
 
     test('createArticleSuccess', () => {
       const success = 'success';
-      const createArticleSuccessAction = createArticleSuccess(success);
+      const slug = 'new-slug';
+      const createArticleSuccessAction = createArticleSuccess({ message: success, slug });
 
       expect(createArticleSuccessAction).toEqual({
         type: 'CREATE_ARTICLE_SUCCESS',
-        resp: { message: 'success' }
+        resp: { message: 'success', slug: 'new-slug' }
       });
     });
 

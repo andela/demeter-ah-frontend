@@ -26,6 +26,17 @@ export const viewProfile = {
 export const membership = {
   followers: [],
   following: [],
+};
+
+export const viewArticleState = {
+  article: {},
+  error: null,
+  isLoading: false,
+  isCompleted: false,
+};
+
+export const relatedArticlesState = {
+  articles: {},
   error: null,
   isLoading: false,
   isCompleted: false,

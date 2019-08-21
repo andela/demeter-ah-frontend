@@ -69,3 +69,25 @@ export const cardStyle = (imgURL) => {
   };
   return card;
 };
+
+
+export const featuredImgStyle = (imgURL) => {
+  const featured = {
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'top center',
+    backgroundImage: `linear-gradient(179.9deg, rgba(255, 255, 255, 0) 25.3%, rgba(10, 9, 9, 0.67) 94.04%), url(${imgURL})`,
+  };
+  return featured;
+};
+
+export const relatedArticleImg = (imgURL) => {
+  const style = {
+    height: '10rem',
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'top center',
+    backgroundImage: `url(${imgURL})`
+  };
+  return style;
+};

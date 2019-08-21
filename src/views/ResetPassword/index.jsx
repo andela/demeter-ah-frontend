@@ -1,23 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import callToast from '../../components/Toast';
+import Status from '../../components/StatusView';
 import './index.scss';
 import * as actions from '../../store/actions/resetPassword';
 import Button from '../../components/Button';
 import InputForm from '../../components/InputForm';
 
-const ResetPassword = ({
+export const ResetPassword = ({
   authResponse, sendResetLink,
   cleanUpReset, isSubmitting,
 }) => {
-  useEffect(() => {
-    cleanUpReset();
-  }, [authResponse]);
-
   const [email, setEmail] = useState({ email: '' });
 
-  if (authResponse.message && isSubmitting === false) callToast(authResponse.message, 'success');
-  else if (authResponse.error && isSubmitting === false) callToast(authResponse.error, 'error');
+  useEffect(() => {
+    cleanUpReset();
+  }, []);
+
+  useEffect(() => {
+    if (authResponse.error && isSubmitting === false) callToast(authResponse.error, 'error');
+  }, [authResponse]);
 
   const onChange = (e) => {
     e.persist();
@@ -31,24 +33,37 @@ const ResetPassword = ({
 
   return (
     <main className="reset">
-      <form onSubmit={handleSubmit} autoComplete="off" className="lg:w-5/12 sm:w-3/5 w-full min-w-min sm:rounded-2xl rounded-none">
-        <h3 className="text-center text-white text-3xl font-semibold">Reset Password</h3>
-        <InputForm
-          classes="my-8 w-3/5 mx-auto"
-          labelname="Email"
-          name="email"
-          onChange={onChange}
-          inputType="email"
-          pattern="^[\w.]+@[\w]{2,20}.[a-z]{2,10}$"
-        />
-        <Button
-          type="submit"
-          isSubmit={isSubmitting}
-          className="submitBtn"
-        >
-          {isSubmitting ? 'Loading' : 'Reset'}
-        </Button>
-      </form>
+      {
+        !(authResponse.message && isSubmitting === false)
+          ? (
+            <form onSubmit={handleSubmit} autoComplete="off" className="lg:w-5/12 md:w-3/5 sm:w-4/5 w-full min-w-min sm:rounded-2xl rounded-none">
+              <h3 className="text-center text-white text-3xl font-semibold">Reset Password</h3>
+              <InputForm
+                classes="my-8 md:w-3/5 w-4/5 mx-auto"
+                labelname="Email"
+                name="email"
+                placeholder="johndoe@gmail.com"
+                onChange={onChange}
+                inputType="email"
+                pattern="^[\w.]+@[\w]{2,20}.[a-z]{2,10}$"
+              />
+              <Button
+                type="submit"
+                isSubmit={isSubmitting}
+                className="submitBtn"
+              >
+                {isSubmitting ? 'Loading' : 'Reset'}
+              </Button>
+            </form>
+          )
+          : (
+            <Status
+              status={authResponse.message}
+              width="w-2/4"
+              height="h-86"
+            />
+          )
+      }
     </main>
   );
 };
@@ -64,5 +79,5 @@ const matchDispatchToProps = {
   sendResetLink: actions.sendResetLink,
   cleanUpReset: actions.cleanUpReset,
 };
-export const ResetPasswordComp = ResetPassword;
+
 export default connect(mapStateToProps, matchDispatchToProps)(ResetPassword);

@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow, mount } from 'enzyme';
 import { BrowserRouter as Router } from 'react-router-dom';
 import store from '../../store';
-import ReduxResetPassword, { ResetPasswordComp } from './index';
+import ReduxResetPassword, { ResetPassword } from './index';
 
 describe('RESET PASSWORD COMPONENT', () => {
   it('Should render without errors', () => {
@@ -27,33 +27,42 @@ describe('RESET PASSWORD COMPONENT', () => {
 
   it('should call onChange function', () => {
     const event = {
-      preventDefault() {},
+      preventDefault() { },
       target: { value: 'frank@gmail.com', name: 'email' },
     };
-    const mockOnResetFn = jest.fn();
     const component = mount(
-      <ResetPasswordComp
+      <ResetPassword
         authResponse={{ error: 'bad data' }}
-        cleanUpReset={() => {}}
+        cleanUpReset={() => { }}
         isSubmitting={false}
-        sendResetLink={() => {}}
-        onSignUp={mockOnResetFn}
+        sendResetLink={() => { }}
       />
     );
     const inputTag = component.find('input').at(0);
     inputTag.simulate('change', event);
   });
 
+  it('Should render status view after reset success', () => {
+    const component = mount(
+      <ResetPassword
+        authResponse={{ message: 'welcome' }}
+        cleanUpReset={() => { }}
+        isSubmitting={false}
+        sendResetLink={() => { }}
+      />
+    );
+    expect(component).toMatchSnapshot();
+  });
+
   it('should call handleSubmit function', () => {
     const mockOnResetFn = jest.fn();
-    const fakeEvent = { preventDefault: mockOnResetFn };
+    const fakeEvent = { preventDefault: () => { } };
     const component = shallow(
-      <ResetPasswordComp
-        authResponse={{ message: 'welcome' }}
-        cleanUpReset={() => {}}
+      <ResetPassword
+        authResponse={{}}
+        cleanUpReset={() => { }}
         isSubmitting={false}
-        sendResetLink={() => {}}
-        onSignUp={mockOnResetFn}
+        sendResetLink={mockOnResetFn}
       />
     );
     component.find('form').simulate('submit', fakeEvent);
@@ -62,11 +71,11 @@ describe('RESET PASSWORD COMPONENT', () => {
 
   it('should change button value from reset to loading on submit', () => {
     const component = mount(
-      <ResetPasswordComp
+      <ResetPassword
         authResponse={{ message: 'welcome' }}
-        cleanUpReset={() => {}}
+        cleanUpReset={() => { }}
         isSubmitting
-        sendResetLink={() => {}}
+        sendResetLink={() => { }}
       />
     );
     expect(component.find('button').text()).toEqual('Loading...');

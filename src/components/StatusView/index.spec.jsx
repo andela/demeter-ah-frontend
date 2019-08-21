@@ -1,10 +1,10 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { Toast } from './index';
+import Status from './index';
 
-describe('Toast Component', () => {
+describe('StatusView Component', () => {
   it('Should render without errors', () => {
-    const component = shallow(<Toast output="welcome" />);
+    const component = shallow(<Status output="welcome" />);
     expect(component).toMatchSnapshot();
   });
 });

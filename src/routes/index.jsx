@@ -4,6 +4,7 @@ import { ToastContainer } from 'react-toastify';
 import Home from '../views/Home';
 import NavBar from '../components/NavBar';
 import ResetPassword from '../views/ResetPassword';
+import ChangePassword from '../views/ChangePassword';
 import SignUp from '../views/Signup';
 import SignIn from '../views/SignIn';
 import ArticleCreate from '../views/Article';
@@ -24,6 +25,7 @@ const app = ({ history }) => (
     <PrivateRoute path="/article/create" component={ArticleCreate} />
     <PublicRoute path="/reset-password" component={ResetPassword} />
     <Route path="/articles/:slug" component={SpecificArticle} />
+    <PublicRoute path="/change-password" component={ChangePassword} />
     <Route path="/profile/:username" component={Dashboard} />
     <PrivateRoute path="/profile/:username/editprofile" component={Profile} />
     <PrivateRoute path="/profile/:username/following" component={Following} />

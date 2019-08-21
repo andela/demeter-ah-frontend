@@ -55,7 +55,7 @@ exports[`RESET PASSWORD COMPONENT Should render along with children componenet 1
         >
           <form
             autoComplete="off"
-            className="lg:w-5/12 sm:w-3/5 w-full min-w-min sm:rounded-2xl rounded-none"
+            className="lg:w-5/12 md:w-3/5 sm:w-4/5 w-full min-w-min sm:rounded-2xl rounded-none"
             onSubmit={[Function]}
           >
             <h3
@@ -64,15 +64,16 @@ exports[`RESET PASSWORD COMPONENT Should render along with children componenet 1
               Reset Password
             </h3>
             <InputForm
-              classes="my-8 w-3/5 mx-auto"
+              classes="my-8 md:w-3/5 w-4/5 mx-auto"
               inputType="email"
               labelname="Email"
               name="email"
               onChange={[Function]}
               pattern="^[\\\\w.]+@[\\\\w]{2,20}.[a-z]{2,10}$"
+              placeholder="johndoe@gmail.com"
             >
               <div
-                className="my-8 w-3/5 mx-auto"
+                className="my-8 md:w-3/5 w-4/5 mx-auto"
               >
                 <Label
                   labelname="Email"
@@ -89,12 +90,14 @@ exports[`RESET PASSWORD COMPONENT Should render along with children componenet 1
                   name="email"
                   onChange={[Function]}
                   pattern="^[\\\\w.]+@[\\\\w]{2,20}.[a-z]{2,10}$"
+                  placeholder="johndoe@gmail.com"
                 >
                   <input
                     className="forminput rounded py-2 bg-purple-150 undefined"
                     name="email"
                     onChange={[Function]}
                     pattern="^[\\\\w.]+@[\\\\w]{2,20}.[a-z]{2,10}$"
+                    placeholder="johndoe@gmail.com"
                     required={true}
                     type="email"
                   />
@@ -120,6 +123,42 @@ exports[`RESET PASSWORD COMPONENT Should render along with children componenet 1
     </Connect(ResetPassword)>
   </Router>
 </BrowserRouter>
+`;
+
+exports[`RESET PASSWORD COMPONENT Should render status view after reset success 1`] = `
+<ResetPassword
+  authResponse={
+    Object {
+      "message": "welcome",
+    }
+  }
+  cleanUpReset={[Function]}
+  isSubmitting={false}
+  sendResetLink={[Function]}
+>
+  <main
+    className="reset"
+  >
+    <Status
+      height="h-86"
+      status="welcome"
+      width="w-2/4"
+    >
+      <div
+        className="w-2/4 h-86 container"
+      >
+        <h3
+          className="status"
+        >
+          welcome
+        </h3>
+        <div
+          className="actions"
+        />
+      </div>
+    </Status>
+  </main>
+</ResetPassword>
 `;
 
 exports[`RESET PASSWORD COMPONENT Should render without errors 1`] = `

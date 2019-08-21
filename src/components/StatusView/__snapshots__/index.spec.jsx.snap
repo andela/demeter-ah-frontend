@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StatusView Component Should render without errors 1`] = `
+<div
+  className="w-full h-full container"
+>
+  <h3
+    className="status"
+  />
+  <div
+    className="actions"
+  />
+</div>
+`;

@@ -1,4 +1,4 @@
-.reset{
+.change-password{
   background: url('../../assets/images/bg.png');
   background-size: cover;
   background-repeat: no-repeat;
@@ -11,10 +11,10 @@
       color: rgba(131, 91, 216, 1);
     }
     label {
-      @apply text-center block opacity-75 font-normal;
+      @apply text-left block opacity-75 font-normal;
     }
     input {
-      @apply text-center mt-2 w-full px-2 py-2;
+      @apply text-left mt-2 w-full px-2 py-2;
       border-radius: .5rem;
       background: rgba(131, 91, 216, .1);
       &:focus{outline: none}

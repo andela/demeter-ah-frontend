@@ -1,7 +1,7 @@
 import * as types from '../../actions/actionTypes';
 import { resetPassword } from '../initialState';
 
-export default function authReducer(state = resetPassword, action) {
+export default function restPasswordReducer(state = resetPassword, action) {
   switch (action.type) {
     case types.RESET_SUCCESS:
       return { ...state, response: action.reset, isSubmitting: false };

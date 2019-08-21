@@ -61,7 +61,7 @@ describe('RESET ACTIONS', () => {
       store.clearActions();
     });
 
-    test('should send error as just response string message', (done) => {
+    test('reset password should send error as just response string message', (done) => {
       const expectedActions = ['RESET_SUBMIT', 'RESET_ERROR'];
 
       axiosCall.mockRejectedValue(new CustomError('User not found'));
@@ -73,7 +73,7 @@ describe('RESET ACTIONS', () => {
       done();
     });
 
-    test('should send error as data response object message', (done) => {
+    test('reset password should send error as data response object message', (done) => {
       const expectedActions = ['RESET_SUBMIT', 'RESET_ERROR'];
 
       axiosCall.mockRejectedValue(new CustomError('User not found', 'object'));
@@ -85,7 +85,7 @@ describe('RESET ACTIONS', () => {
       done();
     });
 
-    test('should send successful message if user exist', (done) => {
+    test('reset password should send successful message if user exist', (done) => {
       const expectedActions = ['RESET_SUBMIT', 'RESET_SUCCESS'];
       axiosCall.mockResolvedValue({
         message: 'reset sent successfully'

@@ -43,8 +43,6 @@ export const voteArticleSuccess = vote => ({
   vote,
 });
 
-export const voteArticleError = error => ({ type: types.VOTE_ARTICLE_ERROR, error });
-
 export const voteArticle = ({ slug, status }) => async (dispatch) => {
   try {
     const result = await axiosCall({
@@ -56,8 +54,7 @@ export const voteArticle = ({ slug, status }) => async (dispatch) => {
     dispatch(voteArticleSuccess(result));
   } catch (err) {
     const { response } = err;
-    const error = response.data.message || response;
-    dispatch(voteArticleError(error));
+    throw response;
   }
 };
 

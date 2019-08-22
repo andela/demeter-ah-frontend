@@ -21,15 +21,36 @@ const Reactions = ({
     vote => vote.user.username === user.username
   ) || { status: null };
 
+  const [like, setLike] = React.useState(false);
+  const [dislike, setDislike] = React.useState(false);
+  const [isVoting, setVoting] = React.useState(false);
+
+  const handleLike = async (status) => {
+    setVoting(true);
+    setLike(!like);
+    setDislike(false);
+    await voteAction({ status, slug });
+    setVoting(false);
+  };
+
+  const handleDisLike = async (status) => {
+    setVoting(true);
+    setDislike(!dislike);
+    setLike(false);
+    await voteAction({ status, slug });
+    setVoting(false);
+  };
+
   return (
     <div className="action share-section">
       <div className="action-con">
         <div className="like-section">
           <button
+            disabled={isVoting}
             onClick={
-              () => voteAction({ status: true, slug })
+              () => handleLike(true)
             }
-            className={`icons like-icon ${isLiked.status === true ? 'active' : ''}`}
+            className={`icons like-icon ${(isVoting ? like : isLiked.status === true) ? 'active' : ''}`}
           >
             <LikeIcon />
           </button>
@@ -37,10 +58,11 @@ const Reactions = ({
         </div>
         <div className="dislike-section">
           <button
+            disabled={isVoting}
             onClick={
-              () => voteAction({ status: false, slug })
+              () => handleDisLike(false)
             }
-            className={`icons dislike-icon ${isLiked.status === false ? 'active' : ''}`}
+            className={`icons dislike-icon ${(isVoting ? dislike : isLiked.status === false) ? 'active' : ''}`}
           >
             <DisLikeIcon />
           </button>

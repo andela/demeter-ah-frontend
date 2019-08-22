@@ -12,6 +12,7 @@ exports[`Reactions Component Should render without errors 1`] = `
     >
       <button
         className="icons like-icon "
+        disabled={false}
         onClick={[Function]}
       >
         <likeIcon />
@@ -27,6 +28,7 @@ exports[`Reactions Component Should render without errors 1`] = `
     >
       <button
         className="icons dislike-icon "
+        disabled={false}
         onClick={[Function]}
       >
         <disLike />
@@ -50,7 +52,7 @@ exports[`Reactions Component Should render without errors 1`] = `
         />
       </button>
       <p
-        className="text-sm mx-auto text-gray-600"
+        className="comment-count"
       />
     </div>
     <div

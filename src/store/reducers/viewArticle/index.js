@@ -12,11 +12,6 @@ const viewArticle = (state = viewArticleState, action) => {
           downVote: [...action.vote.downVote],
         }
       };
-    case types.VOTE_ARTICLE_ERROR:
-      return {
-        ...state,
-        articleVoteError: action.error
-      };
     case types.VIEW_ARTICLE_PENDING:
       return {
         ...state,

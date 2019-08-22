@@ -1,7 +1,6 @@
 import * as types from '../actionTypes';
 import { axiosCall } from '../../../utils';
 
-
 export const cleanUpArticle = () => ({ type: types.ARTICLE_CLEAN_UP });
 
 export const openPublishModal = () => ({ type: types.OPEN_PUBLISH_MODAL, openPublishModal: true });

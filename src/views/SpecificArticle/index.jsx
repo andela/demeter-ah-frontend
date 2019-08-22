@@ -4,7 +4,7 @@ import React, {
 } from 'react';
 import ReactHtmlParser from 'react-html-parser';
 import { connect } from 'react-redux';
-import { viewArticleAction, cleanUpArticle } from '../../store/actions/viewArticle';
+import { voteArticle, viewArticleAction, cleanUpArticle } from '../../store/actions/viewArticle';
 import { relatedArticlesAction, cleanUpRelatedArticles } from '../../store/actions/relatedArticles';
 import RelatedArticles from '../../components/RelatedArticles/index';
 import ArticleFeaturedImg from '../../components/ArticleFeaturedImg/index';
@@ -33,12 +33,13 @@ const SpecificArticle = (props) => {
     article: {
       title, body, image, readTime, createdAt, category, author, tags, bookmarks, slug
     },
+    user,
+    voteArticle: voteArticleAction,
     articles,
     match,
     history,
     articleError,
     isAuthenticated,
-    user,
     bookmarkArticleAction
   } = props;
 
@@ -117,7 +118,7 @@ const SpecificArticle = (props) => {
         <div className="hr-line mt-2 mb-8" />
         <div className="flex section-three mb-8">
           <div className="text-gray-900 text-justify">
-            { bodyValue}
+            {bodyValue}
           </div>
         </div>
         <div className="sm:flex-row md:flex section-four tags mb-8">
@@ -129,10 +130,12 @@ const SpecificArticle = (props) => {
           articleAuthorUsername={articleAuthorUsername}
           authUsername={authUsername}
           isBookmarked={bookmarks && bookmarks.length}
-          slug={slug}
           bookmarkArticle={bookmarkthisArticle}
           commentNo={article.commentNo}
           viewComment={gotoComment}
+          voteAction={voteArticleAction}
+          user={user}
+          article={article}
         />
         <div className="flex flex-col section-five mb-8 bg-gray-100 justify-center">
           <h2 className="w-8/12 mx-auto sm:text-center lg:text-left">Related Articles</h2>
@@ -170,10 +173,13 @@ const mapStateToProps = state => ({
   relatedIsCompleted: state.relatedArticles.isCompleted,
 });
 
-export default connect(mapStateToProps, {
+const mapDispatchToProps = {
+  voteArticle,
   viewArticleAction,
   cleanUpArticle,
   relatedArticlesAction,
   cleanUpRelatedArticles,
   bookmarkArticleAction: slug => bookmarkArticle(slug),
-})(SpecificArticle);
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(SpecificArticle);

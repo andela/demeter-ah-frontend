@@ -10,14 +10,14 @@ const relatedArticles = ({ articles, relatedArticleImg, description }) => (
           <div className="cursor-pointer ">
             <div className="flex-1" style={relatedArticleImg(showArticle.image || PlaceHolderImage)}> </div>
             <h2 className="title sm:min-w-12 md:min-w-84 lg:min-w-102 sm:text-xs-2 md:text-xl lg:text-2xl">{showArticle.title}</h2>
-            { !description ? '' : <p className="pb-4">{description || showArticle.description }</p>}
+            {!description ? '' : <p className="pb-4">{description || showArticle.description}</p>}
           </div>
         </Link>
       </div>
     ))
   ) : (
-    <p className="text-xs text-center">No related articles yet</p>
-  )
+      <p className="text-xs text-center">No related articles yet</p>
+    )
 );
 
 export default relatedArticles;

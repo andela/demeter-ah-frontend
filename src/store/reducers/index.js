@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import authReducer from './Auth';
+import auth from './Auth';
 import resetPassword from './resetPassword';
 import changePassword from './changePassword';
 import articles from './articles';
@@ -13,7 +13,7 @@ import bookmarkArticle from './bookmarkArticle';
 import comments from './Comments';
 
 const reducers = combineReducers({
-  auth: authReducer,
+  auth,
   resetPassword,
   changePassword,
   articles,

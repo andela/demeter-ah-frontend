@@ -2,60 +2,64 @@
 
 exports[`Reactions Component Should render without errors 1`] = `
 <div
-  className="action md:flex-col px-5 share-section md:fixed left-0 top-1/2 mb-8 z-10"
+  className="action share-section"
 >
   <div
-    className="sm:flex md:flex-col md:py-12 px-2"
+    className="action-con"
   >
     <div
-      className="md:flex-col text-center m-2"
+      className="like-section"
     >
-      <div
-        className="flex mx-auto justify-center items-center rounded-full cursor-pointer icons w-10 h-10 bg-white"
+      <button
+        className="icons like-icon "
+        disabled={false}
+        onClick={[Function]}
       >
         <likeIcon />
-      </div>
+      </button>
       <p
-        className="text-sm mx-auto text-gray-600"
+        className="like-count"
       >
-        5
+        0
       </p>
     </div>
     <div
-      className="md:flex-col text-center m-2"
+      className="dislike-section"
     >
-      <div
-        className="flex mx-auto justify-center items-center rounded-full cursor-pointer icons w-10 h-10 bg-white"
+      <button
+        className="icons dislike-icon "
+        disabled={false}
+        onClick={[Function]}
       >
         <disLike />
-      </div>
+      </button>
       <p
-        className="text-sm mx-auto text-gray-600"
+        className="dislike-count"
       >
-        3
+        0
       </p>
     </div>
     <div
-      className="md:flex-col text-center m-2"
+      className="comment-section"
     >
-      <div
-        className="flex mx-auto justify-center items-center rounded-full cursor-pointer icons w-10 h-10 bg-white"
+      <button
+        className="comment-icon icons"
       >
         <img
           alt="Comment"
-          className="cursor-pointer h-4 w-5"
+          className="comment-img"
           src="test-file-stub"
         />
-      </div>
+      </button>
       <p
-        className="text-sm mx-auto text-gray-600"
+        className="comment-count"
       />
     </div>
     <div
-      className="sm:mt-4 sm:ml-5 md:ml-0 md:flex-col text-center"
+      className="bookmark-section"
     >
-      <div
-        className="flex mx-auto justify-center items-center cursor-pointer"
+      <button
+        className="bookmark-icon"
       />
     </div>
   </div>

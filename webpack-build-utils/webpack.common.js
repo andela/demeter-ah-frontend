@@ -6,8 +6,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 dotenv.config();
 
-dotenv.config();
-
 module.exports = {
   entry: './src/index.jsx',
   output: {
@@ -22,7 +20,7 @@ module.exports = {
         use: ['babel-loader'],
       },
       {
-        test: /\.(jpe?g|png|gif|mp3|svg)$/,
+        test: /\.(jpe?g|png|gif|mp3|svg|ico)$/,
         exclude: /node-modules/,
         loader: 'file-loader',
         options: {

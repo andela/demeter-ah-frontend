@@ -30,8 +30,8 @@ const app = ({ history }) => (
     <PublicRoute path="/change-password" component={ChangePassword} />
     <Route path="/profile/:username" component={Dashboard} />
     <PrivateRoute path="/profile/:username/editprofile" component={Profile} />
-    <PrivateRoute path="/profile/:username/following" component={Following} />
-    <PrivateRoute path="/profile/:username/followers" component={Followers} />
+    <Route path="/profile/:username/following" component={Following} />
+    <Route path="/profile/:username/followers" component={Followers} />
     <PrivateRoute path="/profile/:username/bookmark" component={Bookmarks} />
     <Route path="/profile/:username/articles" component={AuthorArticles} />
     <ToastContainer autoClose={5000} position="top-right" hideProgressBar={false} rtl={false} pauseOnHover />

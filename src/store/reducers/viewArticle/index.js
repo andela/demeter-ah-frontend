@@ -23,8 +23,7 @@ const viewArticle = (state = viewArticleState, action) => {
       };
     case types.VIEW_ARTICLE_CLEANUP:
       return {
-        ...state,
-        ...viewArticle,
+        ...viewArticleState,
       };
     default:
       return state;

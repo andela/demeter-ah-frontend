@@ -15,6 +15,7 @@ const FollowList = ({
   getFollowers,
   updateProfile,
   followUserAction,
+  isAuthenticated,
 }) => {
   const [isFollowing, setIsFollowing] = useState(false);
   let followStatus = null;
@@ -62,9 +63,9 @@ const FollowList = ({
       <div className="info">
         <Link to={`/profile/${member.username}/articles`}><h4 className="fullname">{`${member.firstName} ${member.lastName}`}</h4></Link>
         <p className="bio">{member.bio}</p>
-      </div> 
+      </div>
       {
-        (showButton && (user.username !== member.username))
+        (showButton && isAuthenticated && (user.username !== member.username))
           ? (
             <button
               id={member.id}
@@ -84,6 +85,7 @@ const FollowList = ({
 
 const mapStateToProps = state => ({
   user: state.auth.user,
+  isAuthenticated: state.auth.isAuthenticated,
   membership: state.membership,
 });
 

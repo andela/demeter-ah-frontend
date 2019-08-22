@@ -6,8 +6,14 @@ import Bookmark from '../../assets/svgs/bookmarksm';
 import './index.scss';
 
 const Reactions = ({
-  isAuthenticated, articleAuthorUsername, isBookmarked, authUsername,
-  slug, bookmarkArticle
+  isAuthenticated,
+  articleAuthorUsername,
+  isBookmarked,
+  authUsername,
+  slug,
+  bookmarkArticle,
+  viewComment,
+  commentNo
 }) => {
   const notbookmarked = (<Bookmark onClick={bookmarkArticle} isBookmarked slug={slug} />);
   const bookmarked = (
@@ -31,14 +37,14 @@ const Reactions = ({
           <p className="text-sm mx-auto text-gray-600">3</p>
         </div>
         <div className="md:flex-col text-center m-2">
-          <div className="flex mx-auto justify-center items-center rounded-full cursor-pointer icons w-10 h-10 bg-white">
+          <div onClick={viewComment} className="flex mx-auto justify-center items-center rounded-full cursor-pointer icons w-10 h-10 bg-white">
             <img
               src={comment}
               className="cursor-pointer h-4 w-5"
               alt="Comment"
             />
           </div>
-          <p className="text-sm mx-auto text-gray-600">2</p>
+          <p className="text-sm mx-auto text-gray-600">{commentNo}</p>
         </div>
         <div className="sm:mt-4 sm:ml-5 md:ml-0 md:flex-col text-center">
           <div className="flex mx-auto justify-center items-center cursor-pointer">

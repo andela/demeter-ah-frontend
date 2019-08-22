@@ -1,7 +1,7 @@
 import * as types from '../../actions/actionTypes';
 import { viewProfile } from '../initialState';
 
-export default function authReducer(state = viewProfile, { type, payload }) {
+export default function viewProfileReducer(state = viewProfile, { type, payload }) {
   switch (type) {
     case types.VIEW_PROFILE_PENDING:
       return { ...state, ...payload };

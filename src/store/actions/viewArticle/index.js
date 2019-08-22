@@ -43,14 +43,11 @@ export const viewArticleAction = slug => async (dispatch) => {
       path: `/api/v1/articles/${slug}`, method: 'get', payload: null
     });
     dispatch(viewArticleSuccess(result.article));
-    // return result;
   } catch (e) {
     /* istanbul ignore next */
     const { response } = e;
-    console.log('the response', response);
     /* istanbul ignore next */
     const error = (response && response.data && response.data.message);
-    console.log('the error', error);
     /* istanbul ignore next */
     dispatch(viewArticleError(error));
   }

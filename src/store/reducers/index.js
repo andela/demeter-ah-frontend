@@ -8,6 +8,8 @@ import viewProfile from './viewProfile';
 import membership from './Membership';
 import viewArticle from './viewArticle';
 import relatedArticles from './relatedArticles';
+import bookmarks from './bookmarks';
+import bookmarkArticle from './bookmarkArticle';
 
 const reducers = combineReducers({
   auth: authReducer,
@@ -18,7 +20,9 @@ const reducers = combineReducers({
   viewProfile,
   membership,
   viewArticle,
-  relatedArticles
+  relatedArticles,
+  bookmarks,
+  bookmarkArticle
 });
 
 export default reducers;

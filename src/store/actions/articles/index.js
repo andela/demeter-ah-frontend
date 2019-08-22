@@ -10,6 +10,9 @@ export const draftArticle = () => ({ type: types.ARTICLE_DRAFT });
 
 export const publishArticle = () => ({ type: types.ARTICLE_PUBLISH });
 
+
+export const setUsernameArticle = payload => ({ type: types.SET_USERNAME_ARTICLES, payload });
+
 export const createArticleSuccess = ({ message, slug }) => ({
   type: types.CREATE_ARTICLE_SUCCESS,
   resp: { message, slug }
@@ -60,5 +63,20 @@ export const createArticle = payload => async (dispatch) => {
     const error = (response && response.data && response.data.message) || response || 'an error occured';
     /* istanbul ignore next */
     dispatch(createArticleError(error));
+  }
+};
+
+export const getAuthorArticle = username => async (dispatch) => {
+  try {
+    const result = await axiosCall({
+      path: `/api/v1/articles/user/${username}`, method: 'get'
+    });
+    const { articles } = result.articles && result;
+    dispatch(setUsernameArticle(articles));
+  } catch (error) {
+    const { response } = error;
+    dispatch(setUsernameArticle([]));
+    const message = 'something went wrong';
+    throw (response.data && response.data.message) || message;
   }
 };

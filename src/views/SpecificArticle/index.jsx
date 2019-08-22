@@ -113,7 +113,14 @@ const SpecificArticle = (props) => {
             author={author}
             readTime={readTime}
           />
-          <ShareAndDate createdAt={createdAt} category={category} />
+          <ShareAndDate
+            createdAt={createdAt}
+            category={category}
+            content={title}
+            url={window.location.href}
+            description={title}
+            title={title}
+          />
         </div>
         <div className="hr-line mt-2 mb-8" />
         <div className="flex section-three mb-8">

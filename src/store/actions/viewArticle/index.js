@@ -19,6 +19,7 @@ export const viewArticleSuccess = article => ({
     error: null,
   }
 });
+
 export const viewArticleError = error => ({
   type: types.VIEW_ARTICLE_ERROR,
   payload: {
@@ -27,6 +28,7 @@ export const viewArticleError = error => ({
     isLoading: false,
   }
 });
+
 export const cleanUpArticle = () => ({
   type: types.VIEW_ARTICLE_CLEANUP,
   payload: {
@@ -36,6 +38,28 @@ export const cleanUpArticle = () => ({
   }
 });
 
+export const voteArticleSuccess = vote => ({
+  type: types.VOTE_ARTICLE_SUCCESS,
+  vote,
+});
+
+export const voteArticleError = error => ({ type: types.VOTE_ARTICLE_ERROR, error });
+
+export const voteArticle = ({ slug, status }) => async (dispatch) => {
+  try {
+    const result = await axiosCall({
+      path: `/api/v1/articles/vote/${slug}`,
+      payload: { status },
+      method: 'post'
+    });
+
+    dispatch(voteArticleSuccess(result));
+  } catch (err) {
+    const { response } = err;
+    const error = response.data.message || response;
+    dispatch(voteArticleError(error));
+  }
+};
 
 export const viewArticleAction = slug => async (dispatch) => {
   await dispatch(viewArticlePending());

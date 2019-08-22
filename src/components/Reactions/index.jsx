@@ -6,14 +6,9 @@ import Bookmark from '../../assets/svgs/bookmarksm';
 import './index.scss';
 
 const Reactions = ({
-  isAuthenticated,
-  articleAuthorUsername,
-  isBookmarked,
-  authUsername,
-  slug,
-  bookmarkArticle,
-  viewComment,
-  commentNo
+  isAuthenticated, articleAuthorUsername, isBookmarked, authUsername,
+  viewComment, commentNo, bookmarkArticle, voteAction,
+  article: { upVote = [], downVote = [], slug } = {}, user
 }) => {
   const notbookmarked = (<Bookmark onClick={bookmarkArticle} isBookmarked slug={slug} />);
   const bookmarked = (
@@ -21,36 +16,51 @@ const Reactions = ({
       {notbookmarked}
     </span>
   );
+
+  const isLiked = [...upVote, ...downVote].find(
+    vote => vote.user.username === user.username
+  ) || { status: null };
+
   return (
-    <div className="action md:flex-col px-5 share-section md:fixed left-0 top-1/2 mb-8 z-10">
-      <div className="sm:flex md:flex-col md:py-12 px-2">
-        <div className="md:flex-col text-center m-2">
-          <div className="flex mx-auto justify-center items-center rounded-full cursor-pointer icons w-10 h-10 bg-white">
+    <div className="action share-section">
+      <div className="action-con">
+        <div className="like-section">
+          <button
+            onClick={
+              () => voteAction({ status: true, slug })
+            }
+            className={`icons like-icon ${isLiked.status === true ? 'active' : ''}`}
+          >
             <LikeIcon />
-          </div>
-          <p className="text-sm mx-auto text-gray-600">5</p>
+          </button>
+          <p className="like-count">{upVote.length}</p>
         </div>
-        <div className="md:flex-col text-center m-2">
-          <div className="flex mx-auto justify-center items-center rounded-full cursor-pointer icons w-10 h-10 bg-white">
+        <div className="dislike-section">
+          <button
+            onClick={
+              () => voteAction({ status: false, slug })
+            }
+            className={`icons dislike-icon ${isLiked.status === false ? 'active' : ''}`}
+          >
             <DisLikeIcon />
-          </div>
-          <p className="text-sm mx-auto text-gray-600">3</p>
+          </button>
+          <p className="dislike-count">{downVote.length}</p>
         </div>
-        <div className="md:flex-col text-center m-2">
-          <div onClick={viewComment} className="flex mx-auto justify-center items-center rounded-full cursor-pointer icons w-10 h-10 bg-white">
+        <div className="comment-section">
+          <button onClick={viewComment} className="comment-icon icons">
             <img
               src={comment}
-              className="cursor-pointer h-4 w-5"
+              className="comment-img"
               alt="Comment"
             />
-          </div>
-          <p className="text-sm mx-auto text-gray-600">{commentNo}</p>
+          </button>
+          <p className="comment-count">{commentNo}</p>
         </div>
-        <div className="sm:mt-4 sm:ml-5 md:ml-0 md:flex-col text-center">
-          <div className="flex mx-auto justify-center items-center cursor-pointer">
+        <div className="bookmark-section">
+          <button className="bookmark-icon">
             {isAuthenticated && (articleAuthorUsername !== authUsername) && isBookmarked ? bookmarked : ''}
             {isAuthenticated && (articleAuthorUsername !== authUsername) && !isBookmarked ? notbookmarked : ''}
-          </div>
+          </button>
         </div>
       </div>
     </div>

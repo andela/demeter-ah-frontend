@@ -1,7 +1,54 @@
-.action {
+.action{
   .bookmarkIconFill {
     path {
       fill: #835BD8;
+    }
+  }
+  @apply px-5 left-0 top-1/2 mb-8 z-10;
+  @screen md{ @apply fixed flex-col; }
+  &-con{
+    @apply px-2;
+    @screen sm{ @apply flex; }
+    @screen md{ @apply py-12 flex-col; }
+  }
+  .like, .dislike{
+    &-section{
+      @apply text-center m-2;
+      @screen md{ @apply flex-col; }
+    }
+    &-count{
+      @apply text-sm mx-auto text-gray-600;
+    }
+  }
+  .like-icon, .dislike-icon{
+    @apply flex mx-auto justify-center items-center rounded-full w-10 h-10 bg-white;
+    &.active .vote{
+      @apply fill-current stroke-current text-purple-500;
+    }
+  }
+  .comment{
+    &-section{
+      @apply text-center m-2;
+      @screen md{ @apply flex-col; }
+    }
+    &-icon{
+      @apply flex mx-auto justify-center items-center rounded-full cursor-pointer w-10 h-10 bg-white;
+    }
+    &-img{
+      @apply cursor-pointer h-4 w-5;
+    }
+    &-count{
+      @apply text-sm mx-auto text-gray-600;
+    }
+  }
+  .bookmark{
+    &-section{
+      @apply text-center;
+      @screen sm{ @apply mt-4 ml-5; }
+      @screen md{ @apply ml-0 flex-col; }
+    }
+    &-con{
+      @apply flex mx-auto justify-center items-center cursor-pointer;
     }
   }
 }

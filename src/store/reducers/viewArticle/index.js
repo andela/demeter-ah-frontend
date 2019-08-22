@@ -3,6 +3,20 @@ import { viewArticleState } from '../initialState';
 
 const viewArticle = (state = viewArticleState, action) => {
   switch (action.type) {
+    case types.VOTE_ARTICLE_SUCCESS:
+      return {
+        ...state,
+        article: {
+          ...state.article,
+          upVote: [...action.vote.upVote],
+          downVote: [...action.vote.downVote],
+        }
+      };
+    case types.VOTE_ARTICLE_ERROR:
+      return {
+        ...state,
+        articleVoteError: action.error
+      };
     case types.VIEW_ARTICLE_PENDING:
       return {
         ...state,

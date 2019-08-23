@@ -1,5 +1,6 @@
 import * as types from '../actionTypes';
 import { axiosCall } from '../../../utils';
+import { relatedArticlesAction } from '../relatedArticles';
 
 export const viewArticlePending = () => ({
   type: types.VIEW_ARTICLE_PENDING,
@@ -64,6 +65,7 @@ export const viewArticleAction = slug => async (dispatch) => {
     const result = await axiosCall({
       path: `/api/v1/articles/${slug}`, method: 'get', payload: null
     });
+    await dispatch(relatedArticlesAction(result.article.slug, result.article.category));
     dispatch(viewArticleSuccess(result.article));
   } catch (e) {
     /* istanbul ignore next */

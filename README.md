@@ -20,7 +20,7 @@
     <a href="https://github.com/andela/demeter-ah-frontend"><strong>Explore the Repo»</strong></a>
     <br />
     <br />
-    <a href="https://github.com/andela/demeter-ah-frontend">View App</a>
+    <a href="https://demeter-ah-frontend-staging.herokuapp.com/">View App</a>
   </p>
 </p>
 
@@ -87,7 +87,7 @@ npm install
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-_To get started, please refer to the [Hosted App](https://example.com)_
+_To get started, please refer to the [Hosted App](https://demeter-ah-frontend-staging.herokuapp.com/)_
 
 
 <!-- CONTRIBUTING -->

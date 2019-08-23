@@ -18,6 +18,7 @@ import AuthorArticles from '../views/AuthorArticles';
 import ArticleStat from '../views/ArticleStat';
 import PrivateRoute from './PrivateRoute';
 import PublicRoute from './PublicRoute';
+import Search from '../views/Search';
 
 const app = ({ history }) => (
   <Fragment>
@@ -36,7 +37,8 @@ const app = ({ history }) => (
     <PrivateRoute path="/profile/:username/bookmark" component={Bookmarks} />
     <PrivateRoute path="/profile/:username/stat" component={ArticleStat} />
     <Route path="/profile/:username/articles" component={AuthorArticles} />
-    <ToastContainer autoClose={5000} position="top-right" hideProgressBar={false} rtl={false} pauseOnHover />
+    <Route path="/search" component={Search} />
+    <ToastContainer autoClose={5000} position="top-center" hideProgressBar rtl={false} pauseOnHover />
   </Fragment>
 );
 

@@ -59,7 +59,7 @@ exports[`Sign In Component Should call toast isCompleted is true in signup use e
         >
           <loader>
             <div
-              className="h-72 flex items-center justify-center"
+              className="flex items-center justify-center py-4 h-72"
             >
               <img
                 alt=""
@@ -132,7 +132,7 @@ exports[`Sign In Component Should render along with children componenet 1`] = `
         >
           <loader>
             <div
-              className="h-72 flex items-center justify-center"
+              className="flex items-center justify-center py-4 h-72"
             >
               <img
                 alt=""
@@ -244,7 +244,7 @@ exports[`Sign In Component Should run errors if error exist 1`] = `
         >
           <loader>
             <div
-              className="h-72 flex items-center justify-center"
+              className="flex items-center justify-center py-4 h-72"
             >
               <img
                 alt=""

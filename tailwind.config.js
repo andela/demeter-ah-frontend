@@ -157,6 +157,7 @@ module.exports = {
         xlx1: '18rem',
         xlx2: '24rem',
         xlx3: '420px',
+        xlx4: '150px',
         82: '82%'
       },
       width: {

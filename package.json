@@ -10,7 +10,7 @@
 		"webpack": "webpack --env.mode development",
 		"client:build": "rimraf dist && mkdir dist && webpack --env.mode production",
 		"dev:start": "webpack-dev-server --env.mode development --hot",
-		"start": "npm run client:build && babel-node server/index.js"
+		"start": "npm run client:build && node server/index.js"
 	},
 	"husky": {
 		"hooks": {

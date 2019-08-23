@@ -55,7 +55,7 @@ const editComment = ({
             : <textarea name="commentBox" className="comment-box" value={comment} required onChange={handleChange} />}
           <div className="reactions w-full flex items-center mt-2 ">
             { button ? <button type="submit" className="update-btn">{ loading ? 'Updating' : 'Update'}</button> : ''}
-            { user.id !== userId ? ' ' : <button type="button" onClick={handleClick} className={`cancel-btn ${button ? 'border px-4' : ''}`}>{button ? 'Cancel' : 'Edit'}</button>}
+            { user.id !== userId ? ' ' : <button type="button" onClick={handleClick} className={`cancel-btn ${button ? 'border px-4 text-gray-250' : 'text-purple-650'}`}>{button ? 'Cancel' : 'Edit'}</button>}
             <span className="bullet rounded-full h-0.5 w-0.5 mx-2 bg-gray-250" />
             <Reaction commentId={id} slug={slug} downVote={downVote} upVote={upVote} />
           </div>

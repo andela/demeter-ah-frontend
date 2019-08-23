@@ -31,7 +31,7 @@ const SpecificArticle = (props) => {
   const {
     article,
     article: {
-      title, body, image, readTime, createdAt, category, author, tags, bookmarks, slug
+      title, body, image, readTime, createdAt, category, author, tags, bookmarks,
     },
     user,
     voteArticle: voteArticleAction,
@@ -46,7 +46,7 @@ const SpecificArticle = (props) => {
   const setTags = tags && tags.length >= 1 ? (
     tags.map(tag => (
       <div className="m-2" key={tag.ArticleTag.tagId}>
-        <p className="sm:text-xs md:text-sm rounded-full sm:px-2 md:py-1 md:px-4 cursor-pointer border-2 border-solid border-purple-200 text-purple-200 bg-white">{tag.name}</p>
+        <p className="sm:text-xs md:text-sm rounded-full sm:px-2 md:py-1 md:px-4 cursor-pointer border-2 border-solid border-purple-200 text-purple-200 bg-white whitespace-no-wrap">{tag.name}</p>
       </div>
     ))
   ) : (<p className="text-xs" />);
@@ -56,7 +56,6 @@ const SpecificArticle = (props) => {
 
   const [bodyValue, setbodyValue] = useState(null);
   const [onbookmark, setOnBookmark] = useState(false);
-  const [getRelatedArticles, setGetRelatedArticles] = useState(true);
 
   const bookmarkthisArticle = async (e) => {
     const articleSlug = e.target.dataset.slug;
@@ -88,10 +87,6 @@ const SpecificArticle = (props) => {
     }
     if (match.params.slug !== article.slug) {
       props.viewArticleAction(match.params.slug);
-    }
-    if (article && article.title && articles && getRelatedArticles) {
-      props.relatedArticlesAction(match.params.slug, category);
-      setGetRelatedArticles(false);
     }
 
     parsedData = body && JSON.parse(body);

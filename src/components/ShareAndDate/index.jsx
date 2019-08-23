@@ -11,21 +11,21 @@ const ShareAndDate = ({ createdAt, category }) => (
       <div className="facebook mr-0 mt-4 mb-2">
         <img
           src={facebookShare}
-          className="cursor-pointer h-8 w-8 opacity-50"
+          className="cursor-pointer h-8 w-8"
           alt="Share on Facebook"
         />
       </div>
       <div className="twitter ml-4 mt-4 mb-2">
         <img
           src={twitterShare}
-          className="cursor-pointer h-8 w-8 opacity-50"
+          className="cursor-pointer h-8 w-8"
           alt="Share on Twitter"
         />
       </div>
       <div className="mail ml-4 mt-4 mb-2">
         <img
           src={mailShare}
-          className="cursor-pointer h-8 w-8 opacity-50"
+          className="cursor-pointer h-8 w-8"
           alt="Share via Email"
         />
       </div>

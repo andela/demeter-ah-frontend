@@ -88,7 +88,7 @@ const userInfo = ({ user, setImage, loggedInUser }) => {
         <p className="bio text-xs sm:max-w-56 md:max-w-86 md:text-sm max-w-86 md:max-w-118 lg:max-w-122">
           {userData.bio === 'null' ? '' : userData.bio}
         </p>
-        <FollowBtn />
+        <FollowBtn viewedUser={user} classes="border border-solid rounded-xxs border-purple-250 w-32 ml-0 text-white text-sm mt-4" />
       </div>
     </div>
   );

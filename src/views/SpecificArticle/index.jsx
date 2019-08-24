@@ -31,7 +31,7 @@ const SpecificArticle = (props) => {
   const {
     article,
     article: {
-      title, body, image, readTime, createdAt, category, author, tags, bookmarks,
+      title, body, image, readTime, createdAt, category, author, authorId, tags, bookmarks,
     },
     user,
     voteArticle: voteArticleAction,
@@ -105,7 +105,7 @@ const SpecificArticle = (props) => {
         />
         <div className="md:flex sm:flex-row section-two sm:px-0 sm:py-2">
           <AuthorProfile
-            author={author}
+            author={{ ...author, id: authorId }}
             readTime={readTime}
           />
           <ShareAndDate createdAt={createdAt} category={category} />

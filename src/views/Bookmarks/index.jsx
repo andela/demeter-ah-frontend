@@ -13,6 +13,7 @@ const Bookmark = (props) => {
     bookmarkArticleAction,
   } = props;
 
+  let isSubscribe = true;
   const [isMounted, setIsMounted] = useState(false);
 
   const handleBookmark = async (e) => {
@@ -71,13 +72,14 @@ const Bookmark = (props) => {
 
   const fetchBookmarkedArticle = async () => {
     await props.viewBookmarkedArticle();
-    setIsMounted(true);
+    if (isSubscribe) setIsMounted(true);
   };
 
   useEffect(() => {
     fetchBookmarkedArticle();
 
     return () => {
+      isSubscribe = false;
       props.viewBookmarkCleanUp();
       props.bookmarkArticleCleanUp();
     };

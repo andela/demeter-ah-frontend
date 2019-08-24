@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import Button from '../Button';
 import './index.scss';
@@ -8,6 +8,7 @@ import { updateProfileInfo } from '../../store/actions/editProfile';
 
 const Followbtn = ({
   user,
+  classes,
   viewedUser,
   followAction,
   isFollowed,
@@ -17,9 +18,9 @@ const Followbtn = ({
   isAuthenticated,
 }) => {
   const [isFollowing, setIsFollowing] = useState(false);
-
+  let isSubscribe = true;
   const handleFollow = async () => {
-    setIsFollowing(true);
+    if (isSubscribe) setIsFollowing(true);
     // follow user
     await followAction(viewedUser.id);
     // get viewed user updated info
@@ -27,17 +28,22 @@ const Followbtn = ({
       username: viewedUser.username,
       user
     });
-    setIsFollowing(false);
+    if (isSubscribe) setIsFollowing(false);
     // update his following list
     await getFollower(viewedUser.username);
     // update user profile
     await updateProfile(user);
   };
+
+  useEffect(() => () => {
+    isSubscribe = false;
+  }, []);
+
   return (user.username !== viewedUser.username && isAuthenticated)
     ? (
       <Button
         type="submit"
-        classes={`followBtnComp ${isFollowed ? 'follow' : 'unfollow'}`}
+        classes={`followBtnComp ${classes || ''} ${isFollowed ? 'follow' : 'unfollow'}`}
         isSubmit={isFollowing}
         onClick={handleFollow}
       >
@@ -50,7 +56,6 @@ const Followbtn = ({
 const mapStateToProps = state => ({
   user: state.auth.user,
   isAuthenticated: state.auth.isAuthenticated,
-  viewedUser: state.viewProfile.user,
   isFollowed: state.viewProfile.user.isFollowed
 });
 

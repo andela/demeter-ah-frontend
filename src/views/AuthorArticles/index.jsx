@@ -12,10 +12,11 @@ const AuthorArticles = ({
   const [isMounted, setIsMounted] = useState(false);
   const { username } = match.params;
   const thisUser = user.username;
+  let isSubscribe = true;
 
   const fetchgetArticles = async () => {
     await getArticles(username);
-    setIsMounted(true);
+    if (isSubscribe) setIsMounted(true);
   };
 
   const handleAddBookmark = async (e) => {
@@ -26,6 +27,9 @@ const AuthorArticles = ({
 
   useEffect(() => {
     fetchgetArticles();
+    return () => {
+      isSubscribe = false;
+    };
   }, []);
   return (
     <Fragment>

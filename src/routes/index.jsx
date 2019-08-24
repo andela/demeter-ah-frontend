@@ -1,5 +1,7 @@
 import React, { Fragment } from 'react';
-import { Route, HashRouter as Router, withRouter } from 'react-router-dom';
+import {
+  Route, HashRouter as Router, withRouter, Switch
+} from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import Home from '../views/Home';
 import NavBar from '../components/NavBar';
@@ -29,11 +31,13 @@ const app = ({ history }) => (
     <Route path="/articles/:slug" component={SpecificArticle} />
     <PublicRoute path="/change-password" component={ChangePassword} />
     <Route path="/profile/:username" component={Dashboard} />
-    <PrivateRoute path="/profile/:username/editprofile" component={Profile} />
-    <Route path="/profile/:username/following" component={Following} />
-    <Route path="/profile/:username/followers" component={Followers} />
-    <PrivateRoute path="/profile/:username/bookmark" component={Bookmarks} />
-    <Route path="/profile/:username/articles" component={AuthorArticles} />
+    <Switch>
+      <PrivateRoute path="/profile/:username/editprofile" component={Profile} />
+      <Route path="/profile/:username/following" component={Following} />
+      <Route path="/profile/:username/followers" component={Followers} />
+      <PrivateRoute path="/profile/:username/bookmark" component={Bookmarks} />
+      <Route path="/profile/:username/articles" component={AuthorArticles} />
+    </Switch>
     <ToastContainer autoClose={5000} position="top-right" hideProgressBar={false} rtl={false} pauseOnHover />
   </Fragment>
 );

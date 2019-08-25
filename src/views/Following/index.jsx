@@ -16,16 +16,21 @@ const Following = (props) => {
   } = props;
 
   const [isMounted, setIsMounted] = useState(false);
+  let isSubscribe = true;
+
   const fetchFollowingList = async () => {
     (match.params.username !== user.username)
       ? await getFollowing(match.params.username)
       : await getFollowing();
-    setIsMounted(true);
+    if (isSubscribe) setIsMounted(true);
   };
 
   useEffect(
     () => {
       fetchFollowingList();
+      return () => {
+        isSubscribe = false;
+      };
     },
     [match.params.username]
   );

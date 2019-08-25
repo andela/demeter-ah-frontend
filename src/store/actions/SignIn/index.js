@@ -48,7 +48,7 @@ export const signInAction = values => async (dispatch) => {
       return;
     }
     /* istanbul ignore next */
-    const message = response.data.message || response;
+    const message = response.data.error || response;
     /* istanbul ignore next */
     dispatch(signInError(message));
   }

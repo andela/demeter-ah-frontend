@@ -11,7 +11,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/andela/demeter-ah-frontend">
-    <img src="src/assets/images/logo.png" alt="Logo" width="auto" height="80">
+    <img src="/logo.png" alt="Logo" width="auto" height="80">
   </a>
 
   <p align="center">
@@ -138,7 +138,7 @@ Project Link: [https://github.com/andela/demeter-ah-frontend](https://github.com
 [stars-url]: https://github.com/andela/demeter-ah-frontend/stargazers
 [license-shield]: https://img.shields.io/github/license/andela/demeter-ah-frontend.svg?style=flat-square
 [license-url]: https://github.com/andela/demeter-ah-frontend/blob/master/LICENSE.txt
-[product-screenshot]: src/assets/images/landing.png
+[product-screenshot]: assets/images/landing.png
 [maintainability-url]: https://codeclimate.com/github/andela/demeter-ah-frontend/maintainability
 [maintainability-badge]: https://api.codeclimate.com/v1/badges/d53c2f36eae0270bb692/maintainability
 [codeclimate-url]: https://codeclimate.com/github/andela/demeter-ah-frontend/test_coverage

@@ -42,7 +42,7 @@ exports[`Sign In Component Should render along with children componenet 1`] = `
           className="m-4 ml-0 min-w-108 min-h-48 rounded shadow-lg sm:min-w-min lg:min-w-96"
           style={
             Object {
-              "backgroundImage": "linear-gradient(180deg, rgba(0, 0, 0, 0.5) 99.98%, rgba(255, 255, 255, 0) 99.99%, rgba(255, 255, 255, 0.2) 100%), url(test-file-stub)",
+              "backgroundImage": "linear-gradient(180deg, rgba(0, 0, 0, 0.5) 99.98%, rgba(255, 255, 255, 0) 99.99%, rgba(255, 255, 255, 0.2) 100%), url(/article/no-image.png)",
               "backgroundPosition": "center center",
               "backgroundRepeat": "no-repeat",
               "backgroundSize": "cover",
@@ -63,7 +63,7 @@ exports[`Sign In Component Should render along with children componenet 1`] = `
                   className="h-16 w-16"
                   style={
                     Object {
-                      "backgroundImage": "url(test-file-stub)",
+                      "backgroundImage": "url(/user.png)",
                       "backgroundPosition": "center center",
                       "backgroundSize": "cover",
                       "borderRadius": "9999px",

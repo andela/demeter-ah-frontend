@@ -21,11 +21,10 @@ module.exports = {
       },
       {
         test: /\.(jpe?g|png|gif|mp3|svg|ico)$/,
-        exclude: /node-modules/,
-        loader: 'file-loader',
-        options: {
-          outputPath: 'img/'
-        }
+        use: {
+          loader: process.env.NODE_ENV === 'development' ? 'file-loader' : 'ignore-loader',
+          options: {},
+        },
       },
     ],
   },

@@ -1,0 +1,23 @@
+.home{
+  .banner{
+    @apply flex mx-auto flex-col py-8 px-8;
+    @media (min-width: 576px){ @apply px-16 }
+    @screen lg{ @apply flex-row py-16 px-32 items-center }
+    .welcome{
+      @apply w-full mb-12;
+      @screen lg{ @apply w-2/4 mb-0 }
+      h1 {
+        @apply text-4xl w-full text-center;
+        @screen lg{ @apply text-left text-5xl w-4/5 }
+      }
+      p {
+        @apply w-full text-center;
+        @screen lg{ @apply w-3/4 text-left }
+      }
+      &-img{
+        @apply w-4/5 mx-auto;
+        @screen lg{ @apply w-2/4 m-0 }
+      }
+    }
+  }
+}

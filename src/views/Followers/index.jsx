@@ -19,21 +19,25 @@ const Followers = (props) => {
 
   const [showButton, setshowButton] = useState((match.params.username !== user.username));
   const [isMounted, setIsMounted] = useState(false);
+  let isSubscribe = true;
 
   const fetchFollowersList = async () => {
     if (match.params.username !== user.username) {
       await getFollowers(match.params.username);
-      setshowButton(true);
+      if (isSubscribe) setshowButton(true);
     } else {
       await getFollowers();
-      setshowButton(false);
+      if (isSubscribe) setshowButton(false);
     }
-    setIsMounted(true);
+    if (isSubscribe) setIsMounted(true);
   };
 
   useEffect(
     () => {
       fetchFollowersList();
+      return () => {
+        isSubscribe = false;
+      };
     },
     [match.params.username, error, JSON.stringify(followers)]
   );

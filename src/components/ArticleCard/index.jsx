@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ImageStyle, authorImage } from '../../utils';
-import img from '../../assets/images/article/no-image.png';
-import authImage from '../../assets/images/user.png';
 import Star from '../../assets/svgs/starblank';
 import Starcolor from '../../assets/svgs/star';
 import BookmarkIcon from '../../assets/svgs/bookmarkfill';
@@ -42,14 +40,14 @@ const ArticleCard = ({
     <>
       <div className="md:flex md:flex-row flex-row lg:min-w-96 max-w-5xl m-auto text-left justify-start p-2
       bg-white rounded-sm border-b-2 border-gray-350 mb-3 md:min-w-84">
-        <div className="m-4 ml-0 min-w-108 min-h-48 rounded shadow-lg sm:min-w-min lg:min-w-96" style={ImageStyle(image || img)}>
+        <div className="m-4 ml-0 min-w-108 min-h-48 rounded shadow-lg sm:min-w-min lg:min-w-96" style={ImageStyle(image || '/article/no-image.png')}>
           <div className="m-5 flex flex-col justify-between h-82">
             <p className="text-xl font-medium text-white lg:mt-0 mt-4">
               {category}
             </p>
             <div className="flex justify-between mt-16">
               <div>
-                <div style={authorImage(autImage || authImage)} className="h-16 w-16" />
+                <div style={authorImage(autImage || '/user.png')} className="h-16 w-16" />
                 <p className="text-xl font-medium text-white">{authorname || 'Paul Igabu'}</p>
               </div>
               <span className="h-8 w-8" style={{ alignSelf: 'flex-end', cursor: 'pointer' }}>

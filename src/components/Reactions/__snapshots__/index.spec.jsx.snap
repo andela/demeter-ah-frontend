@@ -48,7 +48,7 @@ exports[`Reactions Component Should render without errors 1`] = `
         <img
           alt="Comment"
           className="comment-img"
-          src="test-file-stub"
+          src="/article/comment.png"
         />
       </button>
       <p

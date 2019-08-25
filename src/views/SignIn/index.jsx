@@ -12,10 +12,6 @@ import {
   socialSignInAction,
 } from '../../store/actions/SignIn';
 import '../../styles/react-toastify.css';
-import brandLogo from '../../assets/images/brand-logo.png';
-import goggleIcon from '../../assets/images/google.png';
-import facebookIcon from '../../assets/images/facebook.png';
-import twitterIcon from '../../assets/images/twitter.png';
 
 const SignIn = ({
   cleanUp,
@@ -154,7 +150,7 @@ const SignIn = ({
             </div>
             <div className="right-con mt-10 mb-4 md:my-0 flex justify-center min-w-84 sm:w-full md:w-5/12">
               <img
-                src={brandLogo}
+                src="/brand-logo.png"
                 className="mb-4 hidden md:block sm:hidden lg:block"
                 alt="Authors Haven"
               />
@@ -165,7 +161,7 @@ const SignIn = ({
                 name="Login"
                 classes="w-64 flex items-center justify-around shadow-md rounded-lg mx-2 my-3 text-sm"
               >
-                <img src={goggleIcon} alt="Authors Haven" />
+                <img src="/google.png" alt="Authors Haven" />
                 Sign in with Google
               </Button>
               <Button
@@ -176,7 +172,7 @@ const SignIn = ({
                 classes="w-64 flex items-center justify-around shadow-md rounded-lg mx-2 my-3 text-sm"
               >
                 <img
-                  src={facebookIcon}
+                  src="/facebook.png"
                   alt="Authors Haven"
                 />
                 Sign in with Facebook
@@ -189,7 +185,7 @@ const SignIn = ({
                 classes="w-64 flex items-center justify-around shadow-md rounded-lg mx-2 my-3 text-sm"
               >
                 <img
-                  src={twitterIcon}
+                  src="/twitter.png"
                   alt="Authors Haven"
                 />
                 Sign in with Twitter

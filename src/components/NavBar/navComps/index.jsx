@@ -22,5 +22,5 @@ export const AuthNav = () => (
 );
 
 export const CreateArticleNav = ({ openModal }) => (
-  <Button type="button" onClick={() => openModal()} name="Next Step" classes="btn-purple" />
+  <Button type="button" onClick={() => openModal()} name="Next Step" classes="btn-purple md:fixed md:bottom-2em md:right-2em" />
 );

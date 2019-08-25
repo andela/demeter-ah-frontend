@@ -6,7 +6,6 @@ import { withRouter, Link, Redirect } from 'react-router-dom';
 import * as actions from '../../store/actions/articles';
 import { signOutAction } from '../../store/actions/signOut';
 import { AuthNav, CreateArticleNav } from './navComps';
-import logo from '../../assets/images/logo.png';
 import './index.scss';
 import UserNavInfo from '../UserNavInfo';
 import Search from '../Search';
@@ -50,7 +49,7 @@ const NavBar = ({
     <nav className="flex items-center justify-between relative flex-wrap bg-white-500 pt-2 p-3 z-40 shadow-md">
       <div className="flex items-center flex-shrink-0 text-dark">
         <Link to="/">
-          <img id="logo" src={logo} alt="Author's Haven" />
+          <img id="logo" src="/logo.png" alt="Author's Haven" />
         </Link>
       </div>
       <div className="flex relative">

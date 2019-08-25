@@ -139,7 +139,7 @@ exports[`NavBar Component Should render along with children component 1`] = `
                     <img
                       alt="Author's Haven"
                       id="logo"
-                      src="test-file-stub"
+                      src="/logo.png"
                     />
                   </a>
                 </Link>

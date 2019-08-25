@@ -1,9 +1,8 @@
 import React from 'react';
-import load from '../../assets/images/loader.gif';
 
-const loader = ({ size }) => (
-  <div className="h-72 flex items-center justify-center">
-    <img src={load} alt="" className={size || 'w-8 h-8'} />
+const loader = ({ size, fixed }) => (
+  <div className={`flex items-center justify-center py-4 ${!fixed ? 'h-72' : ''}`}>
+    <img src="/loader.gif" alt="" className={size || 'w-8 h-8'} />
   </div>
 );
 

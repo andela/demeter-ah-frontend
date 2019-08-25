@@ -4,8 +4,6 @@ import ArticleIcon from '../../assets/svgs/articleIcon';
 import BookmarkIcon from '../../assets/svgs/bookmarkIcon';
 import SettingsIcon from '../../assets/svgs/settingsIcon';
 import StatIcon from '../../assets/svgs/statIcon';
-import following from '../../assets/images/following.png';
-import followers from '../../assets/images/followers.png';
 import './index.scss';
 
 const menuTab = ({ user, match }) => {
@@ -21,13 +19,13 @@ const menuTab = ({ user, match }) => {
       </Menu>
       <Menu id="following" name="menuTabs" to={`/profile/${params}/following`}>
         <div className="menuIcon">
-          <img src={following} className="h-5 w-5" alt="following" />
+          <img src="/following.png" className="h-5 w-5" alt="following" />
         </div>
         <span className="hidden md:block">Following</span>
       </Menu>
       <Menu id="followers" name="menuTabs" to={`/profile/${params}/followers`}>
         <div className="menuIcon">
-          <img src={followers} className="h-5 w-5" alt="followers" />
+          <img src="/followers.png" className="h-5 w-5" alt="followers" />
         </div>
         <span className="hidden md:block">Followers</span>
       </Menu>

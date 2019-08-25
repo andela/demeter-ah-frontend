@@ -8,10 +8,6 @@ import Button from '../../components/Button';
 import { signUpAction, cleanUpAuth } from '../../store/actions/signup';
 import { socialSignInAction } from '../../store/actions/SignIn';
 import '../../styles/react-toastify.css';
-import brandLogo from '../../assets/images/brand-logo.png';
-import goggleIcon from '../../assets/images/google.png';
-import facebookIcon from '../../assets/images/facebook.png';
-import twitterIcon from '../../assets/images/twitter.png';
 
 const Signup = (props) => {
   const {
@@ -185,7 +181,7 @@ const Signup = (props) => {
                 <hr className="vline hidden md:block" />
               </div>
               <div className="order-1 md:order-3 right-con md:w-108 justify-center">
-                <img id="brand-logo" className="hidden md:block" src={brandLogo} alt="Authors Haven" />
+                <img id="brand-logo" className="hidden md:block" src="/brand-logo.png" alt="Authors Haven" />
                 <Button
                   onClick={handleSocial}
                   id="google"
@@ -193,8 +189,8 @@ const Signup = (props) => {
                   name="Login"
                   classes="w-64 flex items-center justify-around shadow-md rounded-lg mx-2 my-3 text-sm"
                 >
-                  <img src={goggleIcon} alt="Authors Haven" />
-                Sign up with Google
+                  <img src="/google.png" alt="Authors Haven" />
+                  Sign up with Google
                 </Button>
                 <Button
                   onClick={handleSocial}
@@ -204,10 +200,10 @@ const Signup = (props) => {
                   classes="w-64 flex items-center justify-around shadow-md rounded-lg mx-2 my-3 text-sm"
                 >
                   <img
-                    src={facebookIcon}
+                    src="/facebook.png"
                     alt="Authors Haven"
                   />
-                Sign up with Facebook
+                  Sign up with Facebook
                 </Button>
                 <Button
                   onClick={handleSocial}
@@ -217,10 +213,10 @@ const Signup = (props) => {
                   classes="w-64 flex items-center justify-around shadow-md rounded-lg mx-2 my-3 text-sm"
                 >
                   <img
-                    src={twitterIcon}
+                    src="/twitter.png"
                     alt="Authors Haven"
                   />
-                Sign up with Twitter
+                  Sign up with Twitter
                 </Button>
               </div>
             </div>

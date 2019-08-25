@@ -1,0 +1,27 @@
+.home{
+  .footer{
+    @apply w-full flex flex-col items-center justify-around p-4;
+    @screen md{ @apply flex-row; }
+    border-top: 1px solid rgba(0, 0, 0, .2);
+    & > div{
+      @apply my-3;
+      p{
+        @apply font-semibold opacity-50;
+      }
+    }
+    .connect{
+      @apply flex items-center flex-col w-4/5 justify-between;
+      @screen md{ width: 40%; @apply flex-row; }
+      @screen lg{ width: 30%; }
+      p{
+        @apply my-4;
+      }
+      img{
+        @screen md{ @apply my-0; }
+      }
+      &-icons{
+        @apply flex w-2/4 justify-between;
+      }
+    }
+  }
+}

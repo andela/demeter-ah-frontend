@@ -1,12 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import profilePic from '../../assets/images/dummy-profile-pic.png';
 
 const AuthorProfile = ({ author, readTime }) => (
   <div className="flex-1 left text-center ">
     <div className="flex sm:flex-row flex-wrap">
       <img
-        src={author && author.image ? author.image : profilePic}
+        src={author && author.image ? author.image : '/dummy-profile-pic.png'}
         className="m-1 bg-purple-650 object-cover rounded-full sm:h-20 sm:w-20 md:w-20 md:h-20 lg:h-24 lg:w-24 flex"
         alt="Author"
       />

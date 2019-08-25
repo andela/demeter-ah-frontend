@@ -10,7 +10,7 @@
 		"webpack": "webpack --env.mode development",
 		"client:build": "rimraf dist && mkdir dist && webpack --env.mode production",
 		"dev:start": "webpack-dev-server --env.mode development --hot",
-		"start": "npm run client:build && babel-node server/index.js"
+		"start": "npm run client:build && node server/index.js"
 	},
 	"husky": {
 		"hooks": {
@@ -35,7 +35,6 @@
 	"homepage": "https://github.com/andela/demeter-ah-frontend#readme",
 	"dependencies": {
 		"@babel/core": "^7.5.5",
-		"@babel/node": "^7.5.5",
 		"@babel/plugin-transform-runtime": "^7.5.5",
 		"@babel/preset-env": "^7.5.5",
 		"@babel/preset-react": "^7.0.0",
@@ -50,21 +49,14 @@
 		"autoprefixer": "^9.6.1",
 		"axios": "^0.19.0",
 		"babel-loader": "^8.0.6",
-		"chromedriver": "^76.0.0",
 		"cryptr": "^4.0.2",
 		"css-loader": "^3.1.0",
 		"dotenv": "^8.0.0",
-		"enzyme": "^3.10.0",
-		"enzyme-adapter-react-16": "^1.14.0",
 		"express": "^4.17.1",
 		"file-loader": "^4.1.0",
 		"html-webpack-plugin": "^3.2.0",
-		"jsdom": "^15.1.1",
 		"mini-css-extract-plugin": "^0.8.0",
-		"mock": "^0.1.1",
 		"moment": "^2.24.0",
-		"nock": "^10.0.6",
-		"node-fetch": "^2.6.0",
 		"node-sass": "^4.12.0",
 		"postcss-loader": "^3.0.0",
 		"react": "^16.8.6",
@@ -74,6 +66,7 @@
 		"react-moment": "^0.9.2",
 		"react-redux": "^7.1.0",
 		"react-router-dom": "^5.0.1",
+		"ignore-loader": "^0.1.2",
 		"react-textarea-autosize": "^7.1.0",
 		"react-toastify": "^5.3.2",
 		"redux": "^4.0.4",
@@ -88,6 +81,11 @@
 		"webpack-merge": "^4.2.1"
 	},
 	"devDependencies": {
+		"jsdom": "^15.1.1",
+		"mock": "^0.1.1",
+		"redux-devtools-extension": "^2.13.8",
+		"enzyme": "^3.10.0",
+		"enzyme-adapter-react-16": "^1.14.0",
 		"axios-mock-adapter": "^1.17.0",
 		"babel-eslint": "^10.0.2",
 		"eslint": "^6.1.0",

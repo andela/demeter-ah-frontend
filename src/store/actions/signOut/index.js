@@ -1,9 +1,9 @@
 import { axiosCall, clearLocalStorage } from '../../../utils';
 import { getUser } from '../signup';
 
-export const signOutAction = () => async (dispatch) => {
+export const signOutAction = () => (dispatch) => {
   try {
-    await axiosCall({ path: '/api/v1/users/signout', method: 'post' });
+    axiosCall({ path: '/api/v1/users/signout', method: 'post' });
     clearLocalStorage();
     dispatch(getUser());
   } catch (error) {

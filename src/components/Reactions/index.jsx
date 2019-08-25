@@ -1,5 +1,4 @@
 import React from 'react';
-import comment from '../../assets/images/article/comment.png';
 import LikeIcon from '../../assets/svgs/likeIcon';
 import DisLikeIcon from '../../assets/svgs/disLike';
 import Bookmark from '../../assets/svgs/bookmarksm';
@@ -71,7 +70,7 @@ const Reactions = ({
         <div className="comment-section">
           <button onClick={viewComment} className="comment-icon icons">
             <img
-              src={comment}
+              src="/article/comment.png"
               className="comment-img"
               alt="Comment"
             />

@@ -227,7 +227,7 @@ exports[`Menutab Component Should render along with children component when user
                       <img
                         alt="following"
                         className="h-5 w-5"
-                        src="test-file-stub"
+                        src="/following.png"
                       />
                     </div>
                     <span
@@ -269,7 +269,7 @@ exports[`Menutab Component Should render along with children component when user
                       <img
                         alt="followers"
                         className="h-5 w-5"
-                        src="test-file-stub"
+                        src="/followers.png"
                       />
                     </div>
                     <span
@@ -516,7 +516,7 @@ exports[`Menutab Component Should render along with children component when user
                       <img
                         alt="following"
                         className="h-5 w-5"
-                        src="test-file-stub"
+                        src="/following.png"
                       />
                     </div>
                     <span
@@ -558,7 +558,7 @@ exports[`Menutab Component Should render along with children component when user
                       <img
                         alt="followers"
                         className="h-5 w-5"
-                        src="test-file-stub"
+                        src="/followers.png"
                       />
                     </div>
                     <span

@@ -7,10 +7,10 @@ nav{
     height: 0;
     background-repeat: no-repeat;
     background-size: contain;
-    background-image: url("../../assets/images/brand-logo.png") ; /* lets say 20x20 */
+    background-image: url("/brand-logo.png") ; /* lets say 20x20 */
     @media (min-width: 768px){
       padding: 1rem 6rem;
-      background-image: url("../../assets/images/logo.png") ;
+      background-image: url("/logo.png") ;
     }
   }
   button {

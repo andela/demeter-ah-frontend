@@ -157,6 +157,7 @@ module.exports = {
         xlx1: '18rem',
         xlx2: '24rem',
         xlx3: '420px',
+        xlx4: '150px',
         82: '82%'
       },
       width: {
@@ -166,6 +167,7 @@ module.exports = {
         0: 0,
         auto: 'auto',
         '1/2': '50%',
+        '2em': '2em',
       }
     },
   },

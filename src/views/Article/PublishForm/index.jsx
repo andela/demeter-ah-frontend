@@ -1,5 +1,4 @@
 import React from 'react';
-import close from '../../../assets/images/close.png';
 import Tag from '../../../components/TagInput';
 
 const submitBtn = (submit, isDrafting, isPublishing) => (
@@ -40,7 +39,7 @@ const PublishForm = ({
   return (
     isOpen && (
       <div className="publish">
-        <button onClick={closeModal} className="closebtn"><img src={close} alt="close" /></button>
+        <button onClick={closeModal} className="closebtn"><img src="/close.png" alt="close" /></button>
         <h4 className="mb-12 opacity-50">Write a little description for your viewers</h4>
         <form className="form">
           <input

@@ -252,7 +252,7 @@ exports[`Sign In Component Should render along with children componenet 1`] = `
                 <img
                   alt="Authors Haven"
                   className="mb-4 hidden md:block sm:hidden lg:block"
-                  src="test-file-stub"
+                  src="/brand-logo.png"
                 />
                 <Button
                   classes="w-64 flex items-center justify-around shadow-md rounded-lg mx-2 my-3 text-sm"
@@ -270,7 +270,7 @@ exports[`Sign In Component Should render along with children componenet 1`] = `
                   >
                     <img
                       alt="Authors Haven"
-                      src="test-file-stub"
+                      src="/google.png"
                     />
                     Sign in with Google
                   </button>
@@ -291,7 +291,7 @@ exports[`Sign In Component Should render along with children componenet 1`] = `
                   >
                     <img
                       alt="Authors Haven"
-                      src="test-file-stub"
+                      src="/facebook.png"
                     />
                     Sign in with Facebook
                   </button>
@@ -312,7 +312,7 @@ exports[`Sign In Component Should render along with children componenet 1`] = `
                   >
                     <img
                       alt="Authors Haven"
-                      src="test-file-stub"
+                      src="/twitter.png"
                     />
                     Sign in with Twitter
                   </button>

@@ -1,4 +1,5 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const path = require('path');
 
 module.exports = {
   module: {
@@ -16,6 +17,7 @@ module.exports = {
     ],
   },
   devServer: {
+    contentBase: [path.join(__dirname, '../assets/images')],
     port: 8000,
-  },
+  }
 };

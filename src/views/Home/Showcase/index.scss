@@ -1,0 +1,75 @@
+.home{
+  .showcase{
+    & > div{
+      @apply w-full mb-8;
+      @screen lg{ width: 48%; @apply mb-0 }
+      h1{
+        @apply font-normal opacity-50;
+        border-bottom: 1px solid rgba(0,0,0, .5);
+      }
+    }
+    @apply flex justify-between flex-col w-full py-8 px-8;
+    @media (min-width: 576px){ @apply px-16 }
+    @screen lg{ @apply py-16 px-32 flex-row }
+    .article-cards{
+      @apply w-full;
+      height: 35rem;
+      @media (min-width: 576px){ height: 53rem; }
+      @screen lg{ height: 45rem; }
+      @screen xl{ height: 90vh; }
+      @apply flex flex-col justify-between;
+      .horizontal{
+        @apply w-full p-4 rounded-1xl flex flex-col justify-between;
+        height: 38%;
+        @media (min-width: 576px){ @apply flex-row }
+        .category{
+          @apply w-full mb-4;
+          @screen sm{ @apply w-2/4 mb-0 }
+        }
+        .meta{
+          @apply w-full flex h-full flex-col justify-between text-lg;
+          @media (min-width: 576px){ @apply w-2/4 }
+        }
+      }
+      .vertical{
+        &-group{
+          @apply flex-row flex justify-between;
+          height: 58%;
+        }
+        @apply p-4 rounded-1xl h-full flex flex-col;
+        width: 48%;
+        .category{
+          @apply w-full mb-4;
+        }
+        .meta{
+          @apply w-full flex h-full flex-col justify-between text-lg;
+        }
+      }
+      .horizontal, .vertical{
+        @media (min-width: 576px){ border-radius: 2rem; padding: 1.5rem;}
+        @screen xl{ @apply rounded-lg }
+      }
+      .category{
+        @apply text-sm text-white;
+        @media (min-width: 576px){ @apply text-base }
+        @screen md{ @apply text-lg }
+        @screen lg{ @apply text-base }
+        @screen xl{ @apply text-lg }
+      }
+      .title {
+        @apply text-lg text-white font-bold;
+        @media (min-width: 576px){ @apply text-xl }
+        @screen md{ @apply text-2xl }
+        @screen lg{ @apply text-xl }
+        @screen xl{ @apply text-2xl }
+      }
+      .read-more {
+        @apply bg-white self-start text-gray-800 rounded-full text-sm py-1 px-2;
+        font-size: .7rem;
+        @media (min-width: 576px){ @apply text-sm px-3 py-1 self-end }
+        @screen lg{ padding: .5rem 1.3rem; }
+        width: fit-content;
+      }
+    }
+  }
+}

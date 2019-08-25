@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import './index.scss';
-import uploadIcon from '../../assets/images/upload.png';
 import { setProfileImage } from '../../store/actions/editProfile';
 import FollowBtn from '../FollowButton';
 
@@ -16,7 +15,7 @@ const userInfo = ({ user, setImage, loggedInUser }) => {
     readPath.readAsDataURL(file);
     readPath.onload = e => setUser(prevState => ({ ...prevState, image: e.target.result }));
   };
-    /* istanbul ignore next */
+  /* istanbul ignore next */
   const handleChange = (event) => {
     const [pictureFile] = event.target.files;
     setImage(pictureFile);
@@ -50,7 +49,7 @@ const userInfo = ({ user, setImage, loggedInUser }) => {
           <label htmlFor="changePhoto">
             <img
               className=" m-0 h-9 w-9 rounded-full cursor-pointer border-4 border-solid border-white"
-              src={uploadIcon}
+              src="/upload.png"
               alt=""
             />
           </label>

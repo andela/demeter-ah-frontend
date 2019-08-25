@@ -1,0 +1,38 @@
+.home{
+  .about{
+    box-shadow: 0 0rem 1rem inset rgba(0,0,0, .2);
+    @apply py-4;
+    & > h1{
+      @apply w-full text-center font-light text-4xl ;
+    }
+    .ideas, .outstanding{
+      @apply flex w-full py-8 px-8;
+      @media (min-width: 576px){ @apply px-16 }
+      @screen lg{ @apply py-16 px-32 justify-between items-center }
+      &-content{
+        @apply w-full mb-12;
+        @screen lg{ @apply mb-0; width: 45%; }
+        h1{
+          @apply text-4xl w-full text-center;
+          @screen lg{ @apply text-left text-5xl }
+        }
+        p {
+          @apply w-full text-center;
+          @screen lg{ @apply text-left }
+        }
+      }
+      &-img{
+        @apply w-4/5 mx-auto;
+        @screen lg{ @apply m-0; width: 45%; }
+      }
+    }
+    .outstanding{
+      @apply flex-col;
+      @screen lg{ @apply flex-row-reverse; }
+    }
+    .ideas{
+      @apply flex-col;
+      @screen lg{ @apply flex-row; }
+    }
+  }
+}

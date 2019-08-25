@@ -37,7 +37,7 @@ const Comment = ({
   return (
     <div className="commentSection pb-10 cursor-pointer">
       <div onClick={handleDropdown} className="header w-full text-left py-5 border-gray-50 border-b border-solid">
-        <strong className="text-1.5xl font-semibold">{`Conversations (${commentNo || 0})`}</strong>
+        <strong className="text-1.5xl font-semibold">{`Comments (${commentNo || 0})`}</strong>
         <p>Start a discussion, not a fire. Post with kindness</p>
       </div>
       {
@@ -46,7 +46,7 @@ const Comment = ({
             (
               <>
                 <CreateComment slug={slug} />
-                { loading ? <Loader /> : commentList }
+                { loading ? <Loader fixed /> : commentList }
               </>
             )
           )

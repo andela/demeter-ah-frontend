@@ -1,0 +1,40 @@
+.home{
+  .articles{
+    @apply flex flex-col w-full py-8 px-8;
+    @media (min-width: 576px){ @apply px-16 }
+    @screen lg{ @apply py-16 px-32 }
+    h1{
+      @apply w-full text-center font-light;
+    }
+    .list{
+      @apply flex flex-col justify-around;
+      @screen md{ @apply flex-row }
+    }
+    &-card{
+      @apply my-4 mx-auto;
+      width: 80%;
+      @media (min-width: 576px){ width: 20rem; }
+      @screen lg{ width: 23rem; }
+      h2.title{
+        @apply font-bold text-xl text-center;
+      }
+      img{
+        @apply w-full h-full;
+      }
+    }
+  }
+  .join{
+    @apply flex flex-col w-full py-8 px-8;
+    @media (min-width: 576px){ @apply px-16 }
+    @screen lg{ @apply py-16 px-32 }
+    h1{
+      @apply w-full text-center mb-10;
+    }
+  }
+  a{
+    @apply mx-auto;
+    button{
+      @apply text-purple-650 border border-solid border-purple-650 px-8;
+    }
+  }
+}

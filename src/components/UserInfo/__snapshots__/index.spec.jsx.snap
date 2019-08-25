@@ -99,7 +99,7 @@ exports[`UserInfo Component Should render along with children component 1`] = `
                   <img
                     alt=""
                     className=" m-0 h-9 w-9 rounded-full cursor-pointer border-4 border-solid border-white"
-                    src="test-file-stub"
+                    src="/upload.png"
                   />
                 </label>
                 <input
@@ -275,7 +275,7 @@ exports[`UserInfo Component Should render along with children component wher ima
                   <img
                     alt=""
                     className=" m-0 h-9 w-9 rounded-full cursor-pointer border-4 border-solid border-white"
-                    src="test-file-stub"
+                    src="/upload.png"
                   />
                 </label>
                 <input

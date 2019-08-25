@@ -4,31 +4,37 @@ import Star from '../../assets/svgs/star';
 import facebookShare from '../../assets/images/article/face.png';
 import twitterShare from '../../assets/images/article/twitter.png';
 import mailShare from '../../assets/images/article/mail.png';
+import openTwitter from './Social/twitter';
+import openFacebook from './Social/facebook';
+import openMail from './Social/mail';
 
-const ShareAndDate = ({ createdAt, category }) => (
+
+const ShareAndDate = ({
+  createdAt, category, url, content, title, description
+}) => (
   <div className="flex flex-col right text-center">
     <div className="flex flex-row justify-start md:justify-end">
-      <div className="facebook mr-0 mt-4 mb-2">
+      <button className="facebook mr-0 mt-4 mb-2" onClick={() => openFacebook(url, content, title, description)}>
         <img
           src={facebookShare}
           className="cursor-pointer h-8 w-8 opacity-50"
           alt="Share on Facebook"
         />
-      </div>
-      <div className="twitter ml-4 mt-4 mb-2">
+      </button>
+      <button className="twitter ml-4 mt-4 mb-2" onClick={() => openTwitter(url, content)}>
         <img
           src={twitterShare}
           className="cursor-pointer h-8 w-8 opacity-50"
           alt="Share on Twitter"
         />
-      </div>
-      <div className="mail ml-4 mt-4 mb-2">
+      </button>
+      <button className="mail ml-4 mt-4 mb-2" onClick={() => openMail(url, title)}>
         <img
           src={mailShare}
           className="cursor-pointer h-8 w-8 opacity-50"
           alt="Share via Email"
         />
-      </div>
+      </button>
     </div>
     <div className="flex flex-row justify-start md:justify-end sm:text-sm text-gray-600">
       <p>

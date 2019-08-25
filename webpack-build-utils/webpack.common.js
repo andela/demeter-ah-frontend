@@ -46,7 +46,10 @@ module.exports = {
     }),
     new webpack.DefinePlugin({
       'process.env.SERVER_URL': JSON.stringify(process.env.SERVER_URL),
-      'process.env.SECRET': JSON.stringify(process.env.SECRET)
+      'process.env.SECRET': JSON.stringify(process.env.SECRET),
+      'process.env.FACEBOOK_SHARE_URL': JSON.stringify(process.env.FACEBOOK_SHARE_URL),
+      'process.env.TWITTER_SHARE_URL': JSON.stringify(process.env.TWITTER_SHARE_URL),
+      'process.env.FACEBOOK_SHARE_APP_ID': JSON.stringify(process.env.FACEBOOK_SHARE_APP_ID)
     })
   ],
 };

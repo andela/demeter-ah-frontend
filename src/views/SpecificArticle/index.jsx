@@ -1,6 +1,6 @@
 import './index.scss';
 import React, {
-  useEffect, useState, useRef, Fragment,
+  useEffect, useState, useRef, Fragment
 } from 'react';
 import ReactHtmlParser from 'react-html-parser';
 import { connect } from 'react-redux';
@@ -9,13 +9,16 @@ import RelatedArticles from '../../components/RelatedArticles/index';
 import ArticleFeaturedImg from '../../components/ArticleFeaturedImg/index';
 import AuthorProfile from '../../components/AuthorProfile/index';
 import ShareAndDate from '../../components/ShareAndDate/index';
-import Reactions from '../../components/Reactions/index';
+import Reactions from '../../components/Reactions';
 import FlagArticle from '../../components/FlagArticle/index';
 import ArticleTags from '../../components/ArticleTags/index';
 import convertFromJSON from '../../utils/convertFromJSON';
 import { featuredImgStyle, relatedArticleImg } from '../../utils';
 import { bookmarkArticle } from '../../store/actions/bookmarkArticle';
 import Comment from '../../components/Comment';
+import { submitReportAction } from '../../store/actions/reportArticle';
+import ReportModal from '../../components/ReportModal';
+import Loader from '../../components/Loader';
 
 const SpecificArticle = (props) => {
   const getBody = (raw) => {
@@ -39,7 +42,9 @@ const SpecificArticle = (props) => {
     history,
     articleError,
     isAuthenticated,
-    bookmarkArticleAction
+    bookmarkArticleAction,
+    submitReport,
+    relatedIsLoading
   } = props;
 
   const setTags = tags && tags.length >= 1 ? (
@@ -55,6 +60,12 @@ const SpecificArticle = (props) => {
 
   const [bodyValue, setbodyValue] = useState(null);
   const [onbookmark, setOnBookmark] = useState(false);
+  const reportBody = useRef();
+
+  const [showReport, setShowReport] = useState(false);
+  const openReportModal = () => {
+    setShowReport(!showReport);
+  };
 
   const bookmarkthisArticle = async (e) => {
     const articleSlug = e.target.dataset.slug;
@@ -70,6 +81,25 @@ const SpecificArticle = (props) => {
     });
   };
 
+  const handleReportSubmit = async (e) => {
+    e.preventDefault();
+    const message = reportBody.current.value;
+    const payload = {
+      message,
+      articleId: article.id
+    };
+    await submitReport(payload);
+    setShowReport(!showReport);
+  };
+
+  const report = (
+    <ReportModal
+      closeModal={openReportModal}
+      handleSubmit={handleReportSubmit}
+      reportBody={reportBody}
+    />
+  );
+
   useEffect(() => {
     if (articleError) {
       history.push('/');
@@ -84,6 +114,7 @@ const SpecificArticle = (props) => {
       props.viewArticleAction(match.params.slug);
       setOnBookmark(false);
     }
+
     if (match.params.slug !== article.slug) {
       props.viewArticleAction(match.params.slug);
     }
@@ -125,7 +156,14 @@ const SpecificArticle = (props) => {
         </div>
         <div className="sm:flex-row md:flex section-four tags mb-8">
           <ArticleTags setTags={setTags} />
-          <FlagArticle />
+          {isAuthenticated && ((author && author.username) !== user.username)
+            ? (
+              <FlagArticle
+                handleSubmit={handleReportSubmit}
+                reportBody={reportBody}
+                openReportModal={openReportModal}
+              />
+            ) : ''}
         </div>
         <Reactions
           isAuthenticated={isAuthenticated}
@@ -142,10 +180,14 @@ const SpecificArticle = (props) => {
         <div className="flex flex-col section-five mb-8 bg-gray-100 justify-center">
           <h2 className="w-8/12 mx-auto sm:text-center lg:text-left">Related Articles</h2>
           <div className="flex flex-row w-8/12 mx-auto sm:max-w-32 md:max-w-84 lg:max-w-96">
-            <RelatedArticles
-              articles={articles}
-              relatedArticleImg={relatedArticleImg}
-            />
+            {relatedIsLoading ? <Loader />
+              : (
+                <RelatedArticles
+                  articles={articles}
+                  relatedArticleImg={relatedArticleImg}
+                />
+              )
+            }
           </div>
         </div>
         <div ref={commentNode} className="commentWrapper">
@@ -158,6 +200,7 @@ const SpecificArticle = (props) => {
   return (
     <Fragment>
       {detail}
+      {showReport ? report : ''}
     </Fragment>
   );
 };
@@ -180,6 +223,7 @@ const mapDispatchToProps = {
   viewArticleAction,
   cleanUpArticle,
   bookmarkArticleAction: slug => bookmarkArticle(slug),
+  submitReport: body => submitReportAction(body)
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(SpecificArticle);

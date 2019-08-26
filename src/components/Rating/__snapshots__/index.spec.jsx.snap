@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Rating Component Should render without errors 1`] = `
+Array [
+  <Star
+    key="0"
+  />,
+  <Star
+    key="1"
+  />,
+  <Star
+    key="2"
+  />,
+  <Star
+    key="3"
+  />,
+  <Star
+    key="4"
+  />,
+]
+`;

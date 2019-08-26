@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`List Component Should render without errors 1`] = `
+<tr
+  className="text-center"
+>
+  <td
+    className="p-3 px-5 text-center"
+  />
+  <td
+    className="p-3 px-5 text-center"
+  />
+  <td
+    className="p-3 px-5 text-center"
+  >
+    NO Available stats
+  </td>
+  <td
+    className="p-3 px-5 text-center"
+  />
+  <td
+    className="p-3 px-5 text-center"
+  />
+</tr>
+`;

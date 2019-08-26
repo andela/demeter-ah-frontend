@@ -55,7 +55,7 @@ exports[`Sign In Component Should call toast isCompleted is true in signup use e
         viewBookmarkedArticle={[Function]}
       >
         <div
-          className="border-t-2 bg-purple-50 mb-6 overflow-y-auto"
+          className="border-t-2 bg-purple-50 mb-6 overflow-y-auto h-full"
         >
           <loader>
             <div
@@ -128,7 +128,7 @@ exports[`Sign In Component Should render along with children componenet 1`] = `
         viewBookmarkedArticle={[Function]}
       >
         <div
-          className="border-t-2 bg-purple-50 mb-6 overflow-y-auto"
+          className="border-t-2 bg-purple-50 mb-6 overflow-y-auto h-full"
         >
           <loader>
             <div
@@ -240,7 +240,7 @@ exports[`Sign In Component Should run errors if error exist 1`] = `
         viewBookmarkedArticle={[Function]}
       >
         <div
-          className="border-t-2 bg-purple-50 mb-6 overflow-y-auto"
+          className="border-t-2 bg-purple-50 mb-6 overflow-y-auto h-full"
         >
           <loader>
             <div

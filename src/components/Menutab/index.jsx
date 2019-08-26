@@ -41,7 +41,7 @@ const menuTab = ({ user, match }) => {
             <div className="menuIcon">
               <StatIcon />
             </div>
-            <span className="hidden md:block">Read Articles</span>
+            <span className="hidden md:block">Article Stats</span>
           </Menu>
           <Menu id="settings" name="menuTabs" to={`/profile/${username}/editprofile`}>
             <div className="menuIcon">

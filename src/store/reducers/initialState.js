@@ -12,7 +12,8 @@ export const articles = {
   openPublishModal: false,
   isSubmitting: false,
   response: {},
-  usernameArticles: []
+  usernameArticles: [],
+  articleStats: []
 };
 
 export const editProfile = {

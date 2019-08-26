@@ -12,6 +12,8 @@ export const publishArticle = () => ({ type: types.ARTICLE_PUBLISH });
 
 export const setUsernameArticle = payload => ({ type: types.SET_USERNAME_ARTICLES, payload });
 
+export const setArticleStats = payload => ({ type: types.SET_ARTICLES_STATS, payload });
+
 export const createArticleSuccess = ({ message, slug }) => ({
   type: types.CREATE_ARTICLE_SUCCESS,
   resp: { message, slug }
@@ -75,6 +77,21 @@ export const getAuthorArticle = username => async (dispatch) => {
   } catch (error) {
     const { response } = error;
     dispatch(setUsernameArticle([]));
+    const message = 'something went wrong';
+    throw (response.data && response.data.message) || message;
+  }
+};
+
+export const getArticleStats = username => async (dispatch) => {
+  try {
+    const result = await axiosCall({
+      path: `/api/v1/articles/user/${username}`, method: 'get'
+    });
+    const { articles } = result.articles && result;
+    dispatch(setArticleStats(articles));
+  } catch (error) {
+    const { response } = error;
+    dispatch(setArticleStats([]));
     const message = 'something went wrong';
     throw (response.data && response.data.message) || message;
   }

@@ -23,7 +23,7 @@ const Bookmark = (props) => {
   };
 
   const noBookmark = (
-    <div className="following">
+    <div className="following h-full">
       <ul className="list w-10/12 md:w-3/5">
         <NoItem message="You do not have any article bookmarked" />
       </ul>
@@ -87,7 +87,7 @@ const Bookmark = (props) => {
 
   return (
     <Fragment>
-      <div className="border-t-2 bg-purple-50 mb-6 overflow-y-auto">
+      <div className="border-t-2 bg-purple-50 mb-6 overflow-y-auto h-full">
         {!isMounted ? <Loader /> : getBookmarkedArticles}
       </div>
     </Fragment>

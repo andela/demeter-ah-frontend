@@ -15,6 +15,7 @@ import Dashboard from '../views/Dashboard';
 import SpecificArticle from '../views/SpecificArticle';
 import Bookmarks from '../views/Bookmarks';
 import AuthorArticles from '../views/AuthorArticles';
+import ArticleStat from '../views/ArticleStat';
 import PrivateRoute from './PrivateRoute';
 import PublicRoute from './PublicRoute';
 
@@ -33,6 +34,7 @@ const app = ({ history }) => (
     <Route path="/profile/:username/following" component={Following} />
     <Route path="/profile/:username/followers" component={Followers} />
     <PrivateRoute path="/profile/:username/bookmark" component={Bookmarks} />
+    <PrivateRoute path="/profile/:username/stat" component={ArticleStat} />
     <Route path="/profile/:username/articles" component={AuthorArticles} />
     <ToastContainer autoClose={5000} position="top-right" hideProgressBar={false} rtl={false} pauseOnHover />
   </Fragment>

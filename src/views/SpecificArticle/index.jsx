@@ -114,6 +114,7 @@ const SpecificArticle = (props) => {
             url={window.location.href}
             description={title}
             title={title}
+            rating={article.rating}
           />
         </div>
         <div className="hr-line mt-2 mb-8" />

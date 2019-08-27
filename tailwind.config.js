@@ -24,7 +24,9 @@ module.exports = {
       '1.5xl': '1.2em',
       '1.6xl': '5em',
       'xs-2': '0.85em',
+      xs2: '0.85rem',
       xxs: '0.7em',
+      '1xl': '1.1rem'
     },
     inset: {
       ...inset,
@@ -114,6 +116,7 @@ module.exports = {
         '5.5/12': '45%',
         7: '1.75rem',
         9: '2.2rem',
+        14: '3.5rem',
         60: '9rem',
         72: '17rem',
         84: '21rem',
@@ -127,6 +130,7 @@ module.exports = {
       borderRadius: {
         xs: '0.5rem',
         '1xl': '0.9rem',
+        xl: '1rem',
         '2xl': '1.5rem',
         '4xl': '2rem',
         lg: '3rem',

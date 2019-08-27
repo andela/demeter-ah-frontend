@@ -40,6 +40,7 @@ export const viewArticleState = {
   error: null,
   isLoading: false,
   isCompleted: false,
+  keyword: null,
 };
 
 export const relatedArticlesState = {
@@ -68,4 +69,11 @@ export const comments = {
   error: null,
   isLoading: false,
   isCompleted: false,
+};
+
+export const searchInitialState = {
+  articles: [],
+  isLoading: false,
+  isCompleted: false,
+  error: null
 };

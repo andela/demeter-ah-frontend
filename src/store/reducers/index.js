@@ -11,6 +11,7 @@ import relatedArticles from './relatedArticles';
 import bookmarks from './bookmarks';
 import bookmarkArticle from './bookmarkArticle';
 import comments from './Comments';
+import search from './search';
 
 const reducers = combineReducers({
   auth,
@@ -24,7 +25,8 @@ const reducers = combineReducers({
   relatedArticles,
   bookmarks,
   bookmarkArticle,
-  comments
+  comments,
+  search
 });
 
 export default reducers;

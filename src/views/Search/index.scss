@@ -1,0 +1,25 @@
+.search-pg{
+  background: url('/bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: 'Montserrat', sans-serif;
+  @apply flex flex-col items-center h-screen relative;
+
+  .searchIcon{
+    left: 1.0rem;
+    top: 1rem;
+  }
+
+  .hline{
+    height: 0.1rem;
+  }
+
+  .result{
+    top: 7.5rem;
+  }
+
+  .articles{
+    height: 65vh;
+    overflow-y: scroll;
+  }
+}

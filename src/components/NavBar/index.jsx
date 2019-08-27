@@ -53,7 +53,7 @@ const NavBar = ({
         </Link>
       </div>
       <div className="flex relative">
-        <Search />
+        {path !== '/search' ? <Search history={history} /> : ''}
         {isAuthenticated ? showNavComp() : <AuthNav />}
       </div>
     </nav>

@@ -140,9 +140,9 @@ exports[`Sign In Component Should render along with children componenet 1`] = `
                 >
                   <svg
                     fill="none"
-                    height="12"
+                    height="17"
                     viewBox="0 0 13 12"
-                    width="13"
+                    width="18"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
@@ -161,9 +161,9 @@ exports[`Sign In Component Should render along with children componenet 1`] = `
                 >
                   <svg
                     fill="none"
-                    height="12"
+                    height="17"
                     viewBox="0 0 13 12"
-                    width="13"
+                    width="18"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
@@ -182,9 +182,9 @@ exports[`Sign In Component Should render along with children componenet 1`] = `
                 >
                   <svg
                     fill="none"
-                    height="12"
+                    height="17"
                     viewBox="0 0 13 12"
-                    width="13"
+                    width="18"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
@@ -203,9 +203,9 @@ exports[`Sign In Component Should render along with children componenet 1`] = `
                 >
                   <svg
                     fill="none"
-                    height="12"
+                    height="17"
                     viewBox="0 0 13 12"
-                    width="13"
+                    width="18"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
@@ -224,9 +224,9 @@ exports[`Sign In Component Should render along with children componenet 1`] = `
                 >
                   <svg
                     fill="none"
-                    height="12"
+                    height="17"
                     viewBox="0 0 13 12"
-                    width="13"
+                    width="18"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path

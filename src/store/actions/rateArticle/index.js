@@ -32,15 +32,49 @@ export const rateSuccess = rate => ({
   },
 });
 
+export const rateUpdateSuccess = rate => ({
+  type: types.RATE_UPDATE_SUCCESS,
+  payload: {
+    rate,
+    isLoading: false,
+    isCompleted: true,
+    error: null,
+  },
+});
 
-export const postRate = ({ slug, rate }) => async (dispatch) => {
+
+export const postRate = (slug, rate) => async (dispatch) => {
   try {
     const result = await axiosCall({
       method: 'post',
-      payload: rate,
+      payload: {
+        rate,
+      },
       path: `/api/v1/articles/rate/${slug}`,
     });
-    dispatch(rateSuccess(result));
+    dispatch(rateSuccess(result.rating));
+    return result.rating;
+  } catch (err) {
+    const { response } = err;
+    const error = (response
+        && response.data
+        && (response.data.message || response.data.error))
+        || err.message;
+    dispatch(rateFailure(error));
+  }
+};
+
+export const getRate = slug => async (dispatch) => {
+  const userToken = localStorage.getItem('token');
+  try {
+    const result = await axiosCall({
+      payload: {
+        'x-access-token': userToken
+      },
+      method: 'get',
+      path: `/api/v1/articles/rate/user/${slug}`,
+    });
+    dispatch(rateSuccess(result.rating));
   } catch (err) {
     const { response } = err;
     const error = (response

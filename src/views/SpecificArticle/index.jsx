@@ -19,6 +19,7 @@ import Comment from '../../components/Comment';
 import { submitReportAction } from '../../store/actions/reportArticle';
 import ReportModal from '../../components/ReportModal';
 import Loader from '../../components/Loader';
+import RateArticle from '../../components/RateArticle';
 
 const SpecificArticle = (props) => {
   const getBody = (raw) => {
@@ -124,7 +125,6 @@ const SpecificArticle = (props) => {
     setbodyValue(parsedBody && ReactHtmlParser(parsedBody));
   }, [article, match.params.slug, onbookmark]);
 
-
   const detail = (
     <div className="viewedArticle w-full text-center">
       <div className="article sm:w-11/12 md:w-9/12 max-w-page mx-auto relative">
@@ -154,7 +154,14 @@ const SpecificArticle = (props) => {
             {bodyValue}
           </div>
         </div>
+        <RateArticle
+          classes="flex cursor-pointer justify-center py-3"
+          text="Your rating:"
+          match={match}
+          slug={match.params.slug}
+        />
         <div className="sm:flex-row md:flex section-four tags mb-8">
+
           <ArticleTags setTags={setTags} />
           {isAuthenticated && ((author && author.username) !== user.username)
             ? (
@@ -165,6 +172,7 @@ const SpecificArticle = (props) => {
               />
             ) : ''}
         </div>
+
         <Reactions
           isAuthenticated={isAuthenticated}
           articleAuthorUsername={articleAuthorUsername}

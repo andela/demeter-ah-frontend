@@ -84,7 +84,7 @@ export const notifications = {
   error: null,
 };
 
-export const rateArticle = {
+export const rateState = {
   rate: null,
   error: null,
   isLoading: false,

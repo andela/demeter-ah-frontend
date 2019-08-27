@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import '../Following/index.scss';
-import { getFollowersAction } from '../../store/actions/Membership';
+import { getFollowersAction, followersCleanUp } from '../../store/actions/Membership';
 import FollowList from '../../components/FollowList';
 import Loader from '../../components/Loader';
 import NoItem from '../../components/NoItem';
@@ -12,40 +12,40 @@ const Followers = (props) => {
     user,
     match,
     getFollowersAction: getFollowers,
+    followersCleanUp: cleanUp,
     membership: {
-      followers, error,
+      followers,
     },
   } = props;
 
   const [showButton, setshowButton] = useState((match.params.username !== user.username));
-  const [isMounted, setIsMounted] = useState(false);
-  let isSubscribe = true;
 
   const fetchFollowersList = async () => {
     if (match.params.username !== user.username) {
-      await getFollowers(match.params.username);
-      if (isSubscribe) setshowButton(true);
+      getFollowers(match.params.username);
+      setshowButton(true);
     } else {
-      await getFollowers();
-      if (isSubscribe) setshowButton(false);
+      getFollowers();
+      setshowButton(false);
     }
-    if (isSubscribe) setIsMounted(true);
   };
 
   useEffect(
     () => {
-      fetchFollowersList();
+      let mounted = true;
+      if (mounted) fetchFollowersList();
       return () => {
-        isSubscribe = false;
+        mounted = false;
+        cleanUp();
       };
     },
-    [match.params.username, error, JSON.stringify(followers)]
+    [match.params.username]
   );
 
   return (
     <div className="followers">
       <ul className="list w-10/12 md:w-3/5">
-        {!isMounted
+        {!followers
           ? <Loader />
           : (followers.length === 0)
             ? (
@@ -65,6 +65,6 @@ const mapStateToProps = state => ({
   membership: state.membership,
 });
 
-export default connect(mapStateToProps, { getFollowersAction })(
+export default connect(mapStateToProps, { getFollowersAction, followersCleanUp })(
   Followers
 );

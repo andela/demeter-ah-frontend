@@ -1,5 +1,6 @@
 import axios from 'axios';
 import Cryptr from 'cryptr';
+import Pusher from 'pusher-js';
 import toast from '../components/Toast';
 // eslint-disable-next-line import/no-cycle
 import { getUser } from '../store/actions/signup';
@@ -122,4 +123,9 @@ export const starImg = img => ({
   backgroundImage: `url(${img})`,
   alignSelf: 'flex-end',
   cursor: 'pointer'
+});
+
+export const pusher = new Pusher(process.env.PUSHER_KEY, {
+  cluster: 'eu',
+  forceTLS: true
 });

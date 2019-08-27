@@ -31,8 +31,8 @@ export const viewProfile = {
 };
 
 export const membership = {
-  followers: [],
-  following: [],
+  followers: null,
+  following: null,
 };
 
 export const viewArticleState = {
@@ -76,4 +76,10 @@ export const searchInitialState = {
   isLoading: false,
   isCompleted: false,
   error: null
+};
+
+export const notifications = {
+  notifications: null,
+  notificationStatus: null,
+  error: null,
 };

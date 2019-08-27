@@ -4,7 +4,12 @@ import './index.scss';
 import InputForm from '../../components/InputForm';
 import Button from '../../components/Button';
 import { editProfile, editProfileCleanUp } from '../../store/actions/editProfile';
+import {
+  setNotifStatus,
+  getNotifStatus,
+} from '../../store/actions/notifications';
 import callToast from '../../components/Toast';
+import Checkbox from '../../components/Switch';
 
 const Profile = (props) => {
   const {
@@ -15,6 +20,7 @@ const Profile = (props) => {
     pictureFile,
     history,
     match,
+    notifStatus,
   } = props;
   const {
     firstName, lastName, username, bio
@@ -31,17 +37,33 @@ const Profile = (props) => {
     props.editProfile(
       {
         values,
-        pictureFile
+        pictureFile,
       },
       username,
       props.history
     );
   };
 
+  const handleNotifStatus = async (type) => {
+    await props.setNotifStatus(type);
+  };
+
+  const fetchNotifStatus = async () => {
+    await props.getNotifStatus();
+  };
+
   const onChange = (e) => {
     e.persist();
     setValues(prevState => ({ ...prevState, [e.target.name]: e.target.value }));
   };
+
+  useEffect(() => {
+    let mounted = true;
+    if (mounted) fetchNotifStatus();
+    return () => {
+      mounted = false;
+    };
+  }, []);
 
   useEffect(
     () => {
@@ -54,7 +76,6 @@ const Profile = (props) => {
       if (isCompleted) {
         callToast('Profile updated successfully', 'success');
       }
-
       return () => {
         props.editProfileCleanUp();
       };
@@ -71,6 +92,22 @@ const Profile = (props) => {
         <h4 className="m-4 ml-0 font-semibold w-full text-left text-gray-250">
           Edit Your Profile
         </h4>
+        <div className="flex justify-between">
+          <Checkbox
+            handleNotifStatus={handleNotifStatus}
+            notifStatus={notifStatus && notifStatus.inAppNotify}
+            type="inApp"
+          >
+            IN-APP NOTIFICATION
+          </Checkbox>
+          <Checkbox
+            handleNotifStatus={handleNotifStatus}
+            notifStatus={notifStatus && notifStatus.emailNotify}
+            type="emailNotif"
+          >
+            EMAIL NOTIFICATION
+          </Checkbox>
+        </div>
         <div className="inputwrap md:my-4 flex flex-col md:flex-row justify-between w-full text-left">
           <InputForm
             classes="w-full md:w-5.5/12 my-2 md:my-0"
@@ -129,11 +166,15 @@ const Profile = (props) => {
 const mapStateToProps = state => ({
   user: state.auth.user,
   error: state.editProfile.error,
+  notifStatus: state.notifications.notificationStatus,
   isLoading: state.editProfile.isLoading,
   isCompleted: state.editProfile.isCompleted,
   pictureFile: state.editProfile.pictureFile,
 });
 
-export default connect(mapStateToProps, { editProfile, editProfileCleanUp })(
-  Profile
-);
+export default connect(mapStateToProps, {
+  editProfile,
+  editProfileCleanUp,
+  setNotifStatus,
+  getNotifStatus,
+})(Profile);

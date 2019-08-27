@@ -1,8 +1,8 @@
 /* eslint-disable no-nested-ternary */
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import './index.scss';
-import { getFollowingAction } from '../../store/actions/Membership';
+import { getFollowingAction, followingCleanUp } from '../../store/actions/Membership';
 import FollowList from '../../components/FollowList';
 import Loader from '../../components/Loader';
 import NoItem from '../../components/NoItem';
@@ -11,25 +11,27 @@ const Following = (props) => {
   const {
     user,
     getFollowingAction: getFollowing,
+    followingCleanUp: cleanUp,
     match,
     membership: { following },
   } = props;
 
-  const [isMounted, setIsMounted] = useState(false);
-  let isSubscribe = true;
 
-  const fetchFollowingList = async () => {
-    (match.params.username !== user.username)
-      ? await getFollowing(match.params.username)
-      : await getFollowing();
-    if (isSubscribe) setIsMounted(true);
+  const fetchFollowingList = () => {
+    if (match.params.username !== user.username) {
+      getFollowing(match.params.username);
+    } else {
+      getFollowing();
+    }
   };
 
   useEffect(
     () => {
-      fetchFollowingList();
+      let mounted = true;
+      if (mounted) fetchFollowingList();
       return () => {
-        isSubscribe = false;
+        mounted = false;
+        cleanUp();
       };
     },
     [match.params.username]
@@ -38,7 +40,7 @@ const Following = (props) => {
   return (
     <div className="following">
       <ul className="list w-11/12 md:w-3/5">
-        {!isMounted
+        {!following
           ? <Loader />
           : (following.length === 0)
             ? (
@@ -64,6 +66,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = {
   getFollowingAction,
+  followingCleanUp
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Following);

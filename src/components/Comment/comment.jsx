@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as moment from 'moment';
 import Reaction from './reaction';
 import { updateComment, getComments } from '../../store/actions/Comments';
 import './comment.scss';
 
-const editComment = ({
+const EditComment = ({
   commentObj, slug, updateCommentAction, getCommentAction, user
 }) => {
   const {
     id, content, author: {
-      firstName, lastName, id: userId, image,
+      firstName, lastName, id: userId, image, username
     }, updatedAt, downVote, upVote,
   } = commentObj;
   const [comment, setComment] = useState(content || '');
@@ -42,9 +43,11 @@ const editComment = ({
       <img src={image || 'https://i.imgur.com/wtjaVfi.png'} className="authorImg shadow-md rounded-full object-cover w-16 h-16 mr-4" alt="" />
       <div className="commentInfo flex-grow">
         <div className="fullname flex flex-wrap justify-start items-center">
-          <p className="name text-sm md:text-lg font-bold">
-            {`${firstName} ${lastName}`}
-          </p>
+          <Link to={`/profile/${username}/articles`}>
+            <p className="name text-sm md:text-lg font-bold">
+              {`${firstName} ${lastName}`}
+            </p>
+          </Link>
           <span className="bullet rounded-full p-0.5 mx-2 bg-gray-250" />
           <small className="date text-gray-250 text-xss">
             { moment(updatedAt).fromNow()}
@@ -57,7 +60,13 @@ const editComment = ({
             { button ? <button type="submit" className="update-btn">{ loading ? 'Updating' : 'Update'}</button> : ''}
             { user.id !== userId ? ' ' : <button type="button" onClick={handleClick} className={`cancel-btn ${button ? 'border px-4 text-gray-250' : 'text-purple-650'}`}>{button ? 'Cancel' : 'Edit'}</button>}
             <span className="bullet rounded-full h-0.5 w-0.5 mx-2 bg-gray-250" />
-            <Reaction commentId={id} slug={slug} downVote={downVote} upVote={upVote} />
+            <Reaction
+              commentId={id}
+              ownerId={userId}
+              slug={slug}
+              downVote={downVote}
+              upVote={upVote}
+            />
           </div>
         </form>
       </div>
@@ -74,4 +83,4 @@ const mapDispatchToProps = {
   getCommentAction: getComments,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(editComment);
+export default connect(mapStateToProps, mapDispatchToProps)(EditComment);

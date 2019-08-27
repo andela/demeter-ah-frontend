@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
 import auth from './Auth';
+import articleListing from './articleListing';
 import resetPassword from './resetPassword';
 import changePassword from './changePassword';
 import articles from './articles';
@@ -23,6 +24,7 @@ const reducers = combineReducers({
   editProfile,
   viewProfile,
   membership,
+  articleListing,
   viewArticle,
   relatedArticles,
   bookmarks,

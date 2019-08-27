@@ -36,13 +36,13 @@ exports[`Sign In Component Should render along with children componenet 1`] = `
       }
     >
       <div
-        className="md:flex md:flex-row flex-row lg:min-w-96 max-w-5xl m-auto text-left justify-start p-2 bg-white rounded-sm border-b-2 border-gray-350 mb-3 md:min-w-84"
+        className="md:flex md:flex-row flex-row w-full max-w-5xl m-auto text-left justify-start p-2 bg-white rounded-sm border-b-2 border-gray-350 mb-3 md:min-w-84"
       >
         <div
-          className="m-4 ml-0 min-w-108 min-h-48 rounded shadow-lg sm:min-w-min lg:min-w-96"
+          className="m-4 min-w-full ml-0 min-w-108 min-h-46 rounded shadow-lg md:min-w-min lg:min-w-84"
           style={
             Object {
-              "backgroundImage": "linear-gradient(180deg, rgba(0, 0, 0, 0.5) 99.98%, rgba(255, 255, 255, 0) 99.99%, rgba(255, 255, 255, 0.2) 100%), url(/article/no-image.png)",
+              "backgroundImage": "linear-gradient(180deg, rgba(0, 0, 0, 0.5) 99.98%, rgba(255, 255, 255, 0) 99.99%, rgba(255, 255, 255, 0.2) 100%), url(/placeholder.png)",
               "backgroundPosition": "center center",
               "backgroundRepeat": "no-repeat",
               "backgroundSize": "cover",
@@ -59,29 +59,39 @@ exports[`Sign In Component Should render along with children componenet 1`] = `
               className="flex justify-between mt-16"
             >
               <div>
-                <div
-                  className="h-16 w-16"
-                  style={
-                    Object {
-                      "backgroundImage": "url(/user.png)",
-                      "backgroundPosition": "center center",
-                      "backgroundSize": "cover",
-                      "borderRadius": "9999px",
-                    }
-                  }
-                />
-                <p
-                  className="text-xl font-medium text-white"
+                <Link
+                  to="/profile/Paul Igabu/articles"
                 >
-                  Paul Igabu
-                </p>
+                  <a
+                    href="/profile/Paul Igabu/articles"
+                    onClick={[Function]}
+                  >
+                    <div
+                      className="h-16 w-16"
+                      style={
+                        Object {
+                          "backgroundImage": "url(/user.png)",
+                          "backgroundPosition": "center center",
+                          "backgroundSize": "cover",
+                          "borderRadius": "9999px",
+                        }
+                      }
+                    />
+                    <p
+                      className="text-base text-left font-medium text-white"
+                    >
+                      Paul Igabu
+                    </p>
+                  </a>
+                </Link>
               </div>
               <span
-                className="h-8 w-8"
+                className="h-8"
                 style={
                   Object {
                     "alignSelf": "flex-end",
                     "cursor": "pointer",
+                    "width": "fit-content",
                   }
                 }
               />
@@ -89,7 +99,7 @@ exports[`Sign In Component Should render along with children componenet 1`] = `
           </div>
         </div>
         <div
-          className="ml-0 flex-grow-0 justify-between flex flex-col max-h-48"
+          className="ml-0 md:ml-8 flex-grow justify-between flex flex-col max-h-48"
         >
           <div
             className="flex flex-col"
@@ -115,24 +125,24 @@ exports[`Sign In Component Should render along with children componenet 1`] = `
             </p>
           </div>
           <div
-            className="flex justify-between mt-5 lg:min-w-118 md:min-w-96"
+            className="flex justify-between mt-5"
           >
             <div
-              className="flex text-sm"
+              className="flex w-2/3 justify-between text-sm"
             >
               <p
-                className="pr-10"
+                className="pr-10 text-sm xl:text-base"
               >
                 6 min
               </p>
               <p
-                className="font-semibold"
+                className="font-semibold text-sm xl:text-base"
               >
                 July 12 2019
               </p>
             </div>
             <div
-              className="flex items-center"
+              className="flex w-1/3 justify-end items-center"
             >
               <Stars>
                 <Star

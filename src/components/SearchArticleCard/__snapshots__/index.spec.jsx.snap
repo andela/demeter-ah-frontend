@@ -12,7 +12,7 @@ exports[`SearchArticleCard Component Should render without errors 1`] = `
         alt="Article"
         className="h-full"
         height="100%"
-        src="/article/no-image.png"
+        src="/placeholder.png"
         width="100%"
       />
     </div>
@@ -96,7 +96,7 @@ exports[`SearchArticleCard Component Should render without errors when no tags e
         alt="Article"
         className="h-full"
         height="100%"
-        src="/article/no-image.png"
+        src="/placeholder.png"
         width="100%"
       />
     </div>

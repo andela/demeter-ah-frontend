@@ -7,7 +7,7 @@
   @apply px-5 left-0 top-1/2 mb-8 z-10;
   @screen md{ @apply fixed flex-col; }
   &-con{
-    @apply px-2;
+    @apply px-2 justify-between;
     @screen sm{ @apply flex; }
     @screen md{ @apply py-12 flex-col; }
   }

@@ -20,7 +20,6 @@ export const bookmarkArticleCleanUp = () => ({
 
 export const bookmarkArticle = slug => async (dispatch) => {
   dispatch(bookmarkArticlePending());
-
   try {
     await axiosCall({
       method: 'post',

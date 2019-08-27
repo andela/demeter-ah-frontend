@@ -31,7 +31,7 @@ const SearchArticleCard = ({
         bg-white rounded-sm border-b-2 border-gray-30 mb-0 md:min-w-84"
       >
         <div className="m-4 ml-0 mb-0 w-full md:w-48 h-24 rounded shadow-lg">
-          <img src={image || '/article/no-image.png'} alt="Article" width="100%" height="100%" className="h-full" />
+          <img src={image || '/placeholder.png'} alt="Article" width="100%" height="100%" className="h-full" />
         </div>
         <div className="ml-0 flex-grow-0 justify-between flex flex-col max-h-48">
           <div className="flex flex-col">

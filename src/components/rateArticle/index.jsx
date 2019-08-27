@@ -68,9 +68,9 @@ export const RateArticle = ({
     ? ''
     : (
       <>
-        <p>{ text }</p>
+        <p>{text}</p>
         <div className={classes}>{loadStar()}</div>
-        { userRate }
+        {userRate}
         {' '}
         out of 5
       </>

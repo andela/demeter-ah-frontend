@@ -8,6 +8,7 @@ import ChangePassword from '../views/ChangePassword';
 import SignUp from '../views/Signup';
 import SignIn from '../views/SignIn';
 import ArticleCreate from '../views/Article';
+import ArticleListing from '../views/ArticleListing';
 import Profile from '../views/Profile';
 import Following from '../views/Following';
 import Followers from '../views/Followers';
@@ -30,6 +31,7 @@ const app = ({ history }) => (
     <PublicRoute path="/reset-password" component={ResetPassword} />
     <Route path="/articles/:slug" component={SpecificArticle} />
     <PublicRoute path="/change-password" component={ChangePassword} />
+    <Route path="/article-listing" component={ArticleListing} />
     <Route path="/profile/:username" component={Dashboard} />
     <PrivateRoute path="/profile/:username/editprofile" component={Profile} />
     <Route path="/profile/:username/following" component={Following} />

@@ -1,0 +1,16 @@
+.paginator{
+  @apply w-full my-8;
+  ul{
+    @apply mx-auto;
+    width: fit-content;
+  }
+  li{
+    @apply inline-block p-1 px-3 mx-2;
+    &.active{
+      @apply border-2;
+    }
+    a{
+      @apply font-semibold;
+    }
+  }
+}

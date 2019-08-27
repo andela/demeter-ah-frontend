@@ -49,7 +49,6 @@ const Bookmark = (props) => {
     } = article;
     const date = new Date(createdAt);
     const createdDate = date.toLocaleDateString('default', { month: 'short', day: 'numeric', year: 'numeric' });
-
     const articleCategory = category ? category.name : 'Others';
     return (
       <ArticleCard

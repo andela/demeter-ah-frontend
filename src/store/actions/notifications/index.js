@@ -2,10 +2,11 @@ import * as types from '../actionTypes';
 import { axiosCall } from '../../../utils';
 
 
-export const notificationSuccess = notifications => ({
+export const notificationSuccess = ({ notifications, notifyAlert }) => ({
   type: types.NOTIFICATIONS_SUCCESS,
   payload: {
     notifications,
+    notifyAlert,
   }
 });
 
@@ -61,7 +62,10 @@ export const getNotificationsAction = () => async (dispatch) => {
     const result = await axiosCall({
       path: '/api/v1/notifications', method: 'get',
     });
-    dispatch(notificationSuccess(result.notifications));
+    const { notifications } = result;
+    const notifyAlert = notifications.some(notif => !notif.seen);
+    // console.log(notifyAlert, notifications, 'notif status');
+    dispatch(notificationSuccess({ notifications, notifyAlert }));
   } catch (e) {
     /* istanbul ignore next */
     const { response } = e;

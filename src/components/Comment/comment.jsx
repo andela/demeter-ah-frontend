@@ -1,25 +1,60 @@
-import React, { useState } from 'react';
+/* eslint-disable no-nested-ternary */
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as moment from 'moment';
 import Reaction from './reaction';
 import { updateComment, getComments } from '../../store/actions/Comments';
+import { getCommentHistory } from '../../store/actions/commentHistory';
+import CommentHistory from './commentHistory';
 import './comment.scss';
+import Loader from '../Loader';
 
 const EditComment = ({
-  commentObj, slug, updateCommentAction, getCommentAction, user
+  commentObj,
+  slug,
+  updateCommentAction,
+  getCommentAction,
+  user,
+  authorUsername,
+  commentHistory,
+  fetchCommentHistory,
 }) => {
   const {
     id, content, highlightedText, author: {
       firstName, lastName, id: userId, image, username
-    }, updatedAt, downVote, upVote,
+    }, author, updatedAt, downVote, upVote, commentHistory: edited,
   } = commentObj;
   const [comment, setComment] = useState(content || '');
   const [button, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [showHistory, setShowHistory] = useState(false);
+  const [commentHistoryList, setcommentHistoryList] = useState('');
+
+  const historyRef = useRef();
+  const historyBtn = useRef();
 
   const handleChange = (e) => {
     setComment(e.target.value);
+  };
+
+  const handleGetHistory = () => {
+    if (!showHistory) {
+      setShowHistory(true);
+      fetchCommentHistory(slug, id);
+    }
+  };
+
+  const hideHistory = (e) => {
+    if (historyRef.current && historyRef.current.contains(e.target)) {
+      setShowHistory(true);
+      return;
+    }
+    if (historyBtn.current && historyBtn.current.contains(e.target)) {
+      setShowHistory(true);
+      return;
+    }
+    setShowHistory(false);
   };
 
   const handleSubmit = async (e) => {
@@ -38,6 +73,28 @@ const EditComment = ({
   const handleClick = async () => {
     setOpen(prevState => !prevState);
   };
+
+  useEffect(() => {
+    if (commentHistory) {
+      setcommentHistoryList(commentHistory.map(
+        history => (
+          <CommentHistory
+            key={history.id}
+            author={author}
+            commentObj={history}
+          />
+        )
+      ));
+    }
+  }, [commentHistory]);
+
+  useEffect(() => {
+    document.addEventListener('click', hideHistory);
+    return () => {
+      document.removeEventListener('click', hideHistory);
+    };
+  }, []);
+
   return (
     <div className="comment flex pt-6 px-4 md:px-10">
       <img src={image || 'https://i.imgur.com/wtjaVfi.png'} className="authorImg shadow-md rounded-full object-cover w-16 h-16 mr-4" alt="" />
@@ -52,6 +109,15 @@ const EditComment = ({
           <small className="date text-gray-250 text-xss">
             { moment(updatedAt).fromNow()}
           </small>
+
+          {(edited.length > 0)
+            ? (
+              <small className="ml-3 text-gray-250 italic text-xss">
+             Edited
+              </small>
+            )
+            : ''
+          }
         </div>
         <form onSubmit={handleSubmit} className="flex flex-col w-full my-2">
           { !button ? (
@@ -74,7 +140,20 @@ const EditComment = ({
               downVote={downVote}
               upVote={upVote}
             />
+            { (authorUsername === user.username && edited.length > 0) ? <button ref={historyBtn} type="button" onClick={handleGetHistory} className="cancel-btn ml-2 text-gray-250">{ loading ? 'Getting History' : 'Edit History'}</button> : ''}
           </div>
+          {
+            showHistory ? (
+              <div ref={historyRef} className="edit-history shadow-md pt-2 w-8/12">
+                <p className="header text-sm text-left p-3 text-gray-250 bg-gray-10 font-semibold">History</p>
+                {!commentHistory
+                  ? <Loader fixed />
+                  : commentHistory.length > 0
+                    ? commentHistoryList
+                    : <p className="text-sm text-center p-3 py-5 text-gray-250 ">No Edited History</p>
+                 }
+              </div>
+            ) : ''}
         </form>
       </div>
     </div>
@@ -82,12 +161,14 @@ const EditComment = ({
 };
 
 const mapStateToProps = state => ({
-  user: state.auth.user
+  user: state.auth.user,
+  commentHistory: state.commentHistory.comments
 });
 
 const mapDispatchToProps = {
   updateCommentAction: updateComment,
   getCommentAction: getComments,
+  fetchCommentHistory: getCommentHistory,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(EditComment);

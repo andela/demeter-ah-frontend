@@ -80,6 +80,7 @@ export const searchInitialState = {
 
 export const notifications = {
   notifications: null,
+  notifyAlert: false,
   notificationStatus: null,
   error: null,
 };
@@ -94,4 +95,11 @@ export const rateState = {
 export const articleListing = {
   selectedCategory: 0,
   articleList: null,
+};
+
+export const commentHistory = {
+  comments: null,
+  error: null,
+  isLoading: false,
+  isCompleted: false,
 };

@@ -221,7 +221,7 @@ const SpecificArticle = (props) => {
           </div>
         </div>
         <div ref={commentNode} className="commentWrapper">
-          <Comment commentNo={article.commentNo} match={match} slug={match.params.slug} />
+          <Comment commentNo={article.commentNo} authorUsername={articleAuthorUsername} match={match} slug={match.params.slug} />
         </div>
       </div>
     </div>

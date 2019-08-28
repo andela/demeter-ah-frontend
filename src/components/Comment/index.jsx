@@ -9,14 +9,14 @@ import { getComments, commentCleanUp } from '../../store/actions/Comments';
 import Loader from '../Loader';
 
 const Comment = ({
-  comments, commentNo, slug, getCommentAction, cleanUp, match
+  comments, commentNo, slug, getCommentAction, cleanUp, match, authorUsername,
 }) => {
   const [toggle, setToggle] = useState(false);
   const [loading, setLoading] = useState(false);
   const [commentList, setCommentList] = useState('');
 
   useEffect(() => {
-    comments && setCommentList(comments.map(comment => <ViewComment key={comment.id} slug={slug} commentObj={comment} />));
+    comments && setCommentList(comments.map(comment => <ViewComment key={comment.id} authorUsername={authorUsername} slug={slug} commentObj={comment} />));
   }, [comments]);
 
   useEffect(() => {

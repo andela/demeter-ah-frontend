@@ -14,6 +14,7 @@ export const clearLocalStorage = () => {
   localStorage.clear();
 };
 
+
 export const axiosCall = async ({
   path, payload, method, contentType
 }) => {

@@ -83,3 +83,10 @@ export const notifications = {
   notificationStatus: null,
   error: null,
 };
+
+export const rateState = {
+  rate: null,
+  error: null,
+  isLoading: false,
+  isCompleted: false,
+};

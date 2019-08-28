@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import Star from '../../assets/svgs/starblank';
 import Starcolor from '../../assets/svgs/star';
 

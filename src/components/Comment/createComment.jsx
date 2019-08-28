@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { postComment, getComments } from '../../store/actions/Comments';
 import { viewArticleAction } from '../../store/actions/viewArticle';
 
-const createComment = ({
+const CreateComment = ({
   slug,
   user,
   getCommentAction,
@@ -73,4 +73,4 @@ const mapDispatchToProps = {
   fetchArticle: viewArticleAction,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(createComment);
+export default connect(mapStateToProps, mapDispatchToProps)(CreateComment);

@@ -48,7 +48,8 @@ module.exports = {
       'process.env.SECRET': JSON.stringify(process.env.SECRET),
       'process.env.FACEBOOK_SHARE_URL': JSON.stringify(process.env.FACEBOOK_SHARE_URL),
       'process.env.TWITTER_SHARE_URL': JSON.stringify(process.env.TWITTER_SHARE_URL),
-      'process.env.FACEBOOK_SHARE_APP_ID': JSON.stringify(process.env.FACEBOOK_SHARE_APP_ID)
+      'process.env.FACEBOOK_SHARE_APP_ID': JSON.stringify(process.env.FACEBOOK_SHARE_APP_ID),
+      'process.env.PUSHER_KEY': JSON.stringify(process.env.PUSHER_KEY)
     })
   ],
 };

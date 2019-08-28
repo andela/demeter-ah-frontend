@@ -40,7 +40,9 @@ module.exports = {
           650: '#835BD8',
           250: '#AD93E6',
           200: '#A88CE4',
+          220: 'rgb(199, 175, 252)',
           50: 'rgba(197, 172, 250, 0.05)',
+          80: '#F7F4FC'
         },
         gray: {
           ...colors.gray,
@@ -51,10 +53,12 @@ module.exports = {
           450: '#A9A8A8',
           550: 'rgba(0, 0, 0, 0.5)',
           50: '#c4c4c4',
+          80: '#c8c8c8',
           40: '#c4c4c450',
           30: '#f4f4f4',
           20: '#c4c4c430',
           10: '#c4c4c410',
+          5: '#f9f9f9',
         },
         yellow: {
           ...colors.yellow,
@@ -81,6 +85,7 @@ module.exports = {
         ...maxHeight,
         48: '14rem',
         85: '17rem',
+        85.5: '19.1rem',
         86: '22rem',
         108: '26rem',
         112: '28rem',
@@ -103,6 +108,7 @@ module.exports = {
       },
       minHeight: {
         ...minHeight,
+        10: '4rem',
         46: '13rem',
         48: '14rem',
         83: '20rem',

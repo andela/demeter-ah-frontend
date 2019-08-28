@@ -5,14 +5,16 @@ import DisLikeIcon from '../../assets/svgs/disLike';
 import { getComments, voteComment } from '../../store/actions/Comments';
 import './index.scss';
 
-const reaction = ({
+const Reaction = ({
   commentId,
+  ownerId,
   getCommentAction,
   voteCommentAction,
   isAuthenticated,
   slug,
   upVote,
   downVote,
+  user
 }) => {
   const [liked, setliked] = useState(false);
   const [disliked, setdisliked] = useState(false);
@@ -24,7 +26,7 @@ const reaction = ({
   }, [upVote, downVote]);
 
   const handleLike = async () => {
-    if (isAuthenticated) {
+    if (isAuthenticated && user.id !== ownerId) {
       if (disliked) {
         setdisliked(false);
       }
@@ -39,7 +41,7 @@ const reaction = ({
   };
 
   const handleDislike = async () => {
-    if (isAuthenticated) {
+    if (isAuthenticated && user.id !== ownerId) {
       if (liked) {
         setliked(false);
       }
@@ -82,4 +84,4 @@ const mapDispatchToProps = {
   voteCommentAction: voteComment,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(reaction);
+export default connect(mapStateToProps, mapDispatchToProps)(Reaction);

@@ -43,12 +43,10 @@ const Comment = ({
       {
         toggle
           ? (
-            (
-              <>
-                <CreateComment slug={slug} />
-                { loading ? <Loader fixed /> : commentList }
-              </>
-            )
+            <>
+              <CreateComment slug={slug} />
+              { loading ? <Loader fixed /> : commentList }
+            </>
           )
           : ''
       }

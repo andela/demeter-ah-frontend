@@ -9,6 +9,10 @@ export default function authReducer(state = membership, { type, payload }) {
       return { ...state, ...payload };
     case types.FOLLOWING_SUCCESS:
       return { ...state, ...payload };
+    case types.FOLLOWING_CLEANUP:
+      return { ...state, ...payload };
+    case types.FOLLOWERS_CLEANUP:
+      return { ...state, ...payload };
     case types.MEMBERS_ERROR:
       return { ...state, ...payload };
     default:

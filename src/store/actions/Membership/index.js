@@ -18,6 +18,20 @@ export const followingSuccess = following => ({
   },
 });
 
+export const followingCleanUp = () => ({
+  type: types.FOLLOWING_CLEANUP,
+  payload: {
+    following: null,
+  },
+});
+
+export const followersCleanUp = () => ({
+  type: types.FOLLOWERS_CLEANUP,
+  payload: {
+    followers: null,
+  },
+});
+
 export const followerSuccess = followers => ({
   type: types.FOLLOWERS_SUCCESS,
   payload: {
@@ -83,6 +97,7 @@ export const getFollowingAction = username => async (dispatch) => {
     }
     const { user: { following } } = result;
     dispatch(followingSuccess(following));
+    return following;
   } catch (err) {
     /* istanbul ignore next */
     const { response } = err;

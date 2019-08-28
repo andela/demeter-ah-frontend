@@ -35,8 +35,8 @@ exports[`UserNav Component Should render along with children component 1`] = `
         }
       }
     >
-      <Connect(userNav)>
-        <userNav
+      <Connect(UserNav)>
+        <UserNav
           dispatch={[Function]}
           user={Object {}}
         >
@@ -46,23 +46,38 @@ exports[`UserNav Component Should render along with children component 1`] = `
             <div
               className="relative mx-2 cursor-pointer"
             >
-              <div
-                className="navAlert absolute h-3 w-3 top-0 right-0 border-solid border-2 border-white rounded-full bg-yellow-650"
-              />
-              <notifIcon>
-                <svg
-                  fill="none"
-                  height="24"
-                  viewBox="0 0 31 35"
-                  width="22"
-                  xmlns="http://www.w3.org/2000/svg"
+              <Connect(Notification)>
+                <Notification
+                  getNotifications={[Function]}
+                  user={Object {}}
                 >
-                  <path
-                    d="M15.5 35C16.5268 34.9972 17.5106 34.618 18.2367 33.9455C18.9627 33.2729 19.3719 32.3614 19.375 31.4103H11.625C11.625 32.3623 12.0333 33.2754 12.76 33.9486C13.4867 34.6218 14.4723 35 15.5 35ZM27.125 24.2308V15.2564C27.125 9.74616 23.9475 5.13333 18.4062 3.91282V2.69231C18.4062 1.97826 18.1001 1.29346 17.555 0.788559C17.01 0.283653 16.2708 0 15.5 0C14.7292 0 13.99 0.283653 13.445 0.788559C12.8999 1.29346 12.5937 1.97826 12.5937 2.69231V3.91282C7.03312 5.13333 3.875 9.72821 3.875 15.2564V24.2308L0 27.8205V29.6154H31V27.8205L27.125 24.2308Z"
-                    fill="#737272"
-                  />
-                </svg>
-              </notifIcon>
+                  <div
+                    className="notification relative mx-2"
+                  >
+                    <button
+                      className="bell-icon relative m-0 p-0"
+                      onClick={[Function]}
+                    >
+                      <div>
+                        <notifIcon>
+                          <svg
+                            fill="none"
+                            height="24"
+                            viewBox="0 0 31 35"
+                            width="22"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M15.5 35C16.5268 34.9972 17.5106 34.618 18.2367 33.9455C18.9627 33.2729 19.3719 32.3614 19.375 31.4103H11.625C11.625 32.3623 12.0333 33.2754 12.76 33.9486C13.4867 34.6218 14.4723 35 15.5 35ZM27.125 24.2308V15.2564C27.125 9.74616 23.9475 5.13333 18.4062 3.91282V2.69231C18.4062 1.97826 18.1001 1.29346 17.555 0.788559C17.01 0.283653 16.2708 0 15.5 0C14.7292 0 13.99 0.283653 13.445 0.788559C12.8999 1.29346 12.5937 1.97826 12.5937 2.69231V3.91282C7.03312 5.13333 3.875 9.72821 3.875 15.2564V24.2308L0 27.8205V29.6154H31V27.8205L27.125 24.2308Z"
+                              fill="#737272"
+                            />
+                          </svg>
+                        </notifIcon>
+                      </div>
+                    </button>
+                  </div>
+                </Notification>
+              </Connect(Notification)>
             </div>
             <div
               className="flex items-center cursor-pointer"
@@ -103,8 +118,8 @@ exports[`UserNav Component Should render along with children component 1`] = `
               </dropdown>
             </div>
           </div>
-        </userNav>
-      </Connect(userNav)>
+        </UserNav>
+      </Connect(UserNav)>
     </Router>
   </BrowserRouter>
 </Provider>
@@ -133,7 +148,7 @@ exports[`UserNav Component Should render without errors 1`] = `
     }
   }
 >
-  <Connect(userNav)
+  <Connect(UserNav)
     store={
       Object {
         "dispatch": [Function],

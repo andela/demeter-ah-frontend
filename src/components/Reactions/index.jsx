@@ -25,19 +25,23 @@ const Reactions = ({
   const [isVoting, setVoting] = React.useState(false);
 
   const handleLike = async (status) => {
-    setVoting(true);
-    setLike(!like);
-    setDislike(false);
-    await voteAction({ status, slug });
-    setVoting(false);
+    if (articleAuthorUsername !== user.username) {
+      setVoting(true);
+      setLike(!like);
+      setDislike(false);
+      await voteAction({ status, slug });
+      setVoting(false);
+    }
   };
 
   const handleDisLike = async (status) => {
-    setVoting(true);
-    setDislike(!dislike);
-    setLike(false);
-    await voteAction({ status, slug });
-    setVoting(false);
+    if (articleAuthorUsername !== user.username) {
+      setVoting(true);
+      setDislike(!dislike);
+      setLike(false);
+      await voteAction({ status, slug });
+      setVoting(false);
+    }
   };
 
   return (

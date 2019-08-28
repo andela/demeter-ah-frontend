@@ -20,6 +20,9 @@ import { submitReportAction } from '../../store/actions/reportArticle';
 import ReportModal from '../../components/ReportModal';
 import Loader from '../../components/Loader';
 import RateArticle from '../../components/RateArticle';
+import ContextMenu from '../../components/ContextMenu';
+import CommentModal from '../../components/CommentModal';
+import CommentIcon from '../../assets/svgs/commentIcon';
 
 const SpecificArticle = (props) => {
   const getBody = (raw) => {
@@ -68,6 +71,12 @@ const SpecificArticle = (props) => {
     setShowReport(!showReport);
   };
 
+  const [highlightedText, setHighlightedText] = useState(null);
+  const [commentModalVisible, setCommentModalVisible] = useState(false);
+  const showCommentModal = () => {
+    setCommentModalVisible(!commentModalVisible);
+  };
+
   const bookmarkthisArticle = async (e) => {
     const articleSlug = e.target.dataset.slug;
     await bookmarkArticleAction(articleSlug);
@@ -92,6 +101,17 @@ const SpecificArticle = (props) => {
     await submitReport(payload);
     setShowReport(!showReport);
   };
+
+  const handleTextSelection = () => {
+    const selectedText = window.getSelection().toString();
+    setHighlightedText(selectedText);
+  };
+
+  const LoadMenu = (
+    <div className="bg-purple-650 rounded-md p-1 cursor-pointer" onClick={showCommentModal}>
+      <CommentIcon />
+    </div>
+  );
 
   const report = (
     <ReportModal
@@ -150,9 +170,11 @@ const SpecificArticle = (props) => {
         </div>
         <div className="hr-line mt-2 mb-8" />
         <div className="flex section-three mb-8">
-          <div className="text-gray-900 text-justify">
-            {bodyValue}
-          </div>
+          <ContextMenu LoadMenu={isAuthenticated ? LoadMenu : ''}>
+            <div className="text-gray-900 text-justify" onMouseUp={handleTextSelection}>
+              {bodyValue}
+            </div>
+          </ContextMenu>
         </div>
         <RateArticle
           classes="flex cursor-pointer justify-center py-3"
@@ -209,6 +231,14 @@ const SpecificArticle = (props) => {
     <Fragment>
       {detail}
       {showReport ? report : ''}
+      {commentModalVisible
+        ? (
+          <CommentModal
+            closeModal={showCommentModal}
+            highlightedText={highlightedText}
+            slug={match.params.slug}
+          />
+        ) : ''}
     </Fragment>
   );
 };

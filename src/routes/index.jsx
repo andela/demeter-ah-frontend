@@ -20,12 +20,13 @@ import PrivateRoute from './PrivateRoute';
 import PublicRoute from './PublicRoute';
 import Search from '../views/Search';
 
+
 const app = ({ history }) => (
   <Fragment>
     <NavBar history={history} />
     <Route exact path="/" component={Home} />
-    <PublicRoute path="/signup" component={SignUp} />
-    <PublicRoute path="/signin" component={SignIn} />
+    <Route path="/signup" component={SignUp} />
+    <Route path="/signin" component={SignIn} />
     <PrivateRoute path="/article/create" component={ArticleCreate} />
     <PublicRoute path="/reset-password" component={ResetPassword} />
     <Route path="/articles/:slug" component={SpecificArticle} />

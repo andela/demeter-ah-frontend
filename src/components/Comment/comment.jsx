@@ -10,7 +10,7 @@ const EditComment = ({
   commentObj, slug, updateCommentAction, getCommentAction, user
 }) => {
   const {
-    id, content, author: {
+    id, content, highlightedText, author: {
       firstName, lastName, id: userId, image, username
     }, updatedAt, downVote, upVote,
   } = commentObj;
@@ -54,7 +54,14 @@ const EditComment = ({
           </small>
         </div>
         <form onSubmit={handleSubmit} className="flex flex-col w-full my-2">
-          { !button ? <div name="" id="" rows="auto" className="text-justify h-auto text-sm w-full">{comment}</div>
+          { !button ? (
+            <div>
+              <p className="text-left">
+                <span className="bg-yellow-200">{highlightedText}</span>
+              </p>
+              <div name="" id="" rows="auto" className="text-justify h-auto text-sm w-full">{comment}</div>
+            </div>
+          )
             : <textarea name="commentBox" className="comment-box" value={comment} required onChange={handleChange} />}
           <div className="reactions w-full flex items-center mt-2 ">
             { button ? <button type="submit" className="update-btn">{ loading ? 'Updating' : 'Update'}</button> : ''}

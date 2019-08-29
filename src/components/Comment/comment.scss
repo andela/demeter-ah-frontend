@@ -5,11 +5,11 @@
 
   .reactions {
   .update-btn {
-    @apply text-xs mr-2 cursor-pointer border-solid border-purple-250 rounded-xs font-bold text-black text-left py-2 border text-purple-250 px-4
+    @apply text-xs mr-2 cursor-pointer border-solid border-purple-250 rounded-full text-black text-left py-2 border text-purple-250 px-4
   }
 
   .cancel-btn {
-    @apply text-xs cursor-pointer border-solid border-gray-250 rounded-xs font-bold pr-4 text-left py-2;
+    @apply text-xs cursor-pointer border-solid border-gray-250 rounded-full pr-4 text-left py-2;
   }
 }
 }

@@ -42,7 +42,7 @@ const CreateComment = ({
         <form onSubmit={handleSubmit} className="flex-grow flex-col">
           <textarea
             name="commentBox"
-            className="border rounded-1xl resize-none text-xs border-gray-50 p-3 text-sm w-full"
+            className="border rounded-full resize-none text-xs border-gray-50 p-3 text-sm w-full"
             required
             placeholder="Add a Comment..."
             value={comment}

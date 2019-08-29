@@ -35,7 +35,7 @@ const AuthorArticles = ({
 
   return (
     <Fragment>
-      <div className="overflow-y-auto border-t-2 border-solid border-gray-20">
+      <div className="overflow-y-auto border-t-2 border-solid border-gray-20 px-8">
         {!isMounted ? <Loader /> : (
           <ListArticles
             username={username}

@@ -59,8 +59,8 @@ export const editProfile = (
     const { response } = err;
     /* istanbul ignore next */
     const error = (response
-        && response.data
-        && (response.data.message || response.data.error))
+      && response.data
+      && (response.data.message || response.data.error))
       || err.message;
     dispatch(editProfileError(error));
   }
@@ -77,10 +77,9 @@ export const updateProfileInfo = user => async (dispatch) => {
   } catch (err) {
     const { response } = err;
     const error = (response
-        && response.data
-        && (response.data.message || response.data.error))
+      && response.data
+      && (response.data.message || response.data.error))
       || err.message;
-    console.log('error', error);
   }
 };
 

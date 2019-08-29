@@ -7,7 +7,7 @@ import './index.scss';
 const Join = () => (
   <div className="join">
     <h1>Join Our Authors Today</h1>
-    <Link to="/">
+    <Link to="/signin">
       <Button
         type="button"
         name="Get Started"
@@ -17,20 +17,23 @@ const Join = () => (
   </div>
 );
 
-const Articles = () => (
+const Articles = ({ articles }) => (
   <div className="articles">
     <h1>More Articles</h1>
     <div className="list">
       <div className="articles-card">
-        <div className="img" style={relatedArticleImg('/article/no-image.png')} />
-        <h2 className="title">I want to test the redirect</h2>
+        <div
+          className="img"
+          style={relatedArticleImg(`${articles[4] && articles[3].image ? articles[3].image : '/placeholder.png'}`)}
+        />
+        <h2 className="title">{articles[3] && articles[3].title ? articles[3].title : 'Article'}</h2>
       </div>
       <div className="articles-card">
-        <div className="img" style={relatedArticleImg('/article/no-image.png')} />
-        <h2 className="title">I want to test the redirect</h2>
+        <div className="img" style={relatedArticleImg(`${articles[4] && articles[4].image ? articles[4].image : '/placeholder.png'}`)} />
+        <h2 className="title">{articles[4] && articles[4].title ? articles[4].title : 'Article'}</h2>
       </div>
     </div>
-    <Link to="/">
+    <Link to="/article-listing">
       <Button
         type="button"
         classes="btn-white"
@@ -40,9 +43,9 @@ const Articles = () => (
   </div>
 );
 
-const More = () => (
+const More = ({ articles }) => (
   <>
-    <Articles />
+    <Articles articles={articles} />
     <Join />
   </>
 );

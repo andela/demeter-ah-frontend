@@ -21,15 +21,16 @@
       .horizontal{
         @apply w-full p-4 rounded-1xl flex flex-col justify-between;
         height: 38%;
-        @media (min-width: 576px){ @apply flex-row }
         .category{
           @apply w-full mb-4;
           @screen sm{ @apply w-2/4 mb-0 }
         }
         .meta{
           @apply w-full flex h-full flex-col justify-between text-lg;
-          @media (min-width: 576px){ @apply w-2/4 }
         }
+        a{
+          @apply self-end;
+        } 
       }
       .vertical{
         &-group{
@@ -63,13 +64,13 @@
         @screen lg{ @apply text-xl }
         @screen xl{ @apply text-2xl }
       }
-      .read-more {
-        @apply bg-white self-start text-gray-800 rounded-full text-sm py-1 px-2;
+      a{
+        @apply border-0 m-0 bg-white self-center text-gray-800 rounded-full text-sm py-1 px-2;
         font-size: .7rem;
         @media (min-width: 576px){ @apply text-sm px-3 py-1 self-end }
         @screen lg{ padding: .5rem 1.3rem; }
         width: fit-content;
-      }
+      } 
     }
   }
 }

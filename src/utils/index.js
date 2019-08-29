@@ -67,7 +67,7 @@ export const cardStyle = (imgURL) => {
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center center',
-    backgroundImage: `url(${imgURL})`,
+    backgroundImage: `linear-gradient(180deg, rgba(0, 0, 0, 0.4) 99.98%, rgba(255, 255, 255, 0) 99.99%, rgba(255, 255, 255, 0.2) 100%), url(${imgURL})`,
   };
   return card;
 };
@@ -78,7 +78,7 @@ export const featuredImgStyle = (imgURL) => {
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'top center',
-    backgroundImage: `linear-gradient(179.9deg, rgba(255, 255, 255, 0) 25.3%, rgba(10, 9, 9, 0.67) 94.04%), url(${imgURL})`,
+    backgroundImage: `linear-gradient(179.9deg, rgba(255, 255, 255, 0) 25.3%, rgba(10, 9, 9, 0.67) 79.04%), url(${imgURL})`,
   };
   return featured;
 };

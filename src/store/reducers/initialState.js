@@ -90,3 +90,8 @@ export const rateState = {
   isLoading: false,
   isCompleted: false,
 };
+
+export const articleListing = {
+  selectedCategory: 0,
+  articleList: null,
+};

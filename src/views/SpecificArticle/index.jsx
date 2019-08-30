@@ -19,7 +19,7 @@ import Comment from '../../components/Comment';
 import { submitReportAction } from '../../store/actions/reportArticle';
 import ReportModal from '../../components/ReportModal';
 import Loader from '../../components/Loader';
-import RateArticle from '../../components/RateArticle';
+import RateArticle from '../../components/rateArticle';
 import ContextMenu from '../../components/ContextMenu';
 import CommentModal from '../../components/CommentModal';
 import CommentIcon from '../../assets/svgs/commentIcon';

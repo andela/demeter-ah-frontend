@@ -16,7 +16,6 @@ const EditComment = ({
   updateCommentAction,
   getCommentAction,
   user,
-  authorUsername,
   commentHistory,
   fetchCommentHistory,
 }) => {
@@ -140,7 +139,7 @@ const EditComment = ({
               downVote={downVote}
               upVote={upVote}
             />
-            { (authorUsername === user.username && edited.length > 0) ? <button ref={historyBtn} type="button" onClick={handleGetHistory} className="cancel-btn ml-2 text-gray-250 font-bold">{ loading ? 'Getting History' : 'Edit History'}</button> : ''}
+            { (username === user.username && edited.length > 0) ? <button ref={historyBtn} type="button" onClick={handleGetHistory} className="cancel-btn ml-2 text-gray-250 font-bold">{ loading ? 'Getting History' : 'Edit History'}</button> : ''}
           </div>
           {
             showHistory ? (

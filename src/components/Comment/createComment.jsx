@@ -52,7 +52,7 @@ const CreateComment = ({
             <button
               disabled={loading}
               type="submit"
-              className="text-xs border border-solid border-purple-250 text-purple-250 rounded-lg h-8 px-4 mr-0"
+              className="text-xs border-solid border-2 border-purple-200 text-purple-200 rounded-lg h-8 px-4 mr-0"
             >
               {loading ? 'Loading...' : 'Comment'}
             </button>

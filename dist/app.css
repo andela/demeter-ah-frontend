@@ -55829,15 +55829,15 @@ h6 {
   font-size: 0.75rem;
   margin-right: 0.5rem;
   cursor: pointer;
+  border-width: 2px;
   border-style: solid;
-  border-color: #AD93E6;
+  border-color: #A88CE4;
   border-radius: 9999px;
   color: #000;
   text-align: left;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-  border-width: 1px;
-  color: #AD93E6;
+  color: #A88CE4;
   padding-left: 1rem;
   padding-right: 1rem;
 }

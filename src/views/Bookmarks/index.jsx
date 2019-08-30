@@ -86,7 +86,7 @@ const Bookmark = (props) => {
 
   return (
     <Fragment>
-      <div className="border-t-2 bg-purple-50 mb-6 overflow-y-auto h-full">
+      <div className="border-t-2 px-8 bg-purple-50 mb-6 overflow-y-auto h-full">
         {!isMounted ? <Loader /> : getBookmarkedArticles}
       </div>
     </Fragment>

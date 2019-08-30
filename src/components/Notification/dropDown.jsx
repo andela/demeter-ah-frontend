@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import NotifList from './list';
-import load from '../../../assets/images/loader.gif';
 import './index.scss';
 import {
   readNotificationAction,
@@ -49,7 +48,7 @@ const DropDown = ({
       </div>
       { !isLoading ? '' : (
         <div className="flex justify-center bg-gray-5">
-          <img src={load} alt="loader" className="h-6 w-6" />
+          <img src="/loader.gif" alt="loader" className="h-6 w-6" />
         </div>
       )}
     </div>

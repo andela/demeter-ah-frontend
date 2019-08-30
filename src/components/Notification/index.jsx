@@ -1,12 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { connect } from 'react-redux';
 import { pusher } from '../../utils';
-import callToast from '../Toast';
 import NotifIcon from '../../assets/svgs/notifIcon';
 import { getNotificationsAction } from '../../store/actions/notifications';
 import Dropdown from './dropDown';
 
-const Notification = ({ user, getNotifications }) => {
+const Notification = ({ user, getNotifications, notifyAlert }) => {
   const [notify, setNotify] = useState(false);
   const [loading, setLoading] = useState(false);
   const dropdownIcon = useRef();
@@ -17,9 +16,8 @@ const Notification = ({ user, getNotifications }) => {
     getNotifications();
     const channel = pusher.subscribe('notifications');
 
-    channel.bind(`event-${user.id}`, (data) => {
+    channel.bind(`event-${user.id}`, () => {
       setNotify(true);
-      callToast(data, 'success');
     });
     () => {
       mounted = false;
@@ -28,7 +26,7 @@ const Notification = ({ user, getNotifications }) => {
   }, []);
 
   const handleNotify = async () => {
-    if (mounted) {
+    if (mounted && !toggle) {
       setToggle(true);
       setLoading(true);
       await getNotifications();
@@ -59,7 +57,7 @@ const Notification = ({ user, getNotifications }) => {
       {toggle ? <Dropdown handleDropDown={handleDropDown} isLoading={loading} /> : ''}
       <button className="bell-icon relative m-0 p-0" onClick={handleNotify}>
         <div ref={dropdownIcon}><NotifIcon /></div>
-        {notify
+        {(notify || notifyAlert)
           ? <div className="navAlert absolute h-3 w-3 top-0 right-0 border-solid border-2 border-white rounded-full bg-yellow-650" />
           : ''}
       </button>
@@ -69,6 +67,7 @@ const Notification = ({ user, getNotifications }) => {
 
 const mapStateToProps = state => ({
   user: state.auth.user,
+  notifyAlert: state.notifications.notifyAlert,
 });
 
 const mapDispatchToProps = {

@@ -15,6 +15,7 @@ import comments from './Comments';
 import search from './search';
 import notifications from './notifications';
 import rate from './rateArticle';
+import commentHistory from './commentHistory';
 
 const reducers = combineReducers({
   auth,
@@ -32,7 +33,8 @@ const reducers = combineReducers({
   comments,
   search,
   notifications,
-  rate
+  rate,
+  commentHistory
 });
 
 export default reducers;

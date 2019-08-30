@@ -49,6 +49,7 @@ exports[`UserNav Component Should render along with children component 1`] = `
               <Connect(Notification)>
                 <Notification
                   getNotifications={[Function]}
+                  notifyAlert={false}
                   user={Object {}}
                 >
                   <div

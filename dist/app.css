@@ -55831,8 +55831,7 @@ h6 {
   cursor: pointer;
   border-style: solid;
   border-color: #AD93E6;
-  border-radius: 0.5rem;
-  font-weight: 700;
+  border-radius: 9999px;
   color: #000;
   text-align: left;
   padding-top: 0.5rem;
@@ -55848,8 +55847,7 @@ h6 {
   cursor: pointer;
   border-style: solid;
   border-color: #606060;
-  border-radius: 0.5rem;
-  font-weight: 700;
+  border-radius: 9999px;
   padding-right: 1rem;
   text-align: left;
   padding-top: 0.5rem;

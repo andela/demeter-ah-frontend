@@ -30,8 +30,8 @@ const SearchArticleCard = ({
       <div className="md:flex md:flex-row flex-row lg:min-w-96 m-auto text-left justify-start pl-4 pt-4 pb-8
         bg-white rounded-sm border-b-2 border-gray-30 mb-0 md:min-w-84"
       >
-        <div className="m-4 ml-0 mb-0 w-full md:w-48 h-24 rounded shadow-lg">
-          <img src={image || '/placeholder.png'} alt="Article" width="100%" height="100%" className="h-full" />
+        <div className="m-4 ml-0 mb-0 w-full h-48 md:w-48 md:h-24 rounded shadow-lg">
+          <img src={image || '/placeholder.png'} alt="Article" width="100%" height="100%" className="h-full object-cover" />
         </div>
         <div className="ml-0 flex-grow-0 justify-between flex flex-col max-h-48">
           <div className="flex flex-col">

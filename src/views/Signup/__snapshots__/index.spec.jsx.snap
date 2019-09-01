@@ -460,14 +460,14 @@ exports[`Sign up Component Should render along with children componenet 1`] = `
                     src="/brand-logo.png"
                   />
                   <Button
-                    classes="w-64 flex items-center justify-around shadow-md rounded-lg mx-2 my-3 text-sm"
+                    classes="w-64 px-4 py-2 flex items-center justify-around shadow-md rounded-lg mx-2 my-3 text-sm"
                     id="google"
                     name="Login"
                     onClick={[Function]}
                     type="button"
                   >
                     <button
-                      className="btn w-64 flex items-center justify-around shadow-md rounded-lg mx-2 my-3 text-sm"
+                      className="btn w-64 px-4 py-2 flex items-center justify-around shadow-md rounded-lg mx-2 my-3 text-sm"
                       disabled={false}
                       id="google"
                       onClick={[Function]}
@@ -481,14 +481,14 @@ exports[`Sign up Component Should render along with children componenet 1`] = `
                     </button>
                   </Button>
                   <Button
-                    classes="w-64 flex items-center justify-around shadow-md rounded-lg mx-2 my-3 text-sm"
+                    classes="w-64 px-4 py-2 flex items-center justify-around shadow-md rounded-lg mx-2 my-3 text-sm"
                     id="facebook"
                     name="Login"
                     onClick={[Function]}
                     type="button"
                   >
                     <button
-                      className="btn w-64 flex items-center justify-around shadow-md rounded-lg mx-2 my-3 text-sm"
+                      className="btn w-64 px-4 py-2 flex items-center justify-around shadow-md rounded-lg mx-2 my-3 text-sm"
                       disabled={false}
                       id="facebook"
                       onClick={[Function]}
@@ -502,14 +502,14 @@ exports[`Sign up Component Should render along with children componenet 1`] = `
                     </button>
                   </Button>
                   <Button
-                    classes="w-64 flex items-center justify-around shadow-md rounded-lg mx-2 my-3 text-sm"
+                    classes="w-64 px-4 py-2 flex items-center justify-around shadow-md rounded-lg mx-2 my-3 text-sm"
                     id="twitter"
                     name="Login"
                     onClick={[Function]}
                     type="button"
                   >
                     <button
-                      className="btn w-64 flex items-center justify-around shadow-md rounded-lg mx-2 my-3 text-sm"
+                      className="btn w-64 px-4 py-2 flex items-center justify-around shadow-md rounded-lg mx-2 my-3 text-sm"
                       disabled={false}
                       id="twitter"
                       onClick={[Function]}

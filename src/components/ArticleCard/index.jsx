@@ -34,7 +34,7 @@ const ArticleCard = ({
           <div className="flex justify-between mt-16">
             <div>
               <Link to={`/profile/${authorname || 'Paul Igabu'}/articles`}>
-                <div style={authorImage(autImage || '/user.png')} className="h-16 w-16" />
+                <div style={authorImage(autImage || '/dummy.png')} className="h-16 w-16" />
                 <p className="text-base text-left font-medium text-white">{authorname || 'Paul Igabu'}</p>
               </Link>
             </div>

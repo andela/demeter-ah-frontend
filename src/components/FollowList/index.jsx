@@ -47,11 +47,11 @@ const FollowList = ({
 
             <div
               style={{ backgroundImage: `url(${member.image})` }}
-              className="dp"
+              className="dp w-14 h-14 md:w-16 md:h-16"
             />
           )
           : (
-            <div className="dp bg-purple-500">
+            <div className="dp w-14 h-14 md:w-16 md:h-16 bg-purple-500">
               <p className="altDp">
                 {String(member.firstName)
                   .substring(1, 0)
@@ -61,7 +61,7 @@ const FollowList = ({
           )}
       </Link>
       <div className="info">
-        <Link to={`/profile/${member.username}/articles`}><h4 className="fullname">{`${member.firstName} ${member.lastName}`}</h4></Link>
+        <Link to={`/profile/${member.username}/articles`}><h4 className="fullname text-xs md:text-base">{`${member.firstName} ${member.lastName}`}</h4></Link>
         <p className="bio">{member.bio}</p>
       </div>
       {
@@ -71,7 +71,7 @@ const FollowList = ({
               id={member.id}
               type="button"
               disabled={isFollowing}
-              className={button === 'Following' ? 'unfollow' : 'follow'}
+              className={`min-w-24 sm:w-24 md:w-32 text-xs min-w- md:text-sm ${button === 'Following' ? 'unfollow' : 'follow'}`}
               onClick={handleFollow}
             >
               { isFollowing ? 'Loading..' : button}

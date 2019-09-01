@@ -70,7 +70,7 @@ exports[`Sign In Component Should render along with children componenet 1`] = `
                       className="h-16 w-16"
                       style={
                         Object {
-                          "backgroundImage": "url(/user.png)",
+                          "backgroundImage": "url(/dummy.png)",
                           "backgroundPosition": "center center",
                           "backgroundSize": "cover",
                           "borderRadius": "9999px",

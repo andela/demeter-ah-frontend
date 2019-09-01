@@ -25,7 +25,7 @@ const Reactions = ({
   const [isVoting, setVoting] = React.useState(false);
 
   const handleLike = async (status) => {
-    if (articleAuthorUsername !== user.username) {
+    if (isAuthenticated && articleAuthorUsername !== user.username) {
       setVoting(true);
       setLike(!like);
       setDislike(false);
@@ -35,7 +35,7 @@ const Reactions = ({
   };
 
   const handleDisLike = async (status) => {
-    if (articleAuthorUsername !== user.username) {
+    if (isAuthenticated && articleAuthorUsername !== user.username) {
       setVoting(true);
       setDislike(!dislike);
       setLike(false);

@@ -15,6 +15,7 @@ const Followbtn = ({
   updateProfile,
   getViewedUserInfo,
   isAuthenticated,
+  customClass,
 }) => {
   const [isFollowing, setIsFollowing] = useState(false);
   let isSubscribe = true;
@@ -43,7 +44,7 @@ const Followbtn = ({
     ? (
       <Button
         type="submit"
-        classes={`followBtnComp ${isFollowed ? 'follow' : 'unfollow'}`}
+        classes={`followBtnComp ${customClass || ''} ${isFollowed ? 'follow' : 'unfollow'}`}
         isSubmit={isFollowing}
         onClick={handleFollow}
       >

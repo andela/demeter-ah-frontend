@@ -19,10 +19,12 @@ import Comment from '../../components/Comment';
 import { submitReportAction } from '../../store/actions/reportArticle';
 import ReportModal from '../../components/ReportModal';
 import Loader from '../../components/Loader';
+import Skeleton from '../../components/ArticleLoader';
 import RateArticle from '../../components/rateArticle';
 import ContextMenu from '../../components/ContextMenu';
 import CommentModal from '../../components/CommentModal';
 import CommentIcon from '../../assets/svgs/commentIcon';
+
 
 const SpecificArticle = (props) => {
   const getBody = (raw) => {
@@ -85,7 +87,8 @@ const SpecificArticle = (props) => {
   const commentNode = useRef();
 
   const gotoComment = () => {
-    window.scrollTo({
+    const app = document.querySelector('#app');
+    app.scrollTo({
       top: commentNode.current.offsetTop,
       behavior: 'smooth',
     });
@@ -125,10 +128,12 @@ const SpecificArticle = (props) => {
     if (articleError) {
       history.push('/');
     }
-    return () => {
-      props.cleanUpArticle();
-    };
   }, [articleError]);
+
+  useEffect(() => {
+    props.cleanUpArticle();
+    props.viewArticleAction(match.params.slug);
+  }, [match.params.slug]);
 
   useEffect(() => {
     if (onbookmark) {
@@ -136,14 +141,10 @@ const SpecificArticle = (props) => {
       setOnBookmark(false);
     }
 
-    if (match.params.slug !== article.slug) {
-      props.viewArticleAction(match.params.slug);
-    }
-
     parsedData = body && JSON.parse(body);
     parsedBody = getBody(parsedData);
     setbodyValue(parsedBody && ReactHtmlParser(parsedBody));
-  }, [article, match.params.slug, onbookmark]);
+  }, [article, onbookmark]);
 
   const detail = (
     <div className="viewedArticle w-full text-center">
@@ -208,20 +209,23 @@ const SpecificArticle = (props) => {
           article={article}
         />
         <div className="flex flex-col section-five mb-8 bg-gray-100 justify-center">
-          <h2 className="w-8/12 mx-auto sm:text-center lg:text-left">Related Articles</h2>
-          <div className="flex flex-row w-8/12 mx-auto sm:max-w-32 md:max-w-84 lg:max-w-96">
-            {relatedIsLoading ? <Loader />
-              : (
-                <RelatedArticles
-                  articles={articles}
-                  relatedArticleImg={relatedArticleImg}
-                />
-              )
-            }
+          <h2 className="w-8/12 mx-auto text-center">Related Articles</h2>
+          <div className="flex flex-row w-11/12 flex-wrap justify-center pb-4 md:w-10/12 mx-auto sm:max-w-32 md:max-w-84 lg:max-w-96">
+            <RelatedArticles
+              articles={articles}
+              relatedArticleImg={relatedArticleImg}
+              isLoading={relatedIsLoading}
+            />
           </div>
         </div>
         <div ref={commentNode} className="commentWrapper">
-          <Comment commentNo={article.commentNo} authorUsername={articleAuthorUsername} match={match} slug={match.params.slug} />
+          <Comment
+            commentNo={article.commentNo}
+            authorUsername={articleAuthorUsername}
+            match={match}
+            gotoComment={gotoComment}
+            slug={match.params.slug}
+          />
         </div>
       </div>
     </div>
@@ -229,7 +233,7 @@ const SpecificArticle = (props) => {
 
   return (
     <Fragment>
-      {detail}
+      { body ? detail : <Skeleton hideNav />}
       {showReport ? report : ''}
       {commentModalVisible
         ? (

@@ -13,11 +13,13 @@ const Dashboard = ({
   viewedUser,
   getUserInfo,
   setUserInfo,
+  cleanUp,
 }) => {
   const { username } = match.params;
 
   useEffect(() => {
     if (username !== user.username && username !== viewedUser.username) {
+      cleanUp();
       getUserInfo({ username, history, user });
     } else if (username === user.username) {
       setUserInfo(user);

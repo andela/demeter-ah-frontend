@@ -86,7 +86,7 @@ exports[`UserNav Component Should render along with children component 1`] = `
               <img
                 alt=""
                 className="h-10 w-10 mx-2 rounded-full object-cover"
-                src="https://i.imgur.com/wtjaVfi.png"
+                src="/dummy.png"
               />
               <dropdown
                 classes="mx-2 cursor-pointer"

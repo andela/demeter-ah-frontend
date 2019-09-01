@@ -28,9 +28,9 @@ const Checkbox = ({
   );
 
   return (
-    <div className="in-app flex w-full md:w-5.5/12">
+    <div className="in-app flex flex-wrap w-full md:w-5.5/12">
       <p
-        className={`py-2 pr-4 font-semibold text-xs ${isLoading ? 'text-blue-400' : 'text-gray-250'}`}
+        className={`py-2 pr-4 font-semibold whitespace-nowrap text-xs ${isLoading ? 'text-blue-400' : 'text-gray-250'}`}
       >
         {children}
       </p>

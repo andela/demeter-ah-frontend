@@ -187,7 +187,7 @@ const Signup = (props) => {
                   id="google"
                   type="button"
                   name="Login"
-                  classes="w-64 flex items-center justify-around shadow-md rounded-lg mx-2 my-3 text-sm"
+                  classes="w-64 px-4 py-2 flex items-center justify-around shadow-md rounded-lg mx-2 my-3 text-sm"
                 >
                   <img src="/google.png" alt="Authors Haven" />
                   Sign up with Google
@@ -197,7 +197,7 @@ const Signup = (props) => {
                   id="facebook"
                   type="button"
                   name="Login"
-                  classes="w-64 flex items-center justify-around shadow-md rounded-lg mx-2 my-3 text-sm"
+                  classes="w-64 px-4 py-2 flex items-center justify-around shadow-md rounded-lg mx-2 my-3 text-sm"
                 >
                   <img
                     src="/facebook.png"
@@ -210,7 +210,7 @@ const Signup = (props) => {
                   id="twitter"
                   type="button"
                   name="Login"
-                  classes="w-64 flex items-center justify-around shadow-md rounded-lg mx-2 my-3 text-sm"
+                  classes="w-64 px-4 py-2 flex items-center justify-around shadow-md rounded-lg mx-2 my-3 text-sm"
                 >
                   <img
                     src="/twitter.png"

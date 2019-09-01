@@ -21,14 +21,19 @@ const dropDown = ({ user, handleDropDown, handleSignOut }) => {
             Write a Story
           </li>
         </Link>
-        <Link onClick={handleDropDown} to={`/profile/${username}/followers`}>
+        <Link onClick={handleDropDown} to={`/profile/${username}/following`}>
           <li className="text-xs-2 border-b-2 border-gray-40 py-3 px-8 bg-white cursor-pointer text-center text-gray-550">
-            Followers
+            Following
           </li>
         </Link>
         <Link onClick={handleDropDown} to={`/profile/${username}/articles`}>
           <li className="text-xs-2 border-b-2 border-gray-40 py-3 px-8 bg-white cursor-pointer text-center text-gray-550">
             Articles
+          </li>
+        </Link>
+        <Link onClick={handleDropDown} to={`/profile/${username}/bookmark`}>
+          <li className="text-xs-2 border-b-2 border-gray-40 py-3 px-8 bg-white cursor-pointer text-center text-gray-550">
+            Bookmarks
           </li>
         </Link>
         <Link onClick={handleDropDown} to={`/profile/${username}/editprofile`}>

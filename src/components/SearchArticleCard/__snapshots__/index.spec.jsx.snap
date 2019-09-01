@@ -6,11 +6,11 @@ exports[`SearchArticleCard Component Should render without errors 1`] = `
     className="md:flex md:flex-row flex-row lg:min-w-96 m-auto text-left justify-start pl-4 pt-4 pb-8 bg-white rounded-sm border-b-2 border-gray-30 mb-0 md:min-w-84"
   >
     <div
-      className="m-4 ml-0 mb-0 w-full md:w-48 h-24 rounded shadow-lg"
+      className="m-4 ml-0 mb-0 w-full h-48 md:w-48 md:h-24 rounded shadow-lg"
     >
       <img
         alt="Article"
-        className="h-full"
+        className="h-full object-cover"
         height="100%"
         src="/placeholder.png"
         width="100%"
@@ -90,11 +90,11 @@ exports[`SearchArticleCard Component Should render without errors when no tags e
     className="md:flex md:flex-row flex-row lg:min-w-96 m-auto text-left justify-start pl-4 pt-4 pb-8 bg-white rounded-sm border-b-2 border-gray-30 mb-0 md:min-w-84"
   >
     <div
-      className="m-4 ml-0 mb-0 w-full md:w-48 h-24 rounded shadow-lg"
+      className="m-4 ml-0 mb-0 w-full h-48 md:w-48 md:h-24 rounded shadow-lg"
     >
       <img
         alt="Article"
-        className="h-full"
+        className="h-full object-cover"
         height="100%"
         src="/placeholder.png"
         width="100%"

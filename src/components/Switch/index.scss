@@ -1,5 +1,6 @@
-.checkbox {
-  
+
+  .in-app {
+  margin: 0.5em 0.4em 0.5em 0;
    .wrapper {
     @apply relative items-center px-1 w-8 h-4 bg-white rounded-lg border border-solid;
     
@@ -24,3 +25,4 @@
     left: 15%;
   }
 }
+

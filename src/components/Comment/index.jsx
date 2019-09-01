@@ -1,7 +1,7 @@
 /* eslint-disable no-nested-ternary */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { connect } from 'react-redux';
 import CreateComment from './createComment';
 import ViewComment from './comment';
@@ -9,14 +9,28 @@ import { getComments, commentCleanUp } from '../../store/actions/Comments';
 import Loader from '../Loader';
 
 const Comment = ({
-  comments, commentNo, slug, getCommentAction, cleanUp, match, authorUsername,
+  comments,
+  commentNo,
+  slug,
+  getCommentAction,
+  cleanUp,
+  match,
+  authorUsername,
 }) => {
   const [toggle, setToggle] = useState(false);
   const [loading, setLoading] = useState(false);
   const [commentList, setCommentList] = useState('');
+  const createCommentNode = useRef();
 
   useEffect(() => {
-    comments && setCommentList(comments.map(comment => <ViewComment key={comment.id} authorUsername={authorUsername} slug={slug} commentObj={comment} />));
+    comments && setCommentList(comments.map(comment => (
+      <ViewComment
+        key={comment.id}
+        authorUsername={authorUsername}
+        slug={slug}
+        commentObj={comment}
+      />
+    )));
   }, [comments]);
 
   useEffect(() => {
@@ -44,7 +58,7 @@ const Comment = ({
         toggle
           ? (
             <>
-              <CreateComment slug={slug} />
+              <div ref={createCommentNode}><CreateComment slug={slug} /></div>
               { loading ? <Loader fixed /> : commentList }
             </>
           )

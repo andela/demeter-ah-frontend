@@ -1,12 +1,11 @@
 .followBtnComp {
-  @apply cursor-pointer border border-solid border-purple-250 w-32 ml-0 text-white text-white text-sm mt-4 font-montserrat ;
-  border-radius: 5px;
+  @apply cursor-pointer border-2 border-solid border-purple-200 text-white text-white font-montserrat ;
 }
 
 .follow {
-  @apply text-white bg-purple-250 ;
+  @apply text-white bg-purple-200 ;
 }
 
 .unfollow {
-  @apply text-purple-250 bg-white;
+  @apply text-purple-200 bg-white;
 }

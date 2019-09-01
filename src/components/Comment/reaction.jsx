@@ -56,7 +56,7 @@ const Reaction = ({
   };
 
   return (
-    <div className="comment-reaction flex flex-row justify-center items-center">
+    <div className="comment-reaction p-2 flex flex-row justify-center items-center">
       <div onClick={handleLike} className={`flex ${(liked) ? 'clicked' : ''}`}>
         <LikeIcon />
         <small className="text-xs text-gray-450 ml-2">{upVote.length}</small>

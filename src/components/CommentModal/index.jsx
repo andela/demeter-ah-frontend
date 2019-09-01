@@ -42,7 +42,7 @@ const CommentModal = ({
     : (
       <Fragment>
         <div className="shade">
-          <div className="wrapper">
+          <div className="wrapper w-11/12 lg:w-6/12 max-w-118">
             <div className="flex justify-between items-center px-4">
               <h2>Add your comment</h2>
               <span

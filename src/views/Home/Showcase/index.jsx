@@ -11,16 +11,16 @@ const Card = ({
   bg,
   slug = null
 }) => (
-    <div className={type} style={cardStyle(`${bg || '/placeholder.png'}`)} >
-      <p className="category">{category}</p>
-      <div className="meta">
-        <p className="title">{title}</p>
-        <Link to={slug ? `/articles/${slug}` : '#'}>
+  <div className={type} style={cardStyle(`${bg || '/placeholder.png'}`)}>
+    <p className="category">{category}</p>
+    <div className="meta">
+      <p className="title">{title}</p>
+      <Link to={slug ? `/articles/${slug}` : '#'}>
           Read More
-        </Link>
-      </div>
-    </div >
-  );
+      </Link>
+    </div>
+  </div>
+);
 
 const Showcase = ({ popular, latest }) => (
   <div className="showcase">

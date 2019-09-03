@@ -14,7 +14,7 @@ input, button, select, textarea {
   }
 }
 .btn {
-	@apply px-4 py-2;
+	@apply cursor-pointer;
 }
 .btn-purple{
 	@apply bg-purple-650 text-white text-sm font-montserrat rounded-full;

@@ -7155,6 +7155,10 @@ video {
   min-width: 0;
 }
 
+.min-w-24 {
+  min-width: 6rem;
+}
+
 .min-w-32 {
   min-width: 8rem;
 }
@@ -7165,6 +7169,10 @@ video {
 
 .min-w-48 {
   min-width: 14rem;
+}
+
+.min-w-80 {
+  min-width: 18.6rem;
 }
 
 .min-w-84 {
@@ -17417,6 +17425,10 @@ video {
     min-width: 0;
   }
 
+  .sm\:min-w-24 {
+    min-width: 6rem;
+  }
+
   .sm\:min-w-32 {
     min-width: 8rem;
   }
@@ -17427,6 +17439,10 @@ video {
 
   .sm\:min-w-48 {
     min-width: 14rem;
+  }
+
+  .sm\:min-w-80 {
+    min-width: 18.6rem;
   }
 
   .sm\:min-w-84 {
@@ -27680,6 +27696,10 @@ video {
     min-width: 0;
   }
 
+  .md\:min-w-24 {
+    min-width: 6rem;
+  }
+
   .md\:min-w-32 {
     min-width: 8rem;
   }
@@ -27690,6 +27710,10 @@ video {
 
   .md\:min-w-48 {
     min-width: 14rem;
+  }
+
+  .md\:min-w-80 {
+    min-width: 18.6rem;
   }
 
   .md\:min-w-84 {
@@ -37943,6 +37967,10 @@ video {
     min-width: 0;
   }
 
+  .lg\:min-w-24 {
+    min-width: 6rem;
+  }
+
   .lg\:min-w-32 {
     min-width: 8rem;
   }
@@ -37953,6 +37981,10 @@ video {
 
   .lg\:min-w-48 {
     min-width: 14rem;
+  }
+
+  .lg\:min-w-80 {
+    min-width: 18.6rem;
   }
 
   .lg\:min-w-84 {
@@ -48206,6 +48238,10 @@ video {
     min-width: 0;
   }
 
+  .xl\:min-w-24 {
+    min-width: 6rem;
+  }
+
   .xl\:min-w-32 {
     min-width: 8rem;
   }
@@ -48216,6 +48252,10 @@ video {
 
   .xl\:min-w-48 {
     min-width: 14rem;
+  }
+
+  .xl\:min-w-80 {
+    min-width: 18.6rem;
   }
 
   .xl\:min-w-84 {
@@ -51949,10 +51989,7 @@ input:focus, button:focus, select:focus, textarea:focus {
 }
 
 .btn {
-  padding-left: 1rem;
-  padding-right: 1rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  cursor: pointer;
 }
 
 .btn-purple {
@@ -53592,7 +53629,7 @@ nav button {
 
 .notif-dropdown {
   font-family: 'Raleway', sans-serif;
-  right: 0em;
+  right: -6.2em;
   top: 130%;
   box-shadow: 1px 1px 10px 2px rgba(0, 0, 0, 0.2);
 }
@@ -55406,7 +55443,11 @@ h6 {
   resize: none;
 }
 
-.checkbox .wrapper {
+.in-app {
+  margin: 0.5em 0.4em 0.5em 0;
+}
+
+.in-app .wrapper {
   position: relative;
   align-items: center;
   padding-left: 0.25rem;
@@ -55419,7 +55460,7 @@ h6 {
   border-style: solid;
 }
 
-.checkbox .wrapper .check {
+.in-app .wrapper .check {
   width: 0.75rem;
   height: 0.75rem;
   border-radius: 9999px;
@@ -55428,17 +55469,17 @@ h6 {
   top: 50%;
 }
 
-.checkbox .wrapper .check-icon {
+.in-app .wrapper .check-icon {
   transform: translate(-50%, -50%);
   top: 50%;
   left: 50%;
 }
 
-.checkbox .on {
+.in-app .on {
   left: 85%;
 }
 
-.checkbox .off {
+.in-app .off {
   left: 15%;
 }
 
@@ -55474,8 +55515,6 @@ h6 {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 4rem;
-  height: 4rem;
   background-size: cover;
   border-radius: 9999px;
   background-repeat: no-repeat;
@@ -55496,9 +55535,9 @@ h6 {
 }
 
 .followList .info h4 {
-  font-size: 1rem;
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
+  text-transform: capitalize;
 }
 
 .followList .info p {
@@ -55510,14 +55549,8 @@ h6 {
   background-color: #fff;
   height: 2.5rem;
   border-radius: 9999px;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  width: 8rem;
   color: #9f7aea;
-  font-size: 0.875rem;
   font-weight: 600;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
   border-color: #9f7aea;
   border-style: solid;
   border-width: 2px;
@@ -55527,14 +55560,8 @@ h6 {
   background-color: #9f7aea;
   height: 2.5rem;
   border-radius: 9999px;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  width: 8rem;
   color: #fff;
-  font-size: 0.875rem;
   font-weight: 600;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
   border-color: #9f7aea;
   border-style: solid;
   border-width: 2px;
@@ -55570,26 +55597,21 @@ h6 {
 
 .followBtnComp {
   cursor: pointer;
-  border-width: 1px;
+  border-width: 2px;
   border-style: solid;
-  border-color: #AD93E6;
-  width: 8rem;
-  margin-left: 0;
+  border-color: #A88CE4;
   color: #fff;
   color: #fff;
-  font-size: 0.875rem;
-  margin-top: 1rem;
   font-family: Montserrat;
-  border-radius: 5px;
 }
 
 .follow {
   color: #fff;
-  background-color: #AD93E6;
+  background-color: #A88CE4;
 }
 
 .unfollow {
-  color: #AD93E6;
+  color: #A88CE4;
   background-color: #fff;
 }
 
@@ -55867,7 +55889,6 @@ h6 {
 }
 
 .shade .wrapper {
-  width: 50%;
   position: absolute;
   margin: auto;
   top: 0;

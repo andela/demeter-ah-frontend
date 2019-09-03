@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 import Button from '../../../components/Button';
 import { relatedArticleImg } from '../../../utils';
 import './index.scss';
@@ -43,11 +44,15 @@ const Articles = ({ articles }) => (
   </div>
 );
 
-const More = ({ articles }) => (
+const More = ({ articles, isAuthenticated }) => (
   <>
     <Articles articles={articles} />
-    <Join />
+    {isAuthenticated ? '' : <Join />}
   </>
 );
 
-export default More;
+const mapStateToProps = ({ auth }) => ({
+  isAuthenticated: auth.isAuthenticated,
+});
+
+export default connect(mapStateToProps)(More);

@@ -35,7 +35,7 @@ const CreateComment = ({
     : (
       <div className="createComment flex pt-10 px-4 md:px-10 w-full">
         <img
-          src={(user && user.image) || 'https://i.imgur.com/wtjaVfi.png'}
+          src={(user && user.image) || '/dummy.png'}
           className="shadow-md rounded-full w-16 h-16 mr-4 object-cover"
           alt=""
         />

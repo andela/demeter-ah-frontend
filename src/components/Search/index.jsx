@@ -12,9 +12,9 @@ const search = (props) => {
     /* istanbul ignore next */
     e.preventDefault();
     /* istanbul ignore next */
-    await props.searchAction(params);
-    /* istanbul ignore next */
     history.push('/search');
+    /* istanbul ignore next */
+    await props.searchAction(params);
   };
 
   const onChange = (e) => {
@@ -25,7 +25,7 @@ const search = (props) => {
   };
 
   return (
-    <div className="search relative flex items-center justify-center p-0 mr-6">
+    <form onSubmit={handleClick} className="search relative flex items-center justify-center p-0 mr-6">
       <input
         className="border hidden md:inline-flex border-solid border-gray-350 bg-gray-20 rounded-4xl h-9 w-64 pr-2 pl-4"
         placeholder="Search..."
@@ -34,8 +34,8 @@ const search = (props) => {
         onChange={onChange}
         autoComplete="off"
       />
-      <SearchIcon classes="searchIcon cursor-pointer absolute right-0" onClick={handleClick} />
-    </div>
+      <button className="cursor-pointer absolute right-0"><SearchIcon classes="searchIcon" /></button>
+    </form>
   );
 };
 

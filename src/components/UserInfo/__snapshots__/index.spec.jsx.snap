@@ -156,8 +156,11 @@ exports[`UserInfo Component Should render along with children component 1`] = `
               <p
                 className="bio text-xs sm:max-w-56 md:max-w-86 md:text-sm max-w-86 md:max-w-118 lg:max-w-122"
               />
-              <Connect(Followbtn)>
+              <Connect(Followbtn)
+                customClass="px-4 py-2 w-32 ml-0 mt-4 text-sm rounded-md"
+              >
                 <Followbtn
+                  customClass="px-4 py-2 w-32 ml-0 mt-4 text-sm rounded-md"
                   followAction={[Function]}
                   getFollower={[Function]}
                   getViewedUserInfo={[Function]}
@@ -332,8 +335,11 @@ exports[`UserInfo Component Should render along with children component wher ima
               <p
                 className="bio text-xs sm:max-w-56 md:max-w-86 md:text-sm max-w-86 md:max-w-118 lg:max-w-122"
               />
-              <Connect(Followbtn)>
+              <Connect(Followbtn)
+                customClass="px-4 py-2 w-32 ml-0 mt-4 text-sm rounded-md"
+              >
                 <Followbtn
+                  customClass="px-4 py-2 w-32 ml-0 mt-4 text-sm rounded-md"
                   followAction={[Function]}
                   getFollower={[Function]}
                   getViewedUserInfo={[Function]}

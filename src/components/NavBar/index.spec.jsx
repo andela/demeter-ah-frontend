@@ -30,7 +30,7 @@ describe('NavBar Component', () => {
       </Provider>
     );
     expect(component).toMatchSnapshot();
-    expect(component.find('button')).toHaveLength(2);
+    expect(component.find('button')).toHaveLength(3);
     expect(component.find('img')).toHaveLength(1);
   });
 });

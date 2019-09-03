@@ -24,7 +24,7 @@ const ArticleStat = ({ articles, getArticles, user }) => {
   return (
     <Fragment>
       <div className="overflow-y-auto bg-purple-50 h-full border-t-2 border-solid border-gray-20">
-        <div className="w-2/3 mx-auto mt-8">
+        <div className=" w-full min-w-32 overflow-x-scroll min-w-118 md:10/12 lg:w-2/3 px-2 md:px-4 mx-auto mt-8">
           <div>
             Total Articles (
             <span>{totalArticle}</span>

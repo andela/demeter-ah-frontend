@@ -14,11 +14,17 @@ const ContextMenu = ({ LoadMenu, children }) => {
     e.preventDefault();
     const clickX = e.clientX;
     const clickY = e.clientY;
-    setContextState({
-      visible: true,
-      x: clickX,
-      y: clickY
-    });
+    const selectedText = window.getSelection().toString();
+    const pattern = /\w+/g;
+    if (!pattern.test(selectedText)) {
+      setContextState(initialContextState);
+    } else {
+      setContextState({
+        visible: true,
+        x: clickX,
+        y: clickY
+      });
+    }
   };
 
   const MenuStyle = {
@@ -37,7 +43,7 @@ const ContextMenu = ({ LoadMenu, children }) => {
   };
 
   return (
-    <div>
+    <div className="w-full">
       <div onMouseUp={handleContextMenu}>
         {children}
       </div>

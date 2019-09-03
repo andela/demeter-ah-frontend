@@ -12,7 +12,7 @@ const Reportview = ({ closeModal, handleSubmit, reportBody }) => {
   return (
     <Fragment>
       <div className="shade">
-        <div className="wrapper">
+        <div className="wrapper w-11/12 lg:w-6/12 max-w-118">
           <div className="flex justify-between items-center px-4">
             <h2>Report Article</h2>
             <span

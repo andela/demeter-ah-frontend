@@ -13,7 +13,7 @@ const UserNav = ({ onClick, user, refname }) => (
       <img
         className="h-10 w-10 mx-2 rounded-full object-cover"
         src={user.image
-      || 'https://i.imgur.com/wtjaVfi.png'}
+      || '/dummy.png'}
         alt=""
       />
       <Dropdown onClick={onClick} classes="mx-2 cursor-pointer" />

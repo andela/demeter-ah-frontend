@@ -16,9 +16,8 @@ import convertFromJSON from '../../utils/convertFromJSON';
 import { featuredImgStyle, relatedArticleImg } from '../../utils';
 import { bookmarkArticle } from '../../store/actions/bookmarkArticle';
 import Comment from '../../components/Comment';
-import { submitReportAction } from '../../store/actions/reportArticle';
+import { submitReportAction, hasReadActicle } from '../../store/actions/reportArticle';
 import ReportModal from '../../components/ReportModal';
-import Loader from '../../components/Loader';
 import Skeleton from '../../components/ArticleLoader';
 import RateArticle from '../../components/rateArticle';
 import ContextMenu from '../../components/ContextMenu';
@@ -130,6 +129,37 @@ const SpecificArticle = (props) => {
     }
   }, [articleError]);
 
+  const getTimetoknowWhenArticleIsRead = (articleReadTime) => {
+    let setTimeToMarkAsRead;
+    if (articleReadTime === 'Less than a minute') {
+      setTimeToMarkAsRead = 10000;
+    } else {
+      const timeArray = articleReadTime.split(' ');
+      const timeInSeconds = timeArray[0] * 60;
+      const oneMillisecond = 1000;
+      const timeInMillisecond = timeInSeconds * oneMillisecond;
+      const halfTheTime = timeInMillisecond / 2;
+      setTimeToMarkAsRead = halfTheTime;
+    }
+    return setTimeToMarkAsRead;
+  };
+
+  useEffect(() => {
+    let saveReadTime = setTimeout(() => { }, 0);
+    let setTimeToMarkAsRead;
+
+    if (readTime) {
+      setTimeToMarkAsRead = getTimetoknowWhenArticleIsRead(readTime);
+      saveReadTime = setTimeout(() => {
+        props.clientReadArticle(article.slug);
+      }, setTimeToMarkAsRead);
+    }
+
+    return () => {
+      clearTimeout(saveReadTime);
+    };
+  }, [readTime]);
+
   useEffect(() => {
     props.cleanUpArticle();
     props.viewArticleAction(match.params.slug);
@@ -233,7 +263,7 @@ const SpecificArticle = (props) => {
 
   return (
     <Fragment>
-      { body ? detail : <Skeleton hideNav />}
+      {body ? detail : <Skeleton hideNav />}
       {showReport ? report : ''}
       {commentModalVisible
         ? (
@@ -265,7 +295,8 @@ const mapDispatchToProps = {
   viewArticleAction,
   cleanUpArticle,
   bookmarkArticleAction: slug => bookmarkArticle(slug),
-  submitReport: body => submitReportAction(body)
+  submitReport: body => submitReportAction(body),
+  clientReadArticle: slug => hasReadActicle(slug)
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(SpecificArticle);

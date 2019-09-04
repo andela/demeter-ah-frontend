@@ -44,7 +44,8 @@ const Bookmark = (props) => {
       author: {
         firstName,
         lastName,
-        authorImage
+        authorImage,
+        username
       }
     } = article;
     const date = new Date(createdAt);
@@ -61,6 +62,7 @@ const Bookmark = (props) => {
         onBookmark={handleBookmark}
         category={articleCategory}
         autImage={authorImage}
+        authorusername={username}
         authorname={`${firstName} ${lastName}`}
         readTime={readTime}
         rating={rating}

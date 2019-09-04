@@ -26,7 +26,7 @@ const ListArticles = ({
       author: {
         firstName,
         lastName,
-        authorImage
+        authorImage,
       },
       bookmarks
     } = article;
@@ -46,6 +46,7 @@ const ListArticles = ({
         category={articleCategory}
         autImage={authorImage}
         authorname={`${firstName} ${lastName}`}
+        authorusername={username}
         readTime={readTime}
         rating={rating}
         createdAt={createdDate}

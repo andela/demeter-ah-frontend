@@ -22,13 +22,13 @@ const AuthorProfile = ({
         <div className="text-left">
           <Link to={`/profile/${author && author.username}/articles`} className="cursor-pointer pl-4 text-gray-600">
             <p className="sm:text-base md:text-lg ml-4">
-              { author && author.firstName }
+              {author && author.firstName}
               {' '}
-              { author && author.lastName }
+              {author && author.lastName}
             </p>
             <p className="sm:text-sm md:text-base ml-4">
-                      @
-              { author && author.username }
+              @
+              {author && author.username}
             </p>
           </Link>
           <div className="flex flex-row">
@@ -36,7 +36,7 @@ const AuthorProfile = ({
               <FollowButton customClass="sm:text-xs md:text-sm rounded-full sm:px-3 md:py-1 md:px-4" />
             </div>
             <div className="md:m-0 sm:m-3 lg:m-4 flex justify-center items-center">
-              <p className="sm:text-xs md:text-xs lg:text-sm text-gray-600">{ readTime }</p>
+              <p className="sm:text-xs md:text-xs lg:text-sm text-gray-600">{`${readTime} read`}</p>
             </div>
           </div>
         </div>

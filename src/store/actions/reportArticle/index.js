@@ -19,3 +19,18 @@ export const submitReportAction = body => async () => {
     throw msg;
   }
 };
+
+export const hasReadActicle = slug => async () => {
+  try {
+    await axiosCall({
+      path: `/api/v1/articles/stats/${slug}`, method: 'patch'
+    });
+  } catch (e) {
+    /* istanbul ignore next */
+    const { response } = e;
+    /* istanbul ignore next */
+    const msg = response.data.message || response;
+    /* istanbul ignore next */
+    throw msg;
+  }
+};

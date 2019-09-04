@@ -11,7 +11,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/andela/demeter-ah-frontend">
-    <img src="/logo.png" alt="Logo" width="auto" height="80">
+    <img src="/assets/images/logo.png" alt="Logo" width="auto" height="80">
   </a>
 
   <p align="center">
